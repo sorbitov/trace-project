@@ -1,0 +1,63 @@
+# Requirements
+
+## v1 Requirements
+
+### Identity
+
+- [ ] **ID-01**: Sender can enter an X handle as the recipient target.
+- [ ] **ID-02**: App can normalize X handles consistently, ignoring leading `@` and casing where appropriate.
+- [ ] **ID-03**: Recipient can sign in with X OAuth to prove ownership of the target X identity.
+- [ ] **ID-04**: Backend can bind a verified X identity to a wallet for a specific claim attempt.
+- [ ] **ID-05**: Claim authorization is bound to payment ID, wallet, chain ID, expiry, and verifier signer.
+
+### Payments
+
+- [ ] **PAY-01**: Sender can create a USDC payment to an X identity.
+- [ ] **PAY-02**: Payment funds are held in an Arc escrow contract until claim or refund.
+- [ ] **PAY-03**: Recipient can claim a funded payment after successful X OAuth verification.
+- [ ] **PAY-04**: Sender can refund an expired unclaimed payment.
+- [ ] **PAY-05**: Payment events expose enough data for status/history indexing.
+- [ ] **PAY-06**: Payment memo/message is not stored onchain in plaintext.
+
+### Arc
+
+- [ ] **ARC-01**: Contracts deploy to Arc Testnet.
+- [ ] **ARC-02**: USDC is the v1 payment token.
+- [ ] **ARC-03**: Frontend connects wallets to Arc Testnet.
+- [ ] **ARC-04**: Backend verifies the configured chain ID before signing claim authorizations.
+
+### Security
+
+- [ ] **SEC-01**: Claim signatures cannot be replayed across payments, wallets, chains, or expiry windows.
+- [ ] **SEC-02**: Verifier signer can be rotated.
+- [ ] **SEC-03**: Escrow can be paused for emergency response.
+- [ ] **SEC-04**: Backend rate limits OAuth and claim authorization attempts.
+- [ ] **SEC-05**: Refund path remains available if X verification is down.
+
+### UX
+
+- [ ] **UX-01**: Sender gets a shareable claim/status link after funding.
+- [ ] **UX-02**: App generates X share copy for notifying recipients.
+- [ ] **UX-03**: Recipient can understand why they are being asked to connect wallet and sign in with X.
+- [ ] **UX-04**: App clearly shows payment status: pending, claimed, refunded, expired, or failed.
+
+## v2 Requirements
+
+- [ ] Public tipping pages for X handles.
+- [ ] Multi-payment batch sends to multiple X handles.
+- [ ] Merchant/payment-link mode.
+- [ ] Agent wallet spending policies.
+- [ ] Optional email/Telegram/GitHub identity providers.
+- [ ] Arc App Kit bridge/unified balance integration.
+- [ ] Fee routing and treasury dashboard.
+
+## Out Of Scope
+
+- X API-free scraping as the primary verification model.
+- Browser extension as the primary UX.
+- Custodial balances.
+- Real-money mainnet launch before testnet evidence.
+
+## Traceability
+
+Pending roadmap mapping.
