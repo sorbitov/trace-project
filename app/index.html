@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HandlePay on Arc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="rail" aria-label="HandlePay status">
+        <div class="brand">
+          <span class="brand-mark">H</span>
+          <div>
+            <strong>HandlePay</strong>
+            <small>Arc USDC tips</small>
+          </div>
+        </div>
+
+        <nav class="tabs" aria-label="Views">
+          <button class="tab active" data-view="send">Send</button>
+          <button class="tab" data-view="claim">Claim</button>
+          <button class="tab" data-view="dashboard">Dashboard</button>
+          <button class="tab" data-view="profile">Profile</button>
+        </nav>
+
+        <section class="chain-card">
+          <span>Settlement</span>
+          <strong>Arc Testnet</strong>
+          <small>USDC escrow, claim by X OAuth</small>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Send USDC to any X handle</p>
+            <h1>Tips without asking for a wallet.</h1>
+          </div>
+          <button id="seedDemo" class="ghost-button">Seed demo</button>
+        </header>
+
+        <section id="send" class="view active" aria-labelledby="send-title">
+          <div class="panel main-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Create tip</p>
+                <h2 id="send-title">Pay an X handle</h2>
+              </div>
+              <span class="pill">X lookup required</span>
+            </div>
+
+            <form id="sendForm" class="form-grid">
+              <label>
+                X handle
+                <input id="handle" name="handle" placeholder="@alice" autocomplete="off" required />
+              </label>
+              <label>
+                Amount USDC
+                <input id="amount" name="amount" type="number" min="1" step="0.01" value="25" required />
+              </label>
+              <label>
+                Expiry
+                <select id="expiry" name="expiry">
+                  <option value="30">30 days default</option>
+                  <option value="7">7 days</option>
+                  <option value="14">14 days</option>
+                  <option value="60">60 days</option>
+                  <option value="custom">Custom</option>
+                </select>
+              </label>
+              <label id="customExpiryWrap" class="hidden">
+                Custom days
+                <input id="customExpiry" type="number" min="1" max="365" value="45" />
+              </label>
+              <label>
+                Amount visibility
+                <select id="amountVisibility">
+                  <option value="private">Private until X OAuth</option>
+                  <option value="public">Public on claim page</option>
+                </select>
+              </label>
+              <label>
+                Sender visibility
+                <select id="senderVisibility">
+                  <option value="private">Private in UI</option>
+                  <option value="public">Public</option>
+                </select>
+              </label>
+              <label>
+                Cancel mode
+                <select id="cancelMode">
+                  <option value="cancellable">Sender can cancel before expiry</option>
+                  <option value="locked">Locked until expiry</option>
+                </select>
+              </label>
+              <label>
+                Platform fee
+                <select id="feePreset">
+                  <option value="0.5">0.5% minimum</option>
+                  <option value="1">1%</option>
+                  <option value="2">2%</option>
+                  <option value="custom">Custom</option>
+                </select>
+              </label>
+              <label id="customFeeWrap" class="hidden">
+                Custom fee %
+                <input id="customFee" type="number" min="0.5" max="10" step="0.1" value="1.5" />
+              </label>
+              <label class="wide">
+                Private memo
+                <textarea id="memo" rows="3" placeholder="Visible only after recipient signs in with X">Thanks for the alpha thread.</textarea>
+              </label>
+
+              <div class="quote wide">
+                <span>Total sender pays</span>
+                <strong id="totalDue">25.13 USDC</strong>
+                <small id="feeLine">Includes 0.13 USDC platform fee for X verification and protocol costs.</small>
+              </div>
+
+              <button class="primary-button wide" type="submit">Create Arc escrow tip</button>
+            </form>
+          </div>
+
+          <div class="panel receipt-panel">
+            <p class="eyebrow">Latest payment</p>
+            <div id="latestPayment" class="empty-state">No tip created yet.</div>
+          </div>
+        </section>
+
+        <section id="claim" class="view" aria-labelledby="claim-title">
+          <div class="panel claim-panel">
+            <p class="eyebrow">Claim page</p>
+            <h2 id="claim-title">You have USDC waiting.</h2>
+            <p class="lead">Sign in with X first. Then connect wallet and claim to your Arc address.</p>
+            <div id="claimPreview" class="claim-card"></div>
+            <div class="claim-actions">
+              <button id="mockX" class="primary-button">Continue with X</button>
+              <button id="mockWallet" class="ghost-button" disabled>Connect wallet</button>
+              <button id="mockClaim" class="ghost-button" disabled>Claim USDC</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="dashboard" class="view" aria-labelledby="dashboard-title">
+          <div class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Dashboard</p>
+                <h2 id="dashboard-title">Sent and received history</h2>
+              </div>
+              <span id="historyCount" class="pill">0 payments</span>
+            </div>
+            <div id="history" class="history"></div>
+          </div>
+        </section>
+
+        <section id="profile" class="view" aria-labelledby="profile-title">
+          <div class="profile-hero">
+            <div class="profile-badge">@handle</div>
+            <h2 id="profile-title">A public page with one job: send a USDC tip.</h2>
+            <p>No public tip feed in v1. Public tips are deferred.</p>
+            <button class="primary-button" data-view-jump="send">Send tip</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
