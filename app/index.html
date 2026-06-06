@@ -47,6 +47,15 @@
         </header>
 
         <section id="send" class="view active" aria-labelledby="send-title">
+          <div id="sendGate" class="gate wide">
+            <div>
+              <p class="eyebrow">Dashboard required</p>
+              <strong>Create your HandlePay dashboard before sending tips.</strong>
+              <span>V1 requires sender profile, history, fee accounting, and refund control before the first payment.</span>
+            </div>
+            <button class="primary-button" data-view-jump="dashboard">Create dashboard</button>
+          </div>
+
           <div class="panel main-panel">
             <div class="panel-heading">
               <div>
@@ -149,6 +158,34 @@
         </section>
 
         <section id="dashboard" class="view" aria-labelledby="dashboard-title">
+          <div id="dashboardSetup" class="panel setup-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Required before sending</p>
+                <h2>Create dashboard</h2>
+              </div>
+              <span class="pill">Sender profile</span>
+            </div>
+            <form id="dashboardForm" class="form-grid">
+              <label>
+                Your X handle
+                <input id="senderHandle" placeholder="@yourhandle" autocomplete="off" required />
+              </label>
+              <label>
+                Display name
+                <input id="displayName" placeholder="Arc builder" autocomplete="off" required />
+              </label>
+              <label class="wide">
+                Default sender visibility
+                <select id="defaultSenderVisibility">
+                  <option value="private">Private by default</option>
+                  <option value="public">Public by default</option>
+                </select>
+              </label>
+              <button class="primary-button wide" type="submit">Create dashboard with X OAuth</button>
+            </form>
+          </div>
+
           <div class="panel">
             <div class="panel-heading">
               <div>
@@ -157,6 +194,7 @@
               </div>
               <span id="historyCount" class="pill">0 payments</span>
             </div>
+            <div id="dashboardProfile" class="profile-summary"></div>
             <div id="history" class="history"></div>
           </div>
         </section>

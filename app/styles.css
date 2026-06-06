@@ -169,6 +169,27 @@ h2 {
   padding: 24px;
 }
 
+.gate {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  border: 3px solid var(--line);
+  background: var(--acid);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.gate strong,
+.gate span {
+  display: block;
+}
+
+.gate span {
+  margin-top: 6px;
+  color: #3f3a31;
+}
+
 .panel-heading {
   display: flex;
   justify-content: space-between;
@@ -326,6 +347,26 @@ textarea:focus {
   gap: 14px;
 }
 
+.profile-summary {
+  margin-bottom: 16px;
+}
+
+.profile-summary-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  border: 2px solid var(--line);
+  background: #efe5cf;
+  padding: 14px;
+}
+
+.profile-summary-card strong,
+.profile-summary-card span,
+.profile-summary-card small {
+  overflow-wrap: anywhere;
+}
+
 .history-item {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -394,6 +435,8 @@ textarea:focus {
   .topbar,
   .panel-heading,
   .quote,
+  .gate,
+  .profile-summary-card,
   .history-item {
     display: grid;
   }

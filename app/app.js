@@ -1,5 +1,6 @@
 const state = {
   payments: JSON.parse(localStorage.getItem("handlepay.payments") || "[]"),
+  dashboard: JSON.parse(localStorage.getItem("handlepay.dashboard") || "null"),
   activePaymentId: localStorage.getItem("handlepay.activePaymentId") || null,
   xVerified: false,
   walletConnected: false,
@@ -9,6 +10,7 @@ const $ = (id) => document.getElementById(id);
 
 function save() {
   localStorage.setItem("handlepay.payments", JSON.stringify(state.payments));
+  localStorage.setItem("handlepay.dashboard", JSON.stringify(state.dashboard));
   if (state.activePaymentId) localStorage.setItem("handlepay.activePaymentId", state.activePaymentId);
 }
 
@@ -88,8 +90,26 @@ function renderClaim() {
 }
 
 function renderHistory() {
-  $("historyCount").textContent = `${state.payments.length} payments`;
+  $("historyCount").textContent = state.dashboard ? `${state.payments.length} payments` : "not created";
+  const profile = $("dashboardProfile");
+  if (!state.dashboard) {
+    profile.innerHTML = '<div class="empty-state">Create dashboard to unlock sending, history, and refund controls.</div>';
+  } else {
+    profile.innerHTML = `
+      <div class="profile-summary-card">
+        <strong>@${state.dashboard.handle}</strong>
+        <span>${state.dashboard.displayName}</span>
+        <small>Default sender visibility: ${state.dashboard.defaultSenderVisibility}</small>
+      </div>
+    `;
+  }
+
   const list = $("history");
+  if (!state.dashboard) {
+    list.innerHTML = "";
+    return;
+  }
+
   if (!state.payments.length) {
     list.innerHTML = '<div class="empty-state">No sent or received tips yet.</div>';
     return;
@@ -112,9 +132,22 @@ function renderHistory() {
 
 function renderAll() {
   updateQuote();
+  renderDashboardGate();
   renderLatest();
   renderClaim();
   renderHistory();
+}
+
+function renderDashboardGate() {
+  const hasDashboard = Boolean(state.dashboard);
+  $("sendGate").classList.toggle("hidden", hasDashboard);
+  $("sendForm").querySelectorAll("input, select, textarea, button").forEach((control) => {
+    control.disabled = !hasDashboard;
+  });
+  $("dashboardSetup").classList.toggle("hidden", hasDashboard);
+  if (hasDashboard) {
+    $("senderVisibility").value = state.dashboard.defaultSenderVisibility;
+  }
 }
 
 function setView(id) {
@@ -124,6 +157,10 @@ function setView(id) {
 
 function createPayment(event) {
   event.preventDefault();
+  if (!state.dashboard) {
+    setView("dashboard");
+    return;
+  }
   const handle = normalizeHandle($("handle").value);
   if (!handle) return;
 
@@ -145,7 +182,7 @@ function createPayment(event) {
     senderVisibility: $("senderVisibility").value,
     cancelMode: $("cancelMode").value,
     memo: $("memo").value.trim(),
-    sender: "0xSender...Arc",
+    sender: `@${state.dashboard.handle}`,
     status: "pending",
     claimUrl,
     shareText: `@${handle} you have ${amount} USDC waiting on Arc. Claim with X: ${claimUrl}`,
@@ -160,6 +197,24 @@ function createPayment(event) {
   $("mockClaim").disabled = true;
   save();
   renderAll();
+}
+
+function createDashboard(event) {
+  event.preventDefault();
+  const handle = normalizeHandle($("senderHandle").value);
+  const displayName = $("displayName").value.trim();
+  if (!handle || !displayName) return;
+
+  state.dashboard = {
+    handle,
+    displayName,
+    defaultSenderVisibility: $("defaultSenderVisibility").value,
+    createdAt: new Date().toISOString(),
+    xUserId: `mock-sender-x-${handle.length}-${handle.charCodeAt(0)}`,
+  };
+  save();
+  renderAll();
+  setView("send");
 }
 
 document.querySelectorAll("[data-view]").forEach((button) => {
@@ -182,6 +237,7 @@ $("feePreset").addEventListener("change", () => {
 
 ["amount", "customExpiry", "customFee"].forEach((id) => $(id).addEventListener("input", renderAll));
 $("sendForm").addEventListener("submit", createPayment);
+$("dashboardForm").addEventListener("submit", createDashboard);
 
 $("mockX").addEventListener("click", () => {
   state.xVerified = true;
@@ -204,6 +260,11 @@ $("mockClaim").addEventListener("click", () => {
 });
 
 $("seedDemo").addEventListener("click", () => {
+  if (!state.dashboard) {
+    $("senderHandle").value = "@kant";
+    $("displayName").value = "Arc sender";
+    $("defaultSenderVisibility").value = "private";
+  }
   $("handle").value = "@arc_builder";
   $("amount").value = "42";
   $("memo").value = "Loved the Arc stablecoin payments breakdown.";

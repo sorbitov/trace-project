@@ -40,6 +40,8 @@
 - [ ] **UX-02**: App generates X share copy for notifying recipients.
 - [ ] **UX-03**: Recipient can understand why they are being asked to connect wallet and sign in with X.
 - [ ] **UX-04**: App clearly shows payment status: pending, claimed, refunded, expired, or failed.
+- [ ] **UX-05**: Sender must create a dashboard/profile before the first tip can be sent.
+- [ ] **UX-06**: Send form remains blocked until dashboard/profile creation is complete.
 
 ## v2 Requirements
 
