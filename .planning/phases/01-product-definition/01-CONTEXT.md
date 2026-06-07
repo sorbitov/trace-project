@@ -31,6 +31,8 @@ Phase 1 locks the v1 product behavior for HandlePay before implementation planni
 - Sending is blocked until dashboard creation is complete.
 - V1 includes public profile page `/@handle`.
 - Public profile page only shows recipient identity and a send button in v1.
+- Product opens on a main/home page first.
+- The working dapp is entered from the home page and contains Send, Claim, Dashboard, and Profile.
 
 ## Deferred Ideas
 
@@ -46,6 +48,7 @@ Phase 1 locks the v1 product behavior for HandlePay before implementation planni
 ## UX Notes
 
 - The first claim screen should directly offer to receive USDC.
+- The first product screen should explain the project and provide a clear entry into the dapp.
 - Sender should not need to understand wallet addresses.
 - Sender should see dashboard creation as a required setup step before the first tip, not as an optional afterthought.
 - Recipient should understand why X OAuth is required before wallet connection.

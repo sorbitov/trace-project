@@ -8,6 +8,17 @@ const state = {
 
 const $ = (id) => document.getElementById(id);
 
+function enterDapp(view = "send") {
+  $("homeScreen").classList.add("hidden");
+  $("dappShell").classList.remove("hidden");
+  setView(view);
+}
+
+function showHome() {
+  $("dappShell").classList.add("hidden");
+  $("homeScreen").classList.remove("hidden");
+}
+
 function save() {
   localStorage.setItem("handlepay.payments", JSON.stringify(state.payments));
   localStorage.setItem("handlepay.dashboard", JSON.stringify(state.dashboard));
@@ -221,8 +232,20 @@ document.querySelectorAll("[data-view]").forEach((button) => {
   button.addEventListener("click", () => setView(button.dataset.view));
 });
 
+document.querySelectorAll("[data-enter-dapp]").forEach((button) => {
+  button.addEventListener("click", () => enterDapp("send"));
+});
+
+document.querySelectorAll("[data-enter-dapp-dashboard]").forEach((button) => {
+  button.addEventListener("click", () => enterDapp("dashboard"));
+});
+
+document.querySelectorAll("[data-home]").forEach((button) => {
+  button.addEventListener("click", showHome);
+});
+
 document.querySelectorAll("[data-view-jump]").forEach((button) => {
-  button.addEventListener("click", () => setView(button.dataset.viewJump));
+  button.addEventListener("click", () => enterDapp(button.dataset.viewJump));
 });
 
 $("expiry").addEventListener("change", () => {

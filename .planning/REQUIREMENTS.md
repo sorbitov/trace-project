@@ -42,6 +42,8 @@
 - [ ] **UX-04**: App clearly shows payment status: pending, claimed, refunded, expired, or failed.
 - [ ] **UX-05**: Sender must create a dashboard/profile before the first tip can be sent.
 - [ ] **UX-06**: Send form remains blocked until dashboard/profile creation is complete.
+- [ ] **UX-07**: App opens on a main page that explains HandlePay before entering the dapp.
+- [ ] **UX-08**: User can enter the dapp from the main page and access Send, Claim, Dashboard, and Profile.
 
 ## v2 Requirements
 

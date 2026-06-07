@@ -39,6 +39,92 @@ textarea {
   min-height: 100vh;
 }
 
+.home-screen {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 24px;
+}
+
+.home-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  border: 3px solid var(--line);
+  background: #16130f;
+  color: var(--paper);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 430px;
+  gap: 30px;
+  align-items: end;
+  padding: 54px 0 18px;
+}
+
+.home-copy {
+  display: grid;
+  gap: 24px;
+}
+
+.home-copy h1 {
+  max-width: 980px;
+  font-size: clamp(64px, 10vw, 150px);
+}
+
+.home-lead {
+  max-width: 760px;
+  margin: 0;
+  color: #393229;
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.home-actions,
+.topbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.home-terminal {
+  display: grid;
+  gap: 12px;
+  border: 3px solid var(--line);
+  background: #101820;
+  color: var(--paper);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.terminal-row {
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  border: 2px solid #46515b;
+  padding: 14px;
+}
+
+.terminal-row span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  background: var(--acid);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.terminal-row em {
+  color: #9dd4ff;
+  font-style: normal;
+}
+
 .rail {
   display: flex;
   flex-direction: column;
@@ -412,6 +498,10 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
+  .home-hero {
+    grid-template-columns: 1fr;
+  }
+
   .rail {
     border-right: 0;
     border-bottom: 3px solid var(--line);
@@ -433,6 +523,8 @@ textarea:focus {
   }
 
   .topbar,
+  .home-nav,
+  .terminal-row,
   .panel-heading,
   .quote,
   .gate,

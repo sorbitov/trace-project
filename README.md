@@ -10,6 +10,7 @@ This repository currently contains a first MVP prototype for the v1 product flow
 - private memo after X OAuth
 - generated X mention copy
 - claim flow: X OAuth -> connect wallet -> claim
+- main page before entering the dapp
 - sender/recipient dashboard mock
 - Solidity escrow contract skeleton for Arc USDC settlement
 

@@ -13,7 +13,42 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <main class="shell">
+    <main id="homeScreen" class="home-screen">
+      <nav class="home-nav">
+        <div class="brand home-brand">
+          <span class="brand-mark">H</span>
+          <div>
+            <strong>HandlePay</strong>
+            <small>USDC tips to X handles</small>
+          </div>
+        </div>
+        <button class="ghost-button" data-enter-dapp>Enter dapp</button>
+      </nav>
+
+      <section class="home-hero">
+        <div class="home-copy">
+          <p class="eyebrow">Arc-native social payments</p>
+          <h1>Send USDC to an X handle. They claim with X.</h1>
+          <p class="home-lead">
+            HandlePay turns social identity into a payment route: create a dashboard, tip any
+            `@handle`, generate the X mention, and let the recipient claim on Arc.
+          </p>
+          <div class="home-actions">
+            <button class="primary-button" data-enter-dapp>Launch dapp</button>
+            <button class="ghost-button" data-enter-dapp-dashboard>Create dashboard</button>
+          </div>
+        </div>
+
+        <div class="home-terminal" aria-label="HandlePay flow preview">
+          <div class="terminal-row"><span>1</span><strong>Create dashboard</strong><em>@sender</em></div>
+          <div class="terminal-row"><span>2</span><strong>Tip @alice</strong><em>25 USDC</em></div>
+          <div class="terminal-row"><span>3</span><strong>Post mention</strong><em>X</em></div>
+          <div class="terminal-row"><span>4</span><strong>Claim with X</strong><em>Arc wallet</em></div>
+        </div>
+      </section>
+    </main>
+
+    <main id="dappShell" class="shell hidden">
       <aside class="rail" aria-label="HandlePay status">
         <div class="brand">
           <span class="brand-mark">H</span>
@@ -24,6 +59,7 @@
         </div>
 
         <nav class="tabs" aria-label="Views">
+          <button class="tab" data-home>Home</button>
           <button class="tab active" data-view="send">Send</button>
           <button class="tab" data-view="claim">Claim</button>
           <button class="tab" data-view="dashboard">Dashboard</button>
@@ -43,7 +79,10 @@
             <p class="eyebrow">Send USDC to any X handle</p>
             <h1>Tips without asking for a wallet.</h1>
           </div>
-          <button id="seedDemo" class="ghost-button">Seed demo</button>
+          <div class="topbar-actions">
+            <button class="ghost-button" data-home>Home</button>
+            <button id="seedDemo" class="ghost-button">Seed demo</button>
+          </div>
         </header>
 
         <section id="send" class="view active" aria-labelledby="send-title">
