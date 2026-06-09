@@ -61,22 +61,28 @@
       </nav>
 
       <section class="register-wrap">
-        <div class="register-copy">
-          <p class="eyebrow">Required profile</p>
-          <h1>Create your sender profile.</h1>
-          <p class="home-lead">
-            Register once with your X handle and Arc wallet. After that, the dapp opens directly
-            into sending, claiming, and history.
-          </p>
-        </div>
-
         <div class="panel register-panel">
+          <div class="register-heading">
+            <p class="eyebrow">Required profile</p>
+            <h1>Register to enter the dapp.</h1>
+            <p>
+              Connect X first so HandlePay can take your handle from the account, then attach an
+              Arc wallet for sending and history.
+            </p>
+          </div>
+          <div id="registerNotice" class="register-notice hidden" role="status"></div>
+
+          <div class="auth-step">
+            <span class="step-number">1</span>
+            <div id="xIdentity" class="x-identity">
+              <strong>X account not connected</strong>
+              <small>Your sender handle will be pulled from X OAuth.</small>
+            </div>
+            <button id="connectXProfile" class="ghost-button" type="button">Connect X / Twitter</button>
+          </div>
+
           <form id="profileForm" class="form-grid">
-            <label>
-              Your X handle
-              <input id="profileHandle" placeholder="@yourhandle" autocomplete="off" required />
-            </label>
-            <label>
+            <label class="wide">
               Arc wallet address
               <input id="profileWallet" placeholder="0x..." autocomplete="off" required />
             </label>
@@ -87,7 +93,7 @@
                 <option value="public">Public by default</option>
               </select>
             </label>
-            <button class="primary-button wide" type="submit">Register with X OAuth</button>
+            <button id="createProfile" class="primary-button wide" type="submit" disabled>Create profile</button>
           </form>
         </div>
       </section>

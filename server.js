@@ -78,6 +78,17 @@ async function handleApi(req, res, url) {
     return true;
   }
 
+  if (req.method === "POST" && url.pathname === "/api/x/connect") {
+    const handle = normalizeHandle("arc_sender");
+    send(res, 200, {
+      handle,
+      displayName: `@${handle}`,
+      xUserId: resolveXUserId(handle),
+      connectedAt: new Date().toISOString(),
+    });
+    return true;
+  }
+
   if (req.method === "POST" && url.pathname === "/api/dashboard") {
     const body = await readBody(req);
     const handle = normalizeHandle(body.handle);

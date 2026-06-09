@@ -3,6 +3,7 @@ const state = {
   dashboard: null,
   activePaymentId: null,
   walletConnected: false,
+  registrationX: null,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -26,6 +27,12 @@ function notice(message, kind = "ok") {
   box.className = `notice ${kind}`;
   window.clearTimeout(notice.timer);
   notice.timer = window.setTimeout(() => box.classList.add("hidden"), 5200);
+}
+
+function registerNotice(message, kind = "ok") {
+  const box = $("registerNotice");
+  box.textContent = message;
+  box.className = `register-notice ${kind}`;
 }
 
 function normalizeHandle(value) {
@@ -82,6 +89,7 @@ function showRegister() {
   $("homeScreen").classList.add("hidden");
   $("dappShell").classList.add("hidden");
   $("registerScreen").classList.remove("hidden");
+  renderRegistration();
 }
 
 function updateQuote() {
@@ -201,9 +209,30 @@ function renderDashboardGate() {
   if (hasDashboard) $("senderVisibility").value = state.dashboard.defaultSenderVisibility;
 }
 
+function renderRegistration() {
+  const connected = Boolean(state.registrationX);
+  const identity = $("xIdentity");
+  if (!identity) return;
+
+  identity.innerHTML = connected
+    ? `
+      <strong>${state.registrationX.displayName}</strong>
+      <small>X connected. Add Arc wallet to finish profile.</small>
+    `
+    : `
+      <strong>X account not connected</strong>
+      <small>Your sender handle will be pulled from X OAuth.</small>
+    `;
+
+  $("connectXProfile").textContent = connected ? "X connected" : "Connect X / Twitter";
+  $("connectXProfile").disabled = connected;
+  $("createProfile").disabled = !connected;
+}
+
 function renderAll() {
   updateQuote();
   renderDashboardGate();
+  renderRegistration();
   renderLatest();
   renderClaim();
   renderHistory();
@@ -243,11 +272,15 @@ async function createPayment(event) {
 
 async function registerProfile(event) {
   event.preventDefault();
+  if (!state.registrationX) {
+    registerNotice("Connect X before creating profile.", "error");
+    return;
+  }
   try {
     const nextState = await api("/api/dashboard", {
       method: "POST",
       body: JSON.stringify({
-        handle: normalizeHandle($("profileHandle").value),
+        handle: state.registrationX.handle,
         walletAddress: $("profileWallet").value.trim(),
         defaultSenderVisibility: $("profileSenderVisibility").value,
       }),
@@ -257,7 +290,17 @@ async function registerProfile(event) {
     enterDapp("send");
     notice("Profile registered. Dapp is unlocked.");
   } catch (error) {
-    alert(error.message);
+    registerNotice(error.message, "error");
+  }
+}
+
+async function connectXForRegistration() {
+  try {
+    state.registrationX = await api("/api/x/connect", { method: "POST" });
+    renderRegistration();
+    registerNotice(`Connected as ${state.registrationX.displayName}. Add Arc wallet to continue.`);
+  } catch (error) {
+    registerNotice(error.message, "error");
   }
 }
 
@@ -348,6 +391,7 @@ $("feePreset").addEventListener("change", () => {
 ["amount", "customExpiry", "customFee"].forEach((id) => $(id).addEventListener("input", renderAll));
 $("sendForm").addEventListener("submit", createPayment);
 $("profileForm").addEventListener("submit", registerProfile);
+$("connectXProfile").addEventListener("click", connectXForRegistration);
 $("verifyX").addEventListener("click", verifyX);
 $("connectWallet").addEventListener("click", connectWallet);
 $("claimPayment").addEventListener("click", claimPayment);
