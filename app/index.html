@@ -81,9 +81,10 @@
           </div>
           <div class="topbar-actions">
             <button class="ghost-button" data-home>Home</button>
-            <button id="seedDemo" class="ghost-button">Seed demo</button>
           </div>
         </header>
+
+        <div id="appNotice" class="notice hidden" role="status"></div>
 
         <section id="send" class="view active" aria-labelledby="send-title">
           <div id="sendGate" class="gate wide">
@@ -188,10 +189,14 @@
             <h2 id="claim-title">You have USDC waiting.</h2>
             <p class="lead">Sign in with X first. Then connect wallet and claim to your Arc address.</p>
             <div id="claimPreview" class="claim-card"></div>
+            <label id="walletClaimWrap" class="wallet-claim hidden">
+              Arc wallet address
+              <input id="claimWallet" placeholder="0x..." autocomplete="off" />
+            </label>
             <div class="claim-actions">
-              <button id="mockX" class="primary-button">Continue with X</button>
-              <button id="mockWallet" class="ghost-button" disabled>Connect wallet</button>
-              <button id="mockClaim" class="ghost-button" disabled>Claim USDC</button>
+              <button id="verifyX" class="primary-button">Continue with X</button>
+              <button id="connectWallet" class="ghost-button" disabled>Connect wallet</button>
+              <button id="claimPayment" class="ghost-button" disabled>Claim USDC</button>
             </div>
           </div>
         </section>

@@ -4,6 +4,7 @@ Send USDC to any X handle. They claim with X.
 
 This repository currently contains a first MVP prototype for the v1 product flow:
 
+- server-backed local app state
 - send a tip to an X handle
 - escrow-style payment settings
 - public/private amount and sender visibility
@@ -16,13 +17,17 @@ This repository currently contains a first MVP prototype for the v1 product flow
 
 ## Open Prototype
 
-Open this file in a browser:
+Run the local app server:
 
-```text
-app/index.html
+```bash
+npm start
 ```
 
-No local server is required for the current prototype.
+Then open:
+
+```text
+http://127.0.0.1:4174/index.html
+```
 
 ## Project Docs
 
@@ -33,12 +38,12 @@ GSD artifacts live in `.planning/`.
 - `.planning/ROADMAP.md`
 - `.planning/phases/01-product-definition/01-CONTEXT.md`
 
-## Mocked In This Version
+## Local In This Version
 
-- X lookup and OAuth
-- wallet connection
-- Arc transaction sending
-- dashboard indexing
+- X lookup and OAuth are represented by local verifier API routes.
+- Wallet connection is represented by entering an Arc EVM address.
+- Arc transaction sending is represented by server-backed payment state.
+- Dashboard/history persist to `data/state.json`.
 
 ## Real Next Pieces
 

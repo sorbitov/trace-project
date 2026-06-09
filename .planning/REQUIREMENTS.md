@@ -44,6 +44,8 @@
 - [ ] **UX-06**: Send form remains blocked until dashboard/profile creation is complete.
 - [ ] **UX-07**: App opens on a main page that explains HandlePay before entering the dapp.
 - [ ] **UX-08**: User can enter the dapp from the main page and access Send, Claim, Dashboard, and Profile.
+- [ ] **UX-09**: MVP uses server-backed state instead of demo seed buttons or browser-only localStorage.
+- [ ] **UX-10**: User can create dashboard, create tip, verify X step, connect wallet, claim, cancel, and view history through working app actions.
 
 ## v2 Requirements
 

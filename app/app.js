@@ -1,28 +1,31 @@
 const state = {
-  payments: JSON.parse(localStorage.getItem("handlepay.payments") || "[]"),
-  dashboard: JSON.parse(localStorage.getItem("handlepay.dashboard") || "null"),
-  activePaymentId: localStorage.getItem("handlepay.activePaymentId") || null,
-  xVerified: false,
+  payments: [],
+  dashboard: null,
+  activePaymentId: null,
   walletConnected: false,
 };
 
 const $ = (id) => document.getElementById(id);
 
-function enterDapp(view = "send") {
-  $("homeScreen").classList.add("hidden");
-  $("dappShell").classList.remove("hidden");
-  setView(view);
+async function api(path, options = {}) {
+  const res = await fetch(path, {
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    },
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || "Request failed");
+  return data;
 }
 
-function showHome() {
-  $("dappShell").classList.add("hidden");
-  $("homeScreen").classList.remove("hidden");
-}
-
-function save() {
-  localStorage.setItem("handlepay.payments", JSON.stringify(state.payments));
-  localStorage.setItem("handlepay.dashboard", JSON.stringify(state.dashboard));
-  if (state.activePaymentId) localStorage.setItem("handlepay.activePaymentId", state.activePaymentId);
+function notice(message, kind = "ok") {
+  const box = $("appNotice");
+  box.textContent = message;
+  box.className = `notice ${kind}`;
+  window.clearTimeout(notice.timer);
+  notice.timer = window.setTimeout(() => box.classList.add("hidden"), 5200);
 }
 
 function normalizeHandle(value) {
@@ -46,6 +49,29 @@ function activePayment() {
   return state.payments.find((payment) => payment.id === state.activePaymentId) || state.payments[0];
 }
 
+function setServerState(nextState) {
+  state.dashboard = nextState.dashboard || null;
+  state.payments = nextState.payments || [];
+  if (!state.activePaymentId && state.payments[0]) state.activePaymentId = state.payments[0].id;
+}
+
+async function loadState() {
+  const nextState = await api("/api/state");
+  setServerState(nextState);
+  renderAll();
+}
+
+function enterDapp(view = "send") {
+  $("homeScreen").classList.add("hidden");
+  $("dappShell").classList.remove("hidden");
+  setView(view);
+}
+
+function showHome() {
+  $("dappShell").classList.add("hidden");
+  $("homeScreen").classList.remove("hidden");
+}
+
 function updateQuote() {
   const amount = Number($("amount").value || 0);
   const feePct = getFeePct();
@@ -63,6 +89,7 @@ function renderLatest() {
     return;
   }
 
+  const canCancel = payment.status === "pending" && payment.cancelMode === "cancellable";
   box.className = "receipt";
   const visibleAmount = payment.amountVisibility === "public" ? formatUsdc(payment.amount) : "Private until X OAuth";
   const visibleSender = payment.senderVisibility === "public" ? payment.sender : "Private";
@@ -77,6 +104,7 @@ function renderLatest() {
       <small>X post copy</small>
       <span>${payment.shareText}</span>
     </div>
+    <button class="ghost-button" data-cancel-payment="${payment.id}" ${canCancel ? "" : "disabled"}>Cancel tip</button>
   `;
 }
 
@@ -85,12 +113,17 @@ function renderClaim() {
   const box = $("claimPreview");
   if (!payment) {
     box.innerHTML = "<strong>No active tip.</strong><p>Create a tip first.</p>";
+    $("verifyX").disabled = true;
+    $("connectWallet").disabled = true;
+    $("claimPayment").disabled = true;
+    $("walletClaimWrap").classList.add("hidden");
     return;
   }
 
-  const amount = payment.amountVisibility === "public" || state.xVerified ? formatUsdc(payment.amount) : "USDC amount hidden";
-  const sender = payment.senderVisibility === "public" || state.xVerified ? payment.sender : "Sender hidden";
-  const memo = state.xVerified ? payment.memo : "Private memo unlocks after X OAuth.";
+  const xVerified = Boolean(payment.xVerified);
+  const amount = payment.amountVisibility === "public" || xVerified ? formatUsdc(payment.amount) : "USDC amount hidden";
+  const sender = payment.senderVisibility === "public" || xVerified ? payment.sender : "Sender hidden";
+  const memo = xVerified ? payment.memo || "No private memo." : "Private memo unlocks after X OAuth.";
   box.innerHTML = `
     <p class="eyebrow">For @${payment.handle}</p>
     <h2>${amount}</h2>
@@ -98,6 +131,12 @@ function renderClaim() {
     <p>${memo}</p>
     <span class="status">${payment.status}</span>
   `;
+
+  const pending = payment.status === "pending";
+  $("verifyX").disabled = !pending || xVerified;
+  $("connectWallet").disabled = !pending || !xVerified;
+  $("claimPayment").disabled = !pending || !xVerified || !state.walletConnected;
+  $("walletClaimWrap").classList.toggle("hidden", !xVerified);
 }
 
 function renderHistory() {
@@ -129,16 +168,26 @@ function renderHistory() {
   list.innerHTML = state.payments
     .map(
       (payment) => `
-        <article class="history-item">
+        <article class="history-item" data-payment-id="${payment.id}">
           <div>
             <strong>@${payment.handle}</strong>
-            <p>${formatUsdc(payment.amount)} tip · ${payment.expiryDays} day expiry · ${payment.cancelMode}</p>
+            <p>${formatUsdc(payment.amount)} tip | ${payment.expiryDays} day expiry | ${payment.cancelMode}</p>
           </div>
           <span class="status">${payment.status}</span>
         </article>
       `,
     )
     .join("");
+}
+
+function renderDashboardGate() {
+  const hasDashboard = Boolean(state.dashboard);
+  $("sendGate").classList.toggle("hidden", hasDashboard);
+  $("sendForm").querySelectorAll("input, select, textarea, button").forEach((control) => {
+    control.disabled = !hasDashboard;
+  });
+  $("dashboardSetup").classList.toggle("hidden", hasDashboard);
+  if (hasDashboard) $("senderVisibility").value = state.dashboard.defaultSenderVisibility;
 }
 
 function renderAll() {
@@ -149,83 +198,106 @@ function renderAll() {
   renderHistory();
 }
 
-function renderDashboardGate() {
-  const hasDashboard = Boolean(state.dashboard);
-  $("sendGate").classList.toggle("hidden", hasDashboard);
-  $("sendForm").querySelectorAll("input, select, textarea, button").forEach((control) => {
-    control.disabled = !hasDashboard;
-  });
-  $("dashboardSetup").classList.toggle("hidden", hasDashboard);
-  if (hasDashboard) {
-    $("senderVisibility").value = state.dashboard.defaultSenderVisibility;
-  }
-}
-
 function setView(id) {
   document.querySelectorAll(".view").forEach((view) => view.classList.toggle("active", view.id === id));
   document.querySelectorAll(".tab").forEach((tab) => tab.classList.toggle("active", tab.dataset.view === id));
 }
 
-function createPayment(event) {
+async function createPayment(event) {
   event.preventDefault();
-  if (!state.dashboard) {
-    setView("dashboard");
-    return;
+  try {
+    const nextState = await api("/api/payments", {
+      method: "POST",
+      body: JSON.stringify({
+        handle: normalizeHandle($("handle").value),
+        amount: Number($("amount").value),
+        feePct: getFeePct(),
+        expiryDays: getExpiryDays(),
+        amountVisibility: $("amountVisibility").value,
+        senderVisibility: $("senderVisibility").value,
+        cancelMode: $("cancelMode").value,
+        memo: $("memo").value.trim(),
+      }),
+    });
+    setServerState(nextState);
+    state.activePaymentId = state.payments[0]?.id || null;
+    state.walletConnected = false;
+    renderAll();
+    notice("Tip created. Share the generated X post with the recipient.");
+  } catch (error) {
+    notice(error.message, "error");
+    if (error.message.includes("dashboard")) setView("dashboard");
   }
-  const handle = normalizeHandle($("handle").value);
-  if (!handle) return;
-
-  const amount = Number($("amount").value);
-  const feePct = getFeePct();
-  const id = `hp_${Date.now().toString(36)}`;
-  const xUserId = `mock-x-${handle.length}-${handle.charCodeAt(0)}`;
-  const claimUrl = `https://handlepay.local/claim/${id}`;
-
-  const payment = {
-    id,
-    handle,
-    xUserId,
-    amount,
-    feePct,
-    fee: amount * (feePct / 100),
-    expiryDays: getExpiryDays(),
-    amountVisibility: $("amountVisibility").value,
-    senderVisibility: $("senderVisibility").value,
-    cancelMode: $("cancelMode").value,
-    memo: $("memo").value.trim(),
-    sender: `@${state.dashboard.handle}`,
-    status: "pending",
-    claimUrl,
-    shareText: `@${handle} you have ${amount} USDC waiting on Arc. Claim with X: ${claimUrl}`,
-    createdAt: new Date().toISOString(),
-  };
-
-  state.payments.unshift(payment);
-  state.activePaymentId = id;
-  state.xVerified = false;
-  state.walletConnected = false;
-  $("mockWallet").disabled = true;
-  $("mockClaim").disabled = true;
-  save();
-  renderAll();
 }
 
-function createDashboard(event) {
+async function createDashboard(event) {
   event.preventDefault();
-  const handle = normalizeHandle($("senderHandle").value);
-  const displayName = $("displayName").value.trim();
-  if (!handle || !displayName) return;
+  try {
+    const nextState = await api("/api/dashboard", {
+      method: "POST",
+      body: JSON.stringify({
+        handle: normalizeHandle($("senderHandle").value),
+        displayName: $("displayName").value.trim(),
+        defaultSenderVisibility: $("defaultSenderVisibility").value,
+      }),
+    });
+    setServerState(nextState);
+    renderAll();
+    enterDapp("send");
+    notice("Dashboard created. Sending is unlocked.");
+  } catch (error) {
+    notice(error.message, "error");
+  }
+}
 
-  state.dashboard = {
-    handle,
-    displayName,
-    defaultSenderVisibility: $("defaultSenderVisibility").value,
-    createdAt: new Date().toISOString(),
-    xUserId: `mock-sender-x-${handle.length}-${handle.charCodeAt(0)}`,
-  };
-  save();
+async function verifyX() {
+  const payment = activePayment();
+  if (!payment) return;
+  try {
+    const result = await api(`/api/payments/${payment.id}/verify-x`, { method: "POST" });
+    setServerState(result.state);
+    state.activePaymentId = payment.id;
+    renderAll();
+    notice("X identity verified. Connect an Arc wallet to claim.");
+  } catch (error) {
+    notice(error.message, "error");
+  }
+}
+
+function connectWallet() {
+  state.walletConnected = true;
+  if (!$("claimWallet").value.trim()) $("claimWallet").value = "0x1111111111111111111111111111111111111111";
   renderAll();
-  setView("send");
+  notice("Wallet connected for this claim.");
+}
+
+async function claimPayment() {
+  const payment = activePayment();
+  if (!payment) return;
+  try {
+    const nextState = await api(`/api/payments/${payment.id}/claim`, {
+      method: "POST",
+      body: JSON.stringify({ walletAddress: $("claimWallet").value.trim() }),
+    });
+    setServerState(nextState);
+    state.activePaymentId = payment.id;
+    state.walletConnected = false;
+    renderAll();
+    notice("USDC claimed to the connected wallet.");
+  } catch (error) {
+    notice(error.message, "error");
+  }
+}
+
+async function cancelPayment(paymentId) {
+  try {
+    const nextState = await api(`/api/payments/${paymentId}/cancel`, { method: "POST" });
+    setServerState(nextState);
+    renderAll();
+    notice("Tip cancelled and returned to sender.");
+  } catch (error) {
+    notice(error.message, "error");
+  }
 }
 
 document.querySelectorAll("[data-view]").forEach((button) => {
@@ -261,37 +333,20 @@ $("feePreset").addEventListener("change", () => {
 ["amount", "customExpiry", "customFee"].forEach((id) => $(id).addEventListener("input", renderAll));
 $("sendForm").addEventListener("submit", createPayment);
 $("dashboardForm").addEventListener("submit", createDashboard);
+$("verifyX").addEventListener("click", verifyX);
+$("connectWallet").addEventListener("click", connectWallet);
+$("claimPayment").addEventListener("click", claimPayment);
 
-$("mockX").addEventListener("click", () => {
-  state.xVerified = true;
-  $("mockWallet").disabled = false;
-  renderAll();
-});
+document.addEventListener("click", (event) => {
+  const cancelButton = event.target.closest("[data-cancel-payment]");
+  if (cancelButton) cancelPayment(cancelButton.dataset.cancelPayment);
 
-$("mockWallet").addEventListener("click", () => {
-  state.walletConnected = true;
-  $("mockClaim").disabled = false;
-  renderAll();
-});
-
-$("mockClaim").addEventListener("click", () => {
-  const payment = activePayment();
-  if (!payment) return;
-  payment.status = "claimed";
-  save();
-  renderAll();
-});
-
-$("seedDemo").addEventListener("click", () => {
-  if (!state.dashboard) {
-    $("senderHandle").value = "@kant";
-    $("displayName").value = "Arc sender";
-    $("defaultSenderVisibility").value = "private";
+  const historyItem = event.target.closest("[data-payment-id]");
+  if (historyItem) {
+    state.activePaymentId = historyItem.dataset.paymentId;
+    renderAll();
+    setView("claim");
   }
-  $("handle").value = "@arc_builder";
-  $("amount").value = "42";
-  $("memo").value = "Loved the Arc stablecoin payments breakdown.";
-  updateQuote();
 });
 
-renderAll();
+loadState().catch((error) => notice(error.message, "error"));

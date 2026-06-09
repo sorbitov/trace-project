@@ -201,6 +201,19 @@ textarea {
   padding: 30px;
 }
 
+.notice {
+  margin-bottom: 18px;
+  border: 2px solid var(--line);
+  background: var(--acid);
+  color: var(--ink);
+  padding: 14px 16px;
+  font-weight: 800;
+}
+
+.notice.error {
+  background: #ffd7cb;
+}
+
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -426,6 +439,10 @@ textarea:focus {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+}
+
+.wallet-claim {
+  max-width: 620px;
 }
 
 .history {

@@ -33,6 +33,8 @@ Phase 1 locks the v1 product behavior for HandlePay before implementation planni
 - Public profile page only shows recipient identity and a send button in v1.
 - Product opens on a main/home page first.
 - The working dapp is entered from the home page and contains Send, Claim, Dashboard, and Profile.
+- Prototype must not rely on demo seed buttons or browser-only localStorage state.
+- Local development runs through an app server with API routes and persisted state.
 
 ## Deferred Ideas
 
@@ -60,6 +62,8 @@ Phase 1 locks the v1 product behavior for HandlePay before implementation planni
 - Onchain escrow stores payment state and releases USDC only with trusted verifier authorization.
 - Backend owns X OAuth, handle lookup, user ID resolution, profile creation, private metadata, and claim authorization signing.
 - Frontend should start as a functional prototype with mocked OAuth/contract calls, then connect to real Arc contracts.
+- Current implementation uses local API routes for dashboard, payments, X verification step, wallet claim, cancel, and persisted history.
+- Real X OAuth and real Arc transaction submission remain integration work, not UI demo behavior.
 - Found open-source references:
   - `dapplets/tipping-dapplet`: social-account tipping and claim-later pattern.
   - `CryptoPayLink`: payment links, dashboard, invoices, and hosted checkout patterns.

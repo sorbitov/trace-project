@@ -22,15 +22,29 @@ Patterns used:
 8. Backend signs claim authorization.
 9. Recipient claims from escrow.
 
-## Mocked Prototype
+## Local App Server
 
-The app in `app/` uses localStorage and mock buttons for:
+The app is served by `server.js` and stores runtime state in `data/state.json`.
 
-- X lookup
-- X OAuth
-- wallet connection
-- claim transaction
-- history indexing
+Current API routes:
+
+- `GET /api/state`
+- `POST /api/dashboard`
+- `POST /api/payments`
+- `POST /api/payments/:id/verify-x`
+- `POST /api/payments/:id/claim`
+- `POST /api/payments/:id/cancel`
+
+The app no longer depends on demo seed buttons or browser-only localStorage state.
+
+## Integration Boundary
+
+Local server routes preserve the production shape, but external integrations still need real providers:
+
+- X OAuth app and API lookup for immutable X user IDs
+- wallet connector for the connected Arc EVM address
+- Arc USDC escrow transaction creation and event indexing
+- backend verifier signatures for onchain claim authorization
 
 ## Contract Skeleton
 
