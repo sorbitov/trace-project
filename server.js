@@ -28,6 +28,10 @@ function resolveXUserId(handle) {
   return `xuid_${Buffer.from(normalized).toString("hex")}`;
 }
 
+function isEvmAddress(value) {
+  return /^0x[a-fA-F0-9]{40}$/.test(String(value || "").trim());
+}
+
 async function ensureState() {
   await mkdir(dataDir, { recursive: true });
   if (!existsSync(statePath)) {
@@ -82,10 +86,16 @@ async function handleApi(req, res, url) {
       send(res, 400, { error: "Enter a valid X handle." });
       return true;
     }
+    const walletAddress = String(body.walletAddress || "").trim();
+    if (!isEvmAddress(walletAddress)) {
+      send(res, 400, { error: "Enter a valid Arc EVM wallet address." });
+      return true;
+    }
     const state = await readState();
     state.dashboard = {
       handle,
-      displayName: String(body.displayName || "").trim() || `@${handle}`,
+      displayName: `@${handle}`,
+      walletAddress,
       defaultSenderVisibility: body.defaultSenderVisibility === "public" ? "public" : "private",
       xUserId,
       createdAt: new Date().toISOString(),
@@ -180,7 +190,7 @@ async function handleApi(req, res, url) {
       return true;
     }
     const walletAddress = String(body.walletAddress || "").trim();
-    if (!/^0x[a-fA-F0-9]{40}$/.test(walletAddress)) {
+    if (!isEvmAddress(walletAddress)) {
       send(res, 400, { error: "Enter a valid Arc EVM wallet address." });
       return true;
     }

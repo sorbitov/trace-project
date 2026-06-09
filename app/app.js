@@ -62,14 +62,26 @@ async function loadState() {
 }
 
 function enterDapp(view = "send") {
+  if (!state.dashboard) {
+    showRegister();
+    return;
+  }
   $("homeScreen").classList.add("hidden");
+  $("registerScreen").classList.add("hidden");
   $("dappShell").classList.remove("hidden");
   setView(view);
 }
 
 function showHome() {
   $("dappShell").classList.add("hidden");
+  $("registerScreen").classList.add("hidden");
   $("homeScreen").classList.remove("hidden");
+}
+
+function showRegister() {
+  $("homeScreen").classList.add("hidden");
+  $("dappShell").classList.add("hidden");
+  $("registerScreen").classList.remove("hidden");
 }
 
 function updateQuote() {
@@ -143,12 +155,12 @@ function renderHistory() {
   $("historyCount").textContent = state.dashboard ? `${state.payments.length} payments` : "not created";
   const profile = $("dashboardProfile");
   if (!state.dashboard) {
-    profile.innerHTML = '<div class="empty-state">Create dashboard to unlock sending, history, and refund controls.</div>';
+    profile.innerHTML = '<div class="empty-state">Register profile to unlock sending, history, and refund controls.</div>';
   } else {
     profile.innerHTML = `
       <div class="profile-summary-card">
         <strong>@${state.dashboard.handle}</strong>
-        <span>${state.dashboard.displayName}</span>
+        <span>${state.dashboard.walletAddress}</span>
         <small>Default sender visibility: ${state.dashboard.defaultSenderVisibility}</small>
       </div>
     `;
@@ -186,7 +198,6 @@ function renderDashboardGate() {
   $("sendForm").querySelectorAll("input, select, textarea, button").forEach((control) => {
     control.disabled = !hasDashboard;
   });
-  $("dashboardSetup").classList.toggle("hidden", hasDashboard);
   if (hasDashboard) $("senderVisibility").value = state.dashboard.defaultSenderVisibility;
 }
 
@@ -230,23 +241,23 @@ async function createPayment(event) {
   }
 }
 
-async function createDashboard(event) {
+async function registerProfile(event) {
   event.preventDefault();
   try {
     const nextState = await api("/api/dashboard", {
       method: "POST",
       body: JSON.stringify({
-        handle: normalizeHandle($("senderHandle").value),
-        displayName: $("displayName").value.trim(),
-        defaultSenderVisibility: $("defaultSenderVisibility").value,
+        handle: normalizeHandle($("profileHandle").value),
+        walletAddress: $("profileWallet").value.trim(),
+        defaultSenderVisibility: $("profileSenderVisibility").value,
       }),
     });
     setServerState(nextState);
     renderAll();
     enterDapp("send");
-    notice("Dashboard created. Sending is unlocked.");
+    notice("Profile registered. Dapp is unlocked.");
   } catch (error) {
-    notice(error.message, "error");
+    alert(error.message);
   }
 }
 
@@ -309,7 +320,11 @@ document.querySelectorAll("[data-enter-dapp]").forEach((button) => {
 });
 
 document.querySelectorAll("[data-enter-dapp-dashboard]").forEach((button) => {
-  button.addEventListener("click", () => enterDapp("dashboard"));
+  button.addEventListener("click", showRegister);
+});
+
+document.querySelectorAll("[data-register-profile]").forEach((button) => {
+  button.addEventListener("click", showRegister);
 });
 
 document.querySelectorAll("[data-home]").forEach((button) => {
@@ -332,7 +347,7 @@ $("feePreset").addEventListener("change", () => {
 
 ["amount", "customExpiry", "customFee"].forEach((id) => $(id).addEventListener("input", renderAll));
 $("sendForm").addEventListener("submit", createPayment);
-$("dashboardForm").addEventListener("submit", createDashboard);
+$("profileForm").addEventListener("submit", registerProfile);
 $("verifyX").addEventListener("click", verifyX);
 $("connectWallet").addEventListener("click", connectWallet);
 $("claimPayment").addEventListener("click", claimPayment);

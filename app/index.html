@@ -35,7 +35,7 @@
           </p>
           <div class="home-actions">
             <button class="primary-button" data-enter-dapp>Launch dapp</button>
-            <button class="ghost-button" data-enter-dapp-dashboard>Create dashboard</button>
+            <button class="ghost-button" data-register-profile>Register profile</button>
           </div>
         </div>
 
@@ -44,6 +44,51 @@
           <div class="terminal-row"><span>2</span><strong>Tip @alice</strong><em>25 USDC</em></div>
           <div class="terminal-row"><span>3</span><strong>Post mention</strong><em>X</em></div>
           <div class="terminal-row"><span>4</span><strong>Claim with X</strong><em>Arc wallet</em></div>
+        </div>
+      </section>
+    </main>
+
+    <main id="registerScreen" class="register-screen hidden">
+      <nav class="home-nav">
+        <div class="brand home-brand">
+          <span class="brand-mark">H</span>
+          <div>
+            <strong>HandlePay</strong>
+            <small>Profile registration</small>
+          </div>
+        </div>
+        <button class="ghost-button" data-home>Home</button>
+      </nav>
+
+      <section class="register-wrap">
+        <div class="register-copy">
+          <p class="eyebrow">Required profile</p>
+          <h1>Create your sender profile.</h1>
+          <p class="home-lead">
+            Register once with your X handle and Arc wallet. After that, the dapp opens directly
+            into sending, claiming, and history.
+          </p>
+        </div>
+
+        <div class="panel register-panel">
+          <form id="profileForm" class="form-grid">
+            <label>
+              Your X handle
+              <input id="profileHandle" placeholder="@yourhandle" autocomplete="off" required />
+            </label>
+            <label>
+              Arc wallet address
+              <input id="profileWallet" placeholder="0x..." autocomplete="off" required />
+            </label>
+            <label class="wide">
+              Default sender visibility
+              <select id="profileSenderVisibility">
+                <option value="private">Private by default</option>
+                <option value="public">Public by default</option>
+              </select>
+            </label>
+            <button class="primary-button wide" type="submit">Register with X OAuth</button>
+          </form>
         </div>
       </section>
     </main>
@@ -89,11 +134,11 @@
         <section id="send" class="view active" aria-labelledby="send-title">
           <div id="sendGate" class="gate wide">
             <div>
-              <p class="eyebrow">Dashboard required</p>
-              <strong>Create your HandlePay dashboard before sending tips.</strong>
-              <span>V1 requires sender profile, history, fee accounting, and refund control before the first payment.</span>
+              <p class="eyebrow">Profile required</p>
+              <strong>Register your HandlePay profile before sending tips.</strong>
+              <span>V1 requires X identity and an Arc wallet before the first payment.</span>
             </div>
-            <button class="primary-button" data-view-jump="dashboard">Create dashboard</button>
+            <button class="primary-button" data-register-profile>Register profile</button>
           </div>
 
           <div class="panel main-panel">
@@ -202,34 +247,6 @@
         </section>
 
         <section id="dashboard" class="view" aria-labelledby="dashboard-title">
-          <div id="dashboardSetup" class="panel setup-panel">
-            <div class="panel-heading">
-              <div>
-                <p class="eyebrow">Required before sending</p>
-                <h2>Create dashboard</h2>
-              </div>
-              <span class="pill">Sender profile</span>
-            </div>
-            <form id="dashboardForm" class="form-grid">
-              <label>
-                Your X handle
-                <input id="senderHandle" placeholder="@yourhandle" autocomplete="off" required />
-              </label>
-              <label>
-                Display name
-                <input id="displayName" placeholder="Arc builder" autocomplete="off" required />
-              </label>
-              <label class="wide">
-                Default sender visibility
-                <select id="defaultSenderVisibility">
-                  <option value="private">Private by default</option>
-                  <option value="public">Public by default</option>
-                </select>
-              </label>
-              <button class="primary-button wide" type="submit">Create dashboard with X OAuth</button>
-            </form>
-          </div>
-
           <div class="panel">
             <div class="panel-heading">
               <div>

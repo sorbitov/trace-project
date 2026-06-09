@@ -27,8 +27,11 @@ Phase 1 locks the v1 product behavior for HandlePay before implementation planni
 - After successful claim, recipient gets an optional share button.
 - V1 includes a full dashboard with sent and received history.
 - After X OAuth, the app creates a user profile.
-- Sender must create their HandlePay dashboard/profile before sending the first tip.
-- Sending is blocked until dashboard creation is complete.
+- Sender must register a HandlePay profile before entering the working dapp flow.
+- Profile registration captures X handle and Arc EVM wallet address.
+- Display name is not manually entered in v1; it is derived from X identity.
+- After profile registration, user lands in the dapp with sending unlocked.
+- Sending is blocked until profile registration is complete.
 - V1 includes public profile page `/@handle`.
 - Public profile page only shows recipient identity and a send button in v1.
 - Product opens on a main/home page first.
@@ -52,7 +55,7 @@ Phase 1 locks the v1 product behavior for HandlePay before implementation planni
 - The first claim screen should directly offer to receive USDC.
 - The first product screen should explain the project and provide a clear entry into the dapp.
 - Sender should not need to understand wallet addresses.
-- Sender should see dashboard creation as a required setup step before the first tip, not as an optional afterthought.
+- Sender should see profile registration as a required setup step before entering the dapp, not as an optional afterthought.
 - Recipient should understand why X OAuth is required before wallet connection.
 - Private amount/sender/memo must not be shown before X OAuth.
 - X mention copy is the main viral loop.

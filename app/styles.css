@@ -46,6 +46,13 @@ textarea {
   padding: 24px;
 }
 
+.register-screen {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 24px;
+}
+
 .home-nav {
   display: flex;
   justify-content: space-between;
@@ -64,6 +71,28 @@ textarea {
   gap: 30px;
   align-items: end;
   padding: 54px 0 18px;
+}
+
+.register-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 520px;
+  gap: 30px;
+  align-items: center;
+  padding: 54px 0 18px;
+}
+
+.register-copy {
+  display: grid;
+  gap: 24px;
+}
+
+.register-copy h1 {
+  max-width: 820px;
+  font-size: clamp(56px, 9vw, 136px);
+}
+
+.register-panel {
+  align-self: center;
 }
 
 .home-copy {
@@ -516,6 +545,10 @@ textarea:focus {
   }
 
   .home-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .register-wrap {
     grid-template-columns: 1fr;
   }
 

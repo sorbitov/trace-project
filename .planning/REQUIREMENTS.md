@@ -40,12 +40,13 @@
 - [ ] **UX-02**: App generates X share copy for notifying recipients.
 - [ ] **UX-03**: Recipient can understand why they are being asked to connect wallet and sign in with X.
 - [ ] **UX-04**: App clearly shows payment status: pending, claimed, refunded, expired, or failed.
-- [ ] **UX-05**: Sender must create a dashboard/profile before the first tip can be sent.
-- [ ] **UX-06**: Send form remains blocked until dashboard/profile creation is complete.
+- [ ] **UX-05**: Sender must register a profile before entering the working dapp flow.
+- [ ] **UX-06**: Send form remains blocked until profile registration is complete.
 - [ ] **UX-07**: App opens on a main page that explains HandlePay before entering the dapp.
 - [ ] **UX-08**: User can enter the dapp from the main page and access Send, Claim, Dashboard, and Profile.
 - [ ] **UX-09**: MVP uses server-backed state instead of demo seed buttons or browser-only localStorage.
 - [ ] **UX-10**: User can create dashboard, create tip, verify X step, connect wallet, claim, cancel, and view history through working app actions.
+- [ ] **UX-11**: Profile registration captures X handle and Arc EVM wallet address without requiring manual display name entry.
 
 ## v2 Requirements
 

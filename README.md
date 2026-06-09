@@ -5,6 +5,7 @@ Send USDC to any X handle. They claim with X.
 This repository currently contains a first MVP prototype for the v1 product flow:
 
 - server-backed local app state
+- profile registration before dapp entry
 - send a tip to an X handle
 - escrow-style payment settings
 - public/private amount and sender visibility
