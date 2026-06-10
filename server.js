@@ -380,7 +380,10 @@ async function serveStatic(req, res, url) {
   }
   try {
     const data = await readFile(filePath);
-    res.writeHead(200, { "Content-Type": contentTypes[extname(filePath)] || "application/octet-stream" });
+    res.writeHead(200, {
+      "Content-Type": contentTypes[extname(filePath)] || "application/octet-stream",
+      "Cache-Control": "no-store",
+    });
     res.end(data);
   } catch {
     res.writeHead(404);

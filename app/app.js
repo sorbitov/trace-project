@@ -77,7 +77,11 @@ async function loadState() {
   await loadXSession();
   renderAll();
   const params = new URLSearchParams(window.location.search);
-  if (params.has("x") || params.has("x_error")) showRegister();
+  if (params.has("x") || params.has("x_error")) {
+    showRegister();
+  } else {
+    showHome();
+  }
 }
 
 function enterDapp(view = "send") {
@@ -486,4 +490,8 @@ document.addEventListener("click", (event) => {
   }
 });
 
-loadState().catch((error) => notice(error.message, "error"));
+showHome();
+loadState().catch((error) => {
+  showHome();
+  notice(error.message, "error");
+});
