@@ -44,6 +44,14 @@ After funding, the app generates share text:
 
 The recipient arrives because they were mentioned or sent the claim page. After claiming, they can send to another X handle.
 
+## SEO / GEO Positioning
+
+Primary search promise:
+
+> Send USDC to any X handle. They claim with X.
+
+HandlePay should target searches around X-native stablecoin payments, USDC tips, crypto payment links, Arc payments, and Web3 creator payments. The SEO plan lives in `.planning/SEO.md` and should stay aligned with the product truth: X OAuth proves social identity, Arc settles USDC, and recipients do not need to be registered before a payment is created.
+
 ## Key Decisions
 
 | Decision | Rationale | Outcome |

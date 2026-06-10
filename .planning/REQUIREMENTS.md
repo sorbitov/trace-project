@@ -49,6 +49,15 @@
 - [ ] **UX-11**: Profile registration starts with X/Twitter connection, derives the handle from OAuth, then captures Arc EVM wallet address through wallet connection without requiring manual handle, wallet text entry, or display name entry.
 - [ ] **UX-12**: Profile registration opens as a modal from inside the dapp rather than replacing the dapp with a separate registration page.
 
+### SEO / GEO
+
+- [ ] **SEO-01**: Home page has production title, meta description, canonical URL, Open Graph, and Twitter Card metadata.
+- [ ] **SEO-02**: App exposes `robots.txt` and `sitemap.xml` for production crawlability.
+- [ ] **SEO-03**: Home page includes SoftwareApplication JSON-LD for AI/search extraction.
+- [ ] **SEO-04**: GSD keeps a keyword, page target, and GEO answer plan in `.planning/SEO.md`.
+- [ ] **SEO-05**: Future public `/@handle` pages have handle-specific title, description, and no public tip feed in v1.
+- [ ] **SEO-06**: Claim pages have a production indexing decision before launch because some claim URLs may be private/status-like pages.
+
 ## v2 Requirements
 
 - [ ] Public tipping pages for X handles.

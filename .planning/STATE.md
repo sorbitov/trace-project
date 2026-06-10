@@ -16,6 +16,7 @@ Project initialized as a fresh GSD project in `E:\py_scrypt\arc_project`.
 - Recipients can be unregistered at payment creation time.
 - Escrow is required because recipient wallet may be unknown.
 - X verification happens offchain; settlement happens onchain.
+- SEO/GEO is part of the MVP surface: home metadata, robots.txt, sitemap.xml, SoftwareApplication JSON-LD, and `.planning/SEO.md`.
 
 ## Next Discussion
 
@@ -30,3 +31,14 @@ Clarify v1 product details:
 ## Recent Notes
 
 The previous Predict402 context was incorrect for this project. This project is separate and lives in `E:\py_scrypt\arc_project`.
+
+Current prototype status:
+
+- Home page opens first.
+- Dapp opens from the home page.
+- Send, Claim, Dashboard, and Profile views exist.
+- Profile registration is a modal inside the dapp.
+- Registration flow is X OAuth first, wallet connection second, profile creation third.
+- Sending is gated until profile creation.
+- Local API persists dashboard and payments in `data/state.json`.
+- Server runs on `http://127.0.0.1:4174/index.html`.

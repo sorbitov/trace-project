@@ -43,7 +43,7 @@ Success criteria:
 
 Goal: Ship the sender and recipient flows.
 
-Requirements: UX-01, UX-02, UX-03, UX-04, ARC-03, PAY-06
+Requirements: UX-01, UX-02, UX-03, UX-04, ARC-03, PAY-06, SEO-01, SEO-02, SEO-03, SEO-04
 
 Success criteria:
 
@@ -52,6 +52,7 @@ Success criteria:
 3. Recipient can claim with wallet + X OAuth.
 4. Sender can refund after expiry.
 5. Status page reflects onchain events.
+6. Home page has crawlable SEO metadata, JSON-LD, robots.txt, sitemap.xml, and a GSD SEO plan.
 
 ## Phase 5: Testnet Launch Loop
 
