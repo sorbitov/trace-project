@@ -30,6 +30,7 @@ Phase 1 locks the v1 product behavior for HandlePay before implementation planni
 - Sender must register a HandlePay profile before entering the working dapp flow.
 - Profile registration starts with X/Twitter connection; the X handle is derived from OAuth, not typed manually.
 - Profile registration captures the verified X identity and Arc EVM wallet address.
+- Arc wallet address is captured through wallet connection, not as a primary manual text field.
 - Display name is not manually entered in v1; it is derived from X identity.
 - After profile registration, user lands in the dapp with sending unlocked.
 - Sending is blocked until profile registration is complete.
@@ -57,7 +58,7 @@ Phase 1 locks the v1 product behavior for HandlePay before implementation planni
 - The first product screen should explain the project and provide a clear entry into the dapp.
 - Sender should not need to understand wallet addresses.
 - Sender should see profile registration as a required setup step before entering the dapp, not as an optional afterthought.
-- Registration UI should be a centered auth flow: connect X/Twitter first, then attach Arc wallet, then enter dapp.
+- Registration UI should be a centered auth flow: connect X/Twitter first, connect wallet second, then create profile and enter dapp.
 - Recipient should understand why X OAuth is required before wallet connection.
 - Private amount/sender/memo must not be shown before X OAuth.
 - X mention copy is the main viral loop.

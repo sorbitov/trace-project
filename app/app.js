@@ -4,6 +4,7 @@ const state = {
   activePaymentId: null,
   walletConnected: false,
   registrationX: null,
+  registrationWallet: null,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -33,6 +34,10 @@ function registerNotice(message, kind = "ok") {
   const box = $("registerNotice");
   box.textContent = message;
   box.className = `register-notice ${kind}`;
+}
+
+function shortAddress(address) {
+  return `${address.slice(0, 6)}...${address.slice(-4)}`;
 }
 
 function normalizeHandle(value) {
@@ -65,7 +70,10 @@ function setServerState(nextState) {
 async function loadState() {
   const nextState = await api("/api/state");
   setServerState(nextState);
+  await loadXSession();
   renderAll();
+  const params = new URLSearchParams(window.location.search);
+  if (params.has("x") || params.has("x_error")) showRegister();
 }
 
 function enterDapp(view = "send") {
@@ -211,6 +219,7 @@ function renderDashboardGate() {
 
 function renderRegistration() {
   const connected = Boolean(state.registrationX);
+  const walletConnected = Boolean(state.registrationWallet);
   const identity = $("xIdentity");
   if (!identity) return;
 
@@ -226,7 +235,19 @@ function renderRegistration() {
 
   $("connectXProfile").textContent = connected ? "X connected" : "Connect X / Twitter";
   $("connectXProfile").disabled = connected;
-  $("createProfile").disabled = !connected;
+
+  $("walletIdentity").innerHTML = walletConnected
+    ? `
+      <strong>${shortAddress(state.registrationWallet)}</strong>
+      <small>Wallet connected for Arc profile settlement.</small>
+    `
+    : `
+      <strong>Arc wallet not connected</strong>
+      <small>Connect wallet after X so the profile has a settlement address.</small>
+    `;
+  $("connectProfileWallet").textContent = walletConnected ? "Wallet connected" : "Connect wallet";
+  $("connectProfileWallet").disabled = !connected || walletConnected;
+  $("createProfile").disabled = !connected || !walletConnected;
 }
 
 function renderAll() {
@@ -276,12 +297,16 @@ async function registerProfile(event) {
     registerNotice("Connect X before creating profile.", "error");
     return;
   }
+  if (!state.registrationWallet) {
+    registerNotice("Connect Arc wallet before creating profile.", "error");
+    return;
+  }
   try {
     const nextState = await api("/api/dashboard", {
       method: "POST",
       body: JSON.stringify({
         handle: state.registrationX.handle,
-        walletAddress: $("profileWallet").value.trim(),
+        walletAddress: state.registrationWallet,
         defaultSenderVisibility: $("profileSenderVisibility").value,
       }),
     });
@@ -295,10 +320,39 @@ async function registerProfile(event) {
 }
 
 async function connectXForRegistration() {
+  window.location.href = "/api/auth/x/start";
+}
+
+async function loadXSession() {
   try {
-    state.registrationX = await api("/api/x/connect", { method: "POST" });
+    const result = await api("/api/auth/x/session");
+    state.registrationX = result.connected ? result.profile : null;
+    const params = new URLSearchParams(window.location.search);
+    const xError = params.get("x_error");
+    if (xError) registerNotice(decodeURIComponent(xError), "error");
+    if (params.get("x") === "connected" && state.registrationX) {
+      registerNotice(`Connected as ${state.registrationX.displayName}. Connect wallet to continue.`);
+    }
+  } catch {
+    state.registrationX = null;
+  }
+}
+
+async function requestWalletAddress() {
+  if (!window.ethereum?.request) {
+    throw new Error("Wallet provider not found. Open this page in a browser with MetaMask or another EVM wallet.");
+  }
+  const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+  const walletAddress = accounts?.[0];
+  if (!walletAddress) throw new Error("Wallet connection was cancelled.");
+  return walletAddress;
+}
+
+async function connectProfileWallet() {
+  try {
+    state.registrationWallet = await requestWalletAddress();
     renderRegistration();
-    registerNotice(`Connected as ${state.registrationX.displayName}. Add Arc wallet to continue.`);
+    registerNotice(`Wallet connected: ${shortAddress(state.registrationWallet)}. Create profile to enter dapp.`);
   } catch (error) {
     registerNotice(error.message, "error");
   }
@@ -318,11 +372,16 @@ async function verifyX() {
   }
 }
 
-function connectWallet() {
-  state.walletConnected = true;
-  if (!$("claimWallet").value.trim()) $("claimWallet").value = "0x1111111111111111111111111111111111111111";
-  renderAll();
-  notice("Wallet connected for this claim.");
+async function connectWallet() {
+  try {
+    const walletAddress = await requestWalletAddress();
+    state.walletConnected = true;
+    $("claimWallet").value = walletAddress;
+    renderAll();
+    notice("Wallet connected for this claim.");
+  } catch (error) {
+    notice(error.message, "error");
+  }
 }
 
 async function claimPayment() {
@@ -392,6 +451,7 @@ $("feePreset").addEventListener("change", () => {
 $("sendForm").addEventListener("submit", createPayment);
 $("profileForm").addEventListener("submit", registerProfile);
 $("connectXProfile").addEventListener("click", connectXForRegistration);
+$("connectProfileWallet").addEventListener("click", connectProfileWallet);
 $("verifyX").addEventListener("click", verifyX);
 $("connectWallet").addEventListener("click", connectWallet);
 $("claimPayment").addEventListener("click", claimPayment);

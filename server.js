@@ -1,4 +1,5 @@
 import { createServer } from "node:http";
+import { createHash, randomBytes } from "node:crypto";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { extname, join, normalize } from "node:path";
@@ -9,6 +10,11 @@ const appRoot = join(root, "app");
 const dataDir = join(root, "data");
 const statePath = join(dataDir, "state.json");
 const port = Number(process.env.PORT || 4174);
+const xClientId = process.env.X_CLIENT_ID || process.env.TWITTER_CLIENT_ID || "";
+const xClientSecret = process.env.X_CLIENT_SECRET || process.env.TWITTER_CLIENT_SECRET || "";
+const xRedirectUri = process.env.X_REDIRECT_URI || `http://127.0.0.1:${port}/api/auth/x/callback`;
+const xOAuthStates = new Map();
+const xSessions = new Map();
 
 const contentTypes = {
   ".html": "text/html; charset=utf-8",
@@ -30,6 +36,33 @@ function resolveXUserId(handle) {
 
 function isEvmAddress(value) {
   return /^0x[a-fA-F0-9]{40}$/.test(String(value || "").trim());
+}
+
+function base64Url(buffer) {
+  return buffer.toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+
+function parseCookies(req) {
+  return Object.fromEntries(
+    String(req.headers.cookie || "")
+      .split(";")
+      .map((part) => part.trim())
+      .filter(Boolean)
+      .map((part) => {
+        const index = part.indexOf("=");
+        return index === -1 ? [part, ""] : [part.slice(0, index), decodeURIComponent(part.slice(index + 1))];
+      }),
+  );
+}
+
+function redirect(res, location, headers = {}) {
+  res.writeHead(302, { Location: location, ...headers });
+  res.end();
+}
+
+function currentXSession(req) {
+  const sessionId = parseCookies(req).hp_x_session;
+  return sessionId ? xSessions.get(sessionId) || null : null;
 }
 
 async function ensureState() {
@@ -62,6 +95,12 @@ function send(res, status, body) {
   res.end(JSON.stringify(body));
 }
 
+function sendOAuthRequired(res) {
+  send(res, 501, {
+    error: "X OAuth is not configured. Set X_CLIENT_ID, optional X_CLIENT_SECRET, and X_REDIRECT_URI, then restart server.",
+  });
+}
+
 function paymentView(payment, xVerified = false) {
   return {
     ...payment,
@@ -72,6 +111,94 @@ function paymentView(payment, xVerified = false) {
 }
 
 async function handleApi(req, res, url) {
+  if (req.method === "GET" && url.pathname === "/api/auth/x/start") {
+    if (!xClientId) {
+      redirect(res, "/index.html?x_error=missing_x_oauth_config");
+      return true;
+    }
+
+    const state = base64Url(randomBytes(24));
+    const codeVerifier = base64Url(randomBytes(48));
+    const codeChallenge = base64Url(createHash("sha256").update(codeVerifier).digest());
+    xOAuthStates.set(state, { codeVerifier, createdAt: Date.now() });
+
+    const authUrl = new URL("https://twitter.com/i/oauth2/authorize");
+    authUrl.searchParams.set("response_type", "code");
+    authUrl.searchParams.set("client_id", xClientId);
+    authUrl.searchParams.set("redirect_uri", xRedirectUri);
+    authUrl.searchParams.set("scope", "users.read tweet.read offline.access");
+    authUrl.searchParams.set("state", state);
+    authUrl.searchParams.set("code_challenge", codeChallenge);
+    authUrl.searchParams.set("code_challenge_method", "S256");
+    redirect(res, authUrl.toString());
+    return true;
+  }
+
+  if (req.method === "GET" && url.pathname === "/api/auth/x/callback") {
+    const code = url.searchParams.get("code");
+    const returnedState = url.searchParams.get("state");
+    const stored = returnedState ? xOAuthStates.get(returnedState) : null;
+    if (!code || !returnedState || !stored) {
+      redirect(res, "/index.html?x_error=invalid_x_oauth_state");
+      return true;
+    }
+    xOAuthStates.delete(returnedState);
+
+    try {
+      const tokenHeaders = { "Content-Type": "application/x-www-form-urlencoded" };
+      if (xClientSecret) {
+        tokenHeaders.Authorization = `Basic ${Buffer.from(`${xClientId}:${xClientSecret}`).toString("base64")}`;
+      }
+      const tokenBody = new URLSearchParams({
+        grant_type: "authorization_code",
+        code,
+        redirect_uri: xRedirectUri,
+        code_verifier: stored.codeVerifier,
+        client_id: xClientId,
+      });
+      const tokenRes = await fetch("https://api.twitter.com/2/oauth2/token", {
+        method: "POST",
+        headers: tokenHeaders,
+        body: tokenBody,
+      });
+      const token = await tokenRes.json();
+      if (!tokenRes.ok) throw new Error(token.error_description || token.error || "X token exchange failed");
+
+      const userRes = await fetch("https://api.twitter.com/2/users/me?user.fields=username,name,profile_image_url", {
+        headers: { Authorization: `Bearer ${token.access_token}` },
+      });
+      const user = await userRes.json();
+      if (!userRes.ok || !user.data?.username) throw new Error(user.detail || "X profile lookup failed");
+
+      const handle = normalizeHandle(user.data.username);
+      const sessionId = base64Url(randomBytes(32));
+      xSessions.set(sessionId, {
+        handle,
+        displayName: `@${handle}`,
+        name: user.data.name || "",
+        xUserId: user.data.id,
+        avatarUrl: user.data.profile_image_url || "",
+        connectedAt: new Date().toISOString(),
+      });
+      redirect(res, "/index.html?x=connected", {
+        "Set-Cookie": `hp_x_session=${encodeURIComponent(sessionId)}; Path=/; HttpOnly; SameSite=Lax`,
+      });
+    } catch (error) {
+      redirect(res, `/index.html?x_error=${encodeURIComponent(error instanceof Error ? error.message : "x_oauth_failed")}`);
+    }
+    return true;
+  }
+
+  if (req.method === "GET" && url.pathname === "/api/auth/x/session") {
+    const session = currentXSession(req);
+    if (!session) {
+      send(res, 200, { connected: false });
+      return true;
+    }
+    send(res, 200, { connected: true, profile: session });
+    return true;
+  }
+
   if (req.method === "GET" && url.pathname === "/api/state") {
     const state = await readState();
     send(res, 200, state);
@@ -79,20 +206,24 @@ async function handleApi(req, res, url) {
   }
 
   if (req.method === "POST" && url.pathname === "/api/x/connect") {
-    const handle = normalizeHandle("arc_sender");
-    send(res, 200, {
-      handle,
-      displayName: `@${handle}`,
-      xUserId: resolveXUserId(handle),
-      connectedAt: new Date().toISOString(),
-    });
+    const session = currentXSession(req);
+    if (!session) {
+      sendOAuthRequired(res);
+      return true;
+    }
+    send(res, 200, session);
     return true;
   }
 
   if (req.method === "POST" && url.pathname === "/api/dashboard") {
     const body = await readBody(req);
     const handle = normalizeHandle(body.handle);
-    const xUserId = resolveXUserId(handle);
+    const session = currentXSession(req);
+    if (!session || session.handle !== handle) {
+      send(res, 403, { error: "Complete X OAuth before profile registration." });
+      return true;
+    }
+    const xUserId = session.xUserId;
     if (!xUserId) {
       send(res, 400, { error: "Enter a valid X handle." });
       return true;

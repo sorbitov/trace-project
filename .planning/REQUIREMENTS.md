@@ -46,7 +46,7 @@
 - [ ] **UX-08**: User can enter the dapp from the main page and access Send, Claim, Dashboard, and Profile.
 - [ ] **UX-09**: MVP uses server-backed state instead of demo seed buttons or browser-only localStorage.
 - [ ] **UX-10**: User can create dashboard, create tip, verify X step, connect wallet, claim, cancel, and view history through working app actions.
-- [ ] **UX-11**: Profile registration starts with X/Twitter connection, derives the handle from OAuth, and captures Arc EVM wallet address without requiring manual handle or display name entry.
+- [ ] **UX-11**: Profile registration starts with X/Twitter connection, derives the handle from OAuth, then captures Arc EVM wallet address through wallet connection without requiring manual handle, wallet text entry, or display name entry.
 
 ## v2 Requirements
 

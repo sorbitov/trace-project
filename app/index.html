@@ -81,11 +81,16 @@
             <button id="connectXProfile" class="ghost-button" type="button">Connect X / Twitter</button>
           </div>
 
+          <div class="auth-step">
+            <span class="step-number">2</span>
+            <div id="walletIdentity" class="x-identity">
+              <strong>Arc wallet not connected</strong>
+              <small>Connect wallet after X so the profile has a settlement address.</small>
+            </div>
+            <button id="connectProfileWallet" class="ghost-button" type="button" disabled>Connect wallet</button>
+          </div>
+
           <form id="profileForm" class="form-grid">
-            <label class="wide">
-              Arc wallet address
-              <input id="profileWallet" placeholder="0x..." autocomplete="off" required />
-            </label>
             <label class="wide">
               Default sender visibility
               <select id="profileSenderVisibility">
