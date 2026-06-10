@@ -27,12 +27,12 @@ Phase 1 locks the v1 product behavior for HandlePay before implementation planni
 - After successful claim, recipient gets an optional share button.
 - V1 includes a full dashboard with sent and received history.
 - After X OAuth, the app creates a user profile.
-- Sender must register a HandlePay profile before entering the working dapp flow.
+- Sender sees the dapp before registration, but sending actions stay gated until profile creation.
 - Profile registration starts with X/Twitter connection; the X handle is derived from OAuth, not typed manually.
 - Profile registration captures the verified X identity and Arc EVM wallet address.
 - Arc wallet address is captured through wallet connection, not as a primary manual text field.
 - Display name is not manually entered in v1; it is derived from X identity.
-- After profile registration, user lands in the dapp with sending unlocked.
+- Profile registration opens as a modal from inside the dapp; after profile creation, the modal closes and sending unlocks.
 - Sending is blocked until profile registration is complete.
 - V1 includes public profile page `/@handle`.
 - Public profile page only shows recipient identity and a send button in v1.
@@ -58,7 +58,7 @@ Phase 1 locks the v1 product behavior for HandlePay before implementation planni
 - The first product screen should explain the project and provide a clear entry into the dapp.
 - Sender should not need to understand wallet addresses.
 - Sender should see profile registration as a required setup step before entering the dapp, not as an optional afterthought.
-- Registration UI should be a centered auth flow: connect X/Twitter first, connect wallet second, then create profile and enter dapp.
+- Registration UI should be a centered modal inside the dapp: connect X/Twitter first, connect wallet second, then create profile and unlock sending.
 - Recipient should understand why X OAuth is required before wallet connection.
 - Private amount/sender/memo must not be shown before X OAuth.
 - X mention copy is the main viral loop.

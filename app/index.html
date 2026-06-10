@@ -48,28 +48,44 @@
       </section>
     </main>
 
-    <main id="registerScreen" class="register-screen hidden">
-      <nav class="home-nav">
-        <div class="brand home-brand">
+    <main id="registerScreen" class="hidden"></main>
+
+    <main id="dappShell" class="shell hidden">
+      <aside class="rail" aria-label="HandlePay status">
+        <div class="brand">
           <span class="brand-mark">H</span>
           <div>
             <strong>HandlePay</strong>
-            <small>Profile registration</small>
+            <small>Arc USDC tips</small>
           </div>
         </div>
-        <button class="ghost-button" data-home>Home</button>
-      </nav>
 
-      <section class="register-wrap">
-        <div class="panel register-panel">
-          <div class="register-heading">
-            <p class="eyebrow">Required profile</p>
-            <h1>Register to enter the dapp.</h1>
-            <p>
-              Connect X first so HandlePay can take your handle from the account, then attach an
-              Arc wallet for sending and history.
-            </p>
+        <nav class="tabs" aria-label="Views">
+          <button class="tab" data-home>Home</button>
+          <button class="tab active" data-view="send">Send</button>
+          <button class="tab" data-view="claim">Claim</button>
+          <button class="tab" data-view="dashboard">Dashboard</button>
+          <button class="tab" data-view="profile">Profile</button>
+        </nav>
+
+        <section class="chain-card">
+          <span>Settlement</span>
+          <strong>Arc Testnet</strong>
+          <small>USDC escrow, claim by X OAuth</small>
+        </section>
+      </aside>
+
+      <div id="profileModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="profile-modal-title">
+        <div class="modal-backdrop" data-close-profile-modal></div>
+        <section class="panel register-panel modal-panel">
+          <div class="modal-heading">
+            <div>
+              <p class="eyebrow">Create account</p>
+              <h2 id="profile-modal-title">Connect to start.</h2>
+            </div>
+            <button class="ghost-button icon-button" type="button" data-close-profile-modal aria-label="Close">X</button>
           </div>
+
           <div id="registerNotice" class="register-notice hidden" role="status"></div>
 
           <div class="auth-step">
@@ -100,34 +116,8 @@
             </label>
             <button id="createProfile" class="primary-button wide" type="submit" disabled>Create profile</button>
           </form>
-        </div>
-      </section>
-    </main>
-
-    <main id="dappShell" class="shell hidden">
-      <aside class="rail" aria-label="HandlePay status">
-        <div class="brand">
-          <span class="brand-mark">H</span>
-          <div>
-            <strong>HandlePay</strong>
-            <small>Arc USDC tips</small>
-          </div>
-        </div>
-
-        <nav class="tabs" aria-label="Views">
-          <button class="tab" data-home>Home</button>
-          <button class="tab active" data-view="send">Send</button>
-          <button class="tab" data-view="claim">Claim</button>
-          <button class="tab" data-view="dashboard">Dashboard</button>
-          <button class="tab" data-view="profile">Profile</button>
-        </nav>
-
-        <section class="chain-card">
-          <span>Settlement</span>
-          <strong>Arc Testnet</strong>
-          <small>USDC escrow, claim by X OAuth</small>
         </section>
-      </aside>
+      </div>
 
       <section class="workspace">
         <header class="topbar">
@@ -149,7 +139,7 @@
               <strong>Register your HandlePay profile before sending tips.</strong>
               <span>V1 requires X identity and an Arc wallet before the first payment.</span>
             </div>
-            <button class="primary-button" data-register-profile>Register profile</button>
+            <button class="primary-button" data-register-profile>Connect / Create account</button>
           </div>
 
           <div class="panel main-panel">

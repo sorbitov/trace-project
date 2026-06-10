@@ -32,7 +32,11 @@ function notice(message, kind = "ok") {
 
 function registerNotice(message, kind = "ok") {
   const box = $("registerNotice");
-  box.textContent = message;
+  const readable = {
+    missing_x_oauth_config: "X OAuth keys are not set on this server yet.",
+    invalid_x_oauth_state: "X connection expired. Try connecting again.",
+  };
+  box.textContent = readable[message] || message;
   box.className = `register-notice ${kind}`;
 }
 
@@ -77,10 +81,6 @@ async function loadState() {
 }
 
 function enterDapp(view = "send") {
-  if (!state.dashboard) {
-    showRegister();
-    return;
-  }
   $("homeScreen").classList.add("hidden");
   $("registerScreen").classList.add("hidden");
   $("dappShell").classList.remove("hidden");
@@ -88,6 +88,7 @@ function enterDapp(view = "send") {
 }
 
 function showHome() {
+  closeProfileModal();
   $("dappShell").classList.add("hidden");
   $("registerScreen").classList.add("hidden");
   $("homeScreen").classList.remove("hidden");
@@ -95,9 +96,21 @@ function showHome() {
 
 function showRegister() {
   $("homeScreen").classList.add("hidden");
-  $("dappShell").classList.add("hidden");
-  $("registerScreen").classList.remove("hidden");
+  $("registerScreen").classList.add("hidden");
+  $("dappShell").classList.remove("hidden");
+  setView("send");
+  openProfileModal();
+}
+
+function openProfileModal() {
+  $("profileModal").classList.remove("hidden");
+  document.body.classList.add("modal-open");
   renderRegistration();
+}
+
+function closeProfileModal() {
+  $("profileModal").classList.add("hidden");
+  document.body.classList.remove("modal-open");
 }
 
 function updateQuote() {
@@ -312,6 +325,7 @@ async function registerProfile(event) {
     });
     setServerState(nextState);
     renderAll();
+    closeProfileModal();
     enterDapp("send");
     notice("Profile registered. Dapp is unlocked.");
   } catch (error) {
@@ -431,6 +445,10 @@ document.querySelectorAll("[data-register-profile]").forEach((button) => {
 
 document.querySelectorAll("[data-home]").forEach((button) => {
   button.addEventListener("click", showHome);
+});
+
+document.querySelectorAll("[data-close-profile-modal]").forEach((button) => {
+  button.addEventListener("click", closeProfileModal);
 });
 
 document.querySelectorAll("[data-view-jump]").forEach((button) => {
