@@ -8,6 +8,14 @@ HandlePay on Arc: USDC payments to X handles, claimed through X OAuth.
 
 Project initialized as a fresh GSD project in `E:\py_scrypt\arc_project`.
 
+GSD phases were reorganized:
+
+- Phase 1: idea and product definition.
+- Phase 2: current dapp prototype and everything already built.
+- Phase 3: SEO/GEO.
+- Phase 4: smart contracts and Arc Testnet.
+- Phase 5: backend, integrations, and testnet launch loop.
+
 ## Decisions Made
 
 - Arc is the target blockchain.
@@ -20,13 +28,13 @@ Project initialized as a fresh GSD project in `E:\py_scrypt\arc_project`.
 
 ## Next Discussion
 
-Clarify v1 product details:
+Next work should be added under the correct phase subsection:
 
-- X API/OAuth tier and expected cost.
-- Whether to resolve X user ID at send time or claim time.
-- Payment expiry.
-- Fee model.
-- Whether `/x/handle` public pages are v1 or v2.
+- product idea/rules -> Phase 1
+- current prototype/UI/API behavior -> Phase 2
+- SEO/GEO/content/discoverability -> Phase 3
+- Solidity/contracts/Arc Testnet deployment -> Phase 4
+- real backend, integrations, indexer, launch ops -> Phase 5
 
 ## Recent Notes
 

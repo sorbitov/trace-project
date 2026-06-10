@@ -1,8 +1,8 @@
-# Phase 1 Context: Product Definition
+# Phase 1 Context: Idea and Product Definition
 
 ## Scope
 
-Phase 1 locks the v1 product behavior for HandlePay before implementation planning.
+Phase 1 locks the idea, user promise, v1 product behavior, and business rules for HandlePay.
 
 ## Locked Decisions
 

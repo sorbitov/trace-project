@@ -1,68 +1,128 @@
 # Roadmap
 
-## Phase 1: Product Definition
+## Phase 1: Idea and Product Definition
 
-Goal: Lock the exact v1 flow, trust model, and X OAuth approach before coding.
+Goal: Lock the product idea, user promise, v1 flow, and business rules.
 
-Requirements: ID-01, ID-02, ID-03, PAY-01, UX-01, UX-02, UX-03
+Includes:
+
+- Product vision: send USDC to any X handle, claim with X.
+- Target users: web3 users, creators, builders, traders, KOLs, founders, bounty hunters.
+- Core payment type: unconditional tip/donation.
+- Identity model: X handle first, immutable X user ID resolution by backend.
+- Claim flow: X OAuth -> connect wallet -> claim.
+- Expiry/refund rules: 30 days default, sender-controlled cancel/refund.
+- Privacy posture: private memo/amount/sender options, but not full cryptographic privacy.
+- Fee rule: mandatory sender fee, minimum 0.5%.
 
 Success criteria:
 
-1. User can describe the v1 flow in one sentence.
-2. X OAuth approach is documented with cost and fallback assumptions.
-3. Escrow vs direct-send decision is finalized.
-4. Payment expiry and refund rules are chosen.
+1. The idea can be explained in one sentence.
+2. The v1 sender and recipient flows are locked.
+3. X OAuth, Arc USDC escrow, expiry, fee, and refund rules are documented.
 
-## Phase 2: Arc Escrow Contract
+## Phase 2: Current Dapp Prototype
 
-Goal: Build and test the onchain USDC escrow primitive.
+Goal: Document and maintain everything already built in the local working prototype.
 
-Requirements: PAY-01, PAY-02, PAY-03, PAY-04, PAY-05, ARC-01, ARC-02, SEC-01, SEC-02, SEC-03
+Includes:
+
+- Home page that introduces HandlePay.
+- Dapp shell entered from home.
+- Send, Claim, Dashboard, and Profile views.
+- Profile registration modal inside the dapp.
+- Registration flow: Connect X/Twitter -> connect wallet -> create profile.
+- Server-backed state through local API routes.
+- Persisted dashboard and payments in `data/state.json`.
+- Payment creation form with handle, amount, expiry, visibility, cancel mode, fee, and memo.
+- Generated X mention copy and claim/status URL.
+- Claim flow with X verification step, wallet connect, claim, cancel, and history.
+
+Success criteria:
+
+1. The prototype opens at `http://127.0.0.1:4174/index.html`.
+2. User can enter the dapp before registration.
+3. Sending is gated until profile creation.
+4. Registration is a modal, not a separate full-screen page.
+5. Local API supports dashboard, payments, verify X, claim, cancel, and state.
+
+## Phase 3: SEO and GEO
+
+Goal: Make HandlePay discoverable by search engines and understandable to AI answer engines.
+
+Includes:
+
+- `.planning/SEO.md` as the source of truth.
+- Home page title, meta description, keywords, canonical, robots meta.
+- Open Graph and Twitter Card metadata.
+- SoftwareApplication JSON-LD.
+- `robots.txt` and `sitemap.xml`.
+- Keyword targets around X handle payments, USDC tips, stablecoin payment links, Arc payments, and Web3 creator payments.
+- Future FAQPage schema and public `/@handle` metadata.
+
+Success criteria:
+
+1. Home page has crawlable metadata.
+2. `robots.txt` and `sitemap.xml` exist.
+3. JSON-LD validates.
+4. SEO/GEO requirements stay in GSD.
+5. Future public pages get metadata before launch.
+
+## Phase 4: Smart Contracts and Arc Testnet
+
+Goal: Build the real onchain Arc USDC escrow layer.
+
+Includes:
+
+- `HandlePaymentEscrow` contract.
+- Payment intent creation to X identity/user ID.
+- USDC escrow funding.
+- Claim with backend verifier signature.
+- Refund/cancel path.
+- Verifier signer rotation.
+- Pause/emergency controls.
+- Events for indexing dashboard/history.
+- Arc Testnet deployment.
+- Contract tests for replay, wrong wallet, wrong chain, expired signature, refund, and pause behavior.
 
 Success criteria:
 
 1. Contract can create, claim, and refund payment intents.
-2. Claim requires verifier signature bound to payment, wallet, chain, and expiry.
-3. Contract tests cover replay, wrong wallet, wrong chain, expired signature, and refund.
+2. Claim authorization is bound to payment ID, wallet, chain ID, expiry, and verifier signer.
+3. Tests cover critical security paths.
 4. Contract deploys to Arc Testnet.
+5. Frontend/backend stop relying on local-only payment state for final launch checks.
 
-## Phase 3: X OAuth Verifier Backend
+## Phase 5: Backend, Integrations, and Testnet Launch Loop
 
-Goal: Verify X identity offchain and issue safe claim authorizations.
+Goal: Connect real X OAuth, backend verifier, indexer, contracts, and launch operations.
 
-Requirements: ID-03, ID-04, ID-05, ARC-04, SEC-04, SEC-05
+Includes:
 
-Success criteria:
-
-1. User can complete X OAuth.
-2. Backend can verify the target X identity for a claim.
-3. Backend signs claim authorization only for the connected wallet and target payment.
-4. Rate limits and audit logs exist for claim attempts.
-
-## Phase 4: Web App MVP
-
-Goal: Ship the sender and recipient flows.
-
-Requirements: UX-01, UX-02, UX-03, UX-04, ARC-03, PAY-06, SEO-01, SEO-02, SEO-03, SEO-04
+- Production X OAuth app configuration.
+- X user ID lookup and claim verification.
+- Claim authorization signer.
+- Backend rate limits and audit logs.
+- Contract event indexer.
+- Prepared backend data and PostgreSQL persistence.
+- Testnet funding and signer management.
+- Metrics for created payments, claimed payments, refunds, and OAuth failures.
+- Operational docs for early testers.
 
 Success criteria:
 
-1. Sender can create and fund a payment to an X handle.
-2. Sender receives a claim/status link and share copy.
-3. Recipient can claim with wallet + X OAuth.
-4. Sender can refund after expiry.
-5. Status page reflects onchain events.
-6. Home page has crawlable SEO metadata, JSON-LD, robots.txt, sitemap.xml, and a GSD SEO plan.
+1. End-to-end Arc Testnet flow is repeatable.
+2. Sender can fund real USDC testnet escrow.
+3. Recipient can claim through real X OAuth and wallet connection.
+4. Dashboard reflects indexed onchain events.
+5. A public test campaign can be run with known risks documented.
 
-## Phase 5: Testnet Launch Loop
+## Phase Organization Rule
 
-Goal: Make the product usable by early web3 testers on X.
+New work should be added under the matching phase subsection:
 
-Requirements: all v1 requirements
-
-Success criteria:
-
-1. End-to-end Arc Testnet demo is repeatable.
-2. At least one public test campaign can send payments to X handles.
-3. Operational docs explain funding, claiming, refunding, and known risks.
-4. Metrics track created payments, claimed payments, refunds, and OAuth failures.
+- product idea/rules -> Phase 1
+- current prototype/UI/API behavior -> Phase 2
+- SEO/GEO/content/discoverability -> Phase 3
+- Solidity/contracts/Arc Testnet deployment -> Phase 4
+- real backend, integrations, indexer, launch ops -> Phase 5
