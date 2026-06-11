@@ -324,7 +324,7 @@ async function registerProfile(event) {
       body: JSON.stringify({
         handle: state.registrationX.handle,
         walletAddress: state.registrationWallet,
-        defaultSenderVisibility: $("profileSenderVisibility").value,
+        defaultSenderVisibility: "private",
       }),
     });
     setServerState(nextState);

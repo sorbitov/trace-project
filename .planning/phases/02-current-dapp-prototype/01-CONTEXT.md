@@ -17,6 +17,7 @@ Phase 2 captures what is already built in the local HandlePay prototype.
 - Registration order is `Connect X / Twitter -> connect wallet -> create profile`.
 - Registration derives handle from X OAuth session, not manual input.
 - Wallet is captured through EVM wallet provider, not manual text input.
+- Registration does not ask for default sender visibility; new profiles default to private and sender visibility is chosen in the send form.
 - Server-backed state persists dashboard and payments in `data/state.json`.
 - API routes exist for state, dashboard, payments, X connection/session, X verification, claim, and cancel.
 - Send form supports handle, amount, expiry, amount visibility, sender visibility, cancel mode, platform fee, and memo.
