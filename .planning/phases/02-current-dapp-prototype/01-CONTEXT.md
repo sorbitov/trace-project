@@ -11,7 +11,7 @@ Phase 2 captures what is already built in the local HandlePay prototype.
 - Local server runs on `http://127.0.0.1:4174/index.html`.
 - Home page opens first.
 - Dapp opens from home.
-- Dapp contains Send, Claim, Dashboard, and Profile views.
+- Dapp contains Send, Claim, History, and Profile views.
 - If no profile exists, the dapp is still visible but sending is gated.
 - Profile registration opens as a modal inside the dapp.
 - Account creation can start from wallet or X.
@@ -28,7 +28,7 @@ Phase 2 captures what is already built in the local HandlePay prototype.
 - API routes exist for state, dashboard, payments, X connection/session, X verification, claim, and cancel.
 - Send form supports handle, amount, expiry, amount visibility, sender visibility, cancel mode, platform fee, and memo.
 - App generates X mention/share copy after payment creation.
-- Dashboard shows sender profile and payment history.
+- History shows sender profile and sent/received payment history.
 
 ## Known Prototype Limits
 

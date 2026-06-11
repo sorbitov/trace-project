@@ -29,7 +29,7 @@ Includes:
 
 - Home page that introduces HandlePay.
 - Dapp shell entered from home.
-- Send, Claim, Dashboard, and Profile views.
+- Send, Claim, History, and Profile views.
 - Profile registration modal inside the dapp.
 - Registration flow: Connect X/Twitter -> connect wallet -> create profile.
 - Server-backed state through local API routes.
@@ -81,7 +81,7 @@ Includes:
 - Refund/cancel path.
 - Verifier signer rotation.
 - Pause/emergency controls.
-- Events for indexing dashboard/history.
+- Events for indexing history.
 - Arc Testnet deployment.
 - Contract tests for replay, wrong wallet, wrong chain, expired signature, refund, and pause behavior.
 
@@ -114,7 +114,7 @@ Success criteria:
 1. End-to-end Arc Testnet flow is repeatable.
 2. Sender can fund real USDC testnet escrow.
 3. Recipient can claim through real X OAuth and wallet connection.
-4. Dashboard reflects indexed onchain events.
+4. History reflects indexed onchain events.
 5. A public test campaign can be run with known risks documented.
 
 ## Phase Organization Rule

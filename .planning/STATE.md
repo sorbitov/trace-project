@@ -44,7 +44,7 @@ Current prototype status:
 
 - Home page opens first.
 - Dapp opens from the home page.
-- Send, Claim, Dashboard, and Profile views exist.
+- Send, Claim, History, and Profile views exist.
 - Profile registration is a modal inside the dapp.
 - Registration flow is X OAuth first, wallet connection second, profile creation third.
 - Sending is gated until profile creation.

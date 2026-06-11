@@ -37,7 +37,7 @@ Phase 1 locks the idea, user promise, v1 product behavior, and business rules fo
 - V1 includes public profile page `/@handle`.
 - Public profile page only shows recipient identity and a send button in v1.
 - Product opens on a main/home page first.
-- The working dapp is entered from the home page and contains Send, Claim, Dashboard, and Profile.
+- The working dapp is entered from the home page and contains Send, Claim, History, and Profile.
 - Prototype must not rely on demo seed buttons or browser-only localStorage state.
 - Local development runs through an app server with API routes and persisted state.
 
