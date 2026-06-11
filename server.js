@@ -257,6 +257,20 @@ async function handleApi(req, res, url) {
   if (req.method === "GET" && url.pathname === "/api/auth/x/session") {
     const session = currentXSession(req);
     if (!session) {
+      const state = await readState();
+      if (state.dashboard?.xUserId) {
+        send(res, 200, {
+          connected: true,
+          profile: {
+            handle: state.dashboard.handle,
+            displayName: state.dashboard.displayName || `@${state.dashboard.handle}`,
+            xUserId: state.dashboard.xUserId,
+            connectedAt: state.dashboard.xConnectedAt,
+          },
+          persisted: true,
+        });
+        return true;
+      }
       send(res, 200, { connected: false });
       return true;
     }

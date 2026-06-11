@@ -65,18 +65,21 @@ function activePayment() {
   return state.payments.find((payment) => payment.id === state.activePaymentId) || state.payments[0];
 }
 
+function xSessionFromProfile(profile) {
+  if (!profile?.xUserId) return null;
+  return {
+    handle: profile.handle,
+    displayName: profile.displayName || `@${profile.handle}`,
+    xUserId: profile.xUserId,
+    connectedAt: profile.xConnectedAt,
+  };
+}
+
 function setServerState(nextState) {
   state.dashboard = nextState.dashboard || null;
   state.payments = nextState.payments || [];
   state.registrationWallet = state.dashboard?.walletAddress || null;
-  if (state.dashboard?.xUserId) {
-    state.registrationX = {
-      handle: state.dashboard.handle,
-      displayName: state.dashboard.displayName || `@${state.dashboard.handle}`,
-      xUserId: state.dashboard.xUserId,
-      connectedAt: state.dashboard.xConnectedAt,
-    };
-  }
+  state.registrationX = xSessionFromProfile(state.dashboard);
   if (!state.activePaymentId && state.payments[0]) state.activePaymentId = state.payments[0].id;
 }
 
@@ -386,10 +389,15 @@ async function connectXForRegistration() {
 async function loadXSession() {
   try {
     const result = await api("/api/auth/x/session");
-    state.registrationX = result.connected ? result.profile : null;
-    if (state.registrationX) {
+    const browserSession = result.connected ? result.profile : null;
+    if (browserSession && !result.persisted) {
+      state.registrationX = browserSession;
       const nextState = await api("/api/account/x-connect", { method: "POST" });
       setServerState(nextState);
+    } else if (browserSession) {
+      state.registrationX = browserSession;
+    } else {
+      state.registrationX = xSessionFromProfile(state.dashboard);
     }
     const params = new URLSearchParams(window.location.search);
     const xError = params.get("x_error");
@@ -398,7 +406,7 @@ async function loadXSession() {
       registerNotice(`Connected as ${state.registrationX.displayName}. You can continue now and add wallet before sending.`);
     }
   } catch {
-    state.registrationX = null;
+    state.registrationX = xSessionFromProfile(state.dashboard);
   }
 }
 

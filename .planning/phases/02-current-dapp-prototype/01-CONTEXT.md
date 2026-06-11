@@ -22,6 +22,7 @@ Phase 2 captures what is already built in the local HandlePay prototype.
 - Account creation does not require both wallet and X at once.
 - Registration modal is an entry flow: one connected identity is enough to enter the dapp.
 - Profile settings expose wallet/X status and buttons for linking the missing identity.
+- Saved X links are restored from the persisted profile when the live OAuth cookie is missing.
 - Sending is unlocked only when one profile has both wallet and X linked.
 - Registration derives handle from X OAuth session, not manual input.
 - Wallet is captured through EVM wallet provider, not manual text input.

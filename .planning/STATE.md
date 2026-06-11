@@ -49,5 +49,6 @@ Current prototype status:
 - Registration can start from wallet or X; one connected identity is enough to enter the dapp.
 - Sending is gated until the active profile has both wallet and X linked.
 - Profile settings show wallet/X linking status and let the user connect the missing identity later.
+- Saved X links are restored from the persisted profile, so returning users are not forced through X OAuth again just to enter the dapp.
 - Local API persists dashboard and payments in `data/state.json`.
 - Server runs on `http://127.0.0.1:4174/index.html`.
