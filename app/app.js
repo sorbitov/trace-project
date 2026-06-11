@@ -162,7 +162,7 @@ function renderLatest() {
       <small>X post copy</small>
       <span>${payment.shareText}</span>
     </div>
-    <button class="ghost-button" data-cancel-payment="${payment.id}" ${canCancel ? "" : "disabled"}>Cancel tip</button>
+    <button class="ghost-button" data-cancel-payment="${payment.id}" ${canCancel ? "" : "disabled"}>Cancel</button>
   `;
 }
 

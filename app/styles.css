@@ -395,7 +395,13 @@ h2 {
 }
 
 #send.active {
-  grid-template-columns: minmax(0, 1fr) 360px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+  align-items: start;
+}
+
+.main-panel,
+.receipt-panel {
+  min-width: 0;
 }
 
 .panel {
@@ -548,11 +554,25 @@ textarea:focus {
 .receipt {
   display: grid;
   gap: 12px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .receipt strong,
-.receipt code {
+.receipt span,
+.receipt code,
+.copybox,
+.copybox span {
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: anywhere;
   word-break: break-word;
+}
+
+.receipt .ghost-button {
+  width: 100%;
+  min-width: 0;
+  white-space: normal;
 }
 
 .copybox {
@@ -562,6 +582,7 @@ textarea:focus {
   background: #101820;
   color: #d9f99d;
   border: 2px solid var(--line);
+  overflow: hidden;
 }
 
 .lead {
