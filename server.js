@@ -122,7 +122,7 @@ async function handleApi(req, res, url) {
     const codeChallenge = base64Url(createHash("sha256").update(codeVerifier).digest());
     xOAuthStates.set(state, { codeVerifier, createdAt: Date.now() });
 
-    const authUrl = new URL("https://twitter.com/i/oauth2/authorize");
+    const authUrl = new URL("https://x.com/i/oauth2/authorize");
     authUrl.searchParams.set("response_type", "code");
     authUrl.searchParams.set("client_id", xClientId);
     authUrl.searchParams.set("redirect_uri", xRedirectUri);
