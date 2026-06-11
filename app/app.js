@@ -243,6 +243,14 @@ function renderHistory() {
 function renderDashboardGate() {
   const canSend = accountCanSend();
   $("sendGate").classList.toggle("hidden", canSend);
+  const missing = [];
+  if (!state.dashboard?.walletAddress) missing.push("wallet");
+  if (!state.dashboard?.xUserId) missing.push("X");
+  if (!canSend && state.dashboard) {
+    $("sendGate").querySelector("strong").textContent = `Connect ${missing.join(" and ")} before sending tips.`;
+    $("sendGate").querySelector("span").textContent =
+      "Your account is created. Add the missing connection in profile settings to unlock payments.";
+  }
   $("sendForm").querySelectorAll("input, select, textarea, button").forEach((control) => {
     control.disabled = !canSend;
   });
@@ -252,17 +260,18 @@ function renderDashboardGate() {
 function renderRegistration() {
   const connected = Boolean(state.registrationX);
   const walletConnected = Boolean(state.registrationWallet);
+  const hasAccount = Boolean(state.dashboard || connected || walletConnected);
   const identity = $("xIdentity");
   if (!identity) return;
 
   identity.innerHTML = connected
     ? `
       <strong>${state.registrationX.displayName}</strong>
-      <small>X connected. ${walletConnected ? "Wallet is linked." : "Connect wallet to enable sending."}</small>
+      <small>X connected. ${walletConnected ? "Wallet is linked." : "Wallet can be added later before sending."}</small>
     `
     : `
       <strong>X account not connected</strong>
-      <small>Connect X to create, load, or link your social identity.</small>
+      <small>Connect X now or add it later in profile settings.</small>
     `;
 
   $("connectXProfile").textContent = connected ? "X connected" : "Connect X / Twitter";
@@ -271,15 +280,16 @@ function renderRegistration() {
   $("walletIdentity").innerHTML = walletConnected
     ? `
       <strong>${shortAddress(state.registrationWallet)}</strong>
-      <small>Wallet connected. ${connected ? "X is linked." : "Connect X to enable sending."}</small>
+      <small>Wallet connected. ${connected ? "X is linked." : "X can be added later before sending."}</small>
     `
     : `
       <strong>Wallet not connected</strong>
-      <small>Connect wallet to create or load your account.</small>
+      <small>Connect wallet now or add it later in profile settings.</small>
     `;
   $("connectProfileWallet").textContent = walletConnected ? "Wallet connected" : "Connect wallet";
   $("connectProfileWallet").disabled = walletConnected;
-  $("createProfile").disabled = !connected || !walletConnected;
+  $("createProfile").textContent = accountCanSend() ? "Finish setup" : "Continue to dapp";
+  $("createProfile").disabled = !hasAccount;
 }
 
 function renderAll() {
@@ -325,13 +335,13 @@ async function createPayment(event) {
 
 async function registerProfile(event) {
   event.preventDefault();
-  if (!accountCanSend()) {
-    registerNotice("Connect both wallet and X before sending.", "error");
+  if (!state.dashboard && !state.registrationX && !state.registrationWallet) {
+    registerNotice("Connect wallet or X to create an account.", "error");
     return;
   }
   closeProfileModal();
   enterDapp("send");
-  notice("Profile is ready. Sending is unlocked.");
+  notice(accountCanSend() ? "Profile is ready. Sending is unlocked." : "Account created. Connect the missing wallet or X before sending.");
 }
 
 async function connectXForRegistration() {
@@ -350,7 +360,7 @@ async function loadXSession() {
     const xError = params.get("x_error");
     if (xError) registerNotice(decodeURIComponent(xError), "error");
     if (params.get("x") === "connected" && state.registrationX) {
-      registerNotice(`Connected as ${state.registrationX.displayName}. Connect wallet to continue.`);
+      registerNotice(`Connected as ${state.registrationX.displayName}. You can continue now and add wallet before sending.`);
     }
   } catch {
     state.registrationX = null;
@@ -377,7 +387,7 @@ async function connectProfileWallet() {
     setServerState(nextState);
     renderRegistration();
     renderAll();
-    registerNotice(`Wallet connected: ${shortAddress(state.registrationWallet)}. ${state.registrationX ? "Finish setup to send." : "Connect X to enable sending."}`);
+    registerNotice(`Wallet connected: ${shortAddress(state.registrationWallet)}. ${state.registrationX ? "Finish setup to send." : "You can continue now and add X before sending."}`);
   } catch (error) {
     registerNotice(error.message, "error");
   }

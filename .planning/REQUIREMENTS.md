@@ -48,7 +48,7 @@
 - [ ] **UX-10**: User can create dashboard, create tip, verify X step, connect wallet, claim, cancel, and view history through working app actions.
 - [ ] **UX-11**: Profile registration starts with X/Twitter connection, derives the handle from OAuth, then captures Arc EVM wallet address through wallet connection without requiring manual handle, wallet text entry, sender visibility selection, or display name entry.
 - [ ] **UX-12**: Profile registration opens as a modal from inside the dapp rather than replacing the dapp with a separate registration page.
-- [ ] **UX-13**: Account creation can start from either wallet or X; reconnecting the same wallet or linked X loads the existing profile instead of creating a duplicate.
+- [ ] **UX-13**: Account creation can start from either wallet or X without requiring both immediately; reconnecting the same wallet or linked X loads the existing profile instead of creating a duplicate.
 - [ ] **UX-14**: Sending remains locked until the current profile has both wallet and X linked.
 
 ### SEO / GEO
