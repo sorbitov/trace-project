@@ -14,7 +14,12 @@ Phase 2 captures what is already built in the local HandlePay prototype.
 - Dapp contains Send, Claim, Dashboard, and Profile views.
 - If no profile exists, the dapp is still visible but sending is gated.
 - Profile registration opens as a modal inside the dapp.
-- Registration order is `Connect X / Twitter -> connect wallet -> create profile`.
+- Account creation can start from wallet or X.
+- First wallet connection creates or loads a wallet profile.
+- First X connection creates or loads an X profile.
+- If a wallet profile later connects X, the app links X to that wallet profile.
+- If an X profile later connects wallet, the app links wallet to that X profile.
+- Sending is unlocked only when one profile has both wallet and X linked.
 - Registration derives handle from X OAuth session, not manual input.
 - Wallet is captured through EVM wallet provider, not manual text input.
 - Registration does not ask for default sender visibility; new profiles default to private and sender visibility is chosen in the send form.

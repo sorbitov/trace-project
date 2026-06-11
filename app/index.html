@@ -137,24 +137,24 @@
 
           <div class="auth-step">
             <span class="step-number">1</span>
-            <div id="xIdentity" class="x-identity">
-              <strong>X account not connected</strong>
-              <small>Your sender handle will be pulled from X OAuth.</small>
+            <div id="walletIdentity" class="x-identity">
+              <strong>Wallet not connected</strong>
+              <small>Connect wallet to create or load your account.</small>
             </div>
-            <button id="connectXProfile" class="ghost-button" type="button">Connect X / Twitter</button>
+            <button id="connectProfileWallet" class="ghost-button" type="button">Connect wallet</button>
           </div>
 
           <div class="auth-step">
             <span class="step-number">2</span>
-            <div id="walletIdentity" class="x-identity">
-              <strong>Arc wallet not connected</strong>
-              <small>Connect wallet after X so the profile has a settlement address.</small>
+            <div id="xIdentity" class="x-identity">
+              <strong>X account not connected</strong>
+              <small>Connect X to create, load, or link your social identity.</small>
             </div>
-            <button id="connectProfileWallet" class="ghost-button" type="button" disabled>Connect wallet</button>
+            <button id="connectXProfile" class="ghost-button" type="button">Connect X / Twitter</button>
           </div>
 
           <form id="profileForm" class="form-grid">
-            <button id="createProfile" class="primary-button wide" type="submit" disabled>Create profile</button>
+            <button id="createProfile" class="primary-button wide" type="submit" disabled>Finish setup</button>
           </form>
         </section>
       </div>
@@ -175,9 +175,9 @@
         <section id="send" class="view active" aria-labelledby="send-title">
           <div id="sendGate" class="gate wide">
             <div>
-              <p class="eyebrow">Profile required</p>
-              <strong>Register your HandlePay profile before sending tips.</strong>
-              <span>V1 requires X identity and an Arc wallet before the first payment.</span>
+              <p class="eyebrow">Wallet + X required</p>
+              <strong>Connect both wallet and X before sending tips.</strong>
+              <span>You can create or load an account with either one, but sending needs both linked.</span>
             </div>
             <button class="primary-button" data-register-profile>Connect / Create account</button>
           </div>
@@ -312,6 +312,6 @@
       </section>
     </main>
 
-    <script src="./app.js?v=20260610-safe-start"></script>
+    <script src="./app.js?v=20260611-account-linking"></script>
   </body>
 </html>

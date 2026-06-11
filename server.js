@@ -68,19 +68,19 @@ function currentXSession(req) {
 async function ensureState() {
   await mkdir(dataDir, { recursive: true });
   if (!existsSync(statePath)) {
-    await writeFile(statePath, JSON.stringify({ dashboard: null, payments: [] }, null, 2));
+    await writeFile(statePath, JSON.stringify({ dashboard: null, profiles: [], payments: [] }, null, 2));
   }
 }
 
 async function readState() {
   await ensureState();
   const raw = await readFile(statePath, "utf8");
-  return JSON.parse(raw.replace(/^\uFEFF/, ""));
+  return normalizeState(JSON.parse(raw.replace(/^\uFEFF/, "")));
 }
 
 async function writeState(state) {
   await ensureState();
-  await writeFile(statePath, JSON.stringify(state, null, 2));
+  await writeFile(statePath, JSON.stringify(normalizeState(state), null, 2));
 }
 
 async function readBody(req) {
@@ -99,6 +99,71 @@ function sendOAuthRequired(res) {
   send(res, 501, {
     error: "X OAuth is not configured. Set X_CLIENT_ID, optional X_CLIENT_SECRET, and X_REDIRECT_URI, then restart server.",
   });
+}
+
+function normalizeState(state) {
+  const nextState = {
+    dashboard: state.dashboard || null,
+    profiles: Array.isArray(state.profiles) ? state.profiles : [],
+    payments: Array.isArray(state.payments) ? state.payments : [],
+  };
+  if (nextState.dashboard && !nextState.dashboard.id) {
+    nextState.dashboard.id = `acct_${Buffer.from(nextState.dashboard.walletAddress || nextState.dashboard.handle || "legacy").toString("hex").slice(0, 12)}`;
+  }
+  if (nextState.dashboard && nextState.profiles.every((profile) => profile.id !== nextState.dashboard.id)) {
+    nextState.profiles.unshift(nextState.dashboard);
+  }
+  return nextState;
+}
+
+function profileCanSend(profile) {
+  return Boolean(profile?.walletAddress && profile?.xUserId && profile?.handle);
+}
+
+function profileFromWallet(walletAddress) {
+  const now = new Date().toISOString();
+  return {
+    id: `acct_${Buffer.from(walletAddress.toLowerCase()).toString("hex").slice(0, 16)}`,
+    handle: null,
+    displayName: null,
+    walletAddress,
+    defaultSenderVisibility: "private",
+    xUserId: null,
+    xConnectedAt: null,
+    createdAt: now,
+    updatedAt: now,
+  };
+}
+
+function profileFromX(session) {
+  const now = new Date().toISOString();
+  return {
+    id: `acct_x_${Buffer.from(session.xUserId || session.handle).toString("hex").slice(0, 16)}`,
+    handle: session.handle,
+    displayName: session.displayName,
+    walletAddress: null,
+    defaultSenderVisibility: "private",
+    xUserId: session.xUserId,
+    xConnectedAt: session.connectedAt || now,
+    createdAt: now,
+    updatedAt: now,
+  };
+}
+
+function applyXToProfile(profile, session) {
+  const now = new Date().toISOString();
+  profile.handle = session.handle;
+  profile.displayName = session.displayName;
+  profile.xUserId = session.xUserId;
+  profile.xConnectedAt = session.connectedAt || now;
+  profile.updatedAt = now;
+  return profile;
+}
+
+function applyWalletToProfile(profile, walletAddress) {
+  profile.walletAddress = walletAddress;
+  profile.updatedAt = new Date().toISOString();
+  return profile;
 }
 
 function paymentView(payment, xVerified = false) {
@@ -205,6 +270,96 @@ async function handleApi(req, res, url) {
     return true;
   }
 
+  if (req.method === "POST" && url.pathname === "/api/account/wallet") {
+    const body = await readBody(req);
+    const walletAddress = String(body.walletAddress || "").trim();
+    if (!isEvmAddress(walletAddress)) {
+      send(res, 400, { error: "Enter a valid Arc EVM wallet address." });
+      return true;
+    }
+    const state = await readState();
+    const existing = state.profiles.find(
+      (profile) => String(profile.walletAddress || "").toLowerCase() === walletAddress.toLowerCase(),
+    );
+
+    let profile = existing;
+    if (state.dashboard?.xUserId && !state.dashboard.walletAddress) {
+      if (existing?.xUserId && existing.xUserId !== state.dashboard.xUserId) {
+        send(res, 409, { error: "This wallet is already linked to another X profile." });
+        return true;
+      }
+      profile = existing || state.profiles.find((item) => item.id === state.dashboard.id) || state.dashboard;
+      applyWalletToProfile(profile, walletAddress);
+      if (!existing && state.profiles.every((item) => item.id !== profile.id)) state.profiles.unshift(profile);
+      if (existing && existing.id !== state.dashboard.id) {
+        applyXToProfile(existing, state.dashboard);
+        state.profiles = state.profiles.filter((item) => item.id !== state.dashboard.id);
+        profile = existing;
+      }
+    } else {
+      profile = existing || profileFromWallet(walletAddress);
+      if (!existing) state.profiles.unshift(profile);
+    }
+
+    state.dashboard = profile;
+    await writeState(state);
+    send(res, existing ? 200 : 201, state);
+    return true;
+  }
+
+  if (req.method === "POST" && (url.pathname === "/api/account/x-login" || url.pathname === "/api/account/x-connect")) {
+    const session = currentXSession(req);
+    if (!session) {
+      sendOAuthRequired(res);
+      return true;
+    }
+    const state = await readState();
+    let profile = state.profiles.find((item) => item.xUserId === session.xUserId || item.handle === session.handle);
+
+    if (state.dashboard?.walletAddress && !state.dashboard.xUserId) {
+      if (profile?.walletAddress && profile.walletAddress.toLowerCase() !== state.dashboard.walletAddress.toLowerCase()) {
+        send(res, 409, { error: "This X account is already linked to another wallet profile." });
+        return true;
+      }
+      profile = state.profiles.find((item) => item.id === state.dashboard.id) || state.dashboard;
+      applyXToProfile(profile, session);
+    } else if (!profile) {
+      profile = profileFromX(session);
+      state.profiles.unshift(profile);
+    }
+
+    state.dashboard = profile;
+    await writeState(state);
+    send(res, 200, state);
+    return true;
+  }
+
+  if (req.method === "POST" && url.pathname === "/api/account/link-x") {
+    const session = currentXSession(req);
+    if (!session) {
+      sendOAuthRequired(res);
+      return true;
+    }
+    const state = await readState();
+    if (!state.dashboard?.walletAddress) {
+      send(res, 409, { error: "Connect wallet before linking X." });
+      return true;
+    }
+    const conflict = state.profiles.find(
+      (profile) => profile.id !== state.dashboard.id && (profile.xUserId === session.xUserId || profile.handle === session.handle),
+    );
+    if (conflict) {
+      send(res, 409, { error: "This X account is already linked to another wallet profile." });
+      return true;
+    }
+    const profile = state.profiles.find((item) => item.id === state.dashboard.id) || state.dashboard;
+    applyXToProfile(profile, session);
+    state.dashboard = profile;
+    await writeState(state);
+    send(res, 200, state);
+    return true;
+  }
+
   if (req.method === "POST" && url.pathname === "/api/x/connect") {
     const session = currentXSession(req);
     if (!session) {
@@ -234,14 +389,20 @@ async function handleApi(req, res, url) {
       return true;
     }
     const state = await readState();
-    state.dashboard = {
+    const profile = {
+      id: `acct_${Buffer.from(walletAddress.toLowerCase()).toString("hex").slice(0, 16)}`,
       handle,
       displayName: `@${handle}`,
       walletAddress,
       defaultSenderVisibility: body.defaultSenderVisibility === "public" ? "public" : "private",
       xUserId,
+      xConnectedAt: new Date().toISOString(),
       createdAt: new Date().toISOString(),
     };
+    const existingIndex = state.profiles.findIndex((item) => item.id === profile.id || item.xUserId === xUserId);
+    if (existingIndex >= 0) state.profiles[existingIndex] = { ...state.profiles[existingIndex], ...profile };
+    else state.profiles.unshift(profile);
+    state.dashboard = existingIndex >= 0 ? state.profiles[existingIndex] : profile;
     await writeState(state);
     send(res, 200, state);
     return true;
@@ -249,8 +410,8 @@ async function handleApi(req, res, url) {
 
   if (req.method === "POST" && url.pathname === "/api/payments") {
     const state = await readState();
-    if (!state.dashboard) {
-      send(res, 409, { error: "Create dashboard before sending tips." });
+    if (!profileCanSend(state.dashboard)) {
+      send(res, 409, { error: "Connect both wallet and X before sending tips." });
       return true;
     }
     const body = await readBody(req);

@@ -68,7 +68,20 @@ function activePayment() {
 function setServerState(nextState) {
   state.dashboard = nextState.dashboard || null;
   state.payments = nextState.payments || [];
+  state.registrationWallet = state.dashboard?.walletAddress || null;
+  if (state.dashboard?.xUserId) {
+    state.registrationX = {
+      handle: state.dashboard.handle,
+      displayName: state.dashboard.displayName || `@${state.dashboard.handle}`,
+      xUserId: state.dashboard.xUserId,
+      connectedAt: state.dashboard.xConnectedAt,
+    };
+  }
   if (!state.activePaymentId && state.payments[0]) state.activePaymentId = state.payments[0].id;
+}
+
+function accountCanSend(profile = state.dashboard) {
+  return Boolean(profile?.walletAddress && profile?.xUserId && profile?.handle);
 }
 
 async function loadState() {
@@ -188,13 +201,15 @@ function renderHistory() {
   $("historyCount").textContent = state.dashboard ? `${state.payments.length} payments` : "not created";
   const profile = $("dashboardProfile");
   if (!state.dashboard) {
-    profile.innerHTML = '<div class="empty-state">Register profile to unlock sending, history, and refund controls.</div>';
+    profile.innerHTML = '<div class="empty-state">Connect wallet or X to create an account.</div>';
   } else {
+    const xLabel = state.dashboard.handle ? `@${state.dashboard.handle}` : "X not linked";
+    const walletLabel = state.dashboard.walletAddress || "Wallet not linked";
     profile.innerHTML = `
       <div class="profile-summary-card">
-        <strong>@${state.dashboard.handle}</strong>
-        <span>${state.dashboard.walletAddress}</span>
-        <small>Default sender visibility: ${state.dashboard.defaultSenderVisibility}</small>
+        <strong>${xLabel}</strong>
+        <span>${walletLabel}</span>
+        <small>${accountCanSend() ? "Ready to send" : "Connect both wallet and X to send"}</small>
       </div>
     `;
   }
@@ -226,12 +241,12 @@ function renderHistory() {
 }
 
 function renderDashboardGate() {
-  const hasDashboard = Boolean(state.dashboard);
-  $("sendGate").classList.toggle("hidden", hasDashboard);
+  const canSend = accountCanSend();
+  $("sendGate").classList.toggle("hidden", canSend);
   $("sendForm").querySelectorAll("input, select, textarea, button").forEach((control) => {
-    control.disabled = !hasDashboard;
+    control.disabled = !canSend;
   });
-  if (hasDashboard) $("senderVisibility").value = state.dashboard.defaultSenderVisibility;
+  if (canSend) $("senderVisibility").value = state.dashboard.defaultSenderVisibility;
 }
 
 function renderRegistration() {
@@ -243,11 +258,11 @@ function renderRegistration() {
   identity.innerHTML = connected
     ? `
       <strong>${state.registrationX.displayName}</strong>
-      <small>X connected. Add Arc wallet to finish profile.</small>
+      <small>X connected. ${walletConnected ? "Wallet is linked." : "Connect wallet to enable sending."}</small>
     `
     : `
       <strong>X account not connected</strong>
-      <small>Your sender handle will be pulled from X OAuth.</small>
+      <small>Connect X to create, load, or link your social identity.</small>
     `;
 
   $("connectXProfile").textContent = connected ? "X connected" : "Connect X / Twitter";
@@ -256,14 +271,14 @@ function renderRegistration() {
   $("walletIdentity").innerHTML = walletConnected
     ? `
       <strong>${shortAddress(state.registrationWallet)}</strong>
-      <small>Wallet connected for Arc profile settlement.</small>
+      <small>Wallet connected. ${connected ? "X is linked." : "Connect X to enable sending."}</small>
     `
     : `
-      <strong>Arc wallet not connected</strong>
-      <small>Connect wallet after X so the profile has a settlement address.</small>
+      <strong>Wallet not connected</strong>
+      <small>Connect wallet to create or load your account.</small>
     `;
   $("connectProfileWallet").textContent = walletConnected ? "Wallet connected" : "Connect wallet";
-  $("connectProfileWallet").disabled = !connected || walletConnected;
+  $("connectProfileWallet").disabled = walletConnected;
   $("createProfile").disabled = !connected || !walletConnected;
 }
 
@@ -310,31 +325,13 @@ async function createPayment(event) {
 
 async function registerProfile(event) {
   event.preventDefault();
-  if (!state.registrationX) {
-    registerNotice("Connect X before creating profile.", "error");
+  if (!accountCanSend()) {
+    registerNotice("Connect both wallet and X before sending.", "error");
     return;
   }
-  if (!state.registrationWallet) {
-    registerNotice("Connect Arc wallet before creating profile.", "error");
-    return;
-  }
-  try {
-    const nextState = await api("/api/dashboard", {
-      method: "POST",
-      body: JSON.stringify({
-        handle: state.registrationX.handle,
-        walletAddress: state.registrationWallet,
-        defaultSenderVisibility: "private",
-      }),
-    });
-    setServerState(nextState);
-    renderAll();
-    closeProfileModal();
-    enterDapp("send");
-    notice("Profile registered. Dapp is unlocked.");
-  } catch (error) {
-    registerNotice(error.message, "error");
-  }
+  closeProfileModal();
+  enterDapp("send");
+  notice("Profile is ready. Sending is unlocked.");
 }
 
 async function connectXForRegistration() {
@@ -345,6 +342,10 @@ async function loadXSession() {
   try {
     const result = await api("/api/auth/x/session");
     state.registrationX = result.connected ? result.profile : null;
+    if (state.registrationX) {
+      const nextState = await api("/api/account/x-connect", { method: "POST" });
+      setServerState(nextState);
+    }
     const params = new URLSearchParams(window.location.search);
     const xError = params.get("x_error");
     if (xError) registerNotice(decodeURIComponent(xError), "error");
@@ -368,9 +369,15 @@ async function requestWalletAddress() {
 
 async function connectProfileWallet() {
   try {
-    state.registrationWallet = await requestWalletAddress();
+    const walletAddress = await requestWalletAddress();
+    const nextState = await api("/api/account/wallet", {
+      method: "POST",
+      body: JSON.stringify({ walletAddress }),
+    });
+    setServerState(nextState);
     renderRegistration();
-    registerNotice(`Wallet connected: ${shortAddress(state.registrationWallet)}. Create profile to enter dapp.`);
+    renderAll();
+    registerNotice(`Wallet connected: ${shortAddress(state.registrationWallet)}. ${state.registrationX ? "Finish setup to send." : "Connect X to enable sending."}`);
   } catch (error) {
     registerNotice(error.message, "error");
   }
