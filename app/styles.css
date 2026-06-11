@@ -634,6 +634,17 @@ textarea:focus {
   overflow-wrap: anywhere;
 }
 
+.profile-settings {
+  margin-top: 24px;
+}
+
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
 .history-item {
   display: grid;
   grid-template-columns: 1fr auto;

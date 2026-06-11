@@ -46,7 +46,8 @@ Current prototype status:
 - Dapp opens from the home page.
 - Send, Claim, History, and Profile views exist.
 - Profile registration is a modal inside the dapp.
-- Registration flow is X OAuth first, wallet connection second, profile creation third.
-- Sending is gated until profile creation.
+- Registration can start from wallet or X; one connected identity is enough to enter the dapp.
+- Sending is gated until the active profile has both wallet and X linked.
+- Profile settings show wallet/X linking status and let the user connect the missing identity later.
 - Local API persists dashboard and payments in `data/state.json`.
 - Server runs on `http://127.0.0.1:4174/index.html`.

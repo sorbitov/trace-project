@@ -240,6 +240,38 @@ function renderHistory() {
     .join("");
 }
 
+function renderProfileSettings() {
+  const profile = $("profileAccount");
+  const connectWalletButton = $("profileConnectWallet");
+  const connectXButton = $("profileConnectX");
+  if (!profile || !connectWalletButton || !connectXButton) return;
+
+  if (!state.dashboard) {
+    profile.innerHTML = '<div class="empty-state">Connect wallet or X to create an account.</div>';
+    connectWalletButton.textContent = "Connect wallet";
+    connectWalletButton.disabled = false;
+    connectXButton.textContent = "Connect X / Twitter";
+    connectXButton.disabled = false;
+    return;
+  }
+
+  const xLabel = state.dashboard.handle ? `@${state.dashboard.handle}` : "X not linked";
+  const walletLabel = state.dashboard.walletAddress || "Wallet not linked";
+  profile.innerHTML = `
+    <div class="profile-summary-card">
+      <strong>${state.dashboard.walletAddress ? shortAddress(state.dashboard.walletAddress) : xLabel}</strong>
+      <span>Wallet: ${walletLabel}</span>
+      <span>X: ${xLabel}</span>
+      <small>${accountCanSend() ? "Sending unlocked" : "Connect both wallet and X to unlock sending"}</small>
+    </div>
+  `;
+
+  connectWalletButton.textContent = state.dashboard.walletAddress ? "Wallet connected" : "Connect wallet";
+  connectWalletButton.disabled = Boolean(state.dashboard.walletAddress);
+  connectXButton.textContent = state.dashboard.xUserId ? "X connected" : "Connect X / Twitter";
+  connectXButton.disabled = Boolean(state.dashboard.xUserId);
+}
+
 function renderDashboardGate() {
   const canSend = accountCanSend();
   $("sendGate").classList.toggle("hidden", canSend);
@@ -276,6 +308,7 @@ function renderRegistration() {
 
   $("connectXProfile").textContent = connected ? "X connected" : "Connect X / Twitter";
   $("connectXProfile").disabled = connected;
+  $("xAuthStep").classList.toggle("hidden", walletConnected && !connected);
 
   $("walletIdentity").innerHTML = walletConnected
     ? `
@@ -288,7 +321,8 @@ function renderRegistration() {
     `;
   $("connectProfileWallet").textContent = walletConnected ? "Wallet connected" : "Connect wallet";
   $("connectProfileWallet").disabled = walletConnected;
-  $("createProfile").textContent = accountCanSend() ? "Finish setup" : "Continue to dapp";
+  $("walletAuthStep").classList.toggle("hidden", connected && !walletConnected);
+  $("createProfile").textContent = accountCanSend() ? "Start sending" : "Enter dapp";
   $("createProfile").disabled = !hasAccount;
 }
 
@@ -299,6 +333,7 @@ function renderAll() {
   renderLatest();
   renderClaim();
   renderHistory();
+  renderProfileSettings();
 }
 
 function setView(id) {
@@ -387,7 +422,7 @@ async function connectProfileWallet() {
     setServerState(nextState);
     renderRegistration();
     renderAll();
-    registerNotice(`Wallet connected: ${shortAddress(state.registrationWallet)}. ${state.registrationX ? "Finish setup to send." : "You can continue now and add X before sending."}`);
+    registerNotice(`Wallet connected: ${shortAddress(state.registrationWallet)}. You can enter the dapp now.`);
   } catch (error) {
     registerNotice(error.message, "error");
   }
@@ -491,6 +526,8 @@ $("sendForm").addEventListener("submit", createPayment);
 $("profileForm").addEventListener("submit", registerProfile);
 $("connectXProfile").addEventListener("click", connectXForRegistration);
 $("connectProfileWallet").addEventListener("click", connectProfileWallet);
+$("profileConnectX").addEventListener("click", connectXForRegistration);
+$("profileConnectWallet").addEventListener("click", connectProfileWallet);
 $("verifyX").addEventListener("click", verifyX);
 $("connectWallet").addEventListener("click", connectWallet);
 $("claimPayment").addEventListener("click", claimPayment);
