@@ -60,6 +60,9 @@ Full configuration and operational checks are in [docs/deployment.md](docs/deplo
 ## Reviewer and grant documentation
 
 - [DeFi Track hackathon submission](docs/hackathon-submission.md)
+- [v0.1.0-rc.2 release notes](docs/release-notes-v0.1.0-rc.2.md)
+- [Known issues and limitations](docs/known-issues.md)
+- [GitHub publication checklist](docs/github-publish-checklist.md)
 - [Executive summary](docs/executive-summary.md)
 - [Grant application](docs/grant-application.md)
 - [Budget and milestones](docs/budget-and-milestones.md)
@@ -87,3 +90,5 @@ The escrow contract is deployed on Arc Testnet. Live application operation still
 ## License and security reports
 
 The repository is licensed under the [MIT License](LICENSE). Please report suspected vulnerabilities privately through the repository's security advisory channel as described in [SECURITY.md](SECURITY.md).
+
+Contributions are governed by [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Release history is recorded in [CHANGELOG.md](CHANGELOG.md).

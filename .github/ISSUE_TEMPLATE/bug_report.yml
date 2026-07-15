@@ -1,0 +1,54 @@
+name: Bug report
+description: Report a reproducible non-security defect
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Do not report vulnerabilities or include secrets, private payment data, OAuth tokens, signatures, or private keys. Follow SECURITY.md for security reports.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What happened and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Use test-only accounts and redact addresses or identifiers when they are not necessary.
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Web application
+        - API or database
+        - X identity flow
+        - Wallet flow
+        - Solidity contract
+        - Indexer or Arc RPC
+        - Documentation or CI
+    validations:
+      required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Commit or release
+      placeholder: v0.1.0-rc.2 or commit hash
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, wallet, Node.js version, operating system, and Arc network.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: This report contains no secret or private data and is not a security vulnerability.
+          required: true

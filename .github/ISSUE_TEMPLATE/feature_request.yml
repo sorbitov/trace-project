@@ -1,0 +1,39 @@
+name: Feature request
+description: Propose a scoped improvement to PACT
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user or reviewer problem should be solved?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed outcome
+      description: Describe the desired behavior without including credentials or personal data.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Payment experience
+        - Identity and wallet proof
+        - Contract lifecycle
+        - Privacy and security
+        - Arc integration
+        - Operations and observability
+        - Documentation
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Security, privacy, and recovery considerations
+      description: Explain effects on custody, claims, refunds, roles, identity, or private metadata.

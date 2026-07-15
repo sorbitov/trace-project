@@ -53,15 +53,15 @@ Use this as the final truth and completeness gate. A checked item should have a 
 ## 5. Repository and quality evidence
 
 - [ ] Public repository URL added
-- [ ] License selected and `LICENSE` file committed
+- [x] License selected and `LICENSE` file committed
 - [ ] README setup works from a clean environment
-- [ ] Release tag created for submission
-- [ ] CI runs `npm test`, `npm audit`, and `npm run check`
+- [x] Local release tag created for submission — `v0.1.0-rc.2`
+- [x] CI runs `npm test`, `npm audit`, and `npm run check`
 - [ ] Test output link shows API, security, and contract suites passing
-- [ ] Secrets scan is clean; `.env` and keys are absent from history
-- [ ] Dependency lockfile committed
-- [ ] Known issues and unsupported configurations published
-- [ ] Architecture, security, deployment, pilot, status, and demo documents linked
+- [x] Secrets scan is clean; `.env` and keys are absent from tracked Git history
+- [x] Dependency lockfile committed
+- [x] Known issues and unsupported configurations documented — `docs/known-issues.md`
+- [x] Architecture, security, deployment, pilot, status, and demo documents linked
 
 ## 6. Arc deployment evidence
 
