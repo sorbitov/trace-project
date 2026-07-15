@@ -6,7 +6,20 @@ HandlePay on Arc: USDC payments to X handles, claimed through X OAuth.
 
 ## Current Status
 
-Project initialized as a fresh GSD project in `E:\py_scrypt\arc_project`.
+Local MVP implementation is complete through Phase 3. Phase 4 is active and blocked on Arc Testnet deployment credentials and funded role wallets. Phase 5 launch evidence remains pending.
+
+Implementation update (2026-07-14):
+
+- Local JSON payment mutations were replaced by PostgreSQL-backed sessions, profiles, payment intents, audit logs, and indexer checkpoints.
+- Wallet ownership now uses a signed one-time challenge; X identity uses OAuth 2.0 PKCE.
+- Recipient lookup uses the immutable X API user ID and fails closed when X credentials are absent.
+- Frontend now submits Arc USDC approval and escrow transactions through the injected wallet.
+- Funding and settlement are accepted only after matching Arc receipts and escrow events.
+- Claim links select the exact `#claim=<id>` payment and private API fields are viewer-scoped.
+- Hardened escrow contract, Hardhat build, deploy script, event indexer, rate limits, security headers, and automated tests are present.
+- PostgreSQL migration and local HTTP integration checks pass; 37 automated tests pass and `npm audit` reports zero vulnerabilities.
+- X OAuth client configuration is present, but immutable recipient lookup still needs `X_BEARER_TOKEN` and real two-account acceptance testing.
+- Live Arc deployment remains pending because deployer/verifier keys, role addresses, and funded testnet wallets are intentionally absent.
 
 GSD phases were reorganized:
 
@@ -25,6 +38,13 @@ GSD phases were reorganized:
 - Escrow is required because recipient wallet may be unknown.
 - X verification happens offchain; settlement happens onchain.
 - SEO/GEO is part of the MVP surface: home metadata, robots.txt, sitemap.xml, SoftwareApplication JSON-LD, and `.planning/SEO.md`.
+
+## Current Position
+
+- Current phase: 4 — Smart Contracts and Arc Testnet.
+- Completed locally: phases 1–3.
+- Active plan: deploy and verify the tested escrow contract, then capture lifecycle evidence.
+- Blockers: Arc deployer/verifier credentials, treasury/owner addresses, funded sender/recipient wallets, hosting account, and PostgreSQL deployment.
 
 ## Next Discussion
 
@@ -50,5 +70,5 @@ Current prototype status:
 - Sending is gated until the active profile has both wallet and X linked.
 - Profile settings show wallet/X linking status and let the user connect the missing identity later.
 - Saved X links are restored from the persisted profile, so returning users are not forced through X OAuth again just to enter the dapp.
-- Local API persists dashboard and payments in `data/state.json`.
+- Local API persists sessions, profiles, payments, audit logs, and indexer checkpoints in PostgreSQL.
 - Server runs on `http://127.0.0.1:4174/index.html`.

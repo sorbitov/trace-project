@@ -3,121 +3,409 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HandlePay on Arc - Send USDC to X Handles</title>
-    <meta
-      name="description"
-      content="HandlePay lets web3 users send USDC to any X handle on Arc. Recipients claim with X OAuth and an Arc wallet, even if they were not registered before."
-    />
-    <meta
-      name="keywords"
-      content="USDC payments, X handle payments, Arc blockchain, stablecoin tips, crypto payment links, Web3 payments"
-    />
+    <title>HandleLayer on Arc | X Identity for Onchain Actions</title>
+    <meta name="description" content="HandleLayer turns verified X identities into routes for private USDC escrow, claims and programmable onchain actions on Arc, with wallet proof and refunds." />
+    <meta name="theme-color" content="#050505" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
-    <meta name="theme-color" content="#f4efe2" />
     <link rel="canonical" href="https://handlepay.app/" />
-    <meta property="og:title" content="HandlePay on Arc - Send USDC to X Handles" />
-    <meta
-      property="og:description"
-      content="Send USDC to an X handle. They claim with X OAuth and an Arc wallet."
-    />
+    <meta property="og:title" content="HandleLayer on Arc | Identity to Onchain Action" />
+    <meta property="og:description" content="Route private USDC escrow, claims and programmable onchain actions through verified X identities and wallet proof." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://handlepay.app/" />
-    <meta property="og:site_name" content="HandlePay" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="HandlePay on Arc - Send USDC to X Handles" />
-    <meta
-      name="twitter:description"
-      content="X-native stablecoin payments: send USDC to a handle, claim on Arc."
-    />
+    <meta name="twitter:title" content="HandleLayer on Arc | Identity to Onchain Action" />
+    <meta name="twitter:description" content="Verified X identity and wallet proof for private USDC escrow and programmable onchain actions on Arc." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css?v=20260611-profile-linking" />
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;600;700&family=Oxanium:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=20260714-recipient-picker" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "HandlePay",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "description": "HandlePay is an Arc-based USDC payment app for sending stablecoin tips and payments to X handles.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "featureList": [
-          "Send USDC to an X handle",
-          "Claim with X OAuth",
-          "Connect an Arc wallet",
-          "Create X mention share text",
-          "Track sender and recipient payment history"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://handlepay.app/#organization",
+            "name": "HandleLayer",
+            "url": "https://handlepay.app/",
+            "description": "HandleLayer develops verified social identity routes for programmable onchain actions."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://handlepay.app/#website",
+            "name": "HandleLayer",
+            "url": "https://handlepay.app/",
+            "publisher": { "@id": "https://handlepay.app/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://handlepay.app/#webpage",
+            "name": "HandleLayer on Arc | X Identity for Onchain Actions",
+            "url": "https://handlepay.app/",
+            "description": "Verified X identity and wallet proof for private USDC escrow, claims and programmable onchain actions on Arc.",
+            "dateModified": "2026-07-14",
+            "isPartOf": { "@id": "https://handlepay.app/#website" },
+            "about": { "@id": "https://handlepay.app/#software" },
+            "speakable": {
+              "@type": "SpeakableSpecification",
+              "cssSelector": ["h1", ".grant-lead", ".geo-summary", ".faq-answer"]
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://handlepay.app/#software",
+            "name": "HandleLayer",
+            "url": "https://handlepay.app/",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web",
+            "softwareVersion": "0.1.0",
+            "description": "An Arc-based identity layer that routes private USDC escrow and programmable onchain actions through verified X identities and wallet ownership proof.",
+            "featureList": [
+              "X OAuth 2.0 PKCE identity verification",
+              "Arc USDC escrow funding and settlement",
+              "Private claim links with wallet ownership proof",
+              "Sender cancellation and post-expiry refunds"
+            ],
+            "creator": { "@id": "https://handlepay.app/#organization" }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://handlepay.app/#faq-schema",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is HandleLayer?",
+                "acceptedAnswer": { "@type": "Answer", "text": "HandleLayer is an identity routing layer that connects a verified X account and an EVM wallet to programmable onchain actions. Its first module is private USDC escrow on Arc." }
+              },
+              {
+                "@type": "Question",
+                "name": "How does HandleLayer protect funds?",
+                "acceptedAnswer": { "@type": "Answer", "text": "USDC is held by an Arc escrow contract. A verified recipient can claim it with a short-lived authorization, while the sender can cancel an eligible payment or refund it after expiry." }
+              },
+              {
+                "@type": "Question",
+                "name": "Why are both X and a wallet required?",
+                "acceptedAnswer": { "@type": "Answer", "text": "X OAuth verifies the intended social identity. A wallet signature separately proves control of the address that funds or receives the onchain action." }
+              },
+              {
+                "@type": "Question",
+                "name": "Is HandleLayer live on Arc mainnet?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. The repository contains a locally tested MVP for Arc Testnet. Public contract deployment, independent security review and a production decision remain roadmap milestones." }
+              }
+            ]
+          }
         ]
       }
     </script>
   </head>
   <body>
     <main id="homeScreen" class="home-screen">
-      <nav class="home-nav">
-        <div class="brand home-brand">
-          <span class="brand-mark">H</span>
-          <div>
-            <strong>HandlePay</strong>
-            <small>USDC tips to X handles</small>
-          </div>
+      <nav class="home-nav" aria-label="Primary navigation">
+        <a class="brand home-brand" href="#overview" aria-label="HandleLayer home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <strong>HANDLE LAYER</strong><small>ARC / 2026</small>
+        </a>
+        <div class="home-links">
+          <a href="#product">PRODUCT</a>
+          <a href="#how-it-works">WORKFLOW</a>
+          <a href="#architecture">TRUST</a>
+          <a href="#roadmap">DELIVERY</a>
+          <a href="./docs.html">DOCUMENTS</a>
         </div>
-        <button class="ghost-button" data-enter-dapp>Enter dapp</button>
+        <details class="mobile-site-menu">
+          <summary>SECTIONS</summary>
+          <div><a href="#product">Product model</a><a href="#how-it-works">Payment workflow</a><a href="#architecture">Trust architecture</a><a href="#roadmap">Delivery roadmap</a><a href="./docs.html">Project documents</a></div>
+        </details>
+        <button class="nav-button" data-enter-dapp><span>●</span> OPEN MVP</button>
       </nav>
 
-      <section class="home-hero">
-        <div class="home-copy">
-          <p class="eyebrow">Arc-native social payments</p>
-          <h1>Send USDC to an X handle. They claim with X.</h1>
-          <p class="home-lead">
-            HandlePay turns social identity into a payment route: create a dashboard, tip any
-            `@handle`, generate the X mention, and let the recipient claim on Arc.
-          </p>
-          <div class="home-actions">
-            <button class="primary-button" data-enter-dapp>Launch dapp</button>
-            <button class="ghost-button" data-register-profile>Register profile</button>
-          </div>
+      <section id="overview" class="grant-hero signal-hero">
+        <div class="signal-topline">
+          <span>STUDY: IDENTITY ROUTES / 001</span>
+          <span>ARC // TESTNET</span>
+          <span>STATUS: SYSTEM READY</span>
         </div>
 
-        <div class="home-terminal" aria-label="HandlePay flow preview">
-          <div class="terminal-row"><span>1</span><strong>Create dashboard</strong><em>@sender</em></div>
-          <div class="terminal-row"><span>2</span><strong>Tip @alice</strong><em>25 USDC</em></div>
-          <div class="terminal-row"><span>3</span><strong>Post mention</strong><em>X</em></div>
-          <div class="terminal-row"><span>4</span><strong>Claim with X</strong><em>Arc wallet</em></div>
+        <div class="signal-title">
+          <p class="eyebrow">(X-NATIVE ONCHAIN ACTIONS)</p>
+          <h1>IDENTITY TO ACTION</h1>
+        </div>
+
+        <div class="signal-layout">
+          <aside class="signal-note signal-note-left">
+            <span>C://SOCIAL_GRAPH</span>
+            <strong>PUBLIC X IDENTITIES</strong>
+            <small>CURATED WEB3 INDEX</small>
+          </aside>
+
+          <div class="signal-stage identity-stage" data-identity-stage aria-label="Interactive field of notable public Web3 X profiles">
+            <i class="stage-corner corner-tl"></i><i class="stage-corner corner-tr"></i>
+            <i class="stage-corner corner-bl"></i><i class="stage-corner corner-br"></i>
+            <div class="stage-axis"><span>PUBLIC SIGNALS</span><span data-identity-count>142 CRYPTO ROUTES</span><span>MOVE TO DISCOVER</span></div>
+            <div class="identity-field" data-identity-field>
+              <a class="identity-node" data-x="9" data-y="24" href="https://x.com/VitalikButerin" target="_blank" rel="noreferrer" aria-label="Vitalik Buterin on X"><span class="identity-avatar">VB</span><span class="identity-card"><strong>Vitalik Buterin</strong><small>@VitalikButerin</small><em>ETHEREUM</em></span></a>
+              <a class="identity-node" data-x="25" data-y="13" href="https://x.com/brian_armstrong" target="_blank" rel="noreferrer" aria-label="Brian Armstrong on X"><span class="identity-avatar">BA</span><span class="identity-card"><strong>Brian Armstrong</strong><small>@brian_armstrong</small><em>COINBASE</em></span></a>
+              <a class="identity-node" data-x="43" data-y="28" href="https://x.com/aeyakovenko" target="_blank" rel="noreferrer" aria-label="Anatoly Yakovenko on X"><span class="identity-avatar">AY</span><span class="identity-card"><strong>Anatoly Yakovenko</strong><small>@aeyakovenko</small><em>SOLANA</em></span></a>
+              <a class="identity-node" data-x="65" data-y="14" href="https://x.com/jessepollak" target="_blank" rel="noreferrer" aria-label="Jesse Pollak on X"><span class="identity-avatar">JP</span><span class="identity-card"><strong>Jesse Pollak</strong><small>@jessepollak</small><em>BASE</em></span></a>
+              <a class="identity-node card-left" data-x="88" data-y="25" href="https://x.com/haydenzadams" target="_blank" rel="noreferrer" aria-label="Hayden Adams on X"><span class="identity-avatar">HA</span><span class="identity-card"><strong>Hayden Adams</strong><small>@haydenzadams</small><em>UNISWAP</em></span></a>
+              <a class="identity-node" data-x="16" data-y="56" href="https://x.com/StaniKulechov" target="_blank" rel="noreferrer" aria-label="Stani Kulechov on X"><span class="identity-avatar">SK</span><span class="identity-card"><strong>Stani Kulechov</strong><small>@StaniKulechov</small><em>AAVE</em></span></a>
+              <a class="identity-node" data-x="35" data-y="73" href="https://x.com/sandeepnailwal" target="_blank" rel="noreferrer" aria-label="Sandeep Nailwal on X"><span class="identity-avatar">SN</span><span class="identity-card"><strong>Sandeep Nailwal</strong><small>@sandeepnailwal</small><em>POLYGON</em></span></a>
+              <a class="identity-node" data-x="54" data-y="53" href="https://x.com/balajis" target="_blank" rel="noreferrer" aria-label="Balaji Srinivasan on X"><span class="identity-avatar">BS</span><span class="identity-card"><strong>Balaji Srinivasan</strong><small>@balajis</small><em>NETWORK STATE</em></span></a>
+              <a class="identity-node card-left" data-x="79" data-y="64" href="https://x.com/cobie" target="_blank" rel="noreferrer" aria-label="Cobie on X"><span class="identity-avatar">CO</span><span class="identity-card"><strong>Cobie</strong><small>@cobie</small><em>CRYPTO MEDIA</em></span></a>
+              <a class="identity-node" data-x="7" data-y="84" href="https://x.com/punk6529" target="_blank" rel="noreferrer" aria-label="Punk6529 on X"><span class="identity-avatar">65</span><span class="identity-card"><strong>Punk6529</strong><small>@punk6529</small><em>OPEN METAVERSE</em></span></a>
+              <a class="identity-node" data-x="57" data-y="86" href="https://x.com/cdixon" target="_blank" rel="noreferrer" aria-label="Chris Dixon on X"><span class="identity-avatar">CD</span><span class="identity-card"><strong>Chris Dixon</strong><small>@cdixon</small><em>WEB3 INVESTING</em></span></a>
+              <a class="identity-node card-left" data-x="94" data-y="86" href="https://x.com/laurashin" target="_blank" rel="noreferrer" aria-label="Laura Shin on X"><span class="identity-avatar">LS</span><span class="identity-card"><strong>Laura Shin</strong><small>@laurashin</small><em>CRYPTO JOURNALISM</em></span></a>
+              <a class="identity-node" data-x="16" data-y="37" href="https://x.com/cz_binance" target="_blank" rel="noreferrer" aria-label="Changpeng Zhao on X"><span class="identity-avatar">CZ</span><span class="identity-card"><strong>Changpeng Zhao</strong><small>@cz_binance</small><em>BINANCE</em></span></a>
+              <a class="identity-node" data-x="34" data-y="45" href="https://x.com/CryptoHayes" target="_blank" rel="noreferrer" aria-label="Arthur Hayes on X"><span class="identity-avatar">AH</span><span class="identity-card"><strong>Arthur Hayes</strong><small>@CryptoHayes</small><em>MACRO / CRYPTO</em></span></a>
+              <a class="identity-node" data-x="51" data-y="11" href="https://x.com/RaoulGMI" target="_blank" rel="noreferrer" aria-label="Raoul Pal on X"><span class="identity-avatar">RP</span><span class="identity-card"><strong>Raoul Pal</strong><small>@RaoulGMI</small><em>REAL VISION</em></span></a>
+              <a class="identity-node" data-x="71" data-y="36" href="https://x.com/RyanSAdams" target="_blank" rel="noreferrer" aria-label="Ryan Sean Adams on X"><span class="identity-avatar">RA</span><span class="identity-card"><strong>Ryan Sean Adams</strong><small>@RyanSAdams</small><em>BANKLESS</em></span></a>
+              <a class="identity-node card-left" data-x="93" data-y="47" href="https://x.com/TrustlessState" target="_blank" rel="noreferrer" aria-label="David Hoffman on X"><span class="identity-avatar">DH</span><span class="identity-card"><strong>David Hoffman</strong><small>@TrustlessState</small><em>BANKLESS</em></span></a>
+              <a class="identity-node" data-x="5" data-y="42" href="https://x.com/farokh" target="_blank" rel="noreferrer" aria-label="Farokh on X"><span class="identity-avatar">FA</span><span class="identity-card"><strong>Farokh</strong><small>@farokh</small><em>RUG RADIO</em></span></a>
+              <a class="identity-node" data-x="25" data-y="88" href="https://x.com/hosseeb" target="_blank" rel="noreferrer" aria-label="Haseeb Qureshi on X"><span class="identity-avatar">HQ</span><span class="identity-card"><strong>Haseeb Qureshi</strong><small>@hosseeb</small><em>DRAGONFLY</em></span></a>
+              <a class="identity-node" data-x="46" data-y="68" href="https://x.com/packyM" target="_blank" rel="noreferrer" aria-label="Packy McCormick on X"><span class="identity-avatar">PM</span><span class="identity-card"><strong>Packy McCormick</strong><small>@packyM</small><em>NOT BORING</em></span></a>
+              <a class="identity-node" data-x="68" data-y="73" href="https://x.com/ethereumJoseph" target="_blank" rel="noreferrer" aria-label="Joseph Lubin on X"><span class="identity-avatar">JL</span><span class="identity-card"><strong>Joseph Lubin</strong><small>@ethereumJoseph</small><em>CONSENSYS</em></span></a>
+              <a class="identity-node card-left" data-x="84" data-y="10" href="https://x.com/gavofyork" target="_blank" rel="noreferrer" aria-label="Gavin Wood on X"><span class="identity-avatar">GW</span><span class="identity-card"><strong>Gavin Wood</strong><small>@gavofyork</small><em>POLKADOT</em></span></a>
+              <a class="identity-node card-left" data-x="75" data-y="91" href="https://x.com/AriannaSimpson" target="_blank" rel="noreferrer" aria-label="Arianna Simpson on X"><span class="identity-avatar">AS</span><span class="identity-card"><strong>Arianna Simpson</strong><small>@AriannaSimpson</small><em>WEB3 INVESTING</em></span></a>
+              <a class="identity-node" data-x="41" data-y="91" href="https://x.com/naval" target="_blank" rel="noreferrer" aria-label="Naval Ravikant on X"><span class="identity-avatar">NV</span><span class="identity-card"><strong>Naval Ravikant</strong><small>@naval</small><em>TECH / CRYPTO</em></span></a>
+            </div>
+            <p class="identity-hint">MOVE CURSOR / REVEAL PUBLIC X PROFILES</p>
+            <a class="avatar-credit" href="https://unavatar.io" target="_blank" rel="noreferrer">AVATARS VIA UNAVATAR</a>
+            <div class="signal-pulse"><b></b><span>LIVE SOCIAL GRAPH</span></div>
+          </div>
+
+          <aside class="signal-note signal-note-right">
+            <span>D://POINTER_SCAN</span>
+            <strong>REVEAL A ROUTE</strong>
+            <small>PUBLIC PROFILES / NO AFFILIATION</small>
+          </aside>
+        </div>
+
+        <div class="signal-bottom">
+          <p class="grant-lead">Use a verified X identity as a route for payments, claims, access and future agent actions. The first live module is private USDC escrow on Arc.</p>
+          <div class="grant-actions">
+            <button class="primary-button" data-enter-dapp>OPEN_MVP <span>›››</span></button>
+            <a class="text-link" href="./docs.html">PROJECT_FILES <span>↗</span></a>
+          </div>
+          <span class="signal-coordinate">X.5042002 // Y.USDC</span>
         </div>
       </section>
+
+      <section class="proof-strip" aria-label="Current project status" data-project-metrics>
+        <article><span>STATUS</span><strong>TESTNET-READY MVP</strong><small>Local end-to-end implementation</small></article>
+        <article><span>QUALITY</span><strong>37 / 37 TESTS</strong><small>API, wallet, identity, recipient UX, security and Solidity</small></article>
+        <article><span>SETTLEMENT</span><strong>ARC + USDC</strong><small>On-chain escrow lifecycle</small></article>
+        <article><span>IDENTITY</span><strong>X OAUTH 2.0</strong><small>Immutable recipient lookup</small></article>
+      </section>
+
+      <section id="product" class="grant-section problem-section">
+        <header class="section-index"><span>01</span><p>PROBLEM / OPPORTUNITY</p></header>
+        <div class="section-heading"><p class="eyebrow">(WHY HANDLE LAYER)</p><h2>Wallet addresses are infrastructure.<br />People think in identities.</h2></div>
+        <div class="problem-grid">
+          <article><span>THE FRICTION</span><p>Stablecoin payments still begin by requesting, copying and checking a long wallet address. That breaks the natural flow of social payments.</p></article>
+          <article><span>THE RISK</span><p>A mistyped or substituted address can make a transfer irreversible. The sender also has no reliable proof that the address belongs to the intended social identity.</p></article>
+          <article class="solution-card"><span>THE HANDLE LAYER MODEL</span><p>Verify the identity first, then authorize the requested action. Today that action is escrow settlement; the same boundary can support access, claims and agent permissions.</p></article>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="grant-section flow-section">
+        <header class="section-index"><span>02</span><p>PRODUCT FLOW</p></header>
+        <div class="section-heading"><p class="eyebrow">(FOUR VERIFIABLE STEPS)</p><h2>From @handle<br />to final settlement.</h2></div>
+        <ol class="flow-list">
+          <li><span>01</span><div><strong>ADDRESS</strong><p>The sender enters an X handle, amount, expiry and privacy preferences.</p></div><b>@alice</b></li>
+          <li><span>02</span><div><strong>ESCROW</strong><p>The backend resolves the immutable X user ID and prepares USDC approval plus escrow funding calls.</p></div><b>25 USDC</b></li>
+          <li><span>03</span><div><strong>VERIFY</strong><p>The recipient opens the exact claim link, completes fresh X OAuth and proves control of the claim wallet.</p></div><b>OAuth + signature</b></li>
+          <li><span>04</span><div><strong>SETTLE</strong><p>A short-lived authorization releases USDC on Arc. Unclaimed payments can be cancelled or refunded after expiry.</p></div><b>On-chain receipt</b></li>
+        </ol>
+      </section>
+
+      <section id="architecture" class="grant-section architecture-section">
+        <header class="section-index"><span>03</span><p>TECHNICAL ARCHITECTURE</p></header>
+        <div class="architecture-copy">
+          <div class="section-heading"><p class="eyebrow">(TWO SYSTEMS / ONE PAYMENT)</p><h2><span>X verifies.</span><span>Arc settles.</span></h2></div>
+          <p>X confirms who the recipient is. Arc escrow holds the USDC and enforces claim, cancel, and refund rules. The backend authorizes access; the contract controls the money.</p>
+          <a class="text-link" href="./docs.html#architecture">OPEN ARCHITECTURE DOC <span>→</span></a>
+        </div>
+        <div class="architecture-map" aria-label="HandleLayer architecture diagram">
+          <div class="arch-node sender"><span>01</span><strong>SENDER</strong><small>Wallet + X session</small></div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node api"><span>02</span><strong>HANDLE LAYER API</strong><small>OAuth · privacy · authorization</small></div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node arc"><span>03</span><strong>ARC ESCROW</strong><small>USDC · claim · refund</small></div>
+          <div class="arch-line"></div>
+          <div class="arch-node x"><span>A</span><strong>X API</strong><small>Immutable user ID</small></div>
+          <div class="arch-node db"><span>B</span><strong>POSTGRESQL</strong><small>Sessions · intents · audit</small></div>
+          <div class="arch-node indexer"><span>C</span><strong>INDEXER</strong><small>Contract events</small></div>
+        </div>
+      </section>
+
+      <section id="status" class="grant-section built-section">
+        <header class="section-index"><span>04</span><p>CURRENT BASELINE</p></header>
+        <div class="baseline-intro">
+          <div class="section-heading">
+            <p class="eyebrow">(REPOSITORY STATUS / JUL. 2026)</p>
+            <h2><span>Core system built.</span><span>Public launch next.</span></h2>
+          </div>
+          <p>The payment lifecycle, identity boundary and operating layer work locally. The honest boundary is deployment: no public Arc contract or approved X application is claimed yet.</p>
+        </div>
+        <div class="baseline-metrics" aria-label="Current implementation metrics">
+          <article><strong>37<span>/37</span></strong><p>automated tests passing</p></article>
+          <article><strong>04</strong><p>payment lifecycle paths</p></article>
+          <article><strong>07</strong><p>durable data tables</p></article>
+          <article class="metric-boundary"><strong>00</strong><p>public deployments claimed</p></article>
+        </div>
+        <div class="baseline-grid">
+          <article>
+            <header><span>01 / CHAIN</span><b>DONE</b></header>
+            <strong>Escrow lifecycle</strong>
+            <p>USDC funding, claim, cancel, expiry refund, fee routing and emergency pause.</p>
+          </article>
+          <article>
+            <header><span>02 / IDENTITY</span><b>DONE</b></header>
+            <strong>Verified recipient</strong>
+            <p>X OAuth 2.0 PKCE, immutable X user ID lookup and wallet signature challenges.</p>
+          </article>
+          <article>
+            <header><span>03 / OPERATIONS</span><b>DONE</b></header>
+            <strong>Durable backend</strong>
+            <p>PostgreSQL, event checkpoints, private API scopes, rate limits and audit logs.</p>
+          </article>
+          <article class="baseline-next">
+            <header><span>04 / PUBLIC GATE</span><b>NEXT</b></header>
+            <strong>Prove it live</strong>
+            <p>Deploy and verify on Arc Testnet, configure X, publish the demo and complete review.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="security" class="security-band">
+        <div><p class="eyebrow">(SECURITY MODEL)</p><h2>Verify every boundary.<br />Fail closed by default.</h2></div>
+        <div class="security-points">
+          <p><span>01</span>Funding status requires a matching Arc receipt and PaymentCreated event.</p>
+          <p><span>02</span>Claim signatures bind payment, wallet, chain, contract and authorization expiry.</p>
+          <p><span>03</span>Private amount, sender and memo are omitted for unauthorized viewers.</p>
+          <p><span>04</span>Refund remains available while the contract is emergency-paused.</p>
+        </div>
+      </section>
+
+      <section id="roadmap" class="grant-section roadmap-section">
+        <header class="section-index"><span>05</span><p>16-WEEK GRANT ROUTE</p></header>
+        <div class="roadmap-intro">
+          <div class="section-heading">
+            <p class="eyebrow">(THREE FUNDED MILESTONES / $75K)</p>
+            <h2><span>Deploy.</span><span>Prove. Decide.</span></h2>
+          </div>
+          <p>Each milestone ends in evidence a reviewer can inspect. Mainnet is not assumed: the final phase produces a documented go / no-go decision.</p>
+        </div>
+        <div class="roadmap-track">
+          <article class="roadmap-stage roadmap-now">
+            <header><span>00 / NOW</span><b>COMPLETE</b></header>
+            <div class="roadmap-marker"><i></i><small>BASELINE</small></div>
+            <strong>Testnet-ready core</strong>
+            <p>Contract, API, identity, persistence and privacy controls are implemented locally.</p>
+            <ul><li>37 / 37 automated tests</li><li>Claim, cancel and refund paths</li></ul>
+            <footer><span>OUTPUT</span><em>Repository baseline</em></footer>
+          </article>
+          <article class="roadmap-stage">
+            <header><span>01 / W01–05</span><b>$24K</b></header>
+            <div class="roadmap-marker"><i></i><small>DEPLOY</small></div>
+            <strong>Public Arc Testnet</strong>
+            <p>Move the working system from local readiness to an independently reviewable demo.</p>
+            <ul><li>Verified contract + configured X app</li><li>20 repeatable lifecycle runs</li></ul>
+            <footer><span>OUTPUT</span><em>Public testnet demo</em></footer>
+          </article>
+          <article class="roadmap-stage">
+            <header><span>02 / W06–11</span><b>$31K</b></header>
+            <div class="roadmap-marker"><i></i><small>PROVE</small></div>
+            <strong>Security + closed pilot</strong>
+            <p>Validate the trust model and full payment journey with a monitored tester cohort.</p>
+            <ul><li>High / critical findings resolved</li><li>50 testers · 100 funded payments</li></ul>
+            <footer><span>OUTPUT</span><em>Review + pilot report</em></footer>
+          </article>
+          <article class="roadmap-stage roadmap-decision">
+            <header><span>03 / W12–16</span><b>$20K</b></header>
+            <div class="roadmap-marker"><i></i><small>DECIDE</small></div>
+            <strong>Production decision</strong>
+            <p>Prove operational resilience, measure adoption and set evidence-based launch criteria.</p>
+            <ul><li>100 testers · 250 funded payments</li><li>Recovery drill + launch review</li></ul>
+            <footer><span>OUTPUT</span><em>Go / no-go package</em></footer>
+          </article>
+        </div>
+        <div class="roadmap-outcomes" aria-label="Pilot success criteria">
+          <p><span>PILOT TARGETS</span><strong>100</strong> testers</p>
+          <p><strong>250</strong> funded payments</p>
+          <p><strong>≥80%</strong> claim completion</p>
+          <p><strong>≤5 MIN</strong> median active claim</p>
+          <p><strong>0</strong> private-field authorization failures</p>
+        </div>
+      </section>
+
+      <section id="knowledge" class="grant-section knowledge-section">
+        <header class="section-index"><span>06</span><p>KNOWLEDGE / REFERENCES</p></header>
+        <div class="knowledge-intro">
+          <div class="section-heading"><p class="eyebrow">(ANSWER-FIRST / AI-READABLE)</p><h2>What the system is.<br />What it is not.</h2></div>
+          <p class="geo-summary">HandleLayer connects a verified X identity and an EVM wallet to programmable onchain actions. The first module routes private USDC escrow on Arc; it does not claim mainnet deployment or production readiness.</p>
+        </div>
+        <div class="knowledge-grid">
+          <div class="faq-stack" id="faq">
+            <details open><summary><span>01</span>What is HandleLayer?</summary><p class="faq-answer">HandleLayer is an identity routing layer that connects a verified X account and an EVM wallet to programmable onchain actions. Its first module is private USDC escrow on Arc.</p></details>
+            <details><summary><span>02</span>How are funds protected?</summary><p class="faq-answer">USDC is held by an Arc escrow contract. A verified recipient can claim it with a short-lived authorization, while the sender can cancel an eligible payment or refund it after expiry.</p></details>
+            <details><summary><span>03</span>Why require X and a wallet?</summary><p class="faq-answer">X OAuth verifies the intended social identity. A wallet signature separately proves control of the address that funds or receives the onchain action.</p></details>
+            <details><summary><span>04</span>Is it live on Arc mainnet?</summary><p class="faq-answer">No. The repository contains a locally tested MVP for Arc Testnet. Public contract deployment, independent security review and a production decision remain roadmap milestones.</p></details>
+          </div>
+          <aside class="reference-stack" aria-label="Official technical references">
+            <p class="eyebrow">(PRIMARY SOURCES)</p>
+            <a href="https://docs.arc.io/arc-chain" target="_blank" rel="noopener noreferrer"><span>ARC / NETWORK</span><strong>Stablecoin-native Layer 1 and EVM compatibility</strong><b>↗</b></a>
+            <a href="https://docs.arc.io/arc/references/connect-to-arc" target="_blank" rel="noopener noreferrer"><span>ARC / TESTNET</span><strong>Official network configuration</strong><b>↗</b></a>
+            <a href="https://docs.x.com/fundamentals/authentication/oauth-2-0/authorization-code" target="_blank" rel="noopener noreferrer"><span>X / IDENTITY</span><strong>OAuth 2.0 Authorization Code Flow with PKCE</strong><b>↗</b></a>
+            <a href="https://developers.circle.com/cctp/concepts/supported-chains-and-domains" target="_blank" rel="noopener noreferrer"><span>CIRCLE / USDC</span><strong>Supported chains and Arc Testnet</strong><b>↗</b></a>
+          </aside>
+        </div>
+      </section>
+
+      <section id="documents" class="grant-section documents-section">
+        <header class="section-index"><span>07</span><p>PROJECT DOCUMENTS</p></header>
+        <div class="documents-intro"><div class="section-heading"><p class="eyebrow">(REVIEWER PACK)</p><h2>Everything needed<br />to evaluate the project.</h2></div><p>Technical claims are tied to the current repository. Unknown submission details remain clearly marked instead of being invented.</p></div>
+        <div class="document-grid" data-project-documents>
+          <a href="./docs.html#grant"><span>01</span><strong>GRANT APPLICATION</strong><small>Problem, solution, impact and milestones</small><b>↗</b></a>
+          <a href="./docs.html#architecture"><span>02</span><strong>ARCHITECTURE</strong><small>Components, trust boundaries and flow</small><b>↗</b></a>
+          <a href="./docs.html#security"><span>03</span><strong>SECURITY</strong><small>Threat model and implemented controls</small><b>↗</b></a>
+          <a href="./docs.html#roadmap"><span>04</span><strong>ROADMAP</strong><small>Milestones, deliverables and success criteria</small><b>↗</b></a>
+          <a href="./docs.html#demo"><span>05</span><strong>DEMO GUIDE</strong><small>Setup, test and reviewer walkthrough</small><b>↗</b></a>
+          <a href="./docs.html#checklist"><span>06</span><strong>SUBMISSION CHECKLIST</strong><small>Remaining details before the grant form</small><b>↗</b></a>
+        </div>
+      </section>
+
+      <footer class="grant-footer site-footer">
+        <div class="footer-lead"><p class="eyebrow">(HANDLE LAYER / ARC)</p><h2>Identity becomes<br />an action route.</h2><p>Explore the product, inspect the trust model, follow delivery evidence or open the working MVP.</p></div>
+        <div class="footer-actions"><button class="primary-button" data-enter-dapp>OPEN MVP ↗</button><a class="ghost-button" href="./docs.html">REVIEW DOCUMENTS</a></div>
+        <nav class="footer-map" aria-label="Site sections">
+          <section><span>01 / PRODUCT</span><a href="#overview">Identity layer overview</a><a href="#product">Problem and model</a><a href="#how-it-works">USDC payment workflow</a></section>
+          <section><span>02 / TRUST</span><a href="#architecture">System architecture</a><a href="#status">Current implementation</a><a href="#security">Security boundaries</a></section>
+          <section><span>03 / DELIVERY</span><a href="#roadmap">16-week roadmap</a><a href="./docs.html#pilot">Pilot and impact plan</a><a href="./docs.html#status">Evidence and project status</a></section>
+          <section><span>04 / DOCUMENTS</span><a href="./docs.html">Reviewer document hub</a><a href="./docs.html#grant">Grant application</a><a href="./docs.html#demo">Demo and submission guide</a></section>
+        </nav>
+        <div class="footer-bottom"><span>HANDLELAYER / ARC TESTNET / JUL.2026</span><a href="#overview">BACK TO TOP ↑</a></div>
+      </footer>
     </main>
 
     <main id="registerScreen" class="hidden"></main>
 
     <main id="dappShell" class="shell hidden">
-      <aside class="rail" aria-label="HandlePay status">
-        <div class="brand">
-          <span class="brand-mark">H</span>
-          <div>
-            <strong>HandlePay</strong>
-            <small>Arc USDC tips</small>
-          </div>
-        </div>
+      <aside class="rail" aria-label="HandleLayer navigation">
+        <button class="brand dapp-home" type="button" data-home aria-label="Back to HandleLayer overview">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <strong>HANDLE LAYER / ARC</strong>
+        </button>
 
         <nav class="tabs" aria-label="Views">
-          <button class="tab active" data-view="send">Send</button>
-          <button class="tab" data-view="claim">Claim</button>
-          <button class="tab" data-view="dashboard">History</button>
-          <button class="tab" data-view="profile">Profile</button>
+          <button class="tab active" data-view="send">SEND</button>
+          <button class="tab" data-view="claim">CLAIM</button>
+          <button class="tab" data-view="dashboard">ACTIVITY</button>
+          <button class="tab" data-view="profile">ACCOUNT</button>
         </nav>
 
-        <section class="chain-card">
-          <span>Settlement</span>
-          <strong>Arc Testnet</strong>
-          <small>USDC escrow, claim by X OAuth</small>
+        <section class="chain-card" aria-label="Network status">
+          <i></i><span>ARC TESTNET</span><small>USDC</small>
         </section>
       </aside>
 
@@ -126,201 +414,153 @@
         <section class="panel register-panel modal-panel">
           <div class="modal-heading">
             <div>
-              <p class="eyebrow">Create account</p>
-              <h2 id="profile-modal-title">Connect to start.</h2>
+              <p class="eyebrow">(ACCOUNT SETUP)</p>
+              <h2 id="profile-modal-title">CONNECT<br />IDENTITY</h2>
+              <p id="profileModalLead">Start with either X or wallet. Both are required to send.</p>
             </div>
-            <button class="ghost-button icon-button" type="button" data-close-profile-modal aria-label="Close">X</button>
+            <button class="icon-button" type="button" data-close-profile-modal aria-label="Close">×</button>
           </div>
 
           <div id="registerNotice" class="register-notice hidden" role="status"></div>
 
           <div id="walletAuthStep" class="auth-step">
-            <span class="step-number">1</span>
-            <div id="walletIdentity" class="x-identity">
-              <strong>Wallet not connected</strong>
-              <small>Connect wallet to create or load your account.</small>
-            </div>
-            <button id="connectProfileWallet" class="ghost-button" type="button">Connect wallet</button>
+            <span class="identity-icon">01</span>
+            <div id="walletIdentity" class="x-identity"><strong>WALLET</strong><small>Not connected</small></div>
+            <button id="connectProfileWallet" class="ghost-button" type="button">CONNECT</button>
           </div>
 
           <div id="xAuthStep" class="auth-step">
-            <span class="step-number">2</span>
-            <div id="xIdentity" class="x-identity">
-              <strong>X account not connected</strong>
-              <small>Connect X to create, load, or link your social identity.</small>
-            </div>
-            <button id="connectXProfile" class="ghost-button" type="button">Connect X / Twitter</button>
+            <span class="identity-icon">02</span>
+            <div id="xIdentity" class="x-identity"><strong>X ACCOUNT</strong><small>Not connected</small></div>
+            <button id="connectXProfile" class="ghost-button" type="button">CONNECT</button>
           </div>
 
-          <form id="profileForm" class="form-grid">
-            <button id="createProfile" class="primary-button wide" type="submit" disabled>Enter dapp</button>
-          </form>
+          <form id="profileForm"><button id="createProfile" class="primary-button wide" type="submit" disabled>CONTINUE ↗</button></form>
+        </section>
+      </div>
+
+      <div id="paymentConfirmModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="payment-confirm-title">
+        <div class="modal-backdrop" data-close-payment-confirm></div>
+        <section class="panel modal-panel payment-confirm-panel">
+          <div class="modal-heading">
+            <div><p class="eyebrow">(FINAL RECIPIENT CHECK)</p><h2 id="payment-confirm-title">CONFIRM<br />ROUTE</h2><p>Verify the X identity before opening your wallet.</p></div>
+            <button class="icon-button" type="button" data-close-payment-confirm aria-label="Close">×</button>
+          </div>
+          <div class="payment-confirm-recipient">
+            <span id="confirmRecipientAvatar" class="recipient-monogram" aria-hidden="true">?</span>
+            <div><small>SENDING TO</small><strong id="confirmRecipientName">Recipient</strong><span id="confirmRecipientHandle">@handle</span></div>
+            <b>WILL VERIFY VIA X API</b>
+          </div>
+          <dl class="payment-confirm-facts">
+            <div><dt>AMOUNT</dt><dd id="confirmAmount">0.00 USDC</dd></div>
+            <div><dt>NETWORK</dt><dd>ARC TESTNET</dd></div>
+            <div><dt>EXPIRY</dt><dd id="confirmExpiry">30 DAYS</dd></div>
+          </dl>
+          <p class="payment-confirm-note">The server resolves the current X user ID before the escrow transaction is created. Check the handle carefully.</p>
+          <div class="payment-confirm-actions"><button class="ghost-button" type="button" data-close-payment-confirm>BACK</button><button id="confirmPayment" class="primary-button" type="button">CONFIRM &amp; FUND ↗</button></div>
         </section>
       </div>
 
       <section class="workspace">
         <header class="topbar">
-          <div>
-            <p class="eyebrow">Send USDC to any X handle</p>
-            <h1>Tips without asking for a wallet.</h1>
-          </div>
+          <div><p class="eyebrow">(NEW ON-CHAIN PAYMENT)</p><h1>SEND</h1></div>
+          <span class="topbar-hint">USDC → @HANDLE</span>
         </header>
 
         <div id="appNotice" class="notice hidden" role="status"></div>
 
         <section id="send" class="view active" aria-labelledby="send-title">
           <div id="sendGate" class="gate wide">
-            <div>
-              <p class="eyebrow">Wallet + X required</p>
-              <strong>Connect both wallet and X before sending tips.</strong>
-              <span>You can create or load an account with either one, but sending needs both linked.</span>
-            </div>
-            <button class="primary-button" data-register-profile>Connect / Create account</button>
+            <div class="gate-copy"><strong id="sendGateTitle">IDENTITY REQUIRED</strong><span id="sendGateText">Start with X or wallet; connect both before funding escrow.</span></div>
+            <div class="identity-chips"><span id="gateWalletStatus">WALLET</span><span id="gateXStatus">X ACCOUNT</span></div>
+            <button id="sendGateAction" class="primary-button compact" data-register-profile>START SETUP ↗</button>
           </div>
 
           <div class="panel main-panel">
             <div class="panel-heading">
-              <div>
-                <p class="eyebrow">Create tip</p>
-                <h2 id="send-title">Pay an X handle</h2>
-              </div>
-              <span class="pill">X lookup required</span>
+              <div><p class="eyebrow">(PAYMENT INPUT)</p><h2 id="send-title">NEW TRANSFER</h2></div>
+              <span class="pill">ARC ESCROW</span>
             </div>
 
             <form id="sendForm" class="form-grid">
-              <label>
-                X handle
-                <input id="handle" name="handle" placeholder="@alice" autocomplete="off" required />
-              </label>
-              <label>
-                Amount USDC
-                <input id="amount" name="amount" type="number" min="1" step="0.01" value="25" required />
-              </label>
-              <label>
-                Expiry
-                <select id="expiry" name="expiry">
-                  <option value="30">30 days default</option>
-                  <option value="7">7 days</option>
-                  <option value="14">14 days</option>
-                  <option value="60">60 days</option>
-                  <option value="custom">Custom</option>
-                </select>
-              </label>
-              <label id="customExpiryWrap" class="hidden">
-                Custom days
-                <input id="customExpiry" type="number" min="1" max="365" value="45" />
-              </label>
-              <label>
-                Amount visibility
-                <select id="amountVisibility">
-                  <option value="private">Private until X OAuth</option>
-                  <option value="public">Public on claim page</option>
-                </select>
-              </label>
-              <label>
-                Sender visibility
-                <select id="senderVisibility">
-                  <option value="private">Private in UI</option>
-                  <option value="public">Public</option>
-                </select>
-              </label>
-              <label>
-                Cancel mode
-                <select id="cancelMode">
-                  <option value="cancellable">Sender can cancel before expiry</option>
-                  <option value="locked">Locked until expiry</option>
-                </select>
-              </label>
-              <label>
-                Platform fee
-                <select id="feePreset">
-                  <option value="0.5">0.5% minimum</option>
-                  <option value="1">1%</option>
-                  <option value="2">2%</option>
-                  <option value="custom">Custom</option>
-                </select>
-              </label>
-              <label id="customFeeWrap" class="hidden">
-                Custom fee %
-                <input id="customFee" type="number" min="0.5" max="10" step="0.1" value="1.5" />
-              </label>
-              <label class="wide">
-                Private memo
-                <textarea id="memo" rows="3" placeholder="Visible only after recipient signs in with X">Thanks for the alpha thread.</textarea>
-              </label>
-
-              <div class="quote wide">
-                <span>Total sender pays</span>
-                <strong id="totalDue">25.13 USDC</strong>
-                <small id="feeLine">Includes 0.13 USDC platform fee for X verification and protocol costs.</small>
+              <div class="recipient-field field-primary" data-recipient-picker>
+                <label id="recipientLabel" for="handle">X RECIPIENT <small>NAME, @HANDLE OR X LINK</small></label>
+                <div class="recipient-input-shell"><span>@</span><input id="handle" name="handle" role="combobox" aria-labelledby="recipientLabel" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="recipientOptions" placeholder="Search people and projects" autocomplete="off" required /><kbd>⌘ K</kbd></div>
+                <div id="selectedRecipient" class="selected-recipient hidden" aria-live="polite"></div>
+                <section id="recipientPicker" class="recipient-picker hidden" aria-label="Choose X recipient">
+                  <div class="recipient-filter-bar" aria-label="Recipient filters">
+                    <button type="button" data-recipient-filter="all" aria-pressed="true">TOP</button>
+                    <button type="button" data-recipient-filter="recent" aria-pressed="false">RECENT</button>
+                    <button type="button" data-recipient-filter="favorites" aria-pressed="false">SAVED</button>
+                    <button type="button" data-recipient-filter="base" aria-pressed="false">BASE</button>
+                    <button type="button" data-recipient-filter="people" aria-pressed="false">PEOPLE</button>
+                    <button type="button" data-recipient-filter="projects" aria-pressed="false">PROJECTS</button>
+                  </div>
+                  <div class="recipient-picker-meta"><span id="recipientResultsStatus">PUBLIC X DIRECTORY</span><small>↑↓ SELECT · ENTER CONFIRM · ESC CLOSE</small></div>
+                  <div id="recipientOptions" class="recipient-options" role="listbox" aria-labelledby="recipientLabel"></div>
+                </section>
               </div>
+              <label class="field-primary">AMOUNT<div class="input-suffix"><input id="amount" name="amount" type="number" min="1" step="0.01" value="25" required /><span>USDC</span></div></label>
 
-              <button class="primary-button wide" type="submit">Create Arc escrow tip</button>
+              <label class="wide">PRIVATE NOTE <small>Recipient only</small><textarea id="memo" rows="2" placeholder="Write a short message..."></textarea></label>
+
+              <details class="advanced-fields wide">
+                <summary><span>PAYMENT PARAMETERS</span><small>30 DAYS / PRIVATE / REFUNDABLE</small></summary>
+                <div class="advanced-grid">
+                  <label>EXPIRES<select id="expiry" name="expiry"><option value="30">30 days</option><option value="7">7 days</option><option value="14">14 days</option><option value="60">60 days</option><option value="custom">Custom</option></select></label>
+                  <label id="customExpiryWrap" class="hidden">CUSTOM DAYS<input id="customExpiry" type="number" min="1" max="365" value="45" /></label>
+                  <label>AMOUNT VISIBILITY<select id="amountVisibility"><option value="private">Recipient only</option><option value="public">Public</option></select></label>
+                  <label>SENDER VISIBILITY<select id="senderVisibility"><option value="private">Recipient only</option><option value="public">Public</option></select></label>
+                  <label>REFUND<select id="cancelMode"><option value="cancellable">Any time before claim</option><option value="locked">After expiry only</option></select></label>
+                  <label>PROTOCOL FEE<select id="feePreset"><option value="0.5">0.5%</option><option value="1">1%</option><option value="2">2%</option><option value="custom">Custom</option></select></label>
+                  <label id="customFeeWrap" class="hidden">CUSTOM FEE %<input id="customFee" type="number" min="0.5" max="10" step="0.1" value="1.5" /></label>
+                </div>
+              </details>
+
+              <div class="payment-submit wide">
+                <div class="quote"><span>TOTAL TO FUND</span><strong id="totalDue">25.13 USDC</strong><small id="feeLine">Includes 0.13 USDC protocol fee.</small></div>
+                <button class="primary-button" type="submit">REVIEW &amp; FUND ↗</button>
+              </div>
             </form>
           </div>
 
           <div class="panel receipt-panel">
-            <p class="eyebrow">Latest payment</p>
-            <div id="latestPayment" class="empty-state">No tip created yet.</div>
+            <div class="side-heading"><span>LAST PAYMENT</span><i></i></div>
+            <div id="latestPayment" class="empty-state payment-zero">
+              <div class="empty-route-visual" aria-hidden="true"><span>IDENTITY</span><i></i><span>ESCROW</span><i></i><span>RECEIPT</span></div>
+              <div class="empty-receipt-copy"><small>RECEIPT SLOT / 00</small><strong>FIRST PAYMENT<br />STARTS HERE.</strong><p>Claim link, amount, expiry and settlement state will appear in this panel.</p></div>
+              <button class="ghost-button empty-payment-action" type="button" data-empty-payment-action>COMPLETE IDENTITY ↗</button>
+            </div>
           </div>
         </section>
 
         <section id="claim" class="view" aria-labelledby="claim-title">
           <div class="panel claim-panel">
-            <p class="eyebrow">Claim page</p>
-            <h2 id="claim-title">You have USDC waiting.</h2>
-            <p class="lead">Sign in with X first. Then connect wallet and claim to your Arc address.</p>
+            <p class="eyebrow">(CLAIM ROUTE)</p><h2 id="claim-title">USDC<br />WAITING</h2><p class="lead">Verify the recipient X account, then select an Arc wallet.</p>
             <div id="claimPreview" class="claim-card"></div>
-            <label id="walletClaimWrap" class="wallet-claim hidden">
-              Arc wallet address
-              <input id="claimWallet" placeholder="0x..." autocomplete="off" />
-            </label>
-            <div class="claim-actions">
-              <button id="verifyX" class="primary-button">Continue with X</button>
-              <button id="connectWallet" class="ghost-button" disabled>Connect wallet</button>
-              <button id="claimPayment" class="ghost-button" disabled>Claim USDC</button>
-            </div>
+            <label id="walletClaimWrap" class="wallet-claim hidden">CLAIM WALLET<input id="claimWallet" placeholder="0x..." autocomplete="off" readonly /></label>
+            <div class="claim-actions"><button id="verifyX" class="primary-button">VERIFY X</button><button id="connectWallet" class="ghost-button" disabled>CONNECT WALLET</button><button id="claimPayment" class="ghost-button" disabled>CLAIM USDC</button></div>
           </div>
         </section>
 
         <section id="dashboard" class="view" aria-labelledby="dashboard-title">
           <div class="panel">
-            <div class="panel-heading">
-              <div>
-                <p class="eyebrow">History</p>
-                <h2 id="dashboard-title">Sent and received history</h2>
-              </div>
-              <span id="historyCount" class="pill">0 payments</span>
-            </div>
-            <div id="dashboardProfile" class="profile-summary"></div>
-            <div id="history" class="history"></div>
+            <div class="panel-heading"><div><p class="eyebrow">(LEDGER)</p><h2 id="dashboard-title">ACTIVITY</h2></div><span id="historyCount" class="pill">0 PAYMENTS</span></div>
+            <div id="dashboardProfile" class="profile-summary"></div><div id="history" class="history"></div>
           </div>
         </section>
 
         <section id="profile" class="view" aria-labelledby="profile-title">
-          <div class="profile-hero">
-            <div class="profile-badge">@handle</div>
-            <h2 id="profile-title">A public page with one job: send a USDC tip.</h2>
-            <p>No public tip feed in v1. Public tips are deferred.</p>
-            <button class="primary-button" data-view-jump="send">Send tip</button>
-          </div>
           <div class="panel profile-settings">
-            <div class="panel-heading">
-              <div>
-                <p class="eyebrow">Account settings</p>
-                <h2>Login and sending access</h2>
-              </div>
-            </div>
+            <div class="panel-heading"><div><p class="eyebrow">(IDENTITY)</p><h2 id="profile-title">ACCOUNT</h2></div><span class="pill">SECURE ACCESS</span></div>
             <div id="profileAccount" class="profile-summary"></div>
-            <div class="profile-actions">
-              <button id="profileConnectWallet" class="ghost-button" type="button">Connect wallet</button>
-              <button id="profileConnectX" class="ghost-button" type="button">Connect X / Twitter</button>
-            </div>
+            <div class="profile-actions"><button id="profileConnectWallet" class="ghost-button" type="button">CONNECT WALLET</button><button id="profileConnectX" class="ghost-button" type="button">CONNECT X</button></div>
           </div>
         </section>
       </section>
     </main>
 
-    <script src="./app.js?v=20260611-persisted-x-session"></script>
+    <script src="./project-page.js?v=20260714-hierarchy" defer></script>
+    <script type="module" src="./app.js?v=20260714-recipient-picker"></script>
   </body>
 </html>

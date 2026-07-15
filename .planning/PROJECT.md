@@ -1,6 +1,6 @@
 # HandlePay on Arc
 
-## Vision
+## What This Is
 
 HandlePay is an Arc-based USDC payment app for sending money to people by their X handle instead of a wallet address.
 
@@ -9,6 +9,14 @@ The core promise:
 > Send USDC to any X handle. They claim with X.
 
 The product is aimed at web3 users who already discover people, builders, traders, KOLs, founders, bounty hunters, and creators on X. The sender should not need to ask for a wallet address. The recipient should not need to be registered before the payment is created.
+
+## Core Value
+
+The sender targets a verified X identity instead of collecting a wallet address, while Arc escrow keeps the principal recoverable until the intended recipient proves both the X account and a destination wallet.
+
+## Requirements
+
+The tracked v1 requirements and their current implementation status live in `REQUIREMENTS.md`. Checked requirements mean repository implementation and automated evidence exist; public Arc deployment and real X/wallet acceptance testing remain explicit release gates.
 
 ## Why This Exists
 
@@ -131,4 +139,4 @@ Future privacy can add encrypted memo, pooled settlement, or zero-knowledge/TEE 
 - Should claims require wallet signature before X OAuth, after X OAuth, or both?
 
 ---
-*Last updated: 2026-06-05 after initialization*
+*Last updated: 2026-07-15 after implementation-status reconciliation*

@@ -1,54 +1,80 @@
-# HandlePay on Arc
+# HandleLayer on Arc
 
-Send USDC to any X handle. They claim with X.
+Send USDC to an X handle. The recipient proves the X identity, connects an Arc wallet, and claims from an onchain escrow.
 
-This repository currently contains a first MVP prototype for the v1 product flow:
+The repository now contains a testnet-ready implementation rather than a JSON-state payment mock:
 
-- server-backed local app state
-- profile registration before dapp entry
-- send a tip to an X handle
-- escrow-style payment settings
-- public/private amount and sender visibility
-- private memo after X OAuth
-- generated X mention copy
-- claim flow: X OAuth -> connect wallet -> claim
-- main page before entering the dapp
-- sender/recipient dashboard mock
-- Solidity escrow contract skeleton for Arc USDC settlement
+- Arc Testnet wallet switching and ERC-20 USDC approval
+- onchain escrow creation, claim, cancel, and expired refund
+- X OAuth 2.0 PKCE and immutable X user lookup
+- wallet ownership challenges signed with `personal_sign`
+- PostgreSQL profiles, sessions, payment intents, indexer state, and audit logs
+- scoped/private API payment views
+- receipt and contract-event verification
+- polling Arc event indexer
+- rate limits and HTTP security headers
+- Hardhat build, Solidity security tests, API tests, and dependency lockfile
 
-## Open Prototype
+## Local setup
 
-Run the local app server:
+Requirements: Node.js 22+, Docker Desktop, an X developer app, and an Arc Testnet wallet.
 
-```bash
+```powershell
+Copy-Item .env.example .env
+npm install
+npm run db:up
+npm run db:migrate
 npm start
 ```
 
-Then open:
+Open `http://127.0.0.1:4174/index.html`.
 
-```text
-http://127.0.0.1:4174/index.html
+Without X and contract environment variables the landing page still opens, but payment actions intentionally return configuration errors instead of creating fake records.
+
+## Test and build
+
+```powershell
+npm test
+npm audit
+npm run check
 ```
 
-## Project Docs
+## Arc deployment
 
-GSD artifacts live in `.planning/`.
+1. Fund the deployer with Arc Testnet USDC from the Circle faucet.
+2. Set `DEPLOYER_PRIVATE_KEY`, `VERIFIER_PRIVATE_KEY`, `TREASURY_ADDRESS`, and optionally `CONTRACT_OWNER_ADDRESS` in `.env`.
+3. Run `npm run contract:deploy`.
+4. Copy the resulting address and block from `deployments/arc-testnet.json` to `ESCROW_CONTRACT_ADDRESS` and `ESCROW_DEPLOYMENT_BLOCK`.
+5. Restart the server and check `GET /api/health`.
 
-- `.planning/PROJECT.md`
-- `.planning/REQUIREMENTS.md`
-- `.planning/ROADMAP.md`
-- `.planning/phases/01-product-definition/01-CONTEXT.md`
+Full configuration and operational checks are in [docs/deployment.md](docs/deployment.md).
 
-## Local In This Version
+## Reviewer and grant documentation
 
-- X lookup and OAuth are represented by local verifier API routes.
-- Wallet connection is represented by entering an Arc EVM address.
-- Arc transaction sending is represented by server-backed payment state.
-- Dashboard/history persist to `data/state.json`.
+- [Executive summary](docs/executive-summary.md)
+- [Grant application](docs/grant-application.md)
+- [Budget and milestones](docs/budget-and-milestones.md)
+- [Pilot and impact plan](docs/pilot-and-impact.md)
+- [Project status and evidence](docs/project-status.md)
+- [Architecture](docs/architecture.md)
+- [Security model](docs/security.md)
+- [Internal security review](docs/internal-security-review.md)
+- [Roadmap](docs/roadmap.md)
+- [Reviewer demo guide](docs/demo-guide.md)
+- [Submission checklist](docs/submission-checklist.md)
 
-## Real Next Pieces
+The browser-friendly document hub is available at `http://127.0.0.1:4174/docs.html`. The pack includes a proposed 16-week, USD 75,000 baseline plan with objective milestone evidence and pilot targets. Accountable team identities, the selected program's rules, final budget approval, public repository/deployment links, and demo video still require real team input before submission.
 
-- X OAuth backend
-- Arc Testnet deployment
-- USDC escrow integration
-- event indexer and profile storage
+## Important security properties
+
+- The backend never marks a payment funded without verifying an Arc receipt and matching `PaymentCreated` event.
+- Claim signatures bind the payment ID, recipient wallet, chain ID, contract address, and authorization expiry.
+- Refund remains available when the contract is paused.
+- X and wallet identities are proven separately and joined only inside a server session.
+- Private amount, sender, and memo fields are omitted from unauthorized API responses.
+
+This code is not deployed by the repository itself. Live operation still requires secrets, funded testnet accounts, the deployed contract address, and an approved X application.
+
+## License and security reports
+
+The repository is licensed under the [MIT License](LICENSE). Please report suspected vulnerabilities privately through the repository's security advisory channel as described in [SECURITY.md](SECURITY.md).

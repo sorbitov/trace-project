@@ -32,8 +32,8 @@ Includes:
 - Send, Claim, History, and Profile views.
 - Profile registration modal inside the dapp.
 - Registration flow: Connect X/Twitter -> connect wallet -> create profile.
-- Server-backed state through local API routes.
-- Persisted dashboard and payments in `data/state.json`.
+- Server-backed state through authenticated API routes.
+- PostgreSQL-backed profiles, sessions, payment intents, audit logs, and indexer checkpoints.
 - Payment creation form with handle, amount, expiry, visibility, cancel mode, fee, and memo.
 - Generated X mention copy and claim/status URL.
 - Claim flow with X verification step, wallet connect, claim, cancel, and history.
@@ -44,7 +44,7 @@ Success criteria:
 2. User can enter the dapp before registration.
 3. Sending is gated until profile creation.
 4. Registration is a modal, not a separate full-screen page.
-5. Local API supports dashboard, payments, verify X, claim, cancel, and state.
+5. API supports dashboard, payments, X OAuth, wallet proof, funding verification, claim authorization, settlement, and state.
 
 ## Phase 3: SEO and GEO
 

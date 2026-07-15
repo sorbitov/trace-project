@@ -1,60 +1,31 @@
 # Implementation Notes
 
-## What Was Borrowed From Open Source Research
+## End-to-end flow
 
-No repository was copied directly.
+1. Sender signs a one-time wallet challenge and completes X OAuth.
+2. Backend resolves the recipient handle through X API v2 and stores the immutable X user ID.
+3. Backend creates a PostgreSQL payment intent and returns encoded USDC `approve` and escrow `createPayment` calls.
+4. Sender submits both transactions through the injected wallet on Arc Testnet.
+5. Backend verifies the transaction sender, configured chain, escrow address, amount, identity hash, fee, expiry, cancellation mode, and `PaymentCreated` event.
+6. Recipient opens `#claim=<payment-id>`; the frontend loads that exact payment.
+7. Recipient completes fresh X OAuth and proves control of the claiming wallet.
+8. Backend signs a ten-minute claim authorization bound to payment, wallet, chain, contract, and expiry.
+9. Recipient submits the claim transaction. The API and indexer verify the settlement event.
 
-Patterns used:
+## Storage
 
-- `dapplets/tipping-dapplet`: social-account tipping, claim-later UX, and the idea that tips can accrue before account binding.
-- `CryptoPayLink`: payment-link/dashboard mental model.
-- `PayCircle`: minimal EVM escrow/link structure.
+`data/state.json` is no longer read by the application. PostgreSQL stores profiles, sessions, OAuth states, wallet challenges, payment intents, audit records, and indexer checkpoints. The migration is idempotent and lives in `migrations/001_initial.sql`.
 
-## V1 Flow
+## Contract behavior
 
-1. Sender enters an X handle.
-2. Backend resolves the handle to an immutable X user ID.
-3. Sender funds an Arc USDC escrow payment.
-4. App generates X mention copy.
-5. Recipient opens claim page.
-6. Recipient completes X OAuth.
-7. Recipient connects wallet.
-8. Backend signs claim authorization.
-9. Recipient claims from escrow.
+`HandlePaymentEscrow` escrows the principal and sends the mandatory protocol fee to the treasury at creation. Cancellation or expiry returns the principal; the already-routed protocol fee is not refunded. Create and claim stop during an emergency pause, while cancel and refund remain available.
 
-## Local App Server
+## External boundaries
 
-The app is served by `server.js` and stores runtime state in `data/state.json`.
+The application deliberately fails closed when any required production integration is absent:
 
-Current API routes:
-
-- `GET /api/state`
-- `POST /api/dashboard`
-- `POST /api/payments`
-- `POST /api/payments/:id/verify-x`
-- `POST /api/payments/:id/claim`
-- `POST /api/payments/:id/cancel`
-
-The app no longer depends on demo seed buttons or browser-only localStorage state.
-
-## Integration Boundary
-
-Local server routes preserve the production shape, but external integrations still need real providers:
-
-- X OAuth app and API lookup for immutable X user IDs
-- wallet connector for the connected Arc EVM address
-- Arc USDC escrow transaction creation and event indexing
-- backend verifier signatures for onchain claim authorization
-
-## Contract Skeleton
-
-`contracts/HandlePaymentEscrow.sol` contains the first escrow shape:
-
-- create payment
-- claim with verifier signature
-- sender-only refund after expiry
-- sender-only cancel if cancellable
-- verifier rotation
-- pause switch
-
-The contract intentionally does not verify X directly. X identity is verified by backend, then represented onchain through verifier signatures.
+- no `X_BEARER_TOKEN`: recipient lookup returns 503
+- no X client ID: OAuth start returns 503
+- no escrow address: payment intent creation returns 503
+- no verifier key: claim authorization returns 503
+- wrong Arc RPC chain: receipt verification and claim authorization return 503

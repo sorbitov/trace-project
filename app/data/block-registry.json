@@ -1,0 +1,13 @@
+[
+  { "id": "overview", "label": "Overview", "selector": "#overview", "contentSource": "app/index.html", "editable": true },
+  { "id": "proof", "label": "Project status", "selector": "[data-project-metrics]", "contentSource": "app/data/project.json", "editable": true },
+  { "id": "problem", "label": "Problem and solution", "selector": ".problem-section", "contentSource": "app/index.html", "editable": true },
+  { "id": "flow", "label": "Product flow", "selector": "#how-it-works", "contentSource": "app/index.html", "editable": true },
+  { "id": "architecture", "label": "Architecture", "selector": "#architecture", "contentSource": "app/index.html", "editable": true },
+  { "id": "status", "label": "Implemented status", "selector": "#status", "contentSource": "app/index.html", "editable": true },
+  { "id": "security", "label": "Security model", "selector": "#security", "contentSource": "app/index.html", "editable": true },
+  { "id": "roadmap", "label": "Grant roadmap", "selector": "#roadmap", "contentSource": "app/index.html", "editable": true },
+  { "id": "knowledge", "label": "FAQ and official references", "selector": "#knowledge", "contentSource": "app/index.html", "editable": true },
+  { "id": "documents", "label": "Documents", "selector": "[data-project-documents]", "contentSource": "app/data/project.json", "editable": true },
+  { "id": "footer", "label": "Review CTA", "selector": ".grant-footer", "contentSource": "app/index.html", "editable": true }
+]

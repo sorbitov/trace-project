@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HandleLayer Project Documents | Arc Grant &amp; Security</title>
+    <meta name="description" content="Review HandleLayer's Arc grant application, executive summary, technical architecture, security model, pilot plan, budget, roadmap and delivery evidence." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://handlepay.app/docs.html" />
+    <meta property="og:title" content="HandleLayer Project Documents" />
+    <meta property="og:description" content="Arc grant, architecture, security, roadmap, pilot and reviewer evidence for HandleLayer." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://handlepay.app/docs.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HandleLayer Project Documents" />
+    <meta name="twitter:description" content="A structured reviewer pack for HandleLayer on Arc." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500;600;700&amp;family=Oxanium:wght@500;600;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=20260714-site-hierarchy" />
+    <link rel="stylesheet" href="./docs.css?v=20260714-site-hierarchy" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "CollectionPage",
+            "@id": "https://handlepay.app/docs.html#webpage",
+            "name": "HandleLayer Project Documents",
+            "url": "https://handlepay.app/docs.html",
+            "description": "A reviewer pack covering the HandleLayer product case, Arc architecture, security model, delivery plan and grant evidence.",
+            "dateModified": "2026-07-14",
+            "isPartOf": { "@id": "https://handlepay.app/#website" },
+            "breadcrumb": { "@id": "https://handlepay.app/docs.html#breadcrumb" },
+            "mainEntity": { "@id": "https://handlepay.app/docs.html#document-list" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://handlepay.app/docs.html#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "HandleLayer", "item": "https://handlepay.app/" },
+              { "@type": "ListItem", "position": 2, "name": "Project documents", "item": "https://handlepay.app/docs.html" }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://handlepay.app/docs.html#document-list",
+            "name": "HandleLayer reviewer document index",
+            "numberOfItems": 10,
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Executive summary", "url": "https://handlepay.app/project-docs/executive-summary" },
+              { "@type": "ListItem", "position": 2, "name": "Grant application", "url": "https://handlepay.app/project-docs/grant-application" },
+              { "@type": "ListItem", "position": 3, "name": "Budget and milestones", "url": "https://handlepay.app/project-docs/budget-and-milestones" },
+              { "@type": "ListItem", "position": 4, "name": "Pilot and impact", "url": "https://handlepay.app/project-docs/pilot-and-impact" },
+              { "@type": "ListItem", "position": 5, "name": "Project status", "url": "https://handlepay.app/project-docs/project-status" },
+              { "@type": "ListItem", "position": 6, "name": "Architecture", "url": "https://handlepay.app/project-docs/architecture" },
+              { "@type": "ListItem", "position": 7, "name": "Security", "url": "https://handlepay.app/project-docs/security" },
+              { "@type": "ListItem", "position": 8, "name": "Roadmap", "url": "https://handlepay.app/project-docs/roadmap" },
+              { "@type": "ListItem", "position": 9, "name": "Demo guide", "url": "https://handlepay.app/project-docs/demo-guide" },
+              { "@type": "ListItem", "position": 10, "name": "Submission checklist", "url": "https://handlepay.app/project-docs/submission-checklist" }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="docs-body">
+    <header class="docs-header">
+      <a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>HANDLE LAYER / DOCUMENTS</strong></a>
+      <span>GRANT PACK / JUL.2026</span>
+      <a class="docs-back" href="./index.html">&larr; BACK TO PRODUCT</a>
+    </header>
+
+    <div class="docs-layout">
+      <aside class="docs-sidebar">
+        <p>(DOCUMENT HIERARCHY)</p>
+        <nav class="docs-nav" aria-label="Document sections">
+          <section class="docs-nav-group"><p>01 / CASE</p><a href="#overview"><span>00</span>Pack overview</a><a href="#executive"><span>01</span>Executive summary</a><a href="#grant"><span>02</span>Grant application</a></section>
+          <section class="docs-nav-group"><p>02 / DELIVERY</p><a href="#budget"><span>03</span>Budget + milestones</a><a href="#pilot"><span>04</span>Pilot + impact</a><a href="#status"><span>05</span>Project status</a><a href="#roadmap"><span>08</span>16-week roadmap</a></section>
+          <section class="docs-nav-group"><p>03 / TRUST</p><a href="#architecture"><span>06</span>Architecture</a><a href="#security"><span>07</span>Security model</a></section>
+          <section class="docs-nav-group"><p>04 / VALIDATION</p><a href="#demo"><span>09</span>Reviewer demo</a><a href="#checklist"><span>10</span>Submission checklist</a></section>
+        </nav>
+        <div class="docs-status"><i></i><span>GRANT PACK COMPLETE</span><small>Team facts and public links remain</small></div>
+      </aside>
+
+      <main class="docs-main">
+        <section id="overview" class="docs-hero">
+          <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="./index.html">HandleLayer</a><span>/</span><span aria-current="page">Project documents</span></nav>
+          <p class="eyebrow">(HANDLE LAYER / ARC / REVIEWER PACK)</p>
+          <h1>PROJECT<br />DOCUMENTS</h1>
+          <div class="docs-hero-meta">
+            <p>A submission-ready narrative grounded in the current repository: product case, technical proof, a 16-week delivery plan, proposed $75k budget, pilot KPIs, security boundaries and reviewer evidence.</p>
+            <dl><div><dt>VERSION</dt><dd>0.1.0</dd></div><div><dt>STATUS</dt><dd>Testnet-ready MVP</dd></div><div><dt>PLAN</dt><dd>16 weeks</dd></div><div><dt>REQUEST</dt><dd>$75,000 proposed</dd></div></dl>
+          </div>
+        </section>
+
+        <section id="executive" class="docs-entry">
+          <header><span>01</span><div><p>ONE-PAGER</p><h2>Executive summary</h2></div><a href="/project-docs/executive-summary">OPEN MARKDOWN &nearr;</a></header>
+          <div class="docs-entry-grid"><p>A concise reviewer brief: the problem, product, Arc fit, current implementation, grant objective, milestone budget, pilot targets and required team facts.</p><ul><li>One-line product definition</li><li>Current proof vs. remaining work</li><li>16-week grant objective</li><li>$75k proposed request</li><li>Measurable pilot targets</li></ul></div>
+        </section>
+
+        <section id="grant" class="docs-entry docs-entry-dark">
+          <header><span>02</span><div><p>APPLICATION</p><h2>Grant application</h2></div><a href="/project-docs/grant-application">OPEN MARKDOWN &nearr;</a></header>
+          <div class="docs-entry-grid"><p>The form-ready narrative includes 50- and 150-word answers, problem and solution, Arc rationale, technical evidence, limitations, milestones, impact, sustainability, risks, budget, team fields and a reviewer closing statement.</p><ul><li>No invented traction or biographies</li><li>Specific repository evidence</li><li>Acceptance criteria per milestone</li><li>Truth-bounded privacy claims</li><li>Program-ready answer blocks</li></ul></div>
+          <div class="truth-note"><strong>TRUTH BOUNDARY</strong><p>Current claims cover local code and tests. Public deployment, X credentials, external review, users and production readiness still require evidence.</p></div>
+        </section>
+
+        <section id="budget" class="docs-entry">
+          <header><span>03</span><div><p>FUNDING PLAN</p><h2>Budget + milestones</h2></div><a href="/project-docs/budget-and-milestones">OPEN MARKDOWN &nearr;</a></header>
+          <div class="docs-milestones"><article><span>M1 / WEEKS 1-5 / $24K</span><strong>PUBLIC TESTNET</strong><small>Verified contract, X integration, hosted demo and evidence.</small></article><article><span>M2 / WEEKS 6-11 / $31K</span><strong>SECURITY + PILOT</strong><small>Independent review, remediation and user validation.</small></article><article><span>M3 / WEEKS 12-16 / $20K</span><strong>PRODUCTION DECISION</strong><small>Managed keys, recovery, monitoring and go/no-go.</small></article></div>
+        </section>
+
+        <section id="pilot" class="docs-entry">
+          <header><span>04</span><div><p>MEASUREMENT</p><h2>Pilot + impact</h2></div><a href="/project-docs/pilot-and-impact">OPEN MARKDOWN &nearr;</a></header>
+          <div class="docs-entry-grid"><p>A consent-based Arc Testnet research plan with cohort definitions, funnel formulas, privacy-preserving instrumentation, failure taxonomy, feedback protocol and explicit proceed/redesign/stop thresholds.</p><ul><li>100 tester target</li><li>250 funded payments</li><li>&ge;80% active claim completion</li><li>&le;5 minute median active claim</li><li>100% privacy matrix accuracy</li></ul></div>
+        </section>
+
+        <section id="status" class="docs-entry">
+          <header><span>05</span><div><p>EVIDENCE</p><h2>Project status</h2></div><a href="/project-docs/project-status">OPEN MARKDOWN &nearr;</a></header>
+          <div class="docs-entry-grid"><p>A reviewer-facing capability matrix maps each original prototype gap to implemented repository evidence and the remaining work required for public testnet or production.</p><ul><li>Implemented locally</li><li>Implemented but unconfigured</li><li>Not yet published</li><li>Automated evidence commands</li><li>Next public release contents</li></ul></div>
+        </section>
+
+        <section id="architecture" class="docs-entry">
+          <header><span>06</span><div><p>TECHNICAL</p><h2>Architecture</h2></div><a href="/project-docs/architecture">OPEN MARKDOWN &nearr;</a></header>
+          <div class="mini-architecture" aria-label="Architecture overview"><div><span>USER PROOF</span><strong>WALLET + X</strong></div><b>&rarr;</b><div class="dark"><span>POLICY</span><strong>HANDLE LAYER API</strong></div><b>&rarr;</b><div><span>CUSTODY</span><strong>ARC ESCROW</strong></div></div>
+          <div class="docs-entry-grid"><p>Component ownership, lifecycle state machine, claim digest, chain evidence checks, data model, trust boundaries, failure behavior, recovery and target deployment topology.</p><ul><li>System and sequence diagrams</li><li>Payment state machine</li><li>Identity authorization model</li><li>Funding verification checks</li><li>Mainnet architecture decisions</li></ul></div>
+        </section>
+
+        <section id="security" class="docs-entry docs-entry-dark">
+          <header><span>07</span><div><p>RISK</p><h2>Security model</h2></div><a href="/project-docs/security">OPEN MARKDOWN &nearr;</a></header>
+          <div class="docs-entry-grid"><p>A severity-rated threat model covering identity, wallet proof, verifier, custody, RPC evidence, OAuth, sessions, privacy, database/indexer integrity, keys, monitoring and pre-production exit criteria.</p><ul><li>Security objectives and owners</li><li>Threat/control matrix</li><li>Role/endpoint authorization tests</li><li>Key-management stages</li><li>Monitoring and incident signals</li></ul></div>
+        </section>
+
+        <section id="roadmap" class="docs-entry">
+          <header><span>08</span><div><p>DELIVERY</p><h2>16-week roadmap</h2></div><a href="/project-docs/roadmap">OPEN MARKDOWN &nearr;</a></header>
+          <div class="docs-entry-grid"><p>A week-by-week path from scope freeze and contract deployment through independent review, two pilot waves, recovery exercises and the final launch decision.</p><ol><li>Deploy + host</li><li>Prove lifecycle</li><li>Review + remediate</li><li>Pilot + measure</li><li>Decide production readiness</li></ol></div>
+        </section>
+
+        <section id="demo" class="docs-entry">
+          <header><span>09</span><div><p>VALIDATION</p><h2>Reviewer demo</h2></div><a href="/project-docs/demo-guide">OPEN MARKDOWN &nearr;</a></header>
+          <div class="docs-entry-grid"><p>A repeatable evidence protocol for sender identity, verified funding, exact claim links, private API views, recipient claim, cancel, expired refund, locked mode and negative cases.</p><ol><li>Run checks</li><li>Verify deployment</li><li>Fund on Arc</li><li>Claim as recipient</li><li>Package evidence</li></ol></div>
+        </section>
+
+        <section id="checklist" class="docs-entry checklist-entry">
+          <header><span>10</span><div><p>FINAL GATE</p><h2>Submission checklist</h2></div><a href="/project-docs/submission-checklist">OPEN MARKDOWN &nearr;</a></header>
+          <div class="checklist-grid"><article><span>PROGRAM</span><p>Eligibility, limits, schedule and IP rules.</p></article><article><span>TEAM</span><p>Accountable identities, roles and proof links.</p></article><article><span>BUDGET</span><p>Eligible costs, totals and evidence triggers.</p></article><article><span>PUBLIC PROOF</span><p>Repository, CI, demo, contract and video.</p></article><article><span>SECURITY</span><p>Review, authorization, recovery and disclosure.</p></article><article><span>TRUTH REVIEW</span><p>No placeholder, stale address or unsupported claim.</p></article></div>
+        </section>
+
+        <footer class="docs-footer"><p>HANDLE LAYER / ARC TESTNET</p><nav aria-label="Document footer"><a href="./index.html">Product overview</a><a href="#grant">Grant case</a><a href="#architecture">Architecture</a><a href="#security">Security</a><a href="#checklist">Final checklist</a></nav></footer>
+      </main>
+    </div>
+  </body>
+</html>
