@@ -1,16 +1,16 @@
 # HandleLayer Project Status and Evidence
 
-Updated: 14 July 2026
+Updated: 15 July 2026
 
 ## Status statement
 
-HandleLayer is a local, testnet-ready MVP whose first module is Pay. The core payment, authorization, persistence, privacy, indexing, and contract paths are implemented and covered by automated tests. It is not yet a public Arc Testnet deployment and does not have configured production X credentials or an external security audit.
+HandleLayer is a testnet-deployed MVP whose first module is Pay. The escrow is live on Arc Testnet and RPC-verified; the application, X integration, PostgreSQL service, and indexer are not yet publicly hosted. Arcscan source verification, real lifecycle evidence, and an external security audit remain pending.
 
 ## Capability matrix
 
 | Capability | Status | Repository evidence | Remaining work |
 | --- | --- | --- | --- |
-| USDC escrow create/claim/cancel/refund | Implemented locally | `contracts/HandlePaymentEscrow.sol`, `test/contract.test.js` | Deploy and verify on Arc Testnet; external review |
+| USDC escrow create/claim/cancel/refund | Deployed to Arc Testnet | Contract, tests, `deployments/arc-testnet.json` | Arcscan source verification, lifecycle evidence, external review |
 | Mandatory fee routing | Implemented locally | Contract `createPayment`; fee test | Publish treasury governance and accounting policy |
 | Arc wallet transaction flow | Implemented locally | `app/app.js`, `src/chain.js` | Validate with production wallet matrix |
 | Funding receipt and event verification | Implemented locally | `src/chain.js`, API funding route | Add redundant RPC and operational alerts |
@@ -27,7 +27,7 @@ HandleLayer is a local, testnet-ready MVP whose first module is Pay. The core pa
 | Audit logs | Implemented locally | `audit_logs` table and sensitive-route audit calls | Retention, access policy, export/alerts |
 | Rate limiting and headers | Implemented locally | `express-rate-limit`, Helmet CSP | Shared rate-limit store behind multiple replicas |
 | Event indexer | Implemented locally | `src/indexer.js`, durable checkpoint table | Lag metrics, RPC failover, replay drill |
-| Contract build/deploy tooling | Implemented locally | Hardhat config and deployment script | Public contract deployment and verification |
+| Contract build/deploy tooling | Deployed and RPC-verified | Hardhat tooling and deployment manifest | Arcscan source verification pending explorer indexing |
 | Automated tests | Implemented locally | 37 API/security/contract/UI-state tests | Public CI evidence and broader integration/load coverage |
 | Internal security review | Completed 15 July 2026 | `docs/internal-security-review.md` | Independent reviewer still required |
 | Dependency lockfile | Implemented | `package-lock.json` | Automated update and vulnerability policy |
@@ -58,7 +58,7 @@ Safe claims:
 
 Claims that require new public evidence:
 
-- deployed contract and verified source
+- explorer-verified source and complete lifecycle transactions
 - live hosted end-to-end flow
 - approved/configured X application
 - number of users, payments, or retained users

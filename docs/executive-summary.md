@@ -34,7 +34,7 @@ The repository contains a local, testnet-ready MVP:
 - authorization-scoped payment views that omit private values for unrelated sessions
 - a polling event indexer, security headers, endpoint rate limits, deployment scripts, and automated API/security/contract tests
 
-This is not yet a public deployment. Production X credentials, a deployed and explorer-verified contract, managed infrastructure, and an external security review are still required.
+The escrow is deployed on Arc Testnet and RPC-verified. Explorer source verification, production X configuration, managed infrastructure, hosted end-to-end evidence, and an external security review are still required.
 
 ## Grant objective
 

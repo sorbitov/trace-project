@@ -65,10 +65,10 @@ Use this as the final truth and completeness gate. A checked item should have a 
 
 ## 6. Arc deployment evidence
 
-- [ ] Contract deployed to Arc Testnet
+- [x] Contract deployed to Arc Testnet — `deployments/arc-testnet.json`
 - [ ] Source verified in the Arc explorer
-- [ ] Contract address, deployment transaction, block, chain ID, compiler settings, and constructor args published
-- [ ] USDC, verifier, treasury, owner, minimum fee, and pause state match the manifest
+- [x] Contract address, deployment transaction, block, chain ID, compiler settings, and constructor args published — deployment manifest
+- [x] USDC, verifier, treasury, owner, minimum fee, and pause state match the manifest — RPC verification on 15 July 2026
 - [ ] Deployer, owner, verifier, and treasury roles are separated
 - [ ] Deployer key removed from application hosting
 - [ ] Create, claim, cancel, and refund explorer links captured

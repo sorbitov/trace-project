@@ -6,7 +6,7 @@ HandlePay on Arc: USDC payments to X handles, claimed through X OAuth.
 
 ## Current Status
 
-Local MVP implementation is complete through Phase 3. Phase 4 is active and blocked on Arc Testnet deployment credentials and funded role wallets. Phase 5 launch evidence remains pending.
+Local MVP implementation is complete through Phase 3. Phase 4 is active: the escrow is deployed on Arc Testnet and RPC-verified; explorer source verification and lifecycle evidence remain pending. Phase 5 launch evidence remains pending.
 
 Implementation update (2026-07-14):
 
@@ -19,7 +19,8 @@ Implementation update (2026-07-14):
 - Hardened escrow contract, Hardhat build, deploy script, event indexer, rate limits, security headers, and automated tests are present.
 - PostgreSQL migration and local HTTP integration checks pass; 37 automated tests pass and `npm audit` reports zero vulnerabilities.
 - X OAuth client configuration is present, but immutable recipient lookup still needs `X_BEARER_TOKEN` and real two-account acceptance testing.
-- Live Arc deployment remains pending because deployer/verifier keys, role addresses, and funded testnet wallets are intentionally absent.
+- `HandlePaymentEscrow` deployed at `0x5A3949aE67a37e7e37bFC77F5b7832Cc93f40A2a` in block `51929589`; onchain code and configuration were verified through Arc RPC.
+- Arcscan source submission timed out while the explorer API had not indexed the fresh deployment; retry remains pending.
 
 GSD phases were reorganized:
 
@@ -43,8 +44,8 @@ GSD phases were reorganized:
 
 - Current phase: 4 — Smart Contracts and Arc Testnet.
 - Completed locally: phases 1–3.
-- Active plan: deploy and verify the tested escrow contract, then capture lifecycle evidence.
-- Blockers: Arc deployer/verifier credentials, treasury/owner addresses, funded sender/recipient wallets, hosting account, and PostgreSQL deployment.
+- Active plan: complete Arcscan source verification and capture create/claim/cancel/refund lifecycle evidence.
+- Blockers: Arcscan indexing, a separate verifier/role configuration, funded sender/recipient wallets, hosting account, and PostgreSQL deployment.
 
 ## Next Discussion
 

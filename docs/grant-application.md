@@ -8,7 +8,7 @@ Status: complete submission draft based on the current repository. Fields marked
 | --- | --- |
 | Project | HandleLayer on Arc |
 | Category | Consumer payments / stablecoin infrastructure / identity-addressed escrow |
-| Stage | Local testnet-ready MVP; public deployment pending |
+| Stage | Arc Testnet-deployed MVP; hosted application and public E2E pending |
 | Network and asset | Arc Testnet and USDC |
 | Proposed duration | 16 weeks |
 | Proposed request | USD 75,000 |
@@ -84,7 +84,7 @@ Current verification result: 14 automated tests pass across API, security, and c
 
 The following are not presented as completed:
 
-- no public Arc Testnet deployment or explorer-verified contract yet
+- Arc Testnet escrow is deployed and RPC-verified; explorer source verification and lifecycle evidence remain pending
 - no production X application credentials in the repository
 - no public hosted demo URL or pilot traffic
 - no independent security review

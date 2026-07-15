@@ -41,6 +41,13 @@ npm run check
 
 ## Arc deployment
 
+Current Arc Testnet deployment:
+
+- Contract: [`0x5A3949aE67a37e7e37bFC77F5b7832Cc93f40A2a`](https://testnet.arcscan.app/address/0x5A3949aE67a37e7e37bFC77F5b7832Cc93f40A2a)
+- Deployment transaction: [`0xa3f80c8e…d9c97e`](https://testnet.arcscan.app/tx/0xa3f80c8ee66e9ae22900e8b119caf391b16830f60ee921565b4ffd9cc7d9c97e)
+- Deployment manifest: [`deployments/arc-testnet.json`](deployments/arc-testnet.json)
+- Source verification: pending Arcscan indexing; bytecode and configuration verified through RPC
+
 1. Fund the deployer with Arc Testnet USDC from the Circle faucet.
 2. Set `DEPLOYER_PRIVATE_KEY`, `VERIFIER_PRIVATE_KEY`, `TREASURY_ADDRESS`, and optionally `CONTRACT_OWNER_ADDRESS` in `.env`.
 3. Run `npm run contract:deploy`.
@@ -73,7 +80,7 @@ The browser-friendly document hub is available at `http://127.0.0.1:4174/docs.ht
 - X and wallet identities are proven separately and joined only inside a server session.
 - Private amount, sender, and memo fields are omitted from unauthorized API responses.
 
-This code is not deployed by the repository itself. Live operation still requires secrets, funded testnet accounts, the deployed contract address, and an approved X application.
+The escrow contract is deployed on Arc Testnet. Live application operation still requires managed secrets, PostgreSQL, funded test accounts, X recipient lookup, hosting, and end-to-end acceptance evidence.
 
 ## License and security reports
 

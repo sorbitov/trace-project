@@ -1,0 +1,22 @@
+{
+  "network": "arc-testnet",
+  "chainId": 5042002,
+  "address": "0x5A3949aE67a37e7e37bFC77F5b7832Cc93f40A2a",
+  "usdcAddress": "0x3600000000000000000000000000000000000000",
+  "verifier": "0x36392ba753d76c285C32211Ed086eb1b54F83422",
+  "treasury": "0x36392ba753d76c285C32211Ed086eb1b54F83422",
+  "owner": "0x36392ba753d76c285C32211Ed086eb1b54F83422",
+  "minimumFeeBps": 50,
+  "deploymentBlock": 51929589,
+  "transactionHash": "0xa3f80c8ee66e9ae22900e8b119caf391b16830f60ee921565b4ffd9cc7d9c97e",
+  "deployedAt": "2026-07-15T11:39:30.086Z",
+  "sourceCommit": "18d02227b323194917bf62e11c6241d446f5f288",
+  "compiler": "0.8.36+commit.8a079791",
+  "optimizer": {
+    "enabled": true,
+    "runs": 200
+  },
+  "contractUrl": "https://testnet.arcscan.app/address/0x5A3949aE67a37e7e37bFC77F5b7832Cc93f40A2a",
+  "transactionUrl": "https://testnet.arcscan.app/tx/0xa3f80c8ee66e9ae22900e8b119caf391b16830f60ee921565b4ffd9cc7d9c97e",
+  "sourceVerification": "pending-explorer-indexing"
+}

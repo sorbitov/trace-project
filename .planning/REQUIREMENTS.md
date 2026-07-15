@@ -23,7 +23,7 @@ Checked items have repository implementation and automated evidence. They do not
 
 ### Arc
 
-- [ ] **ARC-01**: Contracts deploy to Arc Testnet.
+- [x] **ARC-01**: Contracts deploy to Arc Testnet.
 - [x] **ARC-02**: USDC is the v1 payment token.
 - [x] **ARC-03**: Frontend connects wallets to Arc Testnet.
 - [x] **ARC-04**: Backend verifies the configured chain ID before signing claim authorizations.
