@@ -10,7 +10,7 @@ HandleLayer is a testnet-deployed MVP whose first module is Pay. The escrow is l
 
 | Capability | Status | Repository evidence | Remaining work |
 | --- | --- | --- | --- |
-| USDC escrow create/claim/cancel/refund | Deployed to Arc Testnet | Contract, tests, `deployments/arc-testnet.json` | Arcscan source verification, lifecycle evidence, external review |
+| USDC escrow create/claim/cancel/refund | Deployed and smoke-tested | Contract, tests, deployment manifest with six transaction hashes | Arcscan source verification and external review |
 | Mandatory fee routing | Implemented locally | Contract `createPayment`; fee test | Publish treasury governance and accounting policy |
 | Arc wallet transaction flow | Implemented locally | `app/app.js`, `src/chain.js` | Validate with production wallet matrix |
 | Funding receipt and event verification | Implemented locally | `src/chain.js`, API funding route | Add redundant RPC and operational alerts |

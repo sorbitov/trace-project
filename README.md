@@ -47,6 +47,7 @@ Current Arc Testnet deployment:
 - Deployment transaction: [`0xa3f80c8e…d9c97e`](https://testnet.arcscan.app/tx/0xa3f80c8ee66e9ae22900e8b119caf391b16830f60ee921565b4ffd9cc7d9c97e)
 - Deployment manifest: [`deployments/arc-testnet.json`](deployments/arc-testnet.json)
 - Source verification: pending Arcscan indexing; bytecode and configuration verified through RPC
+- Live lifecycle: create/claim, create/cancel, and create/expired-refund passed on Arc Testnet for payment IDs 1–3
 
 1. Fund the deployer with Arc Testnet USDC from the Circle faucet.
 2. Set `DEPLOYER_PRIVATE_KEY`, `VERIFIER_PRIVATE_KEY`, `TREASURY_ADDRESS`, and optionally `CONTRACT_OWNER_ADDRESS` in `.env`.

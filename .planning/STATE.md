@@ -20,6 +20,7 @@ Implementation update (2026-07-14):
 - PostgreSQL migration and local HTTP integration checks pass; 37 automated tests pass and `npm audit` reports zero vulnerabilities.
 - X OAuth client configuration is present, but immutable recipient lookup still needs `X_BEARER_TOKEN` and real two-account acceptance testing.
 - `HandlePaymentEscrow` deployed at `0x5A3949aE67a37e7e37bFC77F5b7832Cc93f40A2a` in block `51929589`; onchain code and configuration were verified through Arc RPC.
+- Live low-value lifecycle smoke passed for create/claim, create/cancel, and create/expired-refund (payment IDs 1–3); transaction hashes are recorded in the deployment manifest.
 - Arcscan source submission timed out while the explorer API had not indexed the fresh deployment; retry remains pending.
 
 GSD phases were reorganized:
@@ -44,7 +45,7 @@ GSD phases were reorganized:
 
 - Current phase: 4 — Smart Contracts and Arc Testnet.
 - Completed locally: phases 1–3.
-- Active plan: complete Arcscan source verification and capture create/claim/cancel/refund lifecycle evidence.
+- Active plan: complete Arcscan source verification and package the verified lifecycle evidence.
 - Blockers: Arcscan indexing, a separate verifier/role configuration, funded sender/recipient wallets, hosting account, and PostgreSQL deployment.
 
 ## Next Discussion

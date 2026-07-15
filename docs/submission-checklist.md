@@ -71,7 +71,7 @@ Use this as the final truth and completeness gate. A checked item should have a 
 - [x] USDC, verifier, treasury, owner, minimum fee, and pause state match the manifest — RPC verification on 15 July 2026
 - [ ] Deployer, owner, verifier, and treasury roles are separated
 - [ ] Deployer key removed from application hosting
-- [ ] Create, claim, cancel, and refund explorer links captured
+- [x] Create, claim, cancel, and refund explorer links captured — `deployments/arc-testnet.json`
 - [ ] Indexer starts from deployment block and resumes from checkpoint
 - [ ] Wrong-chain and receipt/event mismatch tests recorded
 

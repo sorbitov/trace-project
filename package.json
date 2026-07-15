@@ -15,10 +15,11 @@
     "db:migrate": "node scripts/migrate.js",
     "contract:compile": "hardhat compile",
     "contract:deploy": "npm run contract:compile && node scripts/deploy-contract.js",
+    "contract:smoke": "node scripts/smoke-contract.js",
     "indexer": "node scripts/indexer.js",
     "test": "npm run contract:compile && node --test --test-concurrency=1",
     "test:contracts": "npm run contract:compile && node --test --test-concurrency=1 test/contract.test.js",
-    "check": "node --check server.js && node --check app/app.js && node --check app/wallet-provider.js && node --check app/project-page.js && node --check app/recipient-picker.js && npm run contract:compile"
+    "check": "node --check server.js && node --check app/app.js && node --check app/wallet-provider.js && node --check app/project-page.js && node --check app/recipient-picker.js && node --check scripts/smoke-contract.js && npm run contract:compile"
   },
   "dependencies": {
     "cookie-parser": "^1.4.7",
