@@ -1,14 +1,14 @@
-# HandleLayer: Executive Summary
+# PACT: Executive Summary
 
 ## One-line description
 
-HandleLayer turns a verified X identity into a route for programmable onchain actions. Its first module, Pay, lets a sender lock USDC on Arc for an X handle while the intended recipient proves that identity, connects a wallet they control, and claims from a non-custodial escrow.
+PACT turns a verified X identity into a route for programmable conditional transfers. A sender locks USDC on Arc for an X handle while the intended recipient proves that identity, connects a wallet they control, and claims from a non-custodial escrow.
 
 ## The problem
 
 Stablecoin payments usually start with a wallet address. That breaks the social context in which many payments originate, creates copy-and-paste risk, and gives the sender no reliable proof that the supplied address belongs to the intended person.
 
-HandleLayer tests a simpler model: address an action to a known social identity and let the verified recipient choose the receiving wallet at execution time.
+PACT tests a simpler model: address a transfer to a known social identity and let the verified recipient choose the receiving wallet at execution time.
 
 ## The product
 
@@ -18,7 +18,7 @@ The recipient opens a payment-specific claim link, completes fresh X OAuth, prov
 
 ## Why Arc
 
-HandleLayer begins with a stablecoin-first consumer payment experiment. Arc provides EVM-compatible execution and a USDC-native environment that allows the Pay module to keep the payment unit, escrowed asset, fee, and user-facing value in the same currency.
+PACT begins with a stablecoin-first consumer payment experiment. Arc provides EVM-compatible execution and a USDC-native environment that keeps the payment unit, escrowed asset, fee, and user-facing value in the same currency.
 
 The current implementation targets Arc Testnet chain ID `5042002` and testnet USDC at `0x3600000000000000000000000000000000000000`.
 
@@ -63,7 +63,7 @@ These are forward-looking targets, not current traction claims.
 
 ## Long-term value
 
-If the pilot validates the interaction model, HandleLayer can extend the same verified identity route from payments into claims, access, rewards, agent permissions, and community actions. The initial Pay scope deliberately remains narrow: one identity provider, one settlement network, one stablecoin, and a clear non-custodial escrow lifecycle.
+If the pilot validates the interaction model, PACT can extend the same verified identity route from payments into claims, access, rewards and community actions. The initial scope deliberately remains narrow: one identity provider, one settlement network, one stablecoin, and a clear non-custodial escrow lifecycle.
 
 ## Required submission facts
 

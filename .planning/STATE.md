@@ -2,7 +2,7 @@
 
 ## Current Project
 
-HandlePay on Arc: USDC payments to X handles, claimed through X OAuth.
+PACT — Programmable Arc Conditional Transfers: USDC payments to X handles, claimed through X OAuth.
 
 ## Current Status
 

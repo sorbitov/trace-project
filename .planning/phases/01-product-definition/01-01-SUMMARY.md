@@ -2,7 +2,7 @@
 
 ## One-liner
 
-Defined HandlePay as Arc USDC escrow payments addressed to X identities and claimed through verified X plus wallet ownership.
+Defined PACT as Arc USDC escrow payments addressed to X identities and claimed through verified X plus wallet ownership.
 
 ## Evidence
 

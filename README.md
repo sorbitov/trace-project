@@ -1,4 +1,4 @@
-# HandleLayer on Arc
+# PACT — Programmable Arc Conditional Transfers
 
 Send USDC to an X handle. The recipient proves the X identity, connects an Arc wallet, and claims from an onchain escrow.
 

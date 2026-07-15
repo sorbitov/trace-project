@@ -79,11 +79,11 @@ test("static responses include security headers", async () => {
   assert.match(response.headers.get("cache-control"), /no-store/);
   const docsPage = await request("/docs.html");
   assert.equal(docsPage.status, 200);
-  assert.match(await docsPage.text(), /<title>HandleLayer Project Documents \| Arc Grant &amp; Security<\/title>/);
+  assert.match(await docsPage.text(), /<title>PACT Project Documents \| Arc Grant &amp; Security<\/title>/);
   const grantDocument = await request("/project-docs/grant-application");
   assert.equal(grantDocument.status, 200);
   assert.match(grantDocument.headers.get("content-type"), /text\/markdown/);
-  assert.match(await grantDocument.text(), /HandleLayer Grant Application/);
+  assert.match(await grantDocument.text(), /PACT Grant Application/);
   const budgetDocument = await request("/project-docs/budget-and-milestones");
   assert.equal(budgetDocument.status, 200);
   assert.match(await budgetDocument.text(), /USD 75,000/);

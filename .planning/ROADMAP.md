@@ -27,7 +27,7 @@ Goal: Document and maintain everything already built in the local working protot
 
 Includes:
 
-- Home page that introduces HandlePay.
+- Home page that introduces PACT.
 - Dapp shell entered from home.
 - Send, Claim, History, and Profile views.
 - Profile registration modal inside the dapp.
@@ -48,7 +48,7 @@ Success criteria:
 
 ## Phase 3: SEO and GEO
 
-Goal: Make HandlePay discoverable by search engines and understandable to AI answer engines.
+Goal: Make PACT discoverable by search engines and understandable to AI answer engines.
 
 Includes:
 

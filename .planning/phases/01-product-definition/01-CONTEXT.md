@@ -2,7 +2,7 @@
 
 ## Scope
 
-Phase 1 locks the idea, user promise, v1 product behavior, and business rules for HandlePay.
+Phase 1 locks the idea, user promise, v1 product behavior, and business rules for PACT.
 
 ## Locked Decisions
 

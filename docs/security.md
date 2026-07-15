@@ -1,4 +1,4 @@
-# HandleLayer Security Model
+# PACT Security Model
 
 Updated: 14 July 2026
 
@@ -112,7 +112,7 @@ The following remain public or inferable on a public blockchain:
 - recipient wallet after claim
 - transaction graph and gas activity
 
-Product copy must say “private in HandleLayer views” rather than “private on-chain.” Memo text is stored off-chain and should never contain secrets, credentials, regulated data, or highly sensitive personal information.
+Product copy must say “private in PACT views” rather than “private on-chain.” Memo text is stored off-chain and should never contain secrets, credentials, regulated data, or highly sensitive personal information.
 
 ## Key management plan
 

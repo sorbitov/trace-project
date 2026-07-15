@@ -2,7 +2,7 @@
 
 ## One-liner
 
-Implemented the PostgreSQL-backed HandlePay MVP with wallet proof, X OAuth PKCE, private API projections, and verified Arc transaction lifecycle paths.
+Implemented the PostgreSQL-backed PACT MVP with wallet proof, X OAuth PKCE, private API projections, and verified Arc transaction lifecycle paths.
 
 ## Evidence
 

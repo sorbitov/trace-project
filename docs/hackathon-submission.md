@@ -1,4 +1,4 @@
-# HandlePay — Arc DeFi Track Submission
+# PACT — Programmable Arc Conditional Transfers
 
 ## Track
 
@@ -10,11 +10,11 @@ Send USDC to an X identity instead of asking for a wallet address; the intended 
 
 ## Short description
 
-HandlePay is programmable social-payment infrastructure on Arc. A sender resolves an X handle to its immutable X user ID and funds a USDC escrow before the recipient has registered a wallet. The recipient opens a payment-specific link, proves the intended X account through OAuth, proves ownership of a destination wallet, and receives a short-lived claim authorization bound to the payment, wallet, chain, contract and expiry. The escrow supports claim, sender cancellation and expired refund while routing a mandatory protocol fee. PostgreSQL stores private metadata and indexed lifecycle state; the chain remains settlement authority. The contract is deployed on Arc Testnet and live low-value claim, cancellation and refund flows have been executed.
+PACT is programmable social-payment infrastructure on Arc. A sender resolves an X handle to its immutable X user ID and funds a USDC escrow before the recipient has registered a wallet. The recipient opens a payment-specific link, proves the intended X account through OAuth, proves ownership of a destination wallet, and receives a short-lived claim authorization bound to the payment, wallet, chain, contract and expiry. The escrow supports claim, sender cancellation and expired refund while routing a mandatory protocol fee. PostgreSQL stores private metadata and indexed lifecycle state; the chain remains settlement authority. The contract is deployed on Arc Testnet and live low-value claim, cancellation and refund flows have been executed.
 
 ## Why this fits the DeFi Track
 
-| Hackathon criterion | HandlePay evidence |
+| Hackathon criterion | PACT evidence |
 | --- | --- |
 | Effective use of Arc and USDC | Arc Testnet is the settlement layer; native USDC is the escrow asset, fee asset and gas asset. |
 | Programmable money flow | Payment creation, identity-bound claim authorization, cancellation policy, expiry and refund form a conditional multi-stage flow. |
@@ -94,7 +94,7 @@ Arc Testnet claim/cancel/refund smoke passing
 
 ## Differentiation
 
-HandlePay is not a custodial social balance and not a generic payment link. The payment can be created before the recipient registers a wallet, but principal remains governed by an onchain lifecycle. Social identity establishes who may claim; wallet proof establishes where principal may move; Arc provides final settlement and recoverability.
+PACT is not a custodial social balance and not a generic payment link. The payment can be created before the recipient registers a wallet, but principal remains governed by an onchain lifecycle. Social identity establishes who may claim; wallet proof establishes where principal may move; Arc provides final settlement and recoverability.
 
 ## Truth boundary and remaining submission assets
 

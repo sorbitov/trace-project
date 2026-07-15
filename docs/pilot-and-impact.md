@@ -1,8 +1,8 @@
-# HandleLayer Pay Pilot and Impact Plan
+# PACT Pilot and Impact Plan
 
 ## Research question
 
-Can an identity-addressed claim flow make Arc USDC payments easier to initiate and safer to attribute than asking a recipient for a wallet address, without turning HandleLayer into a custodial balance system?
+Can an identity-addressed claim flow make Arc USDC payments easier to initiate and safer to attribute than asking a recipient for a wallet address, without turning PACT into a custodial balance system?
 
 ## Pilot scope
 
@@ -96,7 +96,7 @@ Every failed flow should be assigned one primary category:
 
 Ask a participant to pay a known person using a wallet address supplied out of band. Measure steps, completion, address-verification behavior, confidence, and errors. Do not move production value.
 
-### HandleLayer Pay task
+### PACT payment task
 
 Ask the same participant type to create a payment for an X handle. The recipient then claims to a wallet they control. Measure the same outcomes plus OAuth and claim friction.
 

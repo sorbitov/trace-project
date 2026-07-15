@@ -1,4 +1,4 @@
-# HandleLayer Arc Testnet Deployment and Operations
+# PACT Arc Testnet Deployment and Operations
 
 ## Purpose
 

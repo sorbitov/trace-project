@@ -1,10 +1,10 @@
-# HandleLayer Project Status and Evidence
+# PACT Project Status and Evidence
 
 Updated: 15 July 2026
 
 ## Status statement
 
-HandleLayer is a testnet-deployed MVP whose first module is Pay. The escrow is live on Arc Testnet and RPC-verified; the application, X integration, PostgreSQL service, and indexer are not yet publicly hosted. Arcscan source verification, real lifecycle evidence, and an external security audit remain pending.
+PACT is a testnet-deployed MVP. The escrow is live on Arc Testnet and RPC-verified; the application, X integration, PostgreSQL service, and indexer are not yet publicly hosted. Arcscan source verification and an external security audit remain pending.
 
 ## Capability matrix
 

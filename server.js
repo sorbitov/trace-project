@@ -8,7 +8,7 @@ await db.health();
 const app = createApp(db);
 const stopIndexer = startIndexer(db);
 const server = app.listen(config.port, config.host, () => {
-  console.log(`HandleLayer server running at ${config.baseUrl}/index.html (${config.host}:${config.port})`);
+  console.log(`PACT server running at ${config.baseUrl}/index.html (${config.host}:${config.port})`);
 });
 
 async function shutdown(signal) {

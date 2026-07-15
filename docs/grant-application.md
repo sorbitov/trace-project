@@ -1,4 +1,4 @@
-# HandleLayer Grant Application
+# PACT Grant Application
 
 Status: complete submission draft based on the current repository. Fields marked `TEAM INPUT REQUIRED` must be replaced with accountable facts before filing.
 
@@ -6,7 +6,7 @@ Status: complete submission draft based on the current repository. Fields marked
 
 | Field | Proposed answer |
 | --- | --- |
-| Project | HandleLayer on Arc |
+| Project | PACT — Programmable Arc Conditional Transfers |
 | Category | Consumer payments / stablecoin infrastructure / identity-addressed escrow |
 | Stage | Arc Testnet-deployed MVP; hosted application and public E2E pending |
 | Network and asset | Arc Testnet and USDC |
@@ -21,11 +21,11 @@ The proposed amount is a planning baseline. It must be reconciled with the selec
 
 ### 50 words
 
-HandleLayer turns a verified X identity into a reusable route for onchain actions. Its first module, Pay, lets a sender address Arc USDC to an X handle instead of requesting a wallet address. USDC is held in a non-custodial escrow; the verified recipient connects a wallet and claims.
+PACT turns a verified X identity into a route for programmable conditional transfers. A sender addresses Arc USDC to an X handle instead of requesting a wallet address. USDC is held in a non-custodial escrow; the verified recipient connects a wallet and claims.
 
 ### 150 words
 
-HandleLayer is an identity-addressed action layer built for Arc, beginning with a USDC payment protocol. A sender enters an X handle, payment terms, and privacy settings, then deposits USDC into an on-chain escrow. The backend resolves the handle to an immutable X user ID through X API v2 and commits only an identity hash to the contract. The recipient opens a payment-specific link, completes fresh X OAuth, proves control of a receiving wallet with a signed challenge, and receives a short-lived authorization bound to the payment, wallet, chain, contract, and expiry. The escrow then releases principal to that wallet. If a payment is not claimed, the sender can cancel when permitted or refund after expiry. The repository contains the contract, Arc transaction and receipt verification, OAuth and wallet authentication, PostgreSQL persistence, scoped privacy controls, an indexer, audit logs, rate limits, deployment tooling, and automated tests. The same verified identity route can later support claims, access, rewards, and agent permissions without changing the custody boundary. Grant funding would support public testnet deployment, independent review, a measured pilot, and production-readiness work.
+PACT is an identity-addressed conditional transfer protocol built for Arc. A sender enters an X handle, payment terms, and privacy settings, then deposits USDC into an on-chain escrow. The backend resolves the handle to an immutable X user ID through X API v2 and commits only an identity hash to the contract. The recipient opens a payment-specific link, completes fresh X OAuth, proves control of a receiving wallet with a signed challenge, and receives a short-lived authorization bound to the payment, wallet, chain, contract, and expiry. The escrow then releases principal to that wallet. If a payment is not claimed, the sender can cancel when permitted or refund after expiry. The repository contains the contract, Arc transaction and receipt verification, OAuth and wallet authentication, PostgreSQL persistence, scoped privacy controls, an indexer, audit logs, rate limits, deployment tooling, and automated tests. The same verified identity route can later support claims, access and rewards without changing the custody boundary. Grant funding would support public testnet deployment, independent review, a measured pilot, and production-readiness work.
 
 ## Problem and opportunity
 
@@ -37,7 +37,7 @@ The grant pilot will test this hypothesis rather than assume it: does entering a
 
 ## Solution
 
-HandleLayer separates identity authorization from asset custody:
+PACT separates identity authorization from asset custody:
 
 1. The sender proves control of an X account and wallet.
 2. The sender enters an X handle, amount, expiry, memo, visibility, and cancellation policy.
@@ -49,11 +49,11 @@ HandleLayer separates identity authorization from asset custody:
 8. The recipient submits `claim`; the contract verifies the signature and transfers principal.
 9. Unclaimed funds remain recoverable by the sender through permitted cancellation or post-expiry refund.
 
-HandleLayer does not create a custodial user balance, invent a recipient wallet, or mark mock state as paid when integrations are missing.
+PACT does not create a custodial user balance, invent a recipient wallet, or mark mock state as paid when integrations are missing.
 
 ## Why Arc
 
-The HandleLayer Pay module is designed around a stablecoin-denominated user experience. Arc provides EVM-compatible contract execution in a USDC-native environment, allowing the payment unit, escrowed principal, protocol fee, and user-facing amount to stay denominated in the same currency.
+PACT is designed around a stablecoin-denominated user experience. Arc provides EVM-compatible contract execution in a USDC-native environment, allowing the payment unit, escrowed principal, protocol fee, and user-facing amount to stay denominated in the same currency.
 
 The implementation currently targets:
 
@@ -95,11 +95,11 @@ The application fails closed when X, chain, escrow, or verifier configuration is
 
 ## Differentiation
 
-HandleLayer combines four properties that are often separated:
+PACT combines four properties that are often separated:
 
 1. **Human-readable addressing:** the sender enters a known X handle.
 2. **Immutable identity binding:** the system resolves and stores the X user ID so a later handle change does not silently redirect the payment.
-3. **Recipient wallet choice:** the recipient proves the receiving wallet at claim time; HandleLayer does not assign or custody a wallet.
+3. **Recipient wallet choice:** the recipient proves the receiving wallet at claim time; PACT does not assign or custody a wallet.
 4. **On-chain recovery rules:** principal remains in a transparent escrow with enforceable claim, cancel, and expiry behavior.
 
 The design also distinguishes API metadata privacy from blockchain privacy. Private memo, sender label, and amount are withheld from unrelated API sessions, but the product does not claim that public blockchain activity is confidential.
@@ -233,4 +233,4 @@ Do not invent biographies. If one person holds multiple roles, state that direct
 
 ## Reviewer closing statement
 
-HandleLayer already has the technical core required to test identity-addressed USDC payments: custody rules on Arc, identity and wallet proofs off-chain, verified lifecycle transitions, privacy-scoped API views, persistence, indexing, and automated tests. The grant is not requested to fund a slide-only concept. It is requested to convert an existing local MVP into public infrastructure, independently challenge its security assumptions, measure real user behavior on Arc Testnet, and reach an evidence-based production decision.
+PACT already has the technical core required to test identity-addressed USDC payments: custody rules on Arc, identity and wallet proofs off-chain, verified lifecycle transitions, privacy-scoped API views, persistence, indexing, and automated tests. The grant is not requested to fund a slide-only concept. It is requested to convert an existing local MVP into public infrastructure, independently challenge its security assumptions, measure real user behavior on Arc Testnet, and reach an evidence-based production decision.

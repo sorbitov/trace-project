@@ -1,4 +1,4 @@
-# HandleLayer Grant Submission Checklist
+# PACT Grant Submission Checklist
 
 Use this as the final truth and completeness gate. A checked item should have a link or named evidence owner, not only a verbal confirmation.
 

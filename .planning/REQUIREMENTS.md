@@ -44,7 +44,7 @@ Checked items have repository implementation and automated evidence. They do not
 - [x] **UX-04**: App clearly shows payment status: pending, claimed, refunded, expired, or failed.
 - [x] **UX-05**: Sender can enter the dapp before registration, but sending remains gated until profile creation.
 - [x] **UX-06**: Send form remains blocked until profile registration is complete.
-- [x] **UX-07**: App opens on a main page that explains HandlePay before entering the dapp.
+- [x] **UX-07**: App opens on a main page that explains PACT before entering the dapp.
 - [x] **UX-08**: User can enter the dapp from the main page and access Send, Claim, History, and Profile.
 - [x] **UX-09**: MVP uses server-backed state instead of demo seed buttons or browser-only localStorage.
 - [x] **UX-10**: User can create dashboard, create tip, verify X step, connect wallet, claim, cancel, and view history through working app actions.
