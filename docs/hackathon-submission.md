@@ -4,8 +4,6 @@
 
 **DeFi Track** — stablecoin payment infrastructure built with Arc and USDC.
 
-HandlePay does not claim the Agentic Economy Track. Autonomous agents and Agent Stack are not part of the current implementation.
-
 ## One-line pitch
 
 Send USDC to an X identity instead of asking for a wallet address; the intended recipient proves the X account and a wallet to claim from non-custodial Arc escrow.
