@@ -38,6 +38,7 @@ import {
 const appRoot = join(fileURLToPath(new URL("..", import.meta.url)), "app");
 const docsRoot = join(fileURLToPath(new URL("..", import.meta.url)), "docs");
 const publicProjectDocs = new Map([
+  ["hackathon-submission", "hackathon-submission.md"],
   ["executive-summary", "executive-summary.md"],
   ["grant-application", "grant-application.md"],
   ["budget-and-milestones", "budget-and-milestones.md"],

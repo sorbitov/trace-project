@@ -29,7 +29,7 @@
             "name": "HandleLayer Project Documents",
             "url": "https://handlepay.app/docs.html",
             "description": "A reviewer pack covering the HandleLayer product case, Arc architecture, security model, delivery plan and grant evidence.",
-            "dateModified": "2026-07-14",
+            "dateModified": "2026-07-15",
             "isPartOf": { "@id": "https://handlepay.app/#website" },
             "breadcrumb": { "@id": "https://handlepay.app/docs.html#breadcrumb" },
             "mainEntity": { "@id": "https://handlepay.app/docs.html#document-list" }
@@ -46,18 +46,19 @@
             "@type": "ItemList",
             "@id": "https://handlepay.app/docs.html#document-list",
             "name": "HandleLayer reviewer document index",
-            "numberOfItems": 10,
+            "numberOfItems": 11,
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Executive summary", "url": "https://handlepay.app/project-docs/executive-summary" },
-              { "@type": "ListItem", "position": 2, "name": "Grant application", "url": "https://handlepay.app/project-docs/grant-application" },
-              { "@type": "ListItem", "position": 3, "name": "Budget and milestones", "url": "https://handlepay.app/project-docs/budget-and-milestones" },
-              { "@type": "ListItem", "position": 4, "name": "Pilot and impact", "url": "https://handlepay.app/project-docs/pilot-and-impact" },
-              { "@type": "ListItem", "position": 5, "name": "Project status", "url": "https://handlepay.app/project-docs/project-status" },
-              { "@type": "ListItem", "position": 6, "name": "Architecture", "url": "https://handlepay.app/project-docs/architecture" },
-              { "@type": "ListItem", "position": 7, "name": "Security", "url": "https://handlepay.app/project-docs/security" },
-              { "@type": "ListItem", "position": 8, "name": "Roadmap", "url": "https://handlepay.app/project-docs/roadmap" },
-              { "@type": "ListItem", "position": 9, "name": "Demo guide", "url": "https://handlepay.app/project-docs/demo-guide" },
-              { "@type": "ListItem", "position": 10, "name": "Submission checklist", "url": "https://handlepay.app/project-docs/submission-checklist" }
+              { "@type": "ListItem", "position": 1, "name": "DeFi Track hackathon submission", "url": "https://handlepay.app/project-docs/hackathon-submission" },
+              { "@type": "ListItem", "position": 2, "name": "Executive summary", "url": "https://handlepay.app/project-docs/executive-summary" },
+              { "@type": "ListItem", "position": 3, "name": "Grant application", "url": "https://handlepay.app/project-docs/grant-application" },
+              { "@type": "ListItem", "position": 4, "name": "Budget and milestones", "url": "https://handlepay.app/project-docs/budget-and-milestones" },
+              { "@type": "ListItem", "position": 5, "name": "Pilot and impact", "url": "https://handlepay.app/project-docs/pilot-and-impact" },
+              { "@type": "ListItem", "position": 6, "name": "Project status", "url": "https://handlepay.app/project-docs/project-status" },
+              { "@type": "ListItem", "position": 7, "name": "Architecture", "url": "https://handlepay.app/project-docs/architecture" },
+              { "@type": "ListItem", "position": 8, "name": "Security", "url": "https://handlepay.app/project-docs/security" },
+              { "@type": "ListItem", "position": 9, "name": "Roadmap", "url": "https://handlepay.app/project-docs/roadmap" },
+              { "@type": "ListItem", "position": 10, "name": "Demo guide", "url": "https://handlepay.app/project-docs/demo-guide" },
+              { "@type": "ListItem", "position": 11, "name": "Submission checklist", "url": "https://handlepay.app/project-docs/submission-checklist" }
             ]
           }
         ]
@@ -75,7 +76,7 @@
       <aside class="docs-sidebar">
         <p>(DOCUMENT HIERARCHY)</p>
         <nav class="docs-nav" aria-label="Document sections">
-          <section class="docs-nav-group"><p>01 / CASE</p><a href="#overview"><span>00</span>Pack overview</a><a href="#executive"><span>01</span>Executive summary</a><a href="#grant"><span>02</span>Grant application</a></section>
+          <section class="docs-nav-group"><p>01 / CASE</p><a href="#overview"><span>00</span>Pack overview</a><a href="#hackathon"><span>H</span>DeFi Track submission</a><a href="#executive"><span>01</span>Executive summary</a><a href="#grant"><span>02</span>Grant application</a></section>
           <section class="docs-nav-group"><p>02 / DELIVERY</p><a href="#budget"><span>03</span>Budget + milestones</a><a href="#pilot"><span>04</span>Pilot + impact</a><a href="#status"><span>05</span>Project status</a><a href="#roadmap"><span>08</span>16-week roadmap</a></section>
           <section class="docs-nav-group"><p>03 / TRUST</p><a href="#architecture"><span>06</span>Architecture</a><a href="#security"><span>07</span>Security model</a></section>
           <section class="docs-nav-group"><p>04 / VALIDATION</p><a href="#demo"><span>09</span>Reviewer demo</a><a href="#checklist"><span>10</span>Submission checklist</a></section>
@@ -92,6 +93,12 @@
             <p>A submission-ready narrative grounded in the current repository: product case, technical proof, a 16-week delivery plan, proposed $75k budget, pilot KPIs, security boundaries and reviewer evidence.</p>
             <dl><div><dt>VERSION</dt><dd>0.1.0</dd></div><div><dt>STATUS</dt><dd>Testnet-ready MVP</dd></div><div><dt>PLAN</dt><dd>16 weeks</dd></div><div><dt>REQUEST</dt><dd>$75,000 proposed</dd></div></dl>
           </div>
+        </section>
+
+        <section id="hackathon" class="docs-entry docs-entry-dark">
+          <header><span>H</span><div><p>DEFI TRACK</p><h2>Hackathon submission</h2></div><a href="/project-docs/hackathon-submission">OPEN MARKDOWN &nearr;</a></header>
+          <div class="docs-entry-grid"><p>HandlePay turns an X identity into a programmable Arc USDC payment target. Funds remain in non-custodial escrow until the intended recipient proves the X account and a destination wallet, then claims or the sender recovers the principal.</p><ul><li>Arc + native USDC</li><li>Conditional escrow settlement</li><li>Claim, cancel and expired refund</li><li>Deployed contract and six live evidence transactions</li><li>37 automated tests</li></ul></div>
+          <div class="truth-note"><strong>TRACK FIT</strong><p>Submitted to DeFi Track as stablecoin payment infrastructure. Agentic Economy is out of scope until an autonomous agent and Agent Stack integration exist.</p></div>
         </section>
 
         <section id="executive" class="docs-entry">

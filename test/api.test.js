@@ -90,6 +90,9 @@ test("static responses include security headers", async () => {
   const statusDocument = await request("/project-docs/project-status");
   assert.equal(statusDocument.status, 200);
   assert.match(await statusDocument.text(), /Capability matrix/);
+  const hackathonDocument = await request("/project-docs/hackathon-submission");
+  assert.equal(hackathonDocument.status, 200);
+  assert.match(await hackathonDocument.text(), /DeFi Track/);
   assert.equal((await request("/project-docs/not-public")).status, 404);
 });
 

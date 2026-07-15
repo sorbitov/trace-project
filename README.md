@@ -59,6 +59,7 @@ Full configuration and operational checks are in [docs/deployment.md](docs/deplo
 
 ## Reviewer and grant documentation
 
+- [DeFi Track hackathon submission](docs/hackathon-submission.md)
 - [Executive summary](docs/executive-summary.md)
 - [Grant application](docs/grant-application.md)
 - [Budget and milestones](docs/budget-and-milestones.md)
