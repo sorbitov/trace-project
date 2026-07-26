@@ -1,0 +1,1153 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/wotp52",
+    "id": "wotp52",
+    "slide": 10,
+    "layoutId": "ab21bf06-9022-4e3e-9e55-2c8e01bdf596",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "c311461d-409f-4f7f-971d-255800482552",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#050505",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "ab21bf06-9022-4e3e-9e55-2c8e01bdf596",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "c311461d-409f-4f7f-971d-255800482552",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "c311461d-409f-4f7f-971d-255800482552",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/14nm50v6",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#050505",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e1wnalcv",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1280,
+        122
+      ],
+      "geometry": "rect",
+      "fillColor": "#0C0808",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f2543qd0",
+      "id": "3",
+      "bbox": [
+        0,
+        624,
+        1280,
+        96
+      ],
+      "geometry": "rect",
+      "fillColor": "#0C0808",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o7y5gfux",
+      "id": "4",
+      "bbox": [
+        0,
+        118,
+        1280,
+        1.5
+      ],
+      "geometry": "rect",
+      "fillColor": "#682E3C",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p87690vi",
+      "id": "5",
+      "bbox": [
+        72,
+        654,
+        260,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#B9FF38",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/25wne5cr",
+      "id": "6",
+      "bbox": [
+        344,
+        654,
+        135,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#5BE7FF",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/365o7adc",
+      "id": "7",
+      "bbox": [
+        70,
+        38,
+        430,
+        28
+      ],
+      "geometry": "rect",
+      "text": "NEXT STEPS",
+      "textPreview": "NEXT STEPS",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "NEXT STEPS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "NEXT STEPS",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#B9FF38",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "NEXT STEPS",
+              "fontSize": 13,
+              "color": "#B9FF38",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4bu54bud",
+      "id": "8",
+      "bbox": [
+        70,
+        135,
+        720,
+        74
+      ],
+      "geometry": "rect",
+      "text": "The next milestone is a public testnet pilot",
+      "textPreview": "The next milestone is a public testnet pilot",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "fontSize": 44,
+        "typeface": "+mn-lt",
+        "color": "#F0D7BB",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The next milestone is a public testnet"
+          },
+          {
+            "index": 2,
+            "text": "pilot"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The next milestone is a public testnet pilot",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "color": "#F0D7BB",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The next milestone is a public testnet pilot",
+              "fontSize": 44,
+              "color": "#F0D7BB",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5c3mxgvy",
+      "id": "9",
+      "bbox": [
+        70,
+        210,
+        820,
+        58
+      ],
+      "geometry": "rect",
+      "text": "The submission story: DeFi payment infrastructure, technically proven on testnet, ready for public hardening.",
+      "textPreview": "The submission story: DeFi payment infrastructure, technically proven on testnet, ready for public hardening.",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#B99A8D",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The submission story: DeFi payment infrastructure, technically proven on testnet, ready for public"
+          },
+          {
+            "index": 2,
+            "text": "hardening."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The submission story: DeFi payment infrastructure, technically proven on testnet, ready for public hardening.",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#B99A8D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The submission story: DeFi payment infrastructure, technically proven on testnet, ready for public hardening.",
+              "fontSize": 20,
+              "color": "#B99A8D"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dkniho7y",
+      "id": "10",
+      "bbox": [
+        94,
+        318,
+        318,
+        190
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#1B0D11",
+      "lineColor": "#B9FF38",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cju1oj6d",
+      "id": "11",
+      "bbox": [
+        120,
+        344,
+        48,
+        42
+      ],
+      "geometry": "rect",
+      "text": "1",
+      "textPreview": "1",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#B9FF38",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1",
+              "fontSize": 34,
+              "color": "#B9FF38",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bil0feps",
+      "id": "12",
+      "bbox": [
+        176,
+        350,
+        190,
+        34
+      ],
+      "geometry": "rect",
+      "text": "Publish",
+      "textPreview": "Publish",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "fontSize": 26,
+        "typeface": "+mn-lt",
+        "color": "#F0D7BB",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Publish"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Publish",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#F0D7BB",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Publish",
+              "fontSize": 26,
+              "color": "#F0D7BB",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qhcjm987",
+      "id": "13",
+      "bbox": [
+        124,
+        418,
+        258,
+        62
+      ],
+      "geometry": "rect",
+      "text": "GitHub repo, CI output, HTTPS demo and release tag.",
+      "textPreview": "GitHub repo, CI output, HTTPS demo and release tag.",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#B99A8D",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "GitHub repo, CI output, HTTPS"
+          },
+          {
+            "index": 2,
+            "text": "demo and release tag."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "GitHub repo, CI output, HTTPS demo and release tag.",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#B99A8D",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "GitHub repo, CI output, HTTPS demo and release tag.",
+              "fontSize": 18,
+              "color": "#B99A8D",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l8nilo7u",
+      "id": "14",
+      "bbox": [
+        480,
+        318,
+        318,
+        190
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#1B0D11",
+      "lineColor": "#5BE7FF",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/07e1sj69",
+      "id": "15",
+      "bbox": [
+        506,
+        344,
+        48,
+        42
+      ],
+      "geometry": "rect",
+      "text": "2",
+      "textPreview": "2",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#5BE7FF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#5BE7FF",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2",
+              "fontSize": 34,
+              "color": "#5BE7FF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zm50jepo",
+      "id": "16",
+      "bbox": [
+        562,
+        350,
+        190,
+        34
+      ],
+      "geometry": "rect",
+      "text": "Verify",
+      "textPreview": "Verify",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "fontSize": 26,
+        "typeface": "+mn-lt",
+        "color": "#F0D7BB",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Verify"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Verify",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#F0D7BB",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Verify",
+              "fontSize": 26,
+              "color": "#F0D7BB",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ylwjqto3",
+      "id": "17",
+      "bbox": [
+        510,
+        418,
+        258,
+        62
+      ],
+      "geometry": "rect",
+      "text": "Arcscan source verification, two-account X E2E and reviewer video.",
+      "textPreview": "Arcscan source verification, two-account X E2E and reviewer video.",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#B99A8D",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Arcscan source verification,"
+          },
+          {
+            "index": 2,
+            "text": "two-account X E2E and reviewer"
+          },
+          {
+            "index": 3,
+            "text": "video."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Arcscan source verification, two-account X E2E and reviewer video.",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#B99A8D",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Arcscan source verification, two-account X E2E and reviewer video.",
+              "fontSize": 18,
+              "color": "#B99A8D",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9c7ip876",
+      "id": "18",
+      "bbox": [
+        866,
+        318,
+        318,
+        190
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#1B0D11",
+      "lineColor": "#B9FF38",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8be1w36l",
+      "id": "19",
+      "bbox": [
+        892,
+        344,
+        48,
+        42
+      ],
+      "geometry": "rect",
+      "text": "3",
+      "textPreview": "3",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#B9FF38",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3",
+              "fontSize": 34,
+              "color": "#B9FF38",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8fmls7eh",
+      "id": "20",
+      "bbox": [
+        948,
+        350,
+        190,
+        34
+      ],
+      "geometry": "rect",
+      "text": "Harden",
+      "textPreview": "Harden",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "fontSize": 26,
+        "typeface": "+mn-lt",
+        "color": "#F0D7BB",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Harden"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Harden",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#F0D7BB",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Harden",
+              "fontSize": 26,
+              "color": "#F0D7BB",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tgf2lcf2",
+      "id": "21",
+      "bbox": [
+        896,
+        418,
+        258,
+        62
+      ],
+      "geometry": "rect",
+      "text": "Role separation, managed signer, monitoring and external security review.",
+      "textPreview": "Role separation, managed signer, monitoring and external security review.",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#B99A8D",
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Role separation, managed"
+          },
+          {
+            "index": 2,
+            "text": "signer, monitoring and external"
+          },
+          {
+            "index": 3,
+            "text": "security review."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Role separation, managed signer, monitoring and external security review.",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#B99A8D",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Role separation, managed signer, monitoring and external security review.",
+              "fontSize": 18,
+              "color": "#B99A8D",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6t43qxwr",
+      "id": "22",
+      "bbox": [
+        154,
+        568,
+        972,
+        34
+      ],
+      "geometry": "rect",
+      "text": "Decision: proceed as a DeFi Track submission and testnet pilot — not as a production launch claim.",
+      "textPreview": "Decision: proceed as a DeFi Track submission and testnet pilot — not as a production launch claim.",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Decision: proceed as a DeFi Track submission and testnet pilot — not as a production launch claim."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Decision: proceed as a DeFi Track submission and testnet pilot — not as a production launch claim.",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#B9FF38",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Decision: proceed as a DeFi Track submission and testnet pilot — not as a production launch claim.",
+              "fontSize": 21,
+              "color": "#B9FF38",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7edkj2xw",
+      "id": "23",
+      "bbox": [
+        70,
+        672,
+        520,
+        24
+      ],
+      "geometry": "rect",
+      "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+      "textPreview": "TRACE — Trusted Recipient Arc Claim Escrow",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#7E6661",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TRACE — Trusted Recipient Arc Claim Escrow"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#7E6661",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+              "fontSize": 13,
+              "color": "#7E6661",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gj6lwret",
+      "id": "24",
+      "bbox": [
+        1154,
+        670,
+        56,
+        24
+      ],
+      "geometry": "rect",
+      "text": "10",
+      "textPreview": "10",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "10"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "10",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#B9FF38",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "10",
+              "fontSize": 13,
+              "color": "#B9FF38",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

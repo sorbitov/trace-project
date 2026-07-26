@@ -1,0 +1,880 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/7a07de",
+    "id": "7a07de",
+    "slide": 10,
+    "layoutId": "0f39d74e-6f6e-4ed8-bc8c-41a93c741e80",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "fd7ac1bb-9485-4a32-a2be-87be8c902928",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F5F5F5",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "0f39d74e-6f6e-4ed8-bc8c-41a93c741e80",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "fd7ac1bb-9485-4a32-a2be-87be8c902928",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "fd7ac1bb-9485-4a32-a2be-87be8c902928",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s3qpwzq5",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#F5F5F5",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/72h83upk",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6187up8z",
+      "id": "3",
+      "bbox": [
+        72,
+        42,
+        460,
+        24
+      ],
+      "geometry": "rect",
+      "text": "ASK",
+      "textPreview": "ASK",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ASK"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ASK",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5B5B62",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ASK",
+              "fontSize": 12,
+              "color": "#5B5B62",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h8jq947m",
+      "id": "4",
+      "bbox": [
+        72,
+        112,
+        930,
+        92
+      ],
+      "geometry": "rect",
+      "text": "Help turn the proof into a public Arc testnet pilot",
+      "textPreview": "Help turn the proof into a public Arc testnet pilot",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Help turn the proof into a public Arc testnet pilot"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Help turn the proof into a public Arc testnet pilot",
+          "resolvedTextStyle": {
+            "fontSize": 42,
+            "color": "#050505",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Help turn the proof into a public Arc testnet pilot",
+              "fontSize": 42,
+              "color": "#050505",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g7qp0zq1",
+      "id": "5",
+      "bbox": [
+        72,
+        210,
+        760,
+        52
+      ],
+      "geometry": "rect",
+      "text": "The immediate milestone is packaging and verification.",
+      "textPreview": "The immediate milestone is packaging and verification.",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The immediate milestone is packaging and verification."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The immediate milestone is packaging and verification.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The immediate milestone is packaging and verification.",
+              "fontSize": 19,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f6h87upw",
+      "id": "6",
+      "bbox": [
+        110,
+        328,
+        320,
+        132
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9D6E6",
+      "lineWidth": 1
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u587yp8b",
+      "id": "7",
+      "bbox": [
+        132,
+        352,
+        276,
+        28
+      ],
+      "geometry": "rect",
+      "text": "Feedback",
+      "textPreview": "Feedback",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Feedback"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Feedback",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#050505",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Feedback",
+              "fontSize": 23,
+              "color": "#050505",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xcf6x07i",
+      "id": "8",
+      "bbox": [
+        132,
+        390,
+        276,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Arc/Circle fit, security model and DeFi-track positioning.",
+      "textPreview": "Arc/Circle fit, security model and DeFi-track positioning.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Arc/Circle fit, security model and"
+          },
+          {
+            "index": 2,
+            "text": "DeFi-track positioning."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Arc/Circle fit, security model and DeFi-track positioning.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Arc/Circle fit, security model and DeFi-track positioning.",
+              "fontSize": 16,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wb6pofqx",
+      "id": "9",
+      "bbox": [
+        480,
+        328,
+        320,
+        132
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#050505",
+      "lineColor": "#050505",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2dsnqlor",
+      "id": "10",
+      "bbox": [
+        502,
+        352,
+        276,
+        28
+      ],
+      "geometry": "rect",
+      "text": "Public proof",
+      "textPreview": "Public proof",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Public proof"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Public proof",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#FFFFFF",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Public proof",
+              "fontSize": 23,
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ne1ozq5c",
+      "id": "11",
+      "bbox": [
+        502,
+        390,
+        276,
+        48
+      ],
+      "geometry": "rect",
+      "text": "HTTPS demo, CI, explorer links and release tag.",
+      "textPreview": "HTTPS demo, CI, explorer links and release tag.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#C9C5D8",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "HTTPS demo, CI, explorer links and"
+          },
+          {
+            "index": 2,
+            "text": "release tag."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "HTTPS demo, CI, explorer links and release tag.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#C9C5D8"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "HTTPS demo, CI, explorer links and release tag.",
+              "fontSize": 16,
+              "color": "#C9C5D8"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofa5sv6x",
+      "id": "12",
+      "bbox": [
+        850,
+        328,
+        320,
+        132
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9D6E6",
+      "lineWidth": 1
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pgj610n2",
+      "id": "13",
+      "bbox": [
+        872,
+        352,
+        276,
+        28
+      ],
+      "geometry": "rect",
+      "text": "Hardening",
+      "textPreview": "Hardening",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Hardening"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Hardening",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#050505",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Hardening",
+              "fontSize": 23,
+              "color": "#050505",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ahsnu5on",
+      "id": "14",
+      "bbox": [
+        872,
+        390,
+        276,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Two-account X E2E, role separation and external review.",
+      "textPreview": "Two-account X E2E, role separation and external review.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Two-account X E2E, role separation and"
+          },
+          {
+            "index": 2,
+            "text": "external review."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Two-account X E2E, role separation and external review.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Two-account X E2E, role separation and external review.",
+              "fontSize": 16,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bi1o3a58",
+      "id": "15",
+      "bbox": [
+        150,
+        572,
+        980,
+        34
+      ],
+      "geometry": "rect",
+      "text": "TRACE is focused: send USDC to an identity now, settle to a verified wallet later.",
+      "textPreview": "TRACE is focused: send USDC to an identity now, settle to a verified wallet later.",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TRACE is focused: send USDC to an identity now, settle to a verified wallet later."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TRACE is focused: send USDC to an identity now, settle to a verified wallet later.",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#050505",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TRACE is focused: send USDC to an identity now, settle to a verified wallet later.",
+              "fontSize": 23,
+              "color": "#050505",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cju5wfmt",
+      "id": "16",
+      "bbox": [
+        72,
+        674,
+        520,
+        20
+      ],
+      "geometry": "rect",
+      "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+      "textPreview": "TRACE — Trusted Recipient Arc Claim Escrow",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TRACE — Trusted Recipient Arc Claim Escrow"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+              "fontSize": 12,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x43650ne",
+      "id": "17",
+      "bbox": [
+        1150,
+        674,
+        58,
+        20
+      ],
+      "geometry": "rect",
+      "text": "10",
+      "textPreview": "10",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "10"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "10",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#050505",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "10",
+              "fontSize": 12,
+              "color": "#050505",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

@@ -19,4 +19,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://handlepay.app/sitemap.xml
+Sitemap: https://trace.app/sitemap.xml

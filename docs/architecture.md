@@ -1,8 +1,8 @@
-# PACT Architecture
+# TRACE Architecture
 
 ## Objective and core invariant
 
-PACT addresses an Arc USDC escrow to an immutable X user identity and releases principal only to a wallet proven by that freshly authenticated recipient.
+TRACE addresses an Arc USDC escrow to an immutable X user identity and releases principal only to a wallet proven by that freshly authenticated recipient.
 
 The central invariant is:
 
@@ -12,7 +12,7 @@ The central invariant is:
 
 ```mermaid
 flowchart LR
-    S[Sender browser<br/>wallet + X] --> API[PACT API]
+    S[Sender browser<br/>wallet + X] --> API[TRACE API]
     R[Recipient browser<br/>wallet + X] --> API
     API --> X[X OAuth 2.0<br/>X API v2]
     API --> DB[(PostgreSQL)]
@@ -43,7 +43,7 @@ flowchart LR
 ```mermaid
 sequenceDiagram
     participant S as Sender
-    participant API as PACT API
+    participant API as TRACE API
     participant X as X API
     participant E as Arc Escrow
     participant R as Recipient
@@ -88,7 +88,7 @@ stateDiagram-v2
 
 ## Identity and authorization model
 
-PACT joins two independent proofs inside a server session:
+TRACE joins two independent proofs inside a server session:
 
 1. **X proof:** OAuth Authorization Code with PKCE returns the authenticated immutable X user ID.
 2. **Wallet proof:** the wallet signs a one-time message containing address, nonce, issue time, expiry, and service origin.

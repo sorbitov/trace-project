@@ -2,7 +2,7 @@
 
 ## Scope
 
-Phase 2 captures what is already built in the local PACT prototype.
+Phase 2 captures what is already built in the local TRACE prototype.
 
 ## Built So Far
 

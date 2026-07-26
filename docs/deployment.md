@@ -1,4 +1,4 @@
-# PACT Arc Testnet Deployment and Operations
+# TRACE Arc Testnet Deployment and Operations
 
 ## Purpose
 

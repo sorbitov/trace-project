@@ -1,8 +1,8 @@
-# PACT — Programmable Arc Conditional Transfers
+# TRACE
 
 ## What This Is
 
-PACT is an Arc-based USDC payment app for sending money to people by their X handle instead of a wallet address.
+TRACE is an Arc-based USDC payment app for sending money to people by their X handle instead of a wallet address.
 
 The core promise:
 
@@ -28,7 +28,7 @@ Web3 coordination happens on X, but payments still fall back to wallet addresses
 - Tips, bounties, rewards, and small paid work are awkward to settle.
 - Existing social payment flows often depend on another chain, custodial rails, or generic payment links without X-native identity.
 
-PACT uses X identity for discovery and Arc for USDC settlement.
+TRACE uses X identity for discovery and Arc for USDC settlement.
 
 ## Product Shape
 
@@ -58,7 +58,7 @@ Primary search promise:
 
 > Send USDC to any X handle. They claim with X.
 
-PACT should target searches around X-native stablecoin payments, USDC tips, crypto payment links, Arc payments, and Web3 creator payments. The SEO plan lives in `.planning/SEO.md` and should stay aligned with the product truth: X OAuth proves social identity, Arc settles USDC, and recipients do not need to be registered before a payment is created.
+TRACE should target searches around X-native stablecoin payments, USDC tips, crypto payment links, Arc payments, and Web3 creator payments. The SEO plan lives in `.planning/SEO.md` and should stay aligned with the product truth: X OAuth proves social identity, Arc settles USDC, and recipients do not need to be registered before a payment is created.
 
 ## Key Decisions
 

@@ -1,8 +1,22 @@
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+status: unknown
+last_updated: "2026-07-24T20:25:29.171Z"
+progress:
+  total_phases: 5
+  completed_phases: 3
+  total_plans: 4
+  completed_plans: 3
+  percent: 75
+---
+
 # State
 
 ## Current Project
 
-PACT — Programmable Arc Conditional Transfers: USDC payments to X handles, claimed through X OAuth.
+TRACE: USDC payments to X handles, claimed through X OAuth.
 
 ## Current Status
 
@@ -57,6 +71,12 @@ Next work should be added under the correct phase subsection:
 - SEO/GEO/content/discoverability -> Phase 3
 - Solidity/contracts/Arc Testnet deployment -> Phase 4
 - real backend, integrations, indexer, launch ops -> Phase 5
+
+## Accumulated Context
+
+### Roadmap Evolution
+
+- Phase 03.1 inserted after Phase 3: Website Positioning and Content Architecture (URGENT)
 
 ## Recent Notes
 

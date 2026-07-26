@@ -1,0 +1,982 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/62vp5p",
+    "id": "62vp5p",
+    "slide": 5,
+    "layoutId": "0f39d74e-6f6e-4ed8-bc8c-41a93c741e80",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "fd7ac1bb-9485-4a32-a2be-87be8c902928",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F5F5F5",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "0f39d74e-6f6e-4ed8-bc8c-41a93c741e80",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "fd7ac1bb-9485-4a32-a2be-87be8c902928",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "fd7ac1bb-9485-4a32-a2be-87be8c902928",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n6lcr6ds",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#F5F5F5",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8rutkrud",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9s3utwvy",
+      "id": "3",
+      "bbox": [
+        72,
+        42,
+        460,
+        24
+      ],
+      "geometry": "rect",
+      "text": "WHY TRACE",
+      "textPreview": "WHY TRACE",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "WHY TRACE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "WHY TRACE",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5B5B62",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "WHY TRACE",
+              "fontSize": 12,
+              "color": "#5B5B62",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y1sbehcb",
+      "id": "4",
+      "bbox": [
+        72,
+        112,
+        930,
+        92
+      ],
+      "geometry": "rect",
+      "text": "It is a claim lifecycle, not just address lookup",
+      "textPreview": "It is a claim lifecycle, not just address lookup",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "It is a claim lifecycle, not just address lookup"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "It is a claim lifecycle, not just address lookup",
+          "resolvedTextStyle": {
+            "fontSize": 42,
+            "color": "#050505",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "It is a claim lifecycle, not just address lookup",
+              "fontSize": 42,
+              "color": "#050505",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z21snmdg",
+      "id": "5",
+      "bbox": [
+        72,
+        210,
+        760,
+        52
+      ],
+      "geometry": "rect",
+      "text": "The moat is recoverable, proof-bound USDC settlement.",
+      "textPreview": "The moat is recoverable, proof-bound USDC settlement.",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The moat is recoverable, proof-bound USDC settlement."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The moat is recoverable, proof-bound USDC settlement.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The moat is recoverable, proof-bound USDC settlement.",
+              "fontSize": 19,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/03utgru1",
+      "id": "6",
+      "bbox": [
+        110,
+        328,
+        1060,
+        56
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9D6E6",
+      "lineWidth": 1
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l43apwvm",
+      "id": "7",
+      "bbox": [
+        138,
+        345,
+        230,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Direct transfer",
+      "textPreview": "Direct transfer",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Direct transfer"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Direct transfer",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#050505",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Direct transfer",
+              "fontSize": 17,
+              "color": "#050505",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qxsbahcz",
+      "id": "8",
+      "bbox": [
+        410,
+        345,
+        410,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Fast only when the address is already known",
+      "textPreview": "Fast only when the address is already known",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Fast only when the address is already known"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Fast only when the address is already known",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Fast only when the address is already known",
+              "fontSize": 16,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/by1sj2dk",
+      "id": "9",
+      "bbox": [
+        830,
+        345,
+        300,
+        22
+      ],
+      "geometry": "rect",
+      "text": "No identity claim / weak recovery",
+      "textPreview": "No identity claim / weak recovery",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "No identity claim / weak recovery"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "No identity claim / weak recovery",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "No identity claim / weak recovery",
+              "fontSize": 16,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7qtkrelg",
+      "id": "10",
+      "bbox": [
+        110,
+        404,
+        1060,
+        56
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9D6E6",
+      "lineWidth": 1
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6pkjy9kv",
+      "id": "11",
+      "bbox": [
+        138,
+        421,
+        230,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Custodial handle pay",
+      "textPreview": "Custodial handle pay",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Custodial handle pay"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Custodial handle pay",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#050505",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Custodial handle pay",
+              "fontSize": 17,
+              "color": "#050505",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tcb2t436",
+      "id": "12",
+      "bbox": [
+        410,
+        421,
+        410,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Smooth UX",
+      "textPreview": "Smooth UX",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Smooth UX"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Smooth UX",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Smooth UX",
+              "fontSize": 16,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sr210j2l",
+      "id": "13",
+      "bbox": [
+        830,
+        421,
+        300,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Custody and platform risk",
+      "textPreview": "Custody and platform risk",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Custody and platform risk"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Custody and platform risk",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Custody and platform risk",
+              "fontSize": 16,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fedkvelc",
+      "id": "14",
+      "bbox": [
+        110,
+        480,
+        1060,
+        56
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#050505",
+      "lineColor": "#050505",
+      "lineWidth": 1
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ud4j29kr",
+      "id": "15",
+      "bbox": [
+        138,
+        497,
+        230,
+        22
+      ],
+      "geometry": "rect",
+      "text": "TRACE",
+      "textPreview": "TRACE",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TRACE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TRACE",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#FFFFFF",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TRACE",
+              "fontSize": 17,
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hgv2xo3i",
+      "id": "16",
+      "bbox": [
+        410,
+        497,
+        410,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Send now, prove later, recover if needed",
+      "textPreview": "Send now, prove later, recover if needed",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#D8D4E8",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Send now, prove later, recover if needed"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Send now, prove later, recover if needed",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#D8D4E8"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Send now, prove later, recover if needed",
+              "fontSize": 16,
+              "color": "#D8D4E8"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gfml4j2x",
+      "id": "17",
+      "bbox": [
+        830,
+        497,
+        300,
+        22
+      ],
+      "geometry": "rect",
+      "text": "Non-custodial Arc escrow",
+      "textPreview": "Non-custodial Arc escrow",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Non-custodial Arc escrow"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Non-custodial Arc escrow",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#FFFFFF",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Non-custodial Arc escrow",
+              "fontSize": 16,
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vi9kjul8",
+      "id": "18",
+      "bbox": [
+        72,
+        674,
+        520,
+        20
+      ],
+      "geometry": "rect",
+      "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+      "textPreview": "TRACE — Trusted Recipient Arc Claim Escrow",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TRACE — Trusted Recipient Arc Claim Escrow"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+              "fontSize": 12,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ah0jqpkn",
+      "id": "19",
+      "bbox": [
+        1150,
+        674,
+        58,
+        20
+      ],
+      "geometry": "rect",
+      "text": "05",
+      "textPreview": "05",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "05"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "05",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#050505",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "05",
+              "fontSize": 12,
+              "color": "#050505",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

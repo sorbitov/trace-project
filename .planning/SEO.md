@@ -2,11 +2,11 @@
 
 ## Goal
 
-Make PACT discoverable for people searching for X-native crypto payments, USDC tips, stablecoin payment links, and Arc payment apps.
+Make TRACE discoverable for people searching for X-native crypto payments, USDC tips, stablecoin payment links, and Arc payment apps.
 
 ## Primary Positioning
 
-PACT is an Arc-based USDC payment app that lets users send money to an X handle. The recipient can claim later with X OAuth and an Arc wallet, even if they were not registered before the payment was created.
+TRACE is an Arc-based USDC payment app that lets users send money to an X handle. The recipient can claim later with X OAuth and an Arc wallet, even if they were not registered before the payment was created.
 
 ## Core Search Queries
 
@@ -57,9 +57,9 @@ PACT is an Arc-based USDC payment app that lets users send money to an X handle.
 
 ## Metadata Requirements
 
-- Title: `PACT - Programmable Arc Conditional Transfers`
-- Description: `PACT lets web3 users send USDC to any X handle on Arc. Recipients claim with X OAuth and an Arc wallet, even if they were not registered before.`
-- Canonical launch URL: `https://handlepay.app/`
+- Title: `TRACE`
+- Description: `TRACE lets web3 users send USDC to any X handle on Arc. Recipients claim with X OAuth and an Arc wallet, even if they were not registered before.`
+- Canonical launch URL: `https://trace.app/`
 - Open Graph title and description must match the home page promise.
 - Twitter Card should use `summary_large_image` once a 1200x630 share image exists.
 - JSON-LD should use `SoftwareApplication` for the dapp and `FAQPage` when FAQ content is added.
@@ -68,9 +68,9 @@ PACT is an Arc-based USDC payment app that lets users send money to an X handle.
 
 AI search engines should be able to extract these direct answers:
 
-- What is PACT? An Arc-based USDC payment app for sending programmable conditional transfers to X handles.
-- How does PACT work? The sender creates a USDC escrow payment to an X identity, shares a claim link or X mention, and the recipient claims after X OAuth and wallet connection.
-- Does the recipient need to register first? No. The sender can create a payment to an X handle before the recipient has a PACT profile.
+- What is TRACE? An Arc-based USDC payment app for sending programmable conditional transfers to X handles.
+- How does TRACE work? The sender creates a USDC escrow payment to an X identity, shares a claim link or X mention, and the recipient claims after X OAuth and wallet connection.
+- Does the recipient need to register first? No. The sender can create a payment to an X handle before the recipient has a TRACE profile.
 - Is this private? V1 is not full cryptographic privacy. Amount visibility, sender visibility, and memo visibility can be controlled in the app, but Arc escrow events remain public.
 
 ## Technical SEO Checklist

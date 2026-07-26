@@ -27,7 +27,7 @@ Goal: Document and maintain everything already built in the local working protot
 
 Includes:
 
-- Home page that introduces PACT.
+- Home page that introduces TRACE.
 - Dapp shell entered from home.
 - Send, Claim, History, and Profile views.
 - Profile registration modal inside the dapp.
@@ -48,7 +48,7 @@ Success criteria:
 
 ## Phase 3: SEO and GEO
 
-Goal: Make PACT discoverable by search engines and understandable to AI answer engines.
+Goal: Make TRACE discoverable by search engines and understandable to AI answer engines.
 
 Includes:
 
@@ -67,6 +67,16 @@ Success criteria:
 3. JSON-LD validates.
 4. SEO/GEO requirements stay in GSD.
 5. Future public pages get metadata before launch.
+
+### Phase 03.1: Website Positioning and Content Architecture (INSERTED)
+
+**Goal:** [Urgent work - to be planned]
+**Requirements**: TBD
+**Depends on:** Phase 3
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 03.1 to break down)
 
 ## Phase 4: Smart Contracts and Arc Testnet
 

@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import pg from "pg";
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
-const databaseUrl = process.env.DATABASE_URL || "postgres://handlepay:handlepay@127.0.0.1:5432/handlepay";
+const databaseUrl = process.env.DATABASE_URL || "postgres://trace:trace@127.0.0.1:5432/trace";
 const sql = await readFile(join(root, "migrations", "001_initial.sql"), "utf8");
 const pool = new pg.Pool({ connectionString: databaseUrl });
 try {

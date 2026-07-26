@@ -9,7 +9,7 @@ Phase 3 captures discoverability work: search engines, AI answer engines, metada
 - `.planning/SEO.md`
 - Home page title and meta description.
 - Keywords meta.
-- Canonical URL placeholder: `https://handlepay.app/`.
+- Canonical URL placeholder: `https://trace.app/`.
 - Open Graph metadata.
 - Twitter Card metadata.
 - SoftwareApplication JSON-LD.

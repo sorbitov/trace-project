@@ -1,0 +1,279 @@
+{"kind":"deck","id":"pr/x12enn","name":"Deck"}
+{"kind":"layout","layoutId":"c311461d-409f-4f7f-971d-255800482552","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"ab21bf06-9022-4e3e-9e55-2c8e01bdf596","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/gh933h","slide":1,"title":"DeFi Track / Arc + USDC","textShapes":9}
+{"kind":"shape","id":"sh/210rq547","slide":1,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/porqlkni","slide":1,"bbox":[0,0,1280,122]}
+{"kind":"shape","id":"sh/4ni9sfmx","slide":1,"bbox":[0,624,1280,96]}
+{"kind":"shape","id":"sh/rqt8na5o","slide":1,"bbox":[0,118,1280,1.5]}
+{"kind":"shape","id":"sh/qp0ru543","slide":1,"bbox":[72,654,260,3]}
+{"kind":"shape","id":"sh/dsbqpknu","slide":1,"bbox":[344,654,135,3]}
+{"kind":"textbox","id":"sh/cr29wfm9","slide":1,"text":"DeFi Track / Arc + USDC","textPreview":"DeFi Track / Arc + USDC","textChars":23,"textLines":1,"bbox":[70,44,360,24]}
+{"kind":"textbox","id":"sh/zutsru5k","slide":1,"text":"TRACE","textPreview":"TRACE","textChars":5,"textLines":1,"bbox":[70,170,560,100]}
+{"kind":"textbox","id":"sh/etkryp4f","slide":1,"text":"Trusted Recipient Arc Claim Escrow","textPreview":"Trusted Recipient Arc Claim Escrow","textChars":34,"textLines":1,"bbox":[70,270,650,44]}
+{"kind":"textbox","id":"sh/wbulsfex","slide":1,"text":"Claimable USDC payments to X identities on Arc.","textPreview":"Claimable USDC payments to X identities on Arc.","textChars":47,"textLines":1,"bbox":[70,334,640,74]}
+{"kind":"shape","id":"sh/xc32lkfi","slide":1,"bbox":[70,432,220,34]}
+{"kind":"textbox","id":"sh/a9c3qpw7","slide":1,"text":"Arc Testnet deployed","textPreview":"Arc Testnet deployed","textChars":20,"textLines":1,"bbox":[86,439,188,20]}
+{"kind":"shape","id":"sh/balkjuxs","slide":1,"bbox":[308,432,230,34]}
+{"kind":"textbox","id":"sh/kfulwze9","slide":1,"text":"Non-custodial escrow","textPreview":"Non-custodial escrow","textChars":20,"textLines":1,"bbox":[324,439,198,20]}
+{"kind":"shape","id":"sh/lgnmp4vu","slide":1,"bbox":[770,142,310,310]}
+{"kind":"textbox","id":"sh/jelknuxo","slide":1,"text":"send to @handle → prove X + wallet → claim USDC","textPreview":"send to @handle → prove X + wallet → claim USDC","textChars":47,"textLines":1,"bbox":[740,492,380,44]}
+{"kind":"textbox","id":"sh/8jel0ze5","slide":1,"text":"TRACE — Trusted Recipient Arc Claim Escrow","textPreview":"TRACE — Trusted Recipient Arc Claim Escrow","textChars":42,"textLines":1,"bbox":[70,672,520,24]}
+{"kind":"textbox","id":"sh/t4nmt4vq","slide":1,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1154,670,56,24]}
+{"kind":"image","id":"im/ds7epov6","slide":1,"name":"","geometry":"roundRect","alt":"TRACE logo","bbox":[790,162,270,270]}
+{"kind":"notes","id":"nt/gh933h","slide":1,"text":""}
+{"kind":"slide","id":"sl/38gepe","slide":2,"title":"READINESS VERDICT","textShapes":13}
+{"kind":"shape","id":"sh/a1wb2po3","slide":2,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/x47uxk7e","slide":2,"bbox":[0,0,1280,122]}
+{"kind":"shape","id":"sh/w3et4f6t","slide":2,"bbox":[0,624,1280,96]}
+{"kind":"shape","id":"sh/ne5crapc","slide":2,"bbox":[0,118,1280,1.5]}
+{"kind":"shape","id":"sh/mdwby5or","slide":2,"bbox":[72,654,260,3]}
+{"kind":"shape","id":"sh/9gnutk7i","slide":2,"bbox":[344,654,135,3]}
+{"kind":"textbox","id":"sh/ofet0f6x","slide":2,"text":"READINESS VERDICT","textPreview":"READINESS VERDICT","textChars":17,"textLines":1,"bbox":[70,38,430,28]}
+{"kind":"textbox","id":"sh/7apc3e5g","slide":2,"text":"Ready for demo and pilot hardening","textPreview":"Ready for demo and pilot hardening","textChars":34,"textLines":1,"bbox":[70,135,720,74]}
+{"kind":"textbox","id":"sh/69gva9ob","slide":2,"text":"Not a production launch claim yet — the deck is honest about the remaining hardening.","textPreview":"Not a production launch claim yet — the deck is honest about the remaining hardening.","textChars":85,"textLines":1,"bbox":[70,210,820,58]}
+{"kind":"shape","id":"sh/s3eh07ml","slide":2,"bbox":[74,314,536,242]}
+{"kind":"textbox","id":"sh/t47itcn6","slide":2,"text":"What is ready","textPreview":"What is ready","textChars":13,"textLines":1,"bbox":[104,340,420,34]}
+{"kind":"shape","id":"sh/61wzyh4v","slide":2,"bbox":[112,402,8,8]}
+{"kind":"textbox","id":"sh/7250rm5g","slide":2,"text":"Arc Testnet escrow deployment exists and is RPC-verified.","textPreview":"Arc Testnet escrow deployment exists and is RPC-verified.","textChars":57,"textLines":1,"bbox":[136,394,436,42]}
+{"kind":"shape","id":"sh/kzehw7mp","slide":2,"bbox":[112,452,8,8]}
+{"kind":"textbox","id":"sh/50nipcna","slide":2,"text":"Create, claim, cancel and expired-refund paths have transaction evidence.","textPreview":"Create, claim, cancel and expired-refund paths have transaction evidence.","textChars":73,"textLines":1,"bbox":[136,444,436,42]}
+{"kind":"shape","id":"sh/idwzux4j","slide":2,"bbox":[112,508,8,8]}
+{"kind":"textbox","id":"sh/je50n254","slide":2,"text":"37 automated tests pass across contract, API, security and wallet flows.","textPreview":"37 automated tests pass across contract, API, security and wallet flows.","textChars":72,"textLines":1,"bbox":[136,500,436,42]}
+{"kind":"shape","id":"sh/wbuhsnmt","slide":2,"bbox":[670,314,536,242]}
+{"kind":"textbox","id":"sh/xcnilsny","slide":2,"text":"Before real users","textPreview":"Before real users","textChars":17,"textLines":1,"bbox":[700,340,420,34]}
+{"kind":"shape","id":"sh/dsfypof2","slide":2,"bbox":[708,402,8,8]}
+{"kind":"textbox","id":"sh/c7mxwjeh","slide":2,"text":"Publish HTTPS app, managed PostgreSQL, secrets and health monitoring.","textPreview":"Publish HTTPS app, managed PostgreSQL, secrets and health monitoring.","textChars":69,"textLines":1,"bbox":[732,394,436,42]}
+{"kind":"shape","id":"sh/b6dgnexw","slide":2,"bbox":[708,452,8,8]}
+{"kind":"textbox","id":"sh/q54fu9wb","slide":2,"text":"Run real two-X-account browser E2E with two wallets.","textPreview":"Run real two-X-account browser E2E with two wallets.","textChars":52,"textLines":1,"bbox":[732,444,436,42]}
+{"kind":"shape","id":"sh/p4vyl4fq","slide":2,"bbox":[708,508,8,8]}
+{"kind":"textbox","id":"sh/o3mxsjy5","slide":2,"text":"Separate owner, verifier, treasury and deployer roles; finish external review.","textPreview":"Separate owner, verifier, treasury and deployer roles; finish external review.","textChars":78,"textLines":1,"bbox":[732,500,436,42]}
+{"kind":"textbox","id":"sh/32dgjex0","slide":2,"text":"TRACE — Trusted Recipient Arc Claim Escrow","textPreview":"TRACE — Trusted Recipient Arc Claim Escrow","textChars":42,"textLines":1,"bbox":[70,672,520,24]}
+{"kind":"textbox","id":"sh/214fq9gf","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1154,670,56,24]}
+{"kind":"notes","id":"nt/38gepe","slide":2,"text":""}
+{"kind":"slide","id":"sl/cmohe9","slide":3,"title":"PROBLEM","textShapes":12}
+{"kind":"shape","id":"sh/18z2dcrq","slide":3,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/e583ixsz","slide":3,"bbox":[0,0,1280,122]}
+{"kind":"shape","id":"sh/f6hkb29k","slide":3,"bbox":[0,624,1280,96]}
+{"kind":"shape","id":"sh/sjqlg7at","slide":3,"bbox":[0,118,1280,1.5]}
+{"kind":"shape","id":"sh/d4z29cre","slide":3,"bbox":[72,654,260,3]}
+{"kind":"shape","id":"sh/6h83exs3","slide":3,"bbox":[344,654,135,3]}
+{"kind":"textbox","id":"sh/rihk7298","slide":3,"text":"PROBLEM","textPreview":"PROBLEM","textChars":7,"textLines":1,"bbox":[70,38,430,28]}
+{"kind":"textbox","id":"sh/4f6lcnax","slide":3,"text":"Crypto payments still start with an address request","textPreview":"Crypto payments still start with an address request","textChars":51,"textLines":1,"bbox":[70,135,720,74]}
+{"kind":"textbox","id":"sh/5gf25sri","slide":3,"text":"People coordinate around identity, but settlement still asks for a wallet address first.","textPreview":"People coordinate around identity, but settlement still asks for a wallet address first.","textChars":88,"textLines":1,"bbox":[70,210,820,58]}
+{"kind":"shape","id":"sh/hwzatsr2","slide":3,"bbox":[86,314,334,220]}
+{"kind":"shape","id":"sh/gvq9knah","slide":3,"bbox":[472,314,334,220]}
+{"kind":"shape","id":"sh/fuxsri9w","slide":3,"bbox":[858,314,334,220]}
+{"kind":"textbox","id":"sh/utoridsb","slide":3,"text":"DM friction","textPreview":"DM friction","textChars":11,"textLines":1,"bbox":[118,346,270,34]}
+{"kind":"textbox","id":"sh/tsfapsrq","slide":3,"text":"Payouts wait until the recipient shares an address.","textPreview":"Payouts wait until the recipient shares an address.","textChars":51,"textLines":1,"bbox":[125,408,250,74]}
+{"kind":"textbox","id":"sh/sr69gna5","slide":3,"text":"Address risk","textPreview":"Address risk","textChars":12,"textLines":1,"bbox":[504,346,270,34]}
+{"kind":"textbox","id":"sh/7qx8ni9k","slide":3,"text":"Copy/paste errors and impersonation are easy to miss.","textPreview":"Copy/paste errors and impersonation are easy to miss.","textChars":53,"textLines":1,"bbox":[511,408,250,74]}
+{"kind":"textbox","id":"sh/6poredsf","slide":3,"text":"Unknown wallet","textPreview":"Unknown wallet","textChars":14,"textLines":1,"bbox":[890,346,270,34]}
+{"kind":"textbox","id":"sh/5ofql8ru","slide":3,"text":"A sender cannot safely transfer directly when only an X identity is known.","textPreview":"A sender cannot safely transfer directly when only an X identity is known.","textChars":74,"textLines":1,"bbox":[897,408,250,92]}
+{"kind":"textbox","id":"sh/kn69c3a9","slide":3,"text":"TRACE changes the destination from a wallet address to a verified recipient identity.","textPreview":"TRACE changes the destination from a wallet address to a verified recipient identity.","textChars":85,"textLines":1,"bbox":[180,578,920,34]}
+{"kind":"textbox","id":"sh/wja1o7mh","slide":3,"text":"TRACE — Trusted Recipient Arc Claim Escrow","textPreview":"TRACE — Trusted Recipient Arc Claim Escrow","textChars":42,"textLines":1,"bbox":[70,672,520,24]}
+{"kind":"textbox","id":"sh/xkjihcnm","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1154,670,56,24]}
+{"kind":"notes","id":"nt/cmohe9","slide":3,"text":""}
+{"kind":"slide","id":"sl/uz51n8","slide":4,"title":"SOLUTION FLOW","textShapes":14}
+{"kind":"shape","id":"sh/zet0ru9c","slide":4,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/0z210fqx","slide":4,"bbox":[0,0,1280,122]}
+{"kind":"shape","id":"sh/l0bitkri","slide":4,"bbox":[0,624,1280,96]}
+{"kind":"shape","id":"sh/q90zu58v","slide":4,"bbox":[0,118,1280,1.5]}
+{"kind":"shape","id":"sh/ba90na90","slide":4,"bbox":[72,654,260,3]}
+{"kind":"shape","id":"sh/cb2hwfql","slide":4,"bbox":[344,654,135,3]}
+{"kind":"textbox","id":"sh/dcbipkr6","slide":4,"text":"SOLUTION FLOW","textPreview":"SOLUTION FLOW","textChars":13,"textLines":1,"bbox":[70,38,430,28]}
+{"kind":"textbox","id":"sh/a54j698z","slide":4,"text":"An X account becomes a claimable USDC destination","textPreview":"An X account becomes a claimable USDC destination","textChars":49,"textLines":1,"bbox":[70,135,720,74]}
+{"kind":"textbox","id":"sh/v6d0ze9k","slide":4,"text":"The sender can act now; the recipient proves control later.","textPreview":"The sender can act now; the recipient proves control later.","textChars":59,"textLines":1,"bbox":[70,210,820,58]}
+{"kind":"shape","id":"sh/7u5cjeho","slide":4,"bbox":[70,330,255,160]}
+{"kind":"textbox","id":"sh/mtwva903","slide":4,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[94,354,48,42]}
+{"kind":"textbox","id":"sh/9gnuloze","slide":4,"text":"Sender enters X handle","textPreview":"Sender enters X handle","textChars":22,"textLines":1,"bbox":[94,408,205,56]}
+{"kind":"shape","id":"sh/8fedcjit","slide":4,"bbox":[338,410,56,0]}
+{"kind":"shape","id":"sh/vi5wnyhk","slide":4,"bbox":[368,330,255,160]}
+{"kind":"textbox","id":"sh/uhwvet0z","slide":4,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[392,354,48,42]}
+{"kind":"textbox","id":"sh/hk7ep8zq","slide":4,"text":"USDC funds Arc escrow","textPreview":"USDC funds Arc escrow","textChars":21,"textLines":1,"bbox":[392,408,205,56]}
+{"kind":"shape","id":"sh/wjydg3i5","slide":4,"bbox":[636,410,56,0]}
+{"kind":"shape","id":"sh/jmpwryhg","slide":4,"bbox":[666,330,255,160]}
+{"kind":"textbox","id":"sh/ilgvit0b","slide":4,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[690,354,48,42]}
+{"kind":"textbox","id":"sh/etk761of","slide":4,"text":"Recipient proves X + wallet","textPreview":"Recipient proves X + wallet","textChars":27,"textLines":1,"bbox":[690,408,205,56]}
+{"kind":"shape","id":"sh/zutoz650","slide":4,"bbox":[934,410,56,0]}
+{"kind":"shape","id":"sh/0v2p8b6l","slide":4,"bbox":[964,330,255,160]}
+{"kind":"textbox","id":"sh/1gv61gn6","slide":4,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[988,354,48,42]}
+{"kind":"textbox","id":"sh/qpk72hoj","slide":4,"text":"Claim, cancel or refund settles onchain","textPreview":"Claim, cancel or refund settles onchain","textChars":39,"textLines":1,"bbox":[988,408,205,56]}
+{"kind":"shape","id":"sh/rqtovm54","slide":4,"bbox":[188,548,904,58]}
+{"kind":"textbox","id":"sh/cr2p4r6p","slide":4,"text":"Fail-closed rule: the backend verifies Arc receipts and matching contract events before marking funding or settlement complete.","textPreview":"Fail-closed rule: the backend verifies Arc receipts and matching contract events before marking funding or settlement complete.","textChars":127,"textLines":1,"bbox":[218,563,844,30]}
+{"kind":"textbox","id":"sh/dsb6xwna","slide":4,"text":"TRACE — Trusted Recipient Arc Claim Escrow","textPreview":"TRACE — Trusted Recipient Arc Claim Escrow","textChars":42,"textLines":1,"bbox":[70,672,520,24]}
+{"kind":"textbox","id":"sh/al47elon","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1154,670,56,24]}
+{"kind":"notes","id":"nt/uz51n8","slide":4,"text":""}
+{"kind":"slide","id":"sl/9dzz13","slide":5,"title":"TRACK FIT","textShapes":13}
+{"kind":"shape","id":"sh/98bud4vq","slide":5,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/ml0b2pwz","slide":5,"bbox":[0,0,1280,122]}
+{"kind":"shape","id":"sh/nm9cbudk","slide":5,"bbox":[0,624,1280,96]}
+{"kind":"shape","id":"sh/wb2d8ze1","slide":5,"bbox":[0,118,1280,1.5]}
+{"kind":"shape","id":"sh/xcbuh4vm","slide":5,"bbox":[72,654,260,3]}
+{"kind":"shape","id":"sh/a9kv6pwb","slide":5,"bbox":[344,654,135,3]}
+{"kind":"textbox","id":"sh/batcfudw","slide":5,"text":"TRACK FIT","textPreview":"TRACK FIT","textChars":9,"textLines":1,"bbox":[70,38,430,28]}
+{"kind":"textbox","id":"sh/cfytwfex","slide":5,"text":"The DeFi fit is programmable stablecoin settlement","textPreview":"The DeFi fit is programmable stablecoin settlement","textChars":50,"textLines":1,"bbox":[70,135,720,74]}
+{"kind":"textbox","id":"sh/dgru5kvi","slide":5,"text":"TRACE uses Arc + USDC for conditional payment flows, cancellation policy, expiry and fee routing.","textPreview":"TRACE uses Arc + USDC for conditional payment flows, cancellation policy, expiry and fee routing.","textChars":97,"textLines":1,"bbox":[70,210,820,58]}
+{"kind":"shape","id":"sh/pgb2pw7a","slide":5,"bbox":[106,318,478,114]}
+{"kind":"textbox","id":"sh/of21wrqp","slide":5,"text":"Arc","textPreview":"Arc","textChars":3,"textLines":1,"bbox":[132,340,260,30]}
+{"kind":"textbox","id":"sh/netknmpk","slide":5,"text":"Settlement layer, testnet execution, and USDC-denominated flow.","textPreview":"Settlement layer, testnet execution, and USDC-denominated flow.","textChars":63,"textLines":1,"bbox":[132,376,420,44]}
+{"kind":"shape","id":"sh/2dkju18z","slide":5,"bbox":[654,318,478,114]}
+{"kind":"textbox","id":"sh/x4v2tg7m","slide":5,"text":"USDC","textPreview":"USDC","textChars":4,"textLines":1,"bbox":[680,340,260,30]}
+{"kind":"textbox","id":"sh/cjm10bq1","slide":5,"text":"Escrow principal, protocol fee asset and payment unit.","textPreview":"Escrow principal, protocol fee asset and payment unit.","textChars":54,"textLines":1,"bbox":[680,376,420,44]}
+{"kind":"shape","id":"sh/bitkr6pg","slide":5,"bbox":[106,468,478,114]}
+{"kind":"textbox","id":"sh/ahkjy18v","slide":5,"text":"Programmability","textPreview":"Programmability","textChars":15,"textLines":1,"bbox":[132,490,260,30]}
+{"kind":"textbox","id":"sh/l8v2xg7i","slide":5,"text":"Identity-bound claim authorization, cancellation policy, expiry and refund.","textPreview":"Identity-bound claim authorization, cancellation policy, expiry and refund.","textChars":75,"textLines":1,"bbox":[132,526,420,44]}
+{"kind":"shape","id":"sh/k7m14bqx","slide":5,"bbox":[654,468,478,114]}
+{"kind":"textbox","id":"sh/kbul0zy9","slide":5,"text":"Treasury workflow","textPreview":"Treasury workflow","textChars":17,"textLines":1,"bbox":[680,490,260,30]}
+{"kind":"textbox","id":"sh/5c3mt4fu","slide":5,"text":"Mandatory fee routed onchain while principal remains recoverable.","textPreview":"Mandatory fee routed onchain while principal remains recoverable.","textChars":65,"textLines":1,"bbox":[680,526,420,44]}
+{"kind":"textbox","id":"sh/ipc3ypg3","slide":5,"text":"TRACE — Trusted Recipient Arc Claim Escrow","textPreview":"TRACE — Trusted Recipient Arc Claim Escrow","textChars":42,"textLines":1,"bbox":[70,672,520,24]}
+{"kind":"textbox","id":"sh/jql47uxo","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1154,670,56,24]}
+{"kind":"notes","id":"nt/9dzz13","slide":5,"text":""}
+{"kind":"slide","id":"sl/f2zasv","slide":6,"title":"ARCHITECTURE","textShapes":14}
+{"kind":"shape","id":"sh/m10zulsf","slide":6,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/94ri5gr6","slide":6,"bbox":[0,0,1280,122]}
+{"kind":"shape","id":"sh/83ihwval","slide":6,"bbox":[0,624,1280,96]}
+{"kind":"shape","id":"sh/ze90z6to","slide":6,"bbox":[0,118,1280,1.5]}
+{"kind":"shape","id":"sh/ydgzq1sj","slide":6,"bbox":[72,654,260,3]}
+{"kind":"shape","id":"sh/lgri1gru","slide":6,"bbox":[344,654,135,3]}
+{"kind":"textbox","id":"sh/kfihsba9","slide":6,"text":"ARCHITECTURE","textPreview":"ARCHITECTURE","textChars":12,"textLines":1,"bbox":[70,38,430,28]}
+{"kind":"textbox","id":"sh/jat0ba98","slide":6,"text":"Trust is split between identity policy and onchain custody","textPreview":"Trust is split between identity policy and onchain custody","textChars":58,"textLines":1,"bbox":[70,135,720,74]}
+{"kind":"textbox","id":"sh/i9kj25sn","slide":6,"text":"Database state is useful for UX; Arc transactions are the source of truth for funds and settlement.","textPreview":"Database state is useful for UX; Arc transactions are the source of truth for funds and settlement.","textChars":99,"textLines":1,"bbox":[70,210,820,58]}
+{"kind":"shape","id":"sh/c3210ve1","slide":6,"bbox":[102,352,224,134]}
+{"kind":"textbox","id":"sh/x4bit0vm","slide":6,"text":"Browser","textPreview":"Browser","textChars":7,"textLines":1,"bbox":[120,376,188,30]}
+{"kind":"textbox","id":"sh/ahkjylwv","slide":6,"text":"wallet + X session","textPreview":"wallet + X session","textChars":18,"textLines":1,"bbox":[120,422,188,44]}
+{"kind":"shape","id":"sh/b2t0rqdg","slide":6,"bbox":[382,352,224,134]}
+{"kind":"textbox","id":"sh/ofi1wbep","slide":6,"text":"TRACE API","textPreview":"TRACE API","textChars":9,"textLines":1,"bbox":[400,376,188,30]}
+{"kind":"textbox","id":"sh/pgbipgva","slide":6,"text":"OAuth, policy, receipt checks","textPreview":"OAuth, policy, receipt checks","textChars":29,"textLines":1,"bbox":[400,422,188,44]}
+{"kind":"shape","id":"sh/2d0julwz","slide":6,"bbox":[662,352,224,134]}
+{"kind":"textbox","id":"sh/ne90n6d4","slide":6,"text":"PostgreSQL","textPreview":"PostgreSQL","textChars":10,"textLines":1,"bbox":[680,376,188,30]}
+{"kind":"textbox","id":"sh/0bi1sbet","slide":6,"text":"sessions, payments, audit, indexer","textPreview":"sessions, payments, audit, indexer","textChars":34,"textLines":1,"bbox":[680,422,188,44]}
+{"kind":"shape","id":"sh/1crilgve","slide":6,"bbox":[942,352,224,134]}
+{"kind":"textbox","id":"sh/h8jypsn2","slide":6,"text":"Arc Escrow","textPreview":"Arc Escrow","textChars":10,"textLines":1,"bbox":[960,376,188,30]}
+{"kind":"textbox","id":"sh/g7ahw76h","slide":6,"text":"USDC custody and lifecycle","textPreview":"USDC custody and lifecycle","textChars":26,"textLines":1,"bbox":[960,422,188,44]}
+{"kind":"shape","id":"sh/f61gn25w","slide":6,"bbox":[326,418,56,0]}
+{"kind":"shape","id":"sh/u5szuxob","slide":6,"bbox":[606,418,56,0]}
+{"kind":"shape","id":"sh/t4jylsn6","slide":6,"bbox":[886,418,56,0]}
+{"kind":"textbox","id":"sh/s3qhsn6l","slide":6,"text":"Invariant: only verified Arc transactions fund or settle a payment.","textPreview":"Invariant: only verified Arc transactions fund or settle a payment.","textChars":67,"textLines":1,"bbox":[220,552,840,34]}
+{"kind":"textbox","id":"sh/72hgjip0","slide":6,"text":"TRACE — Trusted Recipient Arc Claim Escrow","textPreview":"TRACE — Trusted Recipient Arc Claim Escrow","textChars":42,"textLines":1,"bbox":[70,672,520,24]}
+{"kind":"textbox","id":"sh/618zqdof","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1154,670,56,24]}
+{"kind":"notes","id":"nt/f2zasv","slide":6,"text":""}
+{"kind":"slide","id":"sl/bp5gxf","slide":7,"title":"SECURITY MODEL","textShapes":17}
+{"kind":"shape","id":"sh/qho3a5kj","slide":7,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/d4f2lk3a","slide":7,"bbox":[0,0,1280,122]}
+{"kind":"shape","id":"sh/c36lcf2p","slide":7,"bbox":[0,624,1280,96]}
+{"kind":"shape","id":"sh/3edkfal8","slide":7,"bbox":[0,118,1280,1.5]}
+{"kind":"shape","id":"sh/2d4365kn","slide":7,"bbox":[72,654,260,3]}
+{"kind":"shape","id":"sh/pgv2h03y","slide":7,"bbox":[344,654,135,3]}
+{"kind":"textbox","id":"sh/4fml8v2t","slide":7,"text":"SECURITY MODEL","textPreview":"SECURITY MODEL","textChars":14,"textLines":1,"bbox":[70,38,430,28]}
+{"kind":"textbox","id":"sh/fadkbqlw","slide":7,"text":"Security centers on proof binding and recovery","textPreview":"Security centers on proof binding and recovery","textChars":46,"textLines":1,"bbox":[70,135,720,74]}
+{"kind":"textbox","id":"sh/u9k32lkb","slide":7,"text":"The model is designed around a narrow claim authority and sender recovery paths.","textPreview":"The model is designed around a narrow claim authority and sender recovery paths.","textChars":80,"textLines":1,"bbox":[70,210,820,58]}
+{"kind":"shape","id":"sh/cbahgbap","slide":7,"bbox":[96,304,518,74]}
+{"kind":"textbox","id":"sh/dcjy9gra","slide":7,"text":"Recipient proof","textPreview":"Recipient proof","textChars":15,"textLines":1,"bbox":[116,318,180,24]}
+{"kind":"textbox","id":"sh/q98zelsz","slide":7,"text":"Fresh X OAuth must match the immutable recipient X user ID.","textPreview":"Fresh X OAuth must match the immutable recipient X user ID.","textChars":59,"textLines":1,"bbox":[306,318,280,44]}
+{"kind":"shape","id":"sh/rahg7q94","slide":7,"bbox":[660,304,518,74]}
+{"kind":"textbox","id":"sh/47qhcbat","slide":7,"text":"Wallet proof","textPreview":"Wallet proof","textChars":12,"textLines":1,"bbox":[680,318,180,24]}
+{"kind":"textbox","id":"sh/p8zy5gre","slide":7,"text":"A one-time signed challenge binds the destination wallet to the session.","textPreview":"A one-time signed challenge binds the destination wallet to the session.","textChars":72,"textLines":1,"bbox":[870,318,280,44]}
+{"kind":"shape","id":"sh/258fa1sn","slide":7,"bbox":[96,406,518,74]}
+{"kind":"textbox","id":"sh/36hg3698","slide":7,"text":"Claim digest","textPreview":"Claim digest","textChars":12,"textLines":1,"bbox":[116,420,180,24]}
+{"kind":"textbox","id":"sh/83uhofax","slide":7,"text":"Authorization binds payment ID, wallet, chain ID, contract and expiry.","textPreview":"Authorization binds payment ID, wallet, chain ID, contract and expiry.","textChars":70,"textLines":1,"bbox":[306,420,280,44]}
+{"kind":"shape","id":"sh/943ih0ri","slide":7,"bbox":[660,406,518,74]}
+{"kind":"textbox","id":"sh/h0zy10jm","slide":7,"text":"Recovery","textPreview":"Recovery","textChars":8,"textLines":1,"bbox":[680,420,180,24]}
+{"kind":"textbox","id":"sh/wzqh8v21","slide":7,"text":"Sender cancel/refund remains available under contract policy.","textPreview":"Sender cancel/refund remains available under contract policy.","textChars":61,"textLines":1,"bbox":[870,420,280,44]}
+{"kind":"shape","id":"sh/vyhgzq1g","slide":7,"bbox":[96,508,518,74]}
+{"kind":"textbox","id":"sh/ux8z65kb","slide":7,"text":"Privacy boundary","textPreview":"Privacy boundary","textChars":16,"textLines":1,"bbox":[116,522,180,24]}
+{"kind":"textbox","id":"sh/9wfyx0jq","slide":7,"text":"Unauthorized API views omit amount, sender and memo; chain activity remains public.","textPreview":"Unauthorized API views omit amount, sender and memo; chain activity remains public.","textChars":83,"textLines":1,"bbox":[306,522,280,44]}
+{"kind":"shape","id":"sh/8v6x4v25","slide":7,"bbox":[660,508,518,74]}
+{"kind":"textbox","id":"sh/7uxgvq1k","slide":7,"text":"Production gap","textPreview":"Production gap","textChars":14,"textLines":1,"bbox":[680,522,180,24]}
+{"kind":"textbox","id":"sh/mtof2lkz","slide":7,"text":"External contract/backend review and managed key custody remain required.","textPreview":"External contract/backend review and managed key custody remain required.","textChars":73,"textLines":1,"bbox":[870,522,280,44]}
+{"kind":"textbox","id":"sh/lsfytgje","slide":7,"text":"TRACE — Trusted Recipient Arc Claim Escrow","textPreview":"TRACE — Trusted Recipient Arc Claim Escrow","textChars":42,"textLines":1,"bbox":[70,672,520,24]}
+{"kind":"textbox","id":"sh/kr6x0b2t","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1154,670,56,24]}
+{"kind":"notes","id":"nt/bp5gxf","slide":7,"text":""}
+{"kind":"slide","id":"sl/rehxh5","slide":8,"title":"CURRENT EVIDENCE","textShapes":16}
+{"kind":"shape","id":"sh/wzih4jyx","slide":8,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/vy90bexc","slide":8,"bbox":[0,0,1280,122]}
+{"kind":"shape","id":"sh/ax0z29gr","slide":8,"bbox":[0,624,1280,96]}
+{"kind":"shape","id":"sh/9wri94f6","slide":8,"bbox":[0,118,1280,1.5]}
+{"kind":"shape","id":"sh/8vih0jyl","slide":8,"bbox":[72,654,260,3]}
+{"kind":"shape","id":"sh/nu907ex0","slide":8,"bbox":[344,654,135,3]}
+{"kind":"textbox","id":"sh/mt0zy9gf","slide":8,"text":"CURRENT EVIDENCE","textPreview":"CURRENT EVIDENCE","textChars":16,"textLines":1,"bbox":[70,38,430,28]}
+{"kind":"textbox","id":"sh/tsvil8fa","slide":8,"text":"Evidence exists; public proof is the final packaging step","textPreview":"Evidence exists; public proof is the final packaging step","textChars":57,"textLines":1,"bbox":[70,135,720,74]}
+{"kind":"textbox","id":"sh/srm1c3y5","slide":8,"text":"Keep the big proof visible and put long hashes in the README / explorer links.","textPreview":"Keep the big proof visible and put long hashes in the README / explorer links.","textChars":78,"textLines":1,"bbox":[70,210,820,58]}
+{"kind":"shape","id":"sh/6dsfu5or","slide":8,"bbox":[92,318,244,126]}
+{"kind":"textbox","id":"sh/re1wnq5c","slide":8,"text":"37 / 37","textPreview":"37 / 37","textChars":7,"textLines":1,"bbox":[116,340,196,44]}
+{"kind":"textbox","id":"sh/sfaxwv6x","slide":8,"text":"automated tests passing","textPreview":"automated tests passing","textChars":23,"textLines":1,"bbox":[110,392,208,34]}
+{"kind":"shape","id":"sh/tgjep0ni","slide":8,"bbox":[382,318,244,126]}
+{"kind":"textbox","id":"sh/i98fqlov","slide":8,"text":"5042002","textPreview":"5042002","textChars":7,"textLines":1,"bbox":[406,340,196,44]}
+{"kind":"textbox","id":"sh/jahwjq5g","slide":8,"text":"Arc Testnet chain ID","textPreview":"Arc Testnet chain ID","textChars":20,"textLines":1,"bbox":[400,392,208,34]}
+{"kind":"shape","id":"sh/4bqxsv61","slide":8,"bbox":[672,318,244,126]}
+{"kind":"textbox","id":"sh/5czel0n6","slide":8,"text":"0.50%","textPreview":"0.50%","textChars":5,"textLines":1,"bbox":[696,340,196,44]}
+{"kind":"textbox","id":"sh/25cf2poz","slide":8,"text":"minimum protocol fee","textPreview":"minimum protocol fee","textChars":20,"textLines":1,"bbox":[690,392,208,34]}
+{"kind":"shape","id":"sh/36lwva5k","slide":8,"bbox":[962,318,244,126]}
+{"kind":"textbox","id":"sh/zqdcn2lw","slide":8,"text":"3 flows","textPreview":"3 flows","textChars":7,"textLines":1,"bbox":[986,340,196,44]}
+{"kind":"textbox","id":"sh/yp4beh4b","slide":8,"text":"claim, cancel, refund smoke","textPreview":"claim, cancel, refund smoke","textChars":27,"textLines":1,"bbox":[980,392,208,34]}
+{"kind":"shape","id":"sh/lsvupc32","slide":8,"bbox":[92,492,1114,86]}
+{"kind":"textbox","id":"sh/krmtg7mh","slide":8,"text":"Contract","textPreview":"Contract","textChars":8,"textLines":1,"bbox":[122,512,110,24]}
+{"kind":"textbox","id":"sh/7excrml8","slide":8,"text":"0x5A3949aE67a37e7e37bFC77F5b7832Cc93f40A2a","textPreview":"0x5A3949aE67a37e7e37bFC77F5b7832Cc93f40A2a","textChars":42,"textLines":1,"bbox":[242,511,640,24]}
+{"kind":"textbox","id":"sh/mt4bih4n","slide":8,"text":"Deployment tx: 0xa3f80c8e…d9c97e","textPreview":"Deployment tx: 0xa3f80c8e…d9c97e","textChars":32,"textLines":1,"bbox":[242,542,520,24]}
+{"kind":"textbox","id":"sh/9gfutw3y","slide":8,"text":"TRACE — Trusted Recipient Arc Claim Escrow","textPreview":"TRACE — Trusted Recipient Arc Claim Escrow","textChars":42,"textLines":1,"bbox":[70,672,520,24]}
+{"kind":"textbox","id":"sh/8f6tkrmt","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1154,670,56,24]}
+{"kind":"notes","id":"nt/rehxh5","slide":8,"text":""}
+{"kind":"slide","id":"sl/tlw44e","slide":9,"title":"DEMO PATH","textShapes":18}
+{"kind":"shape","id":"sh/itovm9kv","slide":9,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/5wzex4jm","slide":9,"bbox":[0,0,1280,122]}
+{"kind":"shape","id":"sh/4vqdoj21","slide":9,"bbox":[0,624,1280,96]}
+{"kind":"shape","id":"sh/ryhwze1c","slide":9,"bbox":[0,118,1280,1.5]}
+{"kind":"shape","id":"sh/6x8vq9k7","slide":9,"bbox":[72,654,260,3]}
+{"kind":"shape","id":"sh/t0ze1oji","slide":9,"bbox":[344,654,135,3]}
+{"kind":"textbox","id":"sh/szqdsjix","slide":9,"text":"DEMO PATH","textPreview":"DEMO PATH","textChars":9,"textLines":1,"bbox":[70,38,430,28]}
+{"kind":"textbox","id":"sh/72xcnu18","slide":9,"text":"The judge demo should show the full lifecycle","textPreview":"The judge demo should show the full lifecycle","textChars":45,"textLines":1,"bbox":[70,135,720,74]}
+{"kind":"textbox","id":"sh/m14vupkn","slide":9,"text":"A clean six-step path shows the product without pretending missing infrastructure is ready.","textPreview":"A clean six-step path shows the product without pretending missing infrastructure is ready.","textChars":91,"textLines":1,"bbox":[70,210,820,58]}
+{"kind":"shape","id":"sh/sb258fm1","slide":9,"bbox":[100,308,300,88]}
+{"kind":"textbox","id":"sh/dcb6h03m","slide":9,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[122,331,38,34]}
+{"kind":"textbox","id":"sh/q9kn654v","slide":9,"text":"Enter X handle","textPreview":"Enter X handle","textChars":14,"textLines":1,"bbox":[174,336,200,28]}
+{"kind":"shape","id":"sh/ratofalg","slide":9,"bbox":[470,308,300,88]}
+{"kind":"textbox","id":"sh/0fmpcf2x","slide":9,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[492,331,38,34]}
+{"kind":"textbox","id":"sh/1gv6lk3i","slide":9,"text":"Approve + create escrow","textPreview":"Approve + create escrow","textChars":23,"textLines":1,"bbox":[544,336,200,28]}
+{"kind":"shape","id":"sh/edkna5kr","slide":9,"bbox":[840,308,300,88]}
+{"kind":"textbox","id":"sh/fetojalc","slide":9,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[862,331,38,34]}
+{"kind":"textbox","id":"sh/gji50vmt","slide":9,"text":"Open claim link","textPreview":"Open claim link","textChars":15,"textLines":1,"bbox":[914,336,200,28]}
+{"kind":"shape","id":"sh/hkr69g3e","slide":9,"bbox":[100,438,300,88]}
+{"kind":"textbox","id":"sh/x4zuhsrq","slide":9,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[122,461,38,34]}
+{"kind":"textbox","id":"sh/c3qdona5","slide":9,"text":"Prove X + wallet","textPreview":"Prove X + wallet","textChars":16,"textLines":1,"bbox":[174,466,200,28]}
+{"kind":"shape","id":"sh/b2hcfi90","slide":9,"bbox":[470,438,300,88]}
+{"kind":"textbox","id":"sh/a18vmdsf","slide":9,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[492,461,38,34]}
+{"kind":"textbox","id":"sh/lsjulsr2","slide":9,"text":"Claim USDC","textPreview":"Claim USDC","textChars":10,"textLines":1,"bbox":[544,466,200,28]}
+{"kind":"shape","id":"sh/kradsnah","slide":9,"bbox":[840,438,300,88]}
+{"kind":"textbox","id":"sh/z61cji9w","slide":9,"text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[862,461,38,34]}
+{"kind":"textbox","id":"sh/y58vqdsb","slide":9,"text":"Show cancel/refund","textPreview":"Show cancel/refund","textChars":18,"textLines":1,"bbox":[914,466,200,28]}
+{"kind":"shape","id":"sh/9wjepcry","slide":9,"bbox":[218,574,844,50]}
+{"kind":"textbox","id":"sh/8vadw7ad","slide":9,"text":"Demo rule: never simulate success. If X, DB, RPC or contract config is missing, fail closed and show the blocker.","textPreview":"Demo rule: never simulate success. If X, DB, RPC or contract config is missing, fail closed and show the blocker.","textChars":113,"textLines":1,"bbox":[246,587,788,24]}
+{"kind":"textbox","id":"sh/q14ra98v","slide":9,"text":"TRACE — Trusted Recipient Arc Claim Escrow","textPreview":"TRACE — Trusted Recipient Arc Claim Escrow","textChars":42,"textLines":1,"bbox":[70,672,520,24]}
+{"kind":"textbox","id":"sh/r2dsjupg","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1154,670,56,24]}
+{"kind":"notes","id":"nt/tlw44e","slide":9,"text":""}
+{"kind":"slide","id":"sl/wotp52","slide":10,"title":"NEXT STEPS","textShapes":15}
+{"kind":"shape","id":"sh/14nm50v6","slide":10,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/e1wnalcv","slide":10,"bbox":[0,0,1280,122]}
+{"kind":"shape","id":"sh/f2543qd0","slide":10,"bbox":[0,624,1280,96]}
+{"kind":"shape","id":"sh/o7y5gfux","slide":10,"bbox":[0,118,1280,1.5]}
+{"kind":"shape","id":"sh/p87690vi","slide":10,"bbox":[72,654,260,3]}
+{"kind":"shape","id":"sh/25wne5cr","slide":10,"bbox":[344,654,135,3]}
+{"kind":"textbox","id":"sh/365o7adc","slide":10,"text":"NEXT STEPS","textPreview":"NEXT STEPS","textChars":10,"textLines":1,"bbox":[70,38,430,28]}
+{"kind":"textbox","id":"sh/4bu54bud","slide":10,"text":"The next milestone is a public testnet pilot","textPreview":"The next milestone is a public testnet pilot","textChars":44,"textLines":1,"bbox":[70,135,720,74]}
+{"kind":"textbox","id":"sh/5c3mxgvy","slide":10,"text":"The submission story: DeFi payment infrastructure, technically proven on testnet, ready for public hardening.","textPreview":"The submission story: DeFi payment infrastructure, technically proven on testnet, ready for public hardening.","textChars":109,"textLines":1,"bbox":[70,210,820,58]}
+{"kind":"shape","id":"sh/dkniho7y","slide":10,"bbox":[94,318,318,190]}
+{"kind":"textbox","id":"sh/cju1oj6d","slide":10,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[120,344,48,42]}
+{"kind":"textbox","id":"sh/bil0feps","slide":10,"text":"Publish","textPreview":"Publish","textChars":7,"textLines":1,"bbox":[176,350,190,34]}
+{"kind":"textbox","id":"sh/qhcjm987","slide":10,"text":"GitHub repo, CI output, HTTPS demo and release tag.","textPreview":"GitHub repo, CI output, HTTPS demo and release tag.","textChars":51,"textLines":1,"bbox":[124,418,258,62]}
+{"kind":"shape","id":"sh/l8nilo7u","slide":10,"bbox":[480,318,318,190]}
+{"kind":"textbox","id":"sh/07e1sj69","slide":10,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[506,344,48,42]}
+{"kind":"textbox","id":"sh/zm50jepo","slide":10,"text":"Verify","textPreview":"Verify","textChars":6,"textLines":1,"bbox":[562,350,190,34]}
+{"kind":"textbox","id":"sh/ylwjqto3","slide":10,"text":"Arcscan source verification, two-account X E2E and reviewer video.","textPreview":"Arcscan source verification, two-account X E2E and reviewer video.","textChars":66,"textLines":1,"bbox":[510,418,258,62]}
+{"kind":"shape","id":"sh/9c7ip876","slide":10,"bbox":[866,318,318,190]}
+{"kind":"textbox","id":"sh/8be1w36l","slide":10,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[892,344,48,42]}
+{"kind":"textbox","id":"sh/8fmls7eh","slide":10,"text":"Harden","textPreview":"Harden","textChars":6,"textLines":1,"bbox":[948,350,190,34]}
+{"kind":"textbox","id":"sh/tgf2lcf2","slide":10,"text":"Role separation, managed signer, monitoring and external security review.","textPreview":"Role separation, managed signer, monitoring and external security review.","textChars":73,"textLines":1,"bbox":[896,418,258,62]}
+{"kind":"textbox","id":"sh/6t43qxwr","slide":10,"text":"Decision: proceed as a DeFi Track submission and testnet pilot — not as a production launch claim.","textPreview":"Decision: proceed as a DeFi Track submission and testnet pilot — not as a production launch claim.","textChars":98,"textLines":1,"bbox":[154,568,972,34]}
+{"kind":"textbox","id":"sh/7edkj2xw","slide":10,"text":"TRACE — Trusted Recipient Arc Claim Escrow","textPreview":"TRACE — Trusted Recipient Arc Claim Escrow","textChars":42,"textLines":1,"bbox":[70,672,520,24]}
+{"kind":"textbox","id":"sh/gj6lwret","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1154,670,56,24]}
+{"kind":"notes","id":"nt/wotp52","slide":10,"text":""}

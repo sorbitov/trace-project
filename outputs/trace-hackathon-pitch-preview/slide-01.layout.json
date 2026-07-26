@@ -1,0 +1,881 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/68v2iv",
+    "id": "68v2iv",
+    "slide": 1,
+    "layoutId": "a94d6040-19f0-4722-a105-422aeb35135c",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "dab66d8f-4b2d-4f0d-912f-f101aa6b8412",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#050505",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "a94d6040-19f0-4722-a105-422aeb35135c",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "dab66d8f-4b2d-4f0d-912f-f101aa6b8412",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "dab66d8f-4b2d-4f0d-912f-f101aa6b8412",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lsbutwzq",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#050505",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ypkbihgf",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1280,
+        112
+      ],
+      "geometry": "rect",
+      "fillColor": "#0C0808",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jqtcrmh0",
+      "id": "3",
+      "bbox": [
+        0,
+        642,
+        1280,
+        78
+      ],
+      "geometry": "rect",
+      "fillColor": "#0C0808",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wnitgry9",
+      "id": "4",
+      "bbox": [
+        0,
+        111,
+        1280,
+        1.5
+      ],
+      "geometry": "rect",
+      "fillColor": "#682E3C",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xobupwzu",
+      "id": "5",
+      "bbox": [
+        72,
+        670,
+        228,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#B9FF38",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/al0behg3",
+      "id": "6",
+      "bbox": [
+        314,
+        670,
+        128,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#5BE7FF",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bm9cnmho",
+      "id": "7",
+      "bbox": [
+        72,
+        42,
+        340,
+        24
+      ],
+      "geometry": "rect",
+      "text": "DeFi Track / Arc + USDC",
+      "textPreview": "DeFi Track / Arc + USDC",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "DeFi Track / Arc + USDC"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "DeFi Track / Arc + USDC",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#B9FF38",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "DeFi Track / Arc + USDC",
+              "fontSize": 13,
+              "color": "#B9FF38",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gjmdsbyd",
+      "id": "8",
+      "bbox": [
+        72,
+        170,
+        560,
+        96
+      ],
+      "geometry": "rect",
+      "text": "TRACE",
+      "textPreview": "TRACE",
+      "resolvedFontSize": 78,
+      "resolvedTextStyle": {
+        "fontSize": 78,
+        "typeface": "+mn-lt",
+        "color": "#F0D7BB",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TRACE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TRACE",
+          "resolvedTextStyle": {
+            "fontSize": 78,
+            "color": "#F0D7BB",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TRACE",
+              "fontSize": 78,
+              "color": "#F0D7BB",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hkvu1gfy",
+      "id": "9",
+      "bbox": [
+        72,
+        270,
+        680,
+        40
+      ],
+      "geometry": "rect",
+      "text": "Trusted Recipient Arc Claim Escrow",
+      "textPreview": "Trusted Recipient Arc Claim Escrow",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "fontSize": 27,
+        "typeface": "+mn-lt",
+        "color": "#5BE7FF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Trusted Recipient Arc Claim Escrow"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Trusted Recipient Arc Claim Escrow",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "color": "#5BE7FF",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Trusted Recipient Arc Claim Escrow",
+              "fontSize": 27,
+              "color": "#5BE7FF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5wn6honq",
+      "id": "10",
+      "bbox": [
+        72,
+        334,
+        650,
+        64
+      ],
+      "geometry": "rect",
+      "text": "Claimable USDC payments to X identities on Arc.",
+      "textPreview": "Claimable USDC payments to X identities on Arc.",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "fontSize": 26,
+        "typeface": "+mn-lt",
+        "color": "#B99A8D",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Claimable USDC payments to X identities on Arc."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Claimable USDC payments to X identities on Arc.",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#B99A8D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Claimable USDC payments to X identities on Arc.",
+              "fontSize": 26,
+              "color": "#B99A8D"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4vup8jm5",
+      "id": "11",
+      "bbox": [
+        72,
+        428,
+        170,
+        34
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#080808",
+      "lineColor": "#B9FF38",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/julofe5k",
+      "id": "12",
+      "bbox": [
+        88,
+        435,
+        138,
+        19
+      ],
+      "geometry": "rect",
+      "text": "send to @handle",
+      "textPreview": "send to @handle",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "send to @handle"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "send to @handle",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#B9FF38",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "send to @handle",
+              "fontSize": 13,
+              "color": "#B9FF38",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/itc769of",
+      "id": "13",
+      "bbox": [
+        260,
+        428,
+        190,
+        34
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#080808",
+      "lineColor": "#5BE7FF",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hs36donu",
+      "id": "14",
+      "bbox": [
+        276,
+        435,
+        158,
+        19
+      ],
+      "geometry": "rect",
+      "text": "prove X + wallet",
+      "textPreview": "prove X + wallet",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#5BE7FF",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "prove X + wallet"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "prove X + wallet",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#5BE7FF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "prove X + wallet",
+              "fontSize": 13,
+              "color": "#5BE7FF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w7u54j69",
+      "id": "15",
+      "bbox": [
+        468,
+        428,
+        150,
+        34
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#080808",
+      "lineColor": "#B9FF38",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v6lobe5o",
+      "id": "16",
+      "bbox": [
+        484,
+        435,
+        118,
+        19
+      ],
+      "geometry": "rect",
+      "text": "claim USDC",
+      "textPreview": "claim USDC",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "claim USDC"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "claim USDC",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#B9FF38",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "claim USDC",
+              "fontSize": 13,
+              "color": "#B9FF38",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u5cn29o3",
+      "id": "17",
+      "bbox": [
+        782,
+        146,
+        304,
+        304
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#0C0808",
+      "lineColor": "#682E3C",
+      "lineWidth": 1.6
+    },
+    {
+      "order": 18,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/q50n2loj",
+      "id": "18",
+      "bbox": [
+        802,
+        166,
+        264,
+        264
+      ],
+      "geometry": "roundRect",
+      "alt": "TRACE logo",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "imageMask": {
+        "geometry": "roundRect",
+        "adjustmentList": [
+          {
+            "name": "adj",
+            "formula": "val 4545"
+          }
+        ]
+      },
+      "asset": {
+        "assetId": "ad54f52a-3b89-4af0-805b-55864d5f4471",
+        "contentType": "image/jpeg",
+        "byteLength": 612923
+      }
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gnypg3md",
+      "id": "19",
+      "bbox": [
+        740,
+        490,
+        390,
+        54
+      ],
+      "geometry": "rect",
+      "text": "A payment primitive for recipients whose wallet address is not known yet.",
+      "textPreview": "A payment primitive for recipients whose wallet address is not known yet.",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#F0D7BB",
+        "bold": true,
+        "alignment": "center",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A payment primitive for recipients whose"
+          },
+          {
+            "index": 2,
+            "text": "wallet address is not known yet."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A payment primitive for recipients whose wallet address is not known yet.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#F0D7BB",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A payment primitive for recipients whose wallet address is not known yet.",
+              "fontSize": 19,
+              "color": "#F0D7BB",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0769c7up",
+      "id": "20",
+      "bbox": [
+        72,
+        682,
+        510,
+        22
+      ],
+      "geometry": "rect",
+      "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+      "textPreview": "TRACE — Trusted Recipient Arc Claim Escrow",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#7E6661",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TRACE — Trusted Recipient Arc Claim Escrow"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#7E6661",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+              "fontSize": 12,
+              "color": "#7E6661",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/18fqlcva",
+      "id": "21",
+      "bbox": [
+        1150,
+        680,
+        60,
+        22
+      ],
+      "geometry": "rect",
+      "text": "01",
+      "textPreview": "01",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#B9FF38",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "01",
+              "fontSize": 12,
+              "color": "#B9FF38",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

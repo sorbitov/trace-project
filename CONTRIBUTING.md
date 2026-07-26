@@ -1,6 +1,6 @@
-# Contributing to PACT
+# Contributing to TRACE
 
-PACT is a testnet-stage project. Contributions should preserve the non-custodial escrow lifecycle, explicit identity proofs, and the distinction between private API metadata and public onchain data.
+TRACE is a testnet-stage project. Contributions should preserve the non-custodial escrow lifecycle, explicit identity proofs, and the distinction between private API metadata and public onchain data.
 
 ## Development setup
 

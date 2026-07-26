@@ -1,0 +1,965 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/kg9uhd",
+    "id": "kg9uhd",
+    "slide": 6,
+    "layoutId": "0f39d74e-6f6e-4ed8-bc8c-41a93c741e80",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "fd7ac1bb-9485-4a32-a2be-87be8c902928",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F5F5F5",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "0f39d74e-6f6e-4ed8-bc8c-41a93c741e80",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "fd7ac1bb-9485-4a32-a2be-87be8c902928",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "fd7ac1bb-9485-4a32-a2be-87be8c902928",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qhcnyhwn",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#F5F5F5",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dk3m9cfy",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cju507ed",
+      "id": "3",
+      "bbox": [
+        72,
+        42,
+        460,
+        24
+      ],
+      "geometry": "rect",
+      "text": "ARC + USDC",
+      "textPreview": "ARC + USDC",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "ARC + USDC"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ARC + USDC",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5B5B62",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ARC + USDC",
+              "fontSize": 12,
+              "color": "#5B5B62",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zml4bmx4",
+      "id": "4",
+      "bbox": [
+        72,
+        112,
+        930,
+        92
+      ],
+      "geometry": "rect",
+      "text": "The DeFi primitive is programmable stablecoin settlement",
+      "textPreview": "The DeFi primitive is programmable stablecoin settlement",
+      "resolvedFontSize": 42,
+      "resolvedTextStyle": {
+        "fontSize": 42,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The DeFi primitive is programmable stablecoin"
+          },
+          {
+            "index": 2,
+            "text": "settlement"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The DeFi primitive is programmable stablecoin settlement",
+          "resolvedTextStyle": {
+            "fontSize": 42,
+            "color": "#050505",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The DeFi primitive is programmable stablecoin settlement",
+              "fontSize": 42,
+              "color": "#050505",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/elcn2hwj",
+      "id": "5",
+      "bbox": [
+        72,
+        210,
+        760,
+        52
+      ],
+      "geometry": "rect",
+      "text": "TRACE uses stablecoin custody, policy and recovery as the product core.",
+      "textPreview": "TRACE uses stablecoin custody, policy and recovery as the product core.",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TRACE uses stablecoin custody, policy and recovery as the product core."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TRACE uses stablecoin custody, policy and recovery as the product core.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TRACE uses stablecoin custody, policy and recovery as the product core.",
+              "fontSize": 19,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1onmdwfa",
+      "id": "6",
+      "bbox": [
+        108,
+        330,
+        240,
+        132
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9D6E6",
+      "lineWidth": 1
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0nu54rep",
+      "id": "7",
+      "bbox": [
+        130,
+        354,
+        196,
+        28
+      ],
+      "geometry": "rect",
+      "text": "Arc",
+      "textPreview": "Arc",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Arc"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Arc",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#050505",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Arc",
+              "fontSize": 23,
+              "color": "#050505",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fq14z2x0",
+      "id": "8",
+      "bbox": [
+        130,
+        392,
+        196,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Execution layer and testnet settlement path.",
+      "textPreview": "Execution layer and testnet settlement path.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Execution layer and testnet"
+          },
+          {
+            "index": 2,
+            "text": "settlement path."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Execution layer and testnet settlement path.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Execution layer and testnet settlement path.",
+              "fontSize": 16,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ups3qxwf",
+      "id": "9",
+      "bbox": [
+        390,
+        330,
+        240,
+        132
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#050505",
+      "lineColor": "#050505",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k325ozqt",
+      "id": "10",
+      "bbox": [
+        412,
+        354,
+        196,
+        28
+      ],
+      "geometry": "rect",
+      "text": "USDC",
+      "textPreview": "USDC",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "USDC"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "USDC",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#FFFFFF",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "USDC",
+              "fontSize": 23,
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/54b6h47e",
+      "id": "11",
+      "bbox": [
+        412,
+        392,
+        196,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Principal, claim asset and fee unit.",
+      "textPreview": "Principal, claim asset and fee unit.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#C9C5D8",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Principal, claim asset and"
+          },
+          {
+            "index": 2,
+            "text": "fee unit."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Principal, claim asset and fee unit.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#C9C5D8"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Principal, claim asset and fee unit.",
+              "fontSize": 16,
+              "color": "#C9C5D8"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i10nmp8n",
+      "id": "12",
+      "bbox": [
+        672,
+        330,
+        240,
+        132
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9D6E6",
+      "lineWidth": 1
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j29ofup8",
+      "id": "13",
+      "bbox": [
+        694,
+        354,
+        196,
+        28
+      ],
+      "geometry": "rect",
+      "text": "Policy",
+      "textPreview": "Policy",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Policy"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Policy",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#050505",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Policy",
+              "fontSize": 23,
+              "color": "#050505",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sr25szqp",
+      "id": "14",
+      "bbox": [
+        694,
+        392,
+        196,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Identity-bound claim, cancel and expiry.",
+      "textPreview": "Identity-bound claim, cancel and expiry.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Identity-bound claim,"
+          },
+          {
+            "index": 2,
+            "text": "cancel and expiry."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Identity-bound claim, cancel and expiry.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Identity-bound claim, cancel and expiry.",
+              "fontSize": 16,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tsb6l47a",
+      "id": "15",
+      "bbox": [
+        954,
+        330,
+        240,
+        132
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9D6E6",
+      "lineWidth": 1
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65knq98z",
+      "id": "16",
+      "bbox": [
+        976,
+        354,
+        196,
+        28
+      ],
+      "geometry": "rect",
+      "text": "Treasury",
+      "textPreview": "Treasury",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Treasury"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Treasury",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#050505",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Treasury",
+              "fontSize": 23,
+              "color": "#050505",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7qtojepk",
+      "id": "17",
+      "bbox": [
+        976,
+        392,
+        196,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Onchain fee routing while principal remains recoverable.",
+      "textPreview": "Onchain fee routing while principal remains recoverable.",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Onchain fee routing while"
+          },
+          {
+            "index": 2,
+            "text": "principal remains"
+          },
+          {
+            "index": 3,
+            "text": "recoverable."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Onchain fee routing while principal remains recoverable.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Onchain fee routing while principal remains recoverable.",
+              "fontSize": 16,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8vy5gfql",
+      "id": "18",
+      "bbox": [
+        72,
+        674,
+        520,
+        20
+      ],
+      "geometry": "rect",
+      "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+      "textPreview": "TRACE — Trusted Recipient Arc Claim Escrow",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#5B5B62",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TRACE — Trusted Recipient Arc Claim Escrow"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5B5B62"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+              "fontSize": 12,
+              "color": "#5B5B62"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9wrm9k76",
+      "id": "19",
+      "bbox": [
+        1150,
+        674,
+        58,
+        20
+      ],
+      "geometry": "rect",
+      "text": "06",
+      "textPreview": "06",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#050505",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "06"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "06",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#050505",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "06",
+              "fontSize": 12,
+              "color": "#050505",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

@@ -164,3 +164,142 @@
   .docs-footer nav { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
   .docs-footer nav a { padding-block: 8px; font-size: 9px; }
 }
+
+/* ============================================================
+   SHARPLINK INSTITUTIONAL THEME — docs override (final layer)
+   Neutralizes the hard-coded dark documentation surfaces and
+   lifts the tiny 6-9px type to readable sizes. Last layer wins.
+   ============================================================ */
+
+/* ---- Kill the dark backdrops → warm-white paper ---- */
+.docs-body { color: var(--ink) !important; background: var(--paper) !important; }
+.docs-header {
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+  background: rgba(253, 251, 247, 0.9) !important;
+  backdrop-filter: saturate(1.1) blur(10px);
+}
+.docs-header .brand,
+.docs-back,
+.docs-footer a { color: var(--ink) !important; }
+.docs-header > span,
+.docs-sidebar > p,
+.docs-sidebar nav span { color: var(--wine-soft) !important; }
+
+.docs-layout { border-color: var(--line) !important; }
+.docs-sidebar { border-color: var(--line) !important; background: var(--paper) !important; }
+.docs-sidebar nav a { color: var(--ink) !important; border-color: var(--line) !important; }
+.docs-sidebar nav a:hover { color: #ffffff !important; background: var(--acid) !important; }
+.docs-sidebar nav a:hover span { color: rgba(255, 255, 255, 0.85) !important; }
+.docs-sidebar .docs-nav-group a:focus-visible { color: #ffffff !important; background: var(--acid) !important; }
+.docs-status { border-color: var(--line-strong) !important; background: var(--panel) !important; }
+.docs-status i { background: var(--acid) !important; box-shadow: 0 0 8px rgba(14, 118, 255, 0.5) !important; }
+
+/* ---- Hero + light entries ---- */
+.docs-hero,
+.docs-entry { border-color: var(--line) !important; background: var(--paper) !important; }
+.docs-hero h1,
+.docs-entry h2 { color: var(--ink) !important; font-weight: 700; }
+.docs-hero-meta > p,
+.docs-entry-grid li { color: var(--wine-soft) !important; }
+.docs-hero-meta dl,
+.docs-hero-meta dl div { border-color: var(--line) !important; }
+.docs-entry-grid li { border-color: var(--line) !important; }
+
+/* ---- Entry "OPEN MARKDOWN" links → blue pill ---- */
+.docs-entry header a {
+  color: #ffffff !important;
+  border-color: var(--acid) !important;
+  background: var(--acid) !important;
+  border-radius: 4px !important;
+}
+.docs-entry header a:hover { background: #0b63d6 !important; border-color: #0b63d6 !important; }
+
+/* ---- Dark entries → light cards with subtle tint ---- */
+.docs-entry-dark { color: var(--ink) !important; background: var(--panel-2) !important; }
+.docs-entry-dark header p { color: var(--wine-soft) !important; }
+.docs-entry-dark .docs-entry-grid li { color: var(--wine-soft) !important; border-color: var(--line) !important; }
+.docs-entry-dark header a { color: #ffffff !important; border-color: var(--acid) !important; background: var(--acid) !important; }
+
+/* ---- Truth-note callout → blue-tinted card, dark text ---- */
+.truth-note {
+  color: var(--ink) !important;
+  background: rgba(14, 118, 255, 0.08) !important;
+  border: 1px solid rgba(14, 118, 255, 0.28) !important;
+}
+.truth-note strong { color: var(--acid) !important; }
+.truth-note p { color: var(--ink) !important; }
+
+/* ---- Mini architecture + grids → light cards ---- */
+.mini-architecture > div,
+.docs-milestones,
+.docs-milestones article,
+.checklist-grid,
+.checklist-grid article { border-color: var(--line) !important; }
+.mini-architecture > div,
+.docs-milestones article,
+.checklist-grid article { color: var(--ink) !important; background: var(--panel) !important; }
+.mini-architecture > div.dark {
+  color: #ffffff !important;
+  border-color: var(--acid) !important;
+  background: var(--acid) !important;
+}
+.mini-architecture > div.dark span,
+.mini-architecture > div.dark strong { color: #ffffff !important; }
+.mini-architecture b { color: var(--acid) !important; }
+
+/* ---- Footer ---- */
+.docs-footer { border-top: 1px solid var(--line) !important; background: var(--paper) !important; }
+.docs-footer p,
+.docs-footer a { color: var(--ink) !important; }
+.docs-footer nav a { color: var(--wine-soft) !important; }
+.docs-footer nav a:hover { color: var(--acid) !important; }
+
+/* ---- Breadcrumbs / targets ---- */
+.breadcrumbs { color: var(--wine-soft) !important; }
+.breadcrumbs a { color: var(--ink) !important; }
+.breadcrumbs a:hover { color: var(--acid) !important; }
+.docs-entry:target { box-shadow: inset 3px 0 0 var(--acid) !important; }
+.docs-nav-group > p { color: var(--acid) !important; }
+
+/* ============================================================
+   READABILITY PASS — lift tiny docs type (6-9px → 12-15px)
+   ============================================================ */
+.docs-header { font-size: 12px !important; }
+.docs-header .brand strong { font-size: 12px !important; }
+.docs-back { font-size: 12px !important; }
+
+.docs-sidebar > p { font-size: 11px !important; }
+.docs-sidebar nav a { font-size: 12px !important; }
+.docs-sidebar .docs-nav-group a { font-size: 12px !important; }
+.docs-nav-group > p { font-size: 11px !important; }
+.docs-status span,
+.docs-status small { font-size: 11px !important; }
+
+.docs-hero-meta > p { font-size: 14px !important; line-height: 1.75 !important; }
+.docs-hero-meta dt { font-size: 11px !important; }
+.docs-hero-meta dd { font-size: 13px !important; }
+.breadcrumbs { font-size: 12px !important; }
+
+.docs-entry header p { font-size: 11px !important; }
+.docs-entry > header > span { font-size: 11px !important; }
+.docs-entry header a { font-size: 11px !important; }
+.docs-entry-grid > p { font-size: 14px !important; line-height: 1.75 !important; }
+.docs-entry-grid li { font-size: 12px !important; }
+
+.truth-note strong { font-size: 11px !important; }
+.truth-note p { font-size: 12px !important; line-height: 1.7 !important; }
+
+.mini-architecture span { font-size: 10px !important; }
+.mini-architecture strong { font-size: 13px !important; }
+.mini-architecture b { font-size: 18px !important; }
+
+.docs-milestones span { font-size: 11px !important; }
+.docs-milestones strong { font-size: 13px !important; }
+.docs-milestones small { font-size: 12px !important; line-height: 1.55 !important; }
+
+.checklist-grid span { font-size: 11px !important; }
+.checklist-grid p { font-size: 12px !important; line-height: 1.6 !important; }
+
+.docs-footer p,
+.docs-footer a { font-size: 12px !important; }

@@ -1,0 +1,1313 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/bp5gxf",
+    "id": "bp5gxf",
+    "slide": 7,
+    "layoutId": "ab21bf06-9022-4e3e-9e55-2c8e01bdf596",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "c311461d-409f-4f7f-971d-255800482552",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#050505",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "ab21bf06-9022-4e3e-9e55-2c8e01bdf596",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "c311461d-409f-4f7f-971d-255800482552",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "c311461d-409f-4f7f-971d-255800482552",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qho3a5kj",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1280,
+        720
+      ],
+      "geometry": "rect",
+      "fillColor": "#050505",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d4f2lk3a",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1280,
+        122
+      ],
+      "geometry": "rect",
+      "fillColor": "#0C0808",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/c36lcf2p",
+      "id": "3",
+      "bbox": [
+        0,
+        624,
+        1280,
+        96
+      ],
+      "geometry": "rect",
+      "fillColor": "#0C0808",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3edkfal8",
+      "id": "4",
+      "bbox": [
+        0,
+        118,
+        1280,
+        1.5
+      ],
+      "geometry": "rect",
+      "fillColor": "#682E3C",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2d4365kn",
+      "id": "5",
+      "bbox": [
+        72,
+        654,
+        260,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#B9FF38",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pgv2h03y",
+      "id": "6",
+      "bbox": [
+        344,
+        654,
+        135,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#5BE7FF",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4fml8v2t",
+      "id": "7",
+      "bbox": [
+        70,
+        38,
+        430,
+        28
+      ],
+      "geometry": "rect",
+      "text": "SECURITY MODEL",
+      "textPreview": "SECURITY MODEL",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "SECURITY MODEL"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "SECURITY MODEL",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#B9FF38",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "SECURITY MODEL",
+              "fontSize": 13,
+              "color": "#B9FF38",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fadkbqlw",
+      "id": "8",
+      "bbox": [
+        70,
+        135,
+        720,
+        74
+      ],
+      "geometry": "rect",
+      "text": "Security centers on proof binding and recovery",
+      "textPreview": "Security centers on proof binding and recovery",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "fontSize": 44,
+        "typeface": "+mn-lt",
+        "color": "#F0D7BB",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Security centers on proof binding and"
+          },
+          {
+            "index": 2,
+            "text": "recovery"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Security centers on proof binding and recovery",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "color": "#F0D7BB",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Security centers on proof binding and recovery",
+              "fontSize": 44,
+              "color": "#F0D7BB",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u9k32lkb",
+      "id": "9",
+      "bbox": [
+        70,
+        210,
+        820,
+        58
+      ],
+      "geometry": "rect",
+      "text": "The model is designed around a narrow claim authority and sender recovery paths.",
+      "textPreview": "The model is designed around a narrow claim authority and sender recovery paths.",
+      "resolvedFontSize": 20,
+      "resolvedTextStyle": {
+        "fontSize": 20,
+        "typeface": "+mn-lt",
+        "color": "#B99A8D",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The model is designed around a narrow claim authority and sender recovery paths."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The model is designed around a narrow claim authority and sender recovery paths.",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#B99A8D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The model is designed around a narrow claim authority and sender recovery paths.",
+              "fontSize": 20,
+              "color": "#B99A8D"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cbahgbap",
+      "id": "10",
+      "bbox": [
+        96,
+        304,
+        518,
+        74
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#1B0D11",
+      "lineColor": "#B9FF38",
+      "lineWidth": 1.2
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dcjy9gra",
+      "id": "11",
+      "bbox": [
+        116,
+        318,
+        180,
+        24
+      ],
+      "geometry": "rect",
+      "text": "Recipient proof",
+      "textPreview": "Recipient proof",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Recipient proof"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Recipient proof",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#B9FF38",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Recipient proof",
+              "fontSize": 19,
+              "color": "#B9FF38",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q98zelsz",
+      "id": "12",
+      "bbox": [
+        306,
+        318,
+        280,
+        44
+      ],
+      "geometry": "rect",
+      "text": "Fresh X OAuth must match the immutable recipient X user ID.",
+      "textPreview": "Fresh X OAuth must match the immutable recipient X user ID.",
+      "resolvedFontSize": 15.51,
+      "resolvedTextStyle": {
+        "fontSize": 15.51,
+        "typeface": "+mn-lt",
+        "color": "#B99A8D",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Fresh X OAuth must match the"
+          },
+          {
+            "index": 2,
+            "text": "immutable recipient X user ID."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Fresh X OAuth must match the immutable recipient X user ID.",
+          "resolvedTextStyle": {
+            "fontSize": 15.51,
+            "color": "#B99A8D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Fresh X OAuth must match the immutable recipient X user ID.",
+              "fontSize": 15.51,
+              "color": "#B99A8D"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/rahg7q94",
+      "id": "13",
+      "bbox": [
+        660,
+        304,
+        518,
+        74
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#1B0D11",
+      "lineColor": "#5BE7FF",
+      "lineWidth": 1.2
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/47qhcbat",
+      "id": "14",
+      "bbox": [
+        680,
+        318,
+        180,
+        24
+      ],
+      "geometry": "rect",
+      "text": "Wallet proof",
+      "textPreview": "Wallet proof",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#5BE7FF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Wallet proof"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Wallet proof",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#5BE7FF",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Wallet proof",
+              "fontSize": 19,
+              "color": "#5BE7FF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p8zy5gre",
+      "id": "15",
+      "bbox": [
+        870,
+        318,
+        280,
+        44
+      ],
+      "geometry": "rect",
+      "text": "A one-time signed challenge binds the destination wallet to the session.",
+      "textPreview": "A one-time signed challenge binds the destination wallet to the session.",
+      "resolvedFontSize": 15.51,
+      "resolvedTextStyle": {
+        "fontSize": 15.51,
+        "typeface": "+mn-lt",
+        "color": "#B99A8D",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A one-time signed challenge binds the"
+          },
+          {
+            "index": 2,
+            "text": "destination wallet to the session."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A one-time signed challenge binds the destination wallet to the session.",
+          "resolvedTextStyle": {
+            "fontSize": 15.51,
+            "color": "#B99A8D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A one-time signed challenge binds the destination wallet to the session.",
+              "fontSize": 15.51,
+              "color": "#B99A8D"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/258fa1sn",
+      "id": "16",
+      "bbox": [
+        96,
+        406,
+        518,
+        74
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#1B0D11",
+      "lineColor": "#B9FF38",
+      "lineWidth": 1.2
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/36hg3698",
+      "id": "17",
+      "bbox": [
+        116,
+        420,
+        180,
+        24
+      ],
+      "geometry": "rect",
+      "text": "Claim digest",
+      "textPreview": "Claim digest",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Claim digest"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Claim digest",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#B9FF38",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Claim digest",
+              "fontSize": 19,
+              "color": "#B9FF38",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/83uhofax",
+      "id": "18",
+      "bbox": [
+        306,
+        420,
+        280,
+        44
+      ],
+      "geometry": "rect",
+      "text": "Authorization binds payment ID, wallet, chain ID, contract and expiry.",
+      "textPreview": "Authorization binds payment ID, wallet, chain ID, contract and expiry.",
+      "resolvedFontSize": 15.51,
+      "resolvedTextStyle": {
+        "fontSize": 15.51,
+        "typeface": "+mn-lt",
+        "color": "#B99A8D",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Authorization binds payment ID, wallet,"
+          },
+          {
+            "index": 2,
+            "text": "chain ID, contract and expiry."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Authorization binds payment ID, wallet, chain ID, contract and expiry.",
+          "resolvedTextStyle": {
+            "fontSize": 15.51,
+            "color": "#B99A8D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Authorization binds payment ID, wallet, chain ID, contract and expiry.",
+              "fontSize": 15.51,
+              "color": "#B99A8D"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/943ih0ri",
+      "id": "19",
+      "bbox": [
+        660,
+        406,
+        518,
+        74
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#1B0D11",
+      "lineColor": "#5BE7FF",
+      "lineWidth": 1.2
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h0zy10jm",
+      "id": "20",
+      "bbox": [
+        680,
+        420,
+        180,
+        24
+      ],
+      "geometry": "rect",
+      "text": "Recovery",
+      "textPreview": "Recovery",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#5BE7FF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Recovery"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Recovery",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#5BE7FF",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Recovery",
+              "fontSize": 19,
+              "color": "#5BE7FF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wzqh8v21",
+      "id": "21",
+      "bbox": [
+        870,
+        420,
+        280,
+        44
+      ],
+      "geometry": "rect",
+      "text": "Sender cancel/refund remains available under contract policy.",
+      "textPreview": "Sender cancel/refund remains available under contract policy.",
+      "resolvedFontSize": 15.51,
+      "resolvedTextStyle": {
+        "fontSize": 15.51,
+        "typeface": "+mn-lt",
+        "color": "#B99A8D",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Sender cancel/refund remains available"
+          },
+          {
+            "index": 2,
+            "text": "under contract policy."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Sender cancel/refund remains available under contract policy.",
+          "resolvedTextStyle": {
+            "fontSize": 15.51,
+            "color": "#B99A8D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Sender cancel/refund remains available under contract policy.",
+              "fontSize": 15.51,
+              "color": "#B99A8D"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vyhgzq1g",
+      "id": "22",
+      "bbox": [
+        96,
+        508,
+        518,
+        74
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#1B0D11",
+      "lineColor": "#B9FF38",
+      "lineWidth": 1.2
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ux8z65kb",
+      "id": "23",
+      "bbox": [
+        116,
+        522,
+        180,
+        24
+      ],
+      "geometry": "rect",
+      "text": "Privacy boundary",
+      "textPreview": "Privacy boundary",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Privacy boundary"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Privacy boundary",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#B9FF38",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Privacy boundary",
+              "fontSize": 19,
+              "color": "#B9FF38",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9wfyx0jq",
+      "id": "24",
+      "bbox": [
+        306,
+        522,
+        280,
+        44
+      ],
+      "geometry": "rect",
+      "text": "Unauthorized API views omit amount, sender and memo; chain activity remains public.",
+      "textPreview": "Unauthorized API views omit amount, sender and memo; chain activity remains public.",
+      "resolvedFontSize": 15.51,
+      "resolvedTextStyle": {
+        "fontSize": 15.51,
+        "typeface": "+mn-lt",
+        "color": "#B99A8D",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Unauthorized API views omit amount,"
+          },
+          {
+            "index": 2,
+            "text": "sender and memo; chain activity remains"
+          },
+          {
+            "index": 3,
+            "text": "public."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Unauthorized API views omit amount, sender and memo; chain activity remains public.",
+          "resolvedTextStyle": {
+            "fontSize": 15.51,
+            "color": "#B99A8D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Unauthorized API views omit amount, sender and memo; chain activity remains public.",
+              "fontSize": 15.51,
+              "color": "#B99A8D"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8v6x4v25",
+      "id": "25",
+      "bbox": [
+        660,
+        508,
+        518,
+        74
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#1B0D11",
+      "lineColor": "#5BE7FF",
+      "lineWidth": 1.2
+    },
+    {
+      "order": 26,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7uxgvq1k",
+      "id": "26",
+      "bbox": [
+        680,
+        522,
+        180,
+        24
+      ],
+      "geometry": "rect",
+      "text": "Production gap",
+      "textPreview": "Production gap",
+      "resolvedFontSize": 19,
+      "resolvedTextStyle": {
+        "fontSize": 19,
+        "typeface": "+mn-lt",
+        "color": "#5BE7FF",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Production gap"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Production gap",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#5BE7FF",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Production gap",
+              "fontSize": 19,
+              "color": "#5BE7FF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 27,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/mtof2lkz",
+      "id": "27",
+      "bbox": [
+        870,
+        522,
+        280,
+        44
+      ],
+      "geometry": "rect",
+      "text": "External contract/backend review and managed key custody remain required.",
+      "textPreview": "External contract/backend review and managed key custody remain required.",
+      "resolvedFontSize": 15.51,
+      "resolvedTextStyle": {
+        "fontSize": 15.51,
+        "typeface": "+mn-lt",
+        "color": "#B99A8D",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "External contract/backend review and"
+          },
+          {
+            "index": 2,
+            "text": "managed key custody remain required."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "External contract/backend review and managed key custody remain required.",
+          "resolvedTextStyle": {
+            "fontSize": 15.51,
+            "color": "#B99A8D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "External contract/backend review and managed key custody remain required.",
+              "fontSize": 15.51,
+              "color": "#B99A8D"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 28,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lsfytgje",
+      "id": "28",
+      "bbox": [
+        70,
+        672,
+        520,
+        24
+      ],
+      "geometry": "rect",
+      "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+      "textPreview": "TRACE — Trusted Recipient Arc Claim Escrow",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#7E6661",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "TRACE — Trusted Recipient Arc Claim Escrow"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#7E6661",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TRACE — Trusted Recipient Arc Claim Escrow",
+              "fontSize": 13,
+              "color": "#7E6661",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 29,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kr6x0b2t",
+      "id": "29",
+      "bbox": [
+        1154,
+        670,
+        56,
+        24
+      ],
+      "geometry": "rect",
+      "text": "07",
+      "textPreview": "07",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#B9FF38",
+        "bold": true,
+        "alignment": "right",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "07"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "07",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#B9FF38",
+            "bold": true,
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "07",
+              "fontSize": 13,
+              "color": "#B9FF38",
+              "bold": true,
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

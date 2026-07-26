@@ -751,7 +751,7 @@ body::after {
 }
 
 /* ========================================================================== */
-/* PACT Signal System — dark technical art direction                          */
+/* TRACE Signal System — dark technical art direction                          */
 /* ========================================================================== */
 :root {
   --paper: #050505;
@@ -2177,4 +2177,480 @@ input::placeholder, textarea::placeholder { color: rgba(240,215,187,.25); }
   .payment-confirm-facts div { min-height: 58px; border-right: 0; border-bottom: 1px solid var(--line); }
   .payment-confirm-facts div:last-child { border-bottom: 0; }
   .payment-confirm-actions { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SHARPLINK INSTITUTIONAL THEME  (final override layer)
+   Light, institutional-finance aesthetic modeled on sharplink.com
+   Palette: warm-white paper, black ink, electric-blue accent.
+   Type:    Archivo (display) / Archivo Narrow (labels+mono).
+   This layer intentionally wins the cascade — last layer applied.
+   ============================================================ */
+:root {
+  --paper: #fdfbf7;
+  --paper-dep: #f3f3f3;
+  --paper-2: #ffffff;
+  --panel: #ffffff;
+  --panel-2: #f6f6f4;
+
+  --ink: #000000;
+  --ink-2: #1a1a1a;
+  --wine: #000000;
+  --wine-dark: #000000;
+  --wine-soft: #55524d;
+  --muted: #6b6862;
+  --paper-deep: #eeeeee;
+  --black: #000000;
+
+  --acid: #0e76ff;
+  --acid-soft: #4a97ff;
+  --success: #0e76ff;
+  --danger: #e5484d;
+  --warn: #b8860b;
+
+  --line: rgba(0, 0, 0, 0.12);
+  --line-strong: rgba(0, 0, 0, 0.28);
+  --line-soft: rgba(0, 0, 0, 0.07);
+
+  --display: "Archivo", "Archivo Narrow", system-ui, sans-serif;
+  --mono: "Archivo Narrow", "Azeret Mono", ui-monospace, monospace;
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.06);
+  color-scheme: light;
+}
+
+html,
+body {
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+}
+
+body {
+  font-family: var(--display);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Kill decorative dark backdrops / radial glows from the signal theme */
+body::before,
+body::after,
+.signal-hero::before,
+.signal-hero::after {
+  background: none !important;
+  opacity: 0 !important;
+}
+
+/* ---- Headings & type ---- */
+h1, h2, h3, h4,
+.display,
+.section-title,
+.hero-title,
+.signal-hero h1 {
+  font-family: var(--display) !important;
+  color: var(--ink) !important;
+  letter-spacing: -0.01em;
+}
+
+/* ---- Navigation ---- */
+.home-nav,
+.rail,
+.workspace-header,
+header.home-nav {
+  background: rgba(253, 251, 247, 0.9) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+  backdrop-filter: saturate(1.1) blur(10px);
+}
+.home-nav a,
+.home-nav .nav-link {
+  color: var(--ink-2) !important;
+}
+.home-nav a:hover {
+  color: var(--acid) !important;
+}
+
+/* ---- Hero ---- */
+.signal-hero,
+.prof-strip,
+.grant-section,
+section,
+.workspace {
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+}
+.prof-strip {
+  background: var(--paper-dep) !important;
+  border-color: var(--line) !important;
+}
+
+/* ---- Generic dark surfaces → light cards ---- */
+.problem-grid > *,
+.flow-list > *,
+.architecture-map,
+.architecture-map > *,
+.baseline-grid > *,
+.roadmap-track > *,
+.faq-stack > *,
+.document-grid > *,
+.card,
+.panel,
+.tile,
+.workspace-panel,
+.modal,
+.modal-card,
+.sheet,
+.recipient-picker,
+.payment-confirm-panel {
+  background: var(--panel) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+  box-shadow: var(--shadow);
+}
+
+/* ---- Security band ---- */
+.security-band {
+  background: #000000 !important;
+  color: var(--paper) !important;
+  border-color: #000 !important;
+}
+.security-band h2,
+.security-band h3,
+.security-band p,
+.security-band a {
+  color: var(--paper) !important;
+}
+.security-band .accent,
+.security-band strong {
+  color: var(--acid-soft) !important;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  background: #000000 !important;
+  color: var(--paper) !important;
+  border-color: #000 !important;
+}
+.site-footer a {
+  color: rgba(253, 251, 247, 0.7) !important;
+}
+.site-footer a:hover {
+  color: var(--acid-soft) !important;
+}
+
+/* ---- Buttons ---- */
+.btn,
+.button,
+button.primary,
+.cta,
+.pill-btn,
+[class*="btn-primary"] {
+  clip-path: none !important;
+  border-radius: 4px !important;
+  background: var(--acid) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--acid) !important;
+  font-family: var(--display) !important;
+  font-weight: 600;
+}
+.btn:hover,
+.button:hover,
+button.primary:hover,
+.cta:hover {
+  background: #0b63d6 !important;
+  border-color: #0b63d6 !important;
+}
+.btn.secondary,
+.button.ghost,
+.btn-ghost,
+[class*="btn-secondary"] {
+  background: transparent !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--line-strong) !important;
+}
+.btn.secondary:hover,
+.button.ghost:hover {
+  border-color: var(--acid) !important;
+  color: var(--acid) !important;
+}
+
+/* ---- Inputs ---- */
+input,
+select,
+textarea,
+.field,
+.input {
+  background: #ffffff !important;
+  color: var(--ink) !important;
+  border: 1px solid var(--line-strong) !important;
+  border-radius: 4px !important;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  border-color: var(--acid) !important;
+  box-shadow: 0 0 0 3px rgba(14, 118, 255, 0.15) !important;
+}
+
+/* ---- Tabs / rail nav ---- */
+.rail a,
+.rail button,
+.tab {
+  color: var(--ink-2) !important;
+}
+.rail a.active,
+.tab.active,
+.tab[aria-selected="true"] {
+  color: var(--acid) !important;
+  border-color: var(--acid) !important;
+}
+
+/* ---- Accents, chips, badges ---- */
+.badge,
+.chip,
+.tag,
+.status-dot {
+  background: rgba(14, 118, 255, 0.1) !important;
+  color: var(--acid) !important;
+  border-color: rgba(14, 118, 255, 0.25) !important;
+}
+
+/* ---- Links ---- */
+a {
+  color: var(--acid);
+}
+
+/* ---- Dividers / rules ---- */
+hr,
+.divider,
+.rule {
+  border-color: var(--line) !important;
+  background: var(--line) !important;
+}
+
+/* ---- Overlay backdrops readable on light ---- */
+.modal-backdrop,
+.overlay,
+.scrim {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ============================================================
+   READABILITY PASS — kill tiny type & white-on-white
+   ============================================================ */
+
+/* Baseline: nothing smaller than 13px anywhere on the page. */
+body { font-size: 15px !important; }
+
+/* Eyebrows / labels / mono captions: 9px → 12px */
+.eyebrow,
+.brand strong,
+.gate-copy strong,
+.input-suffix > span,
+.advanced-grid select,
+.advanced-grid input,
+.empty-state strong,
+.x-identity strong,
+.arch-node strong,
+.built-grid li,
+.roadmap-grid p,
+.identity-card strong,
+.home-links a,
+.signal-note,
+.tab,
+.text-link,
+.protocol-amount b,
+.report-grid article strong,
+.hero-meta strong,
+.topbar-hint,
+.selected-recipient strong,
+.recipient-option-copy strong,
+.payment-confirm-recipient span,
+.payment-confirm-facts dd {
+  font-size: 12px !important;
+}
+
+/* Body copy in sections: 10-12px → 14px */
+.problem-grid p,
+.flow-list p,
+.architecture-copy > p,
+.documents-intro > p,
+.document-grid strong,
+.document-grid small,
+.baseline-metrics p,
+.baseline-grid > article > p,
+.roadmap-stage > p,
+.roadmap-stage li,
+.signal-bottom .grant-lead,
+.footer-lead > p:last-child,
+.empty-receipt-copy p,
+.faq-answer,
+.security-points p {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+/* Document grid: the worst offenders at 7px */
+.document-grid span,
+.document-grid small { font-size: 12px !important; line-height: 1.55 !important; }
+.document-grid strong { font-size: 15px !important; }
+.document-grid b { font-size: 22px !important; }
+
+/* Section titles / headings never tiny */
+.section-title,
+.grant-lead { font-size: clamp(15px, 2.4vw, 22px) !important; }
+
+/* FIX white/dark-on-dark inside the black security band.
+   These elements were tinted with --paper-deep (near-black) which
+   is invisible on the dark band. Force them light. */
+.security-band,
+.security-band *,
+.security-points p,
+.security-points p b,
+.security-points strong {
+  color: var(--paper) !important;
+}
+.security-points p { border-bottom-color: rgba(253, 251, 247, 0.18) !important; }
+.security-band .accent,
+.security-band em { color: var(--acid-soft) !important; }
+
+/* Footer text must stay light on the black footer. */
+.site-footer,
+.site-footer * { color: rgba(253, 251, 247, 0.82) !important; }
+.site-footer a { color: rgba(253, 251, 247, 0.7) !important; }
+.site-footer a:hover,
+.footer-lead strong { color: #ffffff !important; }
+
+/* Document-grid hover: dark text on blue is unreadable → white. */
+.document-grid a:hover,
+.document-grid a:hover span,
+.document-grid a:hover small,
+.document-grid a:hover strong,
+.document-grid a:hover b {
+  color: #ffffff !important;
+}
+
+/* Nav button contrast (was --paper on --black; keep white on blue). */
+.nav-button { color: #ffffff !important; background: var(--acid) !important; }
+.report-cta,
+.primary-button { color: #ffffff !important; background: var(--acid) !important; }
+
+/* ============================================================
+   LIGHT LAYER — CORRECTED SELECTORS
+   The block above targets .btn/.button/.cta/.field/.input/.prof-strip,
+   none of which exist in index.html (the markup uses .primary-button,
+   .ghost-button, .icon-button, bare inputs and .proof-strip). Those
+   rules were dead, so buttons, inputs and the metrics strip were still
+   being painted by the dark theme on a light background. Fixed here.
+   ============================================================ */
+
+/* Metrics strip (was misspelled .prof-strip) */
+.proof-strip {
+  background: var(--panel-2) !important;
+  border-color: var(--line) !important;
+}
+.proof-strip article { border-right-color: var(--line) !important; }
+.proof-strip strong { color: var(--ink) !important; }
+.proof-strip span,
+.proof-strip small { color: var(--muted) !important; }
+
+/* Buttons — real class names */
+.primary-button,
+.ghost-button,
+.icon-button {
+  border-radius: 4px !important;
+  clip-path: none !important;
+  font-family: var(--display) !important;
+  font-weight: 600;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.primary-button {
+  color: #fff !important;
+  background: var(--acid) !important;
+  border: 1px solid var(--acid) !important;
+}
+.primary-button:hover:not(:disabled) {
+  color: #fff !important;
+  background: #0b63d6 !important;
+  border-color: #0b63d6 !important;
+  /* the dark theme nudged and hard-shadowed on hover; drop that here */
+  transform: none !important;
+  box-shadow: none !important;
+}
+.ghost-button {
+  color: var(--ink) !important;
+  background: transparent !important;
+  border: 1px solid var(--line-strong) !important;
+}
+.ghost-button:hover:not(:disabled) {
+  color: var(--acid) !important;
+  background: rgba(14, 118, 255, .06) !important;
+  border-color: var(--acid) !important;
+}
+.icon-button {
+  color: var(--ink) !important;
+  background: transparent !important;
+  border: 1px solid var(--line-strong) !important;
+}
+.icon-button:hover:not(:disabled) { border-color: var(--acid) !important; color: var(--acid) !important; }
+.primary-button:disabled,
+.ghost-button:disabled { opacity: .38 !important; box-shadow: none !important; transform: none !important; }
+
+/* Inputs: the generic rule above boxes EVERY input, including the
+   oversized display fields (amount, recipient handle). Keep those
+   borderless and let only the small controls read as form fields. */
+.input-prefix input,
+.input-suffix input,
+.recipient-input-shell input {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: var(--ink) !important;
+}
+.input-prefix input:focus,
+.input-suffix input:focus,
+.recipient-input-shell input:focus { box-shadow: none !important; }
+.advanced-grid input,
+.advanced-grid select,
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+  background: #fff !important;
+  border: 1px solid var(--line-strong) !important;
+  border-radius: 4px !important;
+  color: var(--ink) !important;
+  padding: 9px 11px !important;
+}
+input::placeholder,
+textarea::placeholder { color: var(--muted) !important; opacity: 1 !important; }
+
+/* Tabs */
+.tab { color: var(--ink-2) !important; border-radius: 4px 4px 0 0 !important; }
+.tab:hover { background: rgba(0, 0, 0, .04) !important; }
+.tab.active { color: var(--acid) !important; background: rgba(14, 118, 255, .07) !important; }
+.tab.active::before { color: var(--acid) !important; }
+
+/* Panels: real names, plus the dark theme's blur filter */
+.panel,
+.panel-heading,
+.main-panel,
+.register-panel,
+.claim-panel,
+.receipt-panel,
+.modal-panel,
+.payment-confirm-panel {
+  background: var(--panel) !important;
+  color: var(--ink) !important;
+  border-color: var(--line) !important;
+  backdrop-filter: none !important;
+}
+.panel-heading { background: var(--panel-2) !important; border-bottom-color: var(--line) !important; }
+
+/* Keyboard focus needs to be visible on light */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--acid) !important;
+  outline-offset: 2px !important;
 }

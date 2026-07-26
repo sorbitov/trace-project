@@ -1,4 +1,4 @@
-# PACT Budget and Milestones
+# TRACE Budget and Milestones
 
 ## Planning basis
 

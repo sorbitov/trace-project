@@ -19,7 +19,7 @@ test("normalizes only valid X handles", () => {
 test("wallet challenge proves address ownership", async () => {
   const wallet = Wallet.createRandom();
   const message = walletChallengeMessage({
-    baseUrl: "https://handlepay.app",
+    baseUrl: "https://trace.app",
     walletAddress: wallet.address,
     nonce: "unique-nonce",
     issuedAt: new Date("2026-01-01T00:00:00Z"),

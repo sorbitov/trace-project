@@ -1,6 +1,6 @@
-# PACT v0.1.0-rc.2
+# TRACE v0.1.0-rc.2
 
-PACT — Programmable Arc Conditional Transfers — lets a sender escrow USDC on Arc for an X identity. The intended recipient proves the X account and a destination wallet before claiming; the sender retains contract-enforced cancellation and expired-refund paths.
+TRACE — lets a sender escrow USDC on Arc for an X identity. The intended recipient proves the X account and a destination wallet before claiming; the sender retains contract-enforced cancellation and expired-refund paths.
 
 ## Evidence in this release
 

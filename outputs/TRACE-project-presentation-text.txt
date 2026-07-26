@@ -1,0 +1,129 @@
+TRACE project presentation
+Source: E:/py_scrypt/PACT/outputs/TRACE-project-presentation.pptx
+Slides: 10
+
+--- Slide 1 ---
+TRACE
+Trusted Recipient Arc Claim Escrow
+Claimable USDC payments to X identities on Arc
+DeFi Track / Arc + USDC
+Arc Testnet deployed
+
+--- Slide 2 ---
+READINESS VERDICT
+Ready for demo and pilot hardening, not production launch
+What is ready
+Arc Testnet escrow deployment exists and is RPC-verified.
+Create, claim, cancel and expired-refund paths have transaction evidence.
+37 automated tests pass across contract, API, security and wallet flows.
+Before real users
+Publish HTTPS app, managed PostgreSQL, secrets and health monitoring.
+Run real two-X-account browser E2E with two wallets.
+Separate owner, verifier, treasury and deployer roles; finish external review.
+
+--- Slide 3 ---
+PROBLEM
+Crypto payments still start with an address request
+Most Web3 coordination happens around social identity. Payment still forces the recipient to share a wallet address before the sender can act.
+DM friction and delayed payouts
+Copy/paste address risk
+No safe direct transfer when the wallet is unknown
+TRACE changes the destination from a wallet address to a verified recipient identity.
+
+--- Slide 4 ---
+SOLUTION FLOW
+TRACE turns an X account into a claimable USDC destination
+Sender enters X handle
+USDC funds Arc escrow
+Recipient proves X + wallet
+Claim, cancel or refund settles onchain
+The backend cannot mark funding or settlement complete from a client claim alone; it verifies Arc receipts and matching contract events.
+
+--- Slide 5 ---
+TRACK FIT
+The DeFi fit is programmable stablecoin settlement
+Arc
+Settlement layer, testnet execution, and USDC-denominated flow.
+USDC
+Escrow principal, protocol fee asset and payment unit.
+Programmability
+Identity-bound claim authorization, cancellation policy, expiry and refund.
+Treasury workflow
+Mandatory fee routed onchain while principal remains recoverable.
+
+--- Slide 6 ---
+ARCHITECTURE
+Trust is split between identity policy and onchain custody
+Browser
+wallet + X session
+TRACE API
+OAuth, policy, receipt checks
+PostgreSQL
+sessions, payments, audit, indexer
+Arc Escrow
+USDC custody and lifecycle
+Invariant: the database indexes state, but only verified Arc transactions fund or settle a payment.
+
+--- Slide 7 ---
+SECURITY MODEL
+Security centers on proof binding and recovery
+Recipient proof
+Fresh X OAuth must match the immutable recipient X user ID.
+Wallet proof
+A one-time signed challenge binds the destination wallet to the session.
+Claim digest
+Authorization binds payment ID, wallet, chain ID, contract and expiry.
+Recovery
+Sender cancel/refund remains available under contract policy.
+Privacy boundary
+Unauthorized API views omit amount, sender and memo; chain activity remains public.
+Production gap
+External contract/backend review and managed key custody remain required.
+
+--- Slide 8 ---
+CURRENT EVIDENCE
+Evidence exists, but final public proof still needs hosting
+37 / 37
+automated tests passing
+5042002
+Arc Testnet chain ID
+0.50%
+minimum protocol fee
+3 flows
+claim, cancel, refund smoke
+Contract
+0x5A3949aE67a37e7e37bFC77F5b7832Cc93f40A2a
+Deployment tx: 0xa3f80c8ee66e9ae22900e8b119caf391b16830f60ee921565b4ffd9cc7d9c97e
+
+--- Slide 9 ---
+DEMO PATH
+The judge demo should show the full lifecycle
+1
+Enter X handle
+2
+Approve and create escrow
+3
+Open claim link as recipient
+4
+Prove X and wallet
+5
+Claim USDC
+6
+Show cancel/refund evidence
+Demo rule
+Never simulate success. If X, DB, RPC or contract config is missing, the app should fail closed and show the blocker.
+
+--- Slide 10 ---
+NEXT STEPS
+The next milestone is a public testnet pilot
+1
+Publish
+GitHub repo, CI output, HTTPS demo and release tag.
+2
+Verify
+Arcscan source verification, two-account X E2E and reviewer video.
+3
+Harden
+Role separation, managed signer, monitoring and external security review.
+Decision: proceed as a DeFi Track submission and testnet pilot, not as a production launch claim.
+

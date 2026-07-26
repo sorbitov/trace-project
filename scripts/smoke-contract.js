@@ -47,7 +47,7 @@ async function createPayment(label, expiresIn, cancellable) {
   const approve = await usdc.approve(deployment.address, amount + fee);
   await approve.wait(1);
   const expiresAt = (await latestTimestamp()) + expiresIn;
-  const identity = keccak256(toUtf8Bytes(`handlepay-smoke:${label}:${Date.now()}`));
+  const identity = keccak256(toUtf8Bytes(`trace-smoke:${label}:${Date.now()}`));
   const create = await escrow.createPayment(identity, amount, expiresAt, cancellable, deployment.minimumFeeBps);
   const receipt = await create.wait(1);
   const event = receipt.logs.map((log) => {

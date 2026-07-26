@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to PACT are documented here.
+All notable changes to TRACE are documented here.
 
 ## [0.1.0-rc.2] - 2026-07-15
 
@@ -12,7 +12,7 @@ All notable changes to PACT are documented here.
 
 ### Changed
 
-- Renamed the public project from HandleLayer/HandlePay to PACT — Programmable Arc Conditional Transfers.
+- Renamed the public project from HandleLayer/HandlePay to TRACE.
 
 ### Security
 

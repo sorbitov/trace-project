@@ -7,6 +7,7 @@ import rateLimit from "express-rate-limit";
 import helmet from "helmet";
 import { formatUnits } from "ethers";
 import { config } from "./config.js";
+import { createAvatarProxy } from "./avatars.js";
 import {
   chainConfigured,
   claimAuthorization,
@@ -109,7 +110,7 @@ export function createApp(db) {
         scriptSrc: ["'self'"],
         styleSrc: ["'self'", "https://fonts.googleapis.com"],
         fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
-        imgSrc: ["'self'", "data:", "https:"],
+        imgSrc: ["'self'", "data:"],
         connectSrc: ["'self'", config.arc.rpcUrl],
       },
     },
@@ -376,6 +377,8 @@ export function createApp(db) {
   for (const path of ["/api/dashboard", "/api/account/wallet", "/api/account/x-login", "/api/account/x-connect", "/api/account/link-x", "/api/x/connect", "/api/payments/:id/verify-x", "/api/payments/:id/claim"]) {
     app.all(path, (req, res) => res.status(410).json({ error: "This prototype endpoint was removed. Use verified auth and onchain routes." }));
   }
+
+  app.get("/avatars/x/:handle", createAvatarProxy());
 
   app.get("/project-docs/:name", (req, res) => {
     const filename = publicProjectDocs.get(req.params.name);

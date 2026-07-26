@@ -1,8 +1,8 @@
-# PACT Reviewer Demo and Evidence Guide
+# TRACE Reviewer Demo and Evidence Guide
 
 ## Demo objective
 
-Prove that PACT performs a real Arc Testnet escrow lifecycle, binds claim authorization to the intended X recipient and wallet, protects role-scoped metadata, and fails closed when required integrations are unavailable.
+Prove that TRACE performs a real Arc Testnet escrow lifecycle, binds claim authorization to the intended X recipient and wallet, protects role-scoped metadata, and fails closed when required integrations are unavailable.
 
 ## Environment requirements
 

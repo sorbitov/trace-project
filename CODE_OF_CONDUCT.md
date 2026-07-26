@@ -2,7 +2,7 @@
 
 ## Our pledge
 
-We pledge to make participation in PACT a harassment-free experience for everyone, regardless of background, identity, experience level, or viewpoint.
+We pledge to make participation in TRACE a harassment-free experience for everyone, regardless of background, identity, experience level, or viewpoint.
 
 ## Expected behavior
 

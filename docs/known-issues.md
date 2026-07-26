@@ -7,7 +7,7 @@ This repository is a release candidate for Arc Testnet review, not an audited pr
 - The application has not yet been published at an HTTPS URL.
 - Real two-account X OAuth acceptance testing and a clean-browser reviewer walkthrough remain pending.
 - No independent smart-contract or application security review has been completed.
-- The canonical `handlepay.app` URL is retained as a placeholder until a PACT domain is selected and controlled.
+- The canonical `trace.app` URL is retained as a placeholder until a TRACE domain is selected and controlled.
 - The deployed Solidity artifact remains named `HandlePaymentEscrow`; renaming it would require a new deployment and is intentionally outside this branding-only release.
 - PostgreSQL, managed application secrets, monitored RPC access, and operational alerting are required for a hosted environment.
 - The current deployment is Arc Testnet only and uses testnet USDC.

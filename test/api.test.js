@@ -79,11 +79,11 @@ test("static responses include security headers", async () => {
   assert.match(response.headers.get("cache-control"), /no-store/);
   const docsPage = await request("/docs.html");
   assert.equal(docsPage.status, 200);
-  assert.match(await docsPage.text(), /<title>PACT Project Documents \| Arc Grant &amp; Security<\/title>/);
+  assert.match(await docsPage.text(), /<title>TRACE Project Documents \| Arc Grant &amp; Security<\/title>/);
   const grantDocument = await request("/project-docs/grant-application");
   assert.equal(grantDocument.status, 200);
   assert.match(grantDocument.headers.get("content-type"), /text\/markdown/);
-  assert.match(await grantDocument.text(), /PACT Grant Application/);
+  assert.match(await grantDocument.text(), /TRACE Grant Application/);
   const budgetDocument = await request("/project-docs/budget-and-milestones");
   assert.equal(budgetDocument.status, 200);
   assert.match(await budgetDocument.text(), /USD 75,000/);
@@ -99,7 +99,7 @@ test("static responses include security headers", async () => {
 test("publishes structured site hierarchy and GEO discovery files", async () => {
   const home = await request("/");
   const homeHtml = await home.text();
-  assert.match(homeHtml, /<link rel="canonical" href="https:\/\/handlepay\.app\/"/);
+  assert.match(homeHtml, /<link rel="canonical" href="https:\/\/trace\.app\/"/);
   assert.match(homeHtml, /"@type": "FAQPage"/);
   assert.match(homeHtml, /id="knowledge"/);
   assert.match(homeHtml, /aria-label="Primary navigation"/);

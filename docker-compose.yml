@@ -2,18 +2,18 @@ services:
   postgres:
     image: postgres:17-alpine
     environment:
-      POSTGRES_DB: handlepay
-      POSTGRES_USER: handlepay
-      POSTGRES_PASSWORD: handlepay
+      POSTGRES_DB: trace
+      POSTGRES_USER: trace
+      POSTGRES_PASSWORD: trace
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U handlepay -d handlepay"]
+      test: ["CMD-SHELL", "pg_isready -U trace -d trace"]
       interval: 2s
       timeout: 3s
       retries: 20
     volumes:
-      - handlepay-postgres:/var/lib/postgresql/data
+      - trace-postgres:/var/lib/postgresql/data
 
 volumes:
-  handlepay-postgres:
+  trace-postgres:

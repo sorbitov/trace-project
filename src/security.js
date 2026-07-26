@@ -48,12 +48,12 @@ export function constantTimeEqual(left, right) {
 
 export function walletChallengeMessage({ baseUrl, walletAddress, nonce, issuedAt, expiresAt }) {
   return [
-    "PACT wallet verification",
+    "TRACE wallet verification",
     `Domain: ${new URL(baseUrl).host}`,
     `Address: ${walletAddress}`,
     `Nonce: ${nonce}`,
     `Issued At: ${issuedAt.toISOString()}`,
     `Expiration Time: ${expiresAt.toISOString()}`,
-    "Purpose: Link this wallet to your PACT account. This does not send a transaction.",
+    "Purpose: Link this wallet to your TRACE account. This does not send a transaction.",
   ].join("\n");
 }

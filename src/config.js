@@ -21,7 +21,7 @@ export const config = Object.freeze({
   port,
   host,
   baseUrl: env.BASE_URL || `http://127.0.0.1:${port}`,
-  databaseUrl: env.DATABASE_URL || "postgres://handlepay:handlepay@127.0.0.1:5432/handlepay",
+  databaseUrl: env.DATABASE_URL || "postgres://trace:trace@127.0.0.1:5432/trace",
   sessionSecret,
   sessionDays: Number(env.SESSION_DAYS || 7),
   x: {

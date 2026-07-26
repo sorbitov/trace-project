@@ -1,10 +1,10 @@
-# PACT Project Status and Evidence
+# TRACE Project Status and Evidence
 
 Updated: 15 July 2026
 
 ## Status statement
 
-PACT is a testnet-deployed MVP. The escrow is live on Arc Testnet and RPC-verified; the application, X integration, PostgreSQL service, and indexer are not yet publicly hosted. Arcscan source verification and an external security audit remain pending.
+TRACE is a testnet-deployed MVP. The escrow is live on Arc Testnet and RPC-verified; the application, X integration, PostgreSQL service, and indexer are not yet publicly hosted. Arcscan source verification and an external security audit remain pending.
 
 ## Capability matrix
 

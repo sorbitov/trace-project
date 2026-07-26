@@ -861,7 +861,14 @@ function initIdentityField() {
   });
   field.replaceChildren(fragment);
   const count = stage.querySelector("[data-identity-count]");
-  if (count) count.textContent = `${identityProfiles.length} CRYPTO ROUTES`;
+  // Media queries hide nodes past a breakpoint-specific index (16 / 30 / 60), so
+  // the array length overstates what is on screen. Count what actually renders.
+  function updateCount() {
+    if (!count) return;
+    const visible = [...field.children].filter((node) => node.offsetParent !== null).length;
+    count.textContent = `${visible} CRYPTO ROUTES`;
+  }
+  updateCount();
 
   const nodes = [...stage.querySelectorAll(".identity-node")].map((element, index) => {
     const x = Number(element.dataset.x);
@@ -884,7 +891,7 @@ function initIdentityField() {
       reveal: 0,
       avatarImage,
       avatarState: "idle",
-      avatarUrl: `https://unavatar.io/x/${encodeURIComponent(new URL(element.href).pathname.slice(1))}?fallback=false&size=128`,
+      avatarUrl: `/avatars/x/${encodeURIComponent(new URL(element.href).pathname.slice(1))}`,
     };
   });
 
@@ -915,10 +922,9 @@ function initIdentityField() {
 
   const anchorNode = nodes.find(({ element }) => element.classList.contains("is-anchor"));
   if (anchorNode) loadAvatar(anchorNode);
-  if (window.matchMedia("(hover: none)").matches) {
-    const visibleTouchNodes = window.innerWidth <= 680 ? 30 : 60;
-    nodes.slice(0, visibleTouchNodes).forEach(loadAvatar);
-  }
+  // Avatars now come from our own cached proxy, so every node can load up front
+  // instead of waiting for a hover. The proxy throttles the upstream fetches.
+  nodes.forEach(loadAvatar);
   function setNodeReveal(node, reveal, pointerX = null, pointerY = null, showCard = false) {
     const eased = Math.pow(Math.max(0, Math.min(1, reveal)), .52);
     node.reveal = eased;
@@ -932,9 +938,9 @@ function initIdentityField() {
       pushY = (dy / distance) * eased * 7;
     }
     node.element.style.setProperty("--reveal", eased.toFixed(3));
-    node.element.style.setProperty("--node-opacity", (.08 + eased * .92).toFixed(3));
-    node.element.style.setProperty("--node-scale", (.42 + eased * .58).toFixed(3));
-    node.element.style.setProperty("--node-blur", `${((1 - eased) * 2.8).toFixed(2)}px`);
+    node.element.style.setProperty("--node-opacity", (.46 + eased * .54).toFixed(3));
+    node.element.style.setProperty("--node-scale", (.74 + eased * .26).toFixed(3));
+    node.element.style.setProperty("--node-blur", `${((1 - eased) * .7).toFixed(2)}px`);
     node.element.style.setProperty("--card-opacity", showCard ? Math.max(0, Math.min(1, (eased - .26) / .5)).toFixed(3) : "0");
     node.element.style.setProperty("--glow-size", `${(5 + eased * 23).toFixed(1)}px`);
     node.element.style.setProperty("--push-x", `${pushX.toFixed(1)}px`);
@@ -978,6 +984,11 @@ function initIdentityField() {
     if (node) setNodeReveal(node, 1, null, null, true);
   });
   stage.addEventListener("focusout", () => requestAnimationFrame(resetField));
+  let countTimer = 0;
+  window.addEventListener("resize", () => {
+    clearTimeout(countTimer);
+    countTimer = setTimeout(updateCount, 150);
+  });
   resetField();
 }
 

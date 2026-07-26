@@ -5,7 +5,7 @@ The repository is prepared locally. Do not publish until the owner and repositor
 ## Before creating the repository
 
 - [ ] Confirm the GitHub owner or organization.
-- [ ] Confirm the repository name, recommended: `pact-arc`.
+- [ ] Confirm the repository name, recommended: `trace-arc`.
 - [ ] Decide whether the repository will use `master` as-is or rename it to `main`.
 - [ ] Confirm that `data/ppt.txt`, `.env`, private keys, OAuth tokens, and database exports are not tracked.
 - [ ] Replace team and security contact placeholders with accountable facts.
@@ -29,7 +29,7 @@ Expected release tag: `v0.1.0-rc.2`.
 Create an empty GitHub repository without generated README, license, or `.gitignore`, then run:
 
 ```powershell
-git remote add origin https://github.com/OWNER/pact-arc.git
+git remote add origin https://github.com/OWNER/trace-arc.git
 git push -u origin master
 git push origin v0.1.0-rc.2
 ```
