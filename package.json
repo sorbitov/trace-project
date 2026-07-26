@@ -31,6 +31,6 @@
     "pg": "^8.22.0"
   },
   "devDependencies": {
-    "hardhat": "^3.9.1"
+    "hardhat": "^3.11.1"
   }
 }
