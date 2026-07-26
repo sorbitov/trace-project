@@ -1,0 +1,17 @@
+node_modules/
+dist/
+artifacts/
+cache/
+.coverage/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+data/*.json
+data/*.txt
+
+# Local planning and generated presentation artifacts
+.planning/
+outputs/
+scripts/create-trace-light-presentation-v2.mjs

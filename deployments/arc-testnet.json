@@ -1,0 +1,40 @@
+{
+  "network": "arc-testnet",
+  "chainId": 5042002,
+  "address": "0x5A3949aE67a37e7e37bFC77F5b7832Cc93f40A2a",
+  "usdcAddress": "0x3600000000000000000000000000000000000000",
+  "verifier": "0x36392ba753d76c285C32211Ed086eb1b54F83422",
+  "treasury": "0x36392ba753d76c285C32211Ed086eb1b54F83422",
+  "owner": "0x36392ba753d76c285C32211Ed086eb1b54F83422",
+  "minimumFeeBps": 50,
+  "deploymentBlock": 51929589,
+  "transactionHash": "0xa3f80c8ee66e9ae22900e8b119caf391b16830f60ee921565b4ffd9cc7d9c97e",
+  "deployedAt": "2026-07-15T11:39:30.086Z",
+  "sourceCommit": "18d02227b323194917bf62e11c6241d446f5f288",
+  "compiler": "0.8.36+commit.8a079791",
+  "optimizer": {
+    "enabled": true,
+    "runs": 200
+  },
+  "contractUrl": "https://testnet.arcscan.app/address/0x5A3949aE67a37e7e37bFC77F5b7832Cc93f40A2a",
+  "transactionUrl": "https://testnet.arcscan.app/tx/0xa3f80c8ee66e9ae22900e8b119caf391b16830f60ee921565b4ffd9cc7d9c97e",
+  "sourceVerification": "pending-explorer-verifier",
+  "lifecycleSmoke": {
+    "amountUnits": "100000",
+    "claim": {
+      "paymentId": "1",
+      "createTransaction": "0x028c68d5eb8dea194a63717c761b1180da773d23caa8b50f856894550cd48afb",
+      "settlementTransaction": "0xc0fb573dc2631fa164b4950a278fb4168e5511ed8859476fb4bf2d5a7ca6518e"
+    },
+    "cancel": {
+      "paymentId": "2",
+      "createTransaction": "0xdff7c9072c247fc9f24bced2ea4ce22ee42b4909f2b5ab63e9a2d028035dd16d",
+      "settlementTransaction": "0xa4cf628afeab74c26d5de56b571d879945597b75393b5825dcd33cf092089f69"
+    },
+    "refund": {
+      "paymentId": "3",
+      "createTransaction": "0x7c7e219dc8909c2ff0007a1c0e1544c792a03148b2063ba12ed9fa144c6e9a8a",
+      "settlementTransaction": "0x3142c471fcfb6d8a3f5f52b464d9df98b9c28c437c3908382c2412f1de74b7e4"
+    }
+  }
+}

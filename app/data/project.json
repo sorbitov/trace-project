@@ -1,0 +1,29 @@
+{
+  "name": "TRACE",
+  "tagline": "Send USDC to a person, not an address.",
+  "updated": "2026-07-15",
+  "status": "Arc Testnet-deployed MVP",
+  "metrics": [
+    { "label": "Status", "value": "DeFi Track", "detail": "Arc Testnet-deployed payment infrastructure" },
+    { "label": "Quality", "value": "37 / 37 tests", "detail": "API, wallet, identity, recipient UX, security and Solidity" },
+    { "label": "Grant plan", "value": "16 weeks", "detail": "$75k proposed baseline" },
+    { "label": "Settlement", "value": "Arc + USDC", "detail": "On-chain escrow lifecycle" }
+  ],
+  "documents": [
+    { "number": "H", "title": "Hackathon submission", "detail": "DeFi Track fit, pitch, Arc evidence and demo flow", "href": "./docs.html#hackathon" },
+    { "number": "01", "title": "Executive summary", "detail": "One-page product, proof, ask and pilot brief", "href": "./docs.html#executive" },
+    { "number": "02", "title": "Grant application", "detail": "Form-ready narrative and reviewer case", "href": "./docs.html#grant" },
+    { "number": "03", "title": "Budget + milestones", "detail": "16-week $75k plan with acceptance evidence", "href": "./docs.html#budget" },
+    { "number": "04", "title": "Pilot + impact", "detail": "KPIs, instrumentation and decision thresholds", "href": "./docs.html#pilot" },
+    { "number": "05", "title": "Project status", "detail": "Implemented capabilities and remaining work", "href": "./docs.html#status" },
+    { "number": "06", "title": "Architecture", "detail": "Components, states, trust boundaries and recovery", "href": "./docs.html#architecture" },
+    { "number": "07", "title": "Security", "detail": "Threat model, controls and launch criteria", "href": "./docs.html#security" },
+    { "number": "08", "title": "Roadmap", "detail": "Week-by-week delivery and exit evidence", "href": "./docs.html#roadmap" },
+    { "number": "09", "title": "Demo guide", "detail": "Reviewer walkthrough and evidence package", "href": "./docs.html#demo" },
+    { "number": "10", "title": "Submission checklist", "detail": "Final truth, proof and completeness gate", "href": "./docs.html#checklist" }
+  ],
+  "truthBoundary": {
+    "implemented": "Arc Testnet escrow deployment, live lifecycle transactions, automated tests, PostgreSQL persistence and deployment tooling",
+    "notYetPublished": "Hosted application, X recipient lookup, public repository, external review, pilot metrics and accountable team profile"
+  }
+}
